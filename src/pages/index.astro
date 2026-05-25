@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import PreviewCard from '../components/PreviewCard.astro';
+---
+
+<BaseLayout>
+  <main class="page">
+    <Hero
+      eyebrow="Website concepts, previews, and prototypes"
+      title="Imagine this site before it exists."
+      description="ImagineThisSite is a place for creating visual concept pages, preview environments, and lightweight website proposals for people, organizations, and ideas."
+    />
+
+    <section>
+      <h2>What this is</h2>
+
+      <p>
+        A flexible demo environment for exploring what a website, page, or digital presence could become before committing to a full build.
+      </p>
+    </section>
+
+    <section>
+      <h2>Example previews</h2>
+
+      <div class="preview-grid">
+        <PreviewCard
+          title="Robert's Coffee Shop"
+          description="A warm atmospheric café concept."
+          href="/preview/robertscoffeeshop"
+          image="/images/dot-earth-cloudy.webp"
+        />
+
+        <PreviewCard
+          title="Artist Portfolio"
+          description="A visual identity and portfolio prototype."
+          href="/preview/artistportfolio"
+          image="/images/orange-loops-green-background.webp"
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>
