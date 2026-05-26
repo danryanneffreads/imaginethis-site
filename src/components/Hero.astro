@@ -1,15 +1,28 @@
 ---
-const {
-  eyebrow = "",
-  title = "",
-  description = ""
-} = Astro.props;
+// Hero.astro
+// Reusable hero section component
+
+interface Props {
+  title: string;
+  subtitle: string;
+  cta_text?: string;
+  cta_link?: string;
+}
+
+const { title, subtitle, cta_text = "Get Started", cta_link = "#" } = Astro.props;
 ---
 
-<section>
-  <p class="eyebrow">{eyebrow}</p>
-
-  <h1>{title}</h1>
-
-  <p>{description}</p>
+<section class="bg-gradient-to-r from-amber-700 to-orange-600 text-white py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
+    <p class="text-lg md:text-xl text-amber-100 mb-8 max-w-2xl mx-auto">{subtitle}</p>
+    {cta_text && (
+      <a 
+        href={cta_link} 
+        class="inline-block bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition"
+      >
+        {cta_text}
+      </a>
+    )}
+  </div>
 </section>

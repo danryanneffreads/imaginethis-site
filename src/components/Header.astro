@@ -1,10 +1,18 @@
-<header class="site-header">
-  <a href="/" class="logo">
-    ImagineThisSite
-  </a>
+---
+// Header.astro
+// Reusable header component for all pages
+---
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/preview/robertscoffeeshop">Preview</a>
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="text-2xl font-bold text-blue-600">ImagineThis</div>
+      <span class="text-sm text-gray-500 font-medium">Site</span>
+    </div>
+    <ul class="hidden md:flex gap-8 text-gray-700">
+      <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+      <li><a href="#examples" class="hover:text-blue-600 transition">Examples</a></li>
+    </ul>
   </nav>
 </header>
