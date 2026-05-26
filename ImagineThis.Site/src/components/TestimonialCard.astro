@@ -1,0 +1,22 @@
+---
+// TestimonialCard.astro
+// Reusable testimonial card component for quotes and reviews
+
+interface Props {
+  quote: string;
+  author: string;
+  role?: string;
+}
+
+const { quote, author, role } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-amber-700">
+  <p class="text-gray-700 mb-4 italic">"{quote}"</p>
+  <div>
+    <p class="font-semibold text-gray-900">{author}</p>
+    {role && (
+      <p class="text-sm text-gray-600">{role}</p>
+    )}
+  </div>
+</div>

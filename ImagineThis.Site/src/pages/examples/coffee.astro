@@ -1,0 +1,198 @@
+---
+// pages/examples/coffee.astro
+// Example concept site for a local coffee shop
+// Demonstrates the reusable component system and warm, inviting design
+
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import Card from "../../components/Card.astro";
+import CTASection from "../../components/CTASection.astro";
+import TestimonialCard from "../../components/TestimonialCard.astro";
+---
+
+<Layout 
+  title="Brew Haven — Example Coffee Shop Website" 
+  description="A concept website for a local coffee shop. Shows what a thoughtfully designed website can do for a community business."
+>
+  <!-- Hero Section -->
+  <Hero 
+    title="Welcome to Brew Haven" 
+    subtitle="A neighborhood coffee shop where great coffee meets community. Where every cup tells a story."
+    cta_text="Explore Our Menu"
+    cta_link="#menu"
+  />
+
+  <!-- About/Story Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="https://picsum.photos/500/400?random=10" alt="Brew Haven interior" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="max-w-2xl">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+          <p class="text-lg text-gray-600 mb-4">
+            Brew Haven started with a simple idea: create a space where people feel welcome. Where a regular customer knows their name and their usual order. Where neighbors become friends over a good cup of coffee.
+          </p>
+          <p class="text-lg text-gray-600 mb-4">
+            Every coffee we serve is sourced from growers we know and trust. Every pastry is made fresh each morning. Every conversation that happens in our shop matters to us.
+          </p>
+          <p class="text-lg text-gray-600">
+            When you come to Brew Haven, you're not just getting coffee. You're joining something. A community. A ritual. A moment of calm in a busy day.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu/Services Section -->
+  <section id="menu" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Menu</h2>
+        <p class="text-lg text-gray-600">
+          We keep it simple. The best espresso drinks, single-origin pours, fresh pastries, and light lunch options. Quality over quantity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card 
+          title="Signature Espresso"
+          description="Our house blend. Rich, smooth, and reliable. The foundation of every great coffee day."
+          image="https://picsum.photos/400/240?random=11"
+        />
+        <Card 
+          title="Single-Origin Pour Overs"
+          description="Rotating selection of single-origin coffees from growers we partner with. Each one tells a story."
+          image="https://picsum.photos/400/240?random=12"
+        />
+        <Card 
+          title="Seasonal Specials"
+          description="We change our seasonal drinks every month. Inspired by what's fresh, what's in season, and what we're excited about."
+          image="https://picsum.photos/400/240?random=13"
+        />
+        <Card 
+          title="Fresh Pastries"
+          description="Baked fresh every morning. Croissants, muffins, scones, and seasonal treats made with care."
+          image="https://picsum.photos/400/240?random=14"
+        />
+        <Card 
+          title="Light Lunch"
+          description="Sandwiches, salads, and soups. Made with good ingredients. Perfect for a quick lunch or a reason to stay longer."
+          image="https://picsum.photos/400/240?random=15"
+        />
+        <Card 
+          title="Non-Coffee Drinks"
+          description="Hot chocolate, tea, matcha lattes, and fresh juices for those who don't drink coffee. No judgment here."
+          image="https://picsum.photos/400/240?random=16"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">What Our Customers Say</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <TestimonialCard 
+          quote="I come here every morning. It's become part of my routine. The coffee is great, but what really brings me back is the people."
+          author="Sarah"
+          role="Regular Customer"
+        />
+        <TestimonialCard 
+          quote="Finally, a coffee shop that gets it. They actually care about where their coffee comes from. You can taste it."
+          author="Mike"
+          role="Coffee Enthusiast"
+        />
+        <TestimonialCard 
+          quote="The best place in the neighborhood to get work done. Good WiFi, good coffee, and people who won't rush you out."
+          author="Jennifer"
+          role="Freelancer"
+        />
+        <TestimonialCard 
+          quote="We use Brew Haven for all our business meetings. The atmosphere is perfect, and the staff is amazing."
+          author="Tom"
+          role="Local Business Owner"
+        />
+        <TestimonialCard 
+          quote="My kids love the hot chocolate. I love the espresso. We love the vibe. This is our third place."
+          author="Andrea"
+          role="Parent"
+        />
+        <TestimonialCard 
+          quote="Best pastries in town, hands down. And the people who work here treat you like you belong. Because you do."
+          author="David"
+          role="Neighborhood Regular"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Location/Contact Section -->
+  <section id="location" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Find Us</h2>
+          <p class="text-lg text-gray-600 mb-4">
+            <strong>Brew Haven</strong><br/>
+            125 Oak Street<br/>
+            Downtown District<br/>
+            (555) 123-4567
+          </p>
+          <div class="mt-6">
+            <h3 class="font-semibold text-gray-900 mb-3">Hours</h3>
+            <p class="text-gray-600 mb-2"><strong>Monday - Friday:</strong> 6:30 AM - 6:00 PM</p>
+            <p class="text-gray-600 mb-2"><strong>Saturday:</strong> 7:00 AM - 7:00 PM</p>
+            <p class="text-gray-600"><strong>Sunday:</strong> 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+        <div>
+          <img src="https://picsum.photos/500/400?random=17" alt="Brew Haven storefront" class="rounded-lg shadow-lg w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Atmosphere/Community Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">What Makes Brew Haven Special</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-5xl mb-4">☕</div>
+          <h3 class="font-semibold text-gray-900 mb-3 text-lg">Quality Coffee</h3>
+          <p class="text-gray-600">
+            We care deeply about where our coffee comes from and how it's prepared. Every cup reflects that commitment.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="font-semibold text-gray-900 mb-3 text-lg">Community First</h3>
+          <p class="text-gray-600">
+            This is more than a coffee shop. It's a gathering place where neighbors become friends and conversations matter.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl mb-4">🌱</div>
+          <h3 class="font-semibold text-gray-900 mb-3 text-lg">Sustainable Sourcing</h3>
+          <p class="text-gray-600">
+            We partner directly with growers who care about quality, fair trade, and environmental responsibility.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTASection 
+    heading="Ready to Join the Brew Haven Community?"
+    description="Stop by and experience it yourself. We're open 6 days a week, and we'd love to see you."
+    button_text="Get Directions"
+    button_link="#location"
+    dark={true}
+  />
+</Layout>

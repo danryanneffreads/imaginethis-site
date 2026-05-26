@@ -1,0 +1,89 @@
+---
+// pages/index.astro
+// Home page - showcases the ImagineThis.Site service
+
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Card from "../components/Card.astro";
+import CTASection from "../components/CTASection.astro";
+---
+
+<Layout title="ImagineThis.Site - Websites That Help Your Business Grow" description="See what your business website could be. Thoughtfully designed, built to help you connect with customers.">
+  <!-- Hero Section -->
+  <Hero 
+    title="What if your website actually worked for you?" 
+    subtitle="Most small businesses have a website that's barely holding its own. You deserve better. Let me show you what's possible."
+    cta_text="See Examples"
+    cta_link="#examples"
+  />
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">How It Works</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          I combine two things: I understand how your business actually works (operations, customer flow, what matters to you) and I can design and build thoughtful websites that help you make a great first impression.
+        </p>
+        <p class="text-lg text-gray-600 mb-6">
+          I'll create a polished, custom concept site for your business — something you can show to customers, investors, or your team. This is your chance to see what's possible before you commit to a full build.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-amber-700 mb-2">👁️</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Understand Your Business</h3>
+            <p class="text-gray-600 text-sm">I ask questions and listen. Your website should reflect how your business actually serves customers.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-amber-700 mb-2">🎯</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Design With Purpose</h3>
+            <p class="text-gray-600 text-sm">Beautiful isn't enough. Your website should help customers find you, trust you, and take action.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-amber-700 mb-2">⚡</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Move Fast</h3>
+            <p class="text-gray-600 text-sm">From first conversation to live demo in days. See the vision, iterate, and make it yours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples Section -->
+  <section id="examples" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See What's Possible</h2>
+      <p class="text-lg text-gray-600 mb-10 max-w-2xl">These concept sites show what a thoughtfully designed website can do. Each was built to help a real business make a better first impression and connect with customers.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card 
+          title="Brew Haven Coffee"
+          description="A coffee shop website that makes customers feel welcome before they walk in. Features a menu, location, and a sense of the coffee shop's personality."
+          image="https://picsum.photos/400/240?random=1"
+          link="/examples/coffee"
+        />
+        <Card 
+          title="Local Consulting Pro"
+          description="A consultant's website built to win trust. Clean portfolio, clear services, and an easy way for prospects to get in touch and book a call."
+          image="https://picsum.photos/400/240?random=2"
+          link="/examples/consulting"
+        />
+        <Card 
+          title="Artisan Bakery"
+          description="A bakery website that celebrates what makes them special. Beautiful product showcase, clear ordering process, and delivery information right where customers need it."
+          image="https://picsum.photos/400/240?random=3"
+          link="/examples/bakery"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTASection 
+    heading="Let's Imagine What's Possible"
+    description="Tell me about your business. What frustrates you about your current website? What would your ideal website help you do? From there, I'll build a concept site that shows you what's possible."
+    button_text="Get in Touch"
+    button_link="mailto:danryanneff@gmail.com"
+    dark={true}
+  />
+</Layout>
