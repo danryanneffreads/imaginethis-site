@@ -21,3 +21,26 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Workspace junk — never commit
+.ICEauthority
+.XDG
+.Xresources
+.agent-browser
+.bashrc
+.browser-profile
+.daytona/
+.gitconfig
+.inputrc
+.kortix-state
+.local/
+.lss
+.profile
+.secrets
+.vscode/
+career-coordinates/
+uploads/
+volume/
+Daniel_Neff_Resume*
+generate_resume.py
+mandala.png
