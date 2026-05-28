@@ -29,8 +29,18 @@ const { title = "ImagineThis.Site - Websites Built on How You Serve", descriptio
         --font-sans: 'Inter', sans-serif;
       }
     </style>
+    <script>
+      // Dark mode toggle script - runs before render
+      (function() {
+        // Check localStorage for saved preference, default to light
+        const isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="flex flex-col min-h-screen bg-white" style="font-family: var(--font-sans)">
+  <body class="flex flex-col min-h-screen bg-white dark:bg-gray-950 dark:text-white" style="font-family: var(--font-sans)">
     <Header />
     <main class="flex-grow">
       <slot />
