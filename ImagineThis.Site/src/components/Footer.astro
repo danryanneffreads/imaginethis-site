@@ -3,28 +3,26 @@
 // Reusable footer component for all pages
 ---
 
-<footer class="bg-gray-900 text-white py-12">
+<footer class="bg-white border-t border-gray-200 py-12">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <div>
-        <h3 class="text-lg font-bold mb-4">ImagineThis.Site</h3>
-         <p class="text-gray-400 text-sm">Thoughtfully designed websites for the businesses you love. Built to help you grow.</p>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-gray-200">
+      <div class="text-center md:text-left">
+        <p class="text-gray-700">
+          <a href="/" class="hover:text-gray-900 transition">Home</a>
+          <span class="text-gray-400 mx-3">·</span>
+          <a href="#examples" class="hover:text-gray-900 transition">Examples</a>
+          <span class="text-gray-400 mx-3">·</span>
+          <a href="#" class="hover:text-gray-900 transition">Landscape</a>
+        </p>
       </div>
-      <div>
-        <h4 class="font-semibold mb-4">Quick Links</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/" class="hover:text-white transition">Home</a></li>
-          <li><a href="#examples" class="hover:text-white transition">Examples</a></li>
-           <li><a href="mailto:danryanneff@gmail.com" class="hover:text-white transition">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-4">Built With</h4>
-        <p class="text-sm text-gray-400">Astro · Tailwind CSS · Cloudflare Pages</p>
+      <div class="text-center md:text-right">
+        <p class="text-gray-700">
+          <a href="https://danryanneff.com" class="hover:text-gray-900 transition">About Dan</a>
+        </p>
       </div>
     </div>
-    <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-      <p>&copy; 2026 ImagineThis.Site. All rights reserved.</p>
+    <div class="text-center text-sm text-gray-500 pt-8">
+      <p>&copy; 2026 ImagineThis.Site</p>
     </div>
   </div>
 </footer>

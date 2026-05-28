@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Development Lab – Career Coordinates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CAREER COORDINATES – PDL v2
+   Left sidebar layout · Larger cards · Price pill in image
+   WordPress/Kadence Custom HTML block ready — scoped .pdl2
+   ============================================================ */
+
+.pdl2 *, .pdl2 *::before, .pdl2 *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.pdl2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fff;
+  color: #1D3557;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+.pdl2 a { text-decoration: none; color: inherit; }
+
+/* ── PAGE HEADER ─────────────────────────────────────────── */
+.pdl2-header {
+  background: linear-gradient(160deg, #1D3557 0%, #243f66 50%, #C0543A 100%);
+  padding: 72px 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.pdl2-header::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 60px solid rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.pdl2-header-inner { max-width: 1300px; margin: 0 auto; }
+.pdl2-header-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #C0543A;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pdl2-header-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #C0543A;
+}
+.pdl2-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+  line-height: 1.15;
+  max-width: 600px;
+  margin-bottom: 16px;
+}
+.pdl2-header p {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* ── BODY LAYOUT ─────────────────────────────────────────── */
+.pdl2-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: start;
+  padding: 0 24px;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.pdl2-sidebar {
+  padding: 36px 24px 36px 0;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.pdl2-sidebar-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #aaa;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+.pdl2-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+.pdl2-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #555;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+.pdl2-filter-btn:hover { background: #f4f4f4; color: #1D3557; }
+.pdl2-filter-btn.active {
+  background: #1D3557;
+  color: #fff;
+  font-weight: 600;
+}
+.pdl2-filter-btn .pdl2-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.08);
+  color: inherit;
+  opacity: 0.7;
+}
+.pdl2-filter-btn.active .pdl2-badge {
+  background: rgba(255,255,255,0.2);
+  opacity: 1;
+}
+.pdl2-sidebar-divider {
+  height: 1px;
+  background: #eee;
+  margin: 4px 0 24px;
+}
+.pdl2-search {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #1D3557;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+  margin-bottom: 4px;
+}
+.pdl2-search:focus { border-color: #1D3557; }
+.pdl2-search::placeholder { color: #bbb; }
+
+/* ── MAIN CONTENT ─────────────────────────────────────────── */
+.pdl2-main {
+  padding: 36px 0 60px 36px;
+  border-left: 1px solid #eee;
+}
+.pdl2-main-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pdl2-count {
+  font-size: 0.85rem;
+  color: #888;
+}
+.pdl2-count strong { color: #1D3557; font-weight: 700; }
+
+/* ── SECTION HEADERS ──────────────────────────────────────── */
+.pdl2-section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 36px 0 20px;
+}
+.pdl2-section-head:first-child { margin-top: 0; }
+.pdl2-section-head-line { flex: 1; height: 1px; background: #eee; }
+.pdl2-section-head-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #bbb;
+  white-space: nowrap;
+}
+
+/* ── CARD GRID ────────────────────────────────────────────── */
+.pdl2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.pdl2-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #ebebeb;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+}
+.pdl2-card:hover {
+  box-shadow: 0 8px 32px rgba(29,53,87,0.12);
+  transform: translateY(-3px);
+  border-color: #d0d0d0;
+}
+.pdl2-card-img {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: #f2f0ec;
+}
+.pdl2-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.pdl2-card:hover .pdl2-card-img img { transform: scale(1.04); }
+
+/* Price pill floats in top-right of image */
+.pdl2-price-pill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #1D3557;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(4px);
+}
+.pdl2-price-pill.free { background: #5C7A5E; }
+.pdl2-price-pill.bundle { background: #C0543A; }
+
+/* Type tag bottom-left */
+.pdl2-type-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.pdl2-card-body {
+  padding: 18px 18px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pdl2-card-body h3 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #1D3557;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.pdl2-card-body p {
+  font-size: 0.83rem;
+  color: #666;
+  line-height: 1.55;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pdl2-card-foot {
+  padding: 12px 18px 16px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.pdl2-card-cta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C0543A;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s;
+}
+.pdl2-card:hover .pdl2-card-cta { gap: 9px; }
+
+/* ── NO RESULTS ───────────────────────────────────────────── */
+#pdl2-no-results {
+  display: none;
+  text-align: center;
+  padding: 56px 24px;
+  color: #aaa;
+  font-size: 0.95rem;
+  grid-column: 1/-1;
+}
+
+/* ── BOTTOM CTA ───────────────────────────────────────────── */
+.pdl2-cta {
+  background: #1D3557;
+  padding: 56px 48px;
+  text-align: center;
+}
+.pdl2-cta p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 440px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+.pdl2-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #C0543A;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+.pdl2-cta a:hover { background: #a8432a; transform: translateY(-2px); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .pdl2-body { grid-template-columns: 1fr; }
+  .pdl2-sidebar {
+    position: static;
+    max-height: none;
+    padding: 28px 0 8px;
+    border-bottom: 1px solid #eee;
+  }
+  .pdl2-filter-group { flex-direction: row; flex-wrap: wrap; }
+  .pdl2-main { border-left: none; padding: 28px 0 48px; }
+  .pdl2-header { padding: 48px 24px 40px; }
+  .pdl2-body { padding: 0 16px; }
+}
+@media (max-width: 520px) {
+  .pdl2-grid { grid-template-columns: 1fr; }
+  .pdl2-header h1 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="pdl2">
+
+  <!-- HEADER -->
+  <div class="pdl2-header">
+    <div class="pdl2-header-inner">
+      <div class="pdl2-header-eyebrow">Professional Development Lab</div>
+      <h1>Coaching, resources &amp; tools for your career journey</h1>
+      <p>Assessments, coaching sprints, downloadable worksheets, and curated bundles — all in one place. No pagination required.</p>
+    </div>
+  </div>
+
+  <!-- BODY: SIDEBAR + GRID -->
+  <div class="pdl2-body">
+
+    <!-- SIDEBAR -->
+    <aside class="pdl2-sidebar">
+      <div class="pdl2-sidebar-label">Search</div>
+      <input class="pdl2-search" type="text" id="pdl2-search" placeholder="Search products…" oninput="pdl2Filter()" />
+
+      <div style="height:24px;"></div>
+      <div class="pdl2-sidebar-label">Filter by Type</div>
+      <div class="pdl2-filter-group">
+        <button class="pdl2-filter-btn active" data-filter="all"      onclick="pdl2SetFilter('all',this)">All Products <span class="pdl2-badge">24</span></button>
+        <button class="pdl2-filter-btn"         data-filter="coaching" onclick="pdl2SetFilter('coaching',this)">Coaching Sessions <span class="pdl2-badge">11</span></button>
+        <button class="pdl2-filter-btn"         data-filter="bundle"   onclick="pdl2SetFilter('bundle',this)">Bundles <span class="pdl2-badge">3</span></button>
+        <button class="pdl2-filter-btn"         data-filter="download" onclick="pdl2SetFilter('download',this)">Downloads <span class="pdl2-badge">8</span></button>
+        <button class="pdl2-filter-btn"         data-filter="free"     onclick="pdl2SetFilter('free',this)">Free Resources <span class="pdl2-badge">2</span></button>
+      </div>
+
+      <div class="pdl2-sidebar-divider"></div>
+      <div class="pdl2-sidebar-label">Quick Links</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <a href="https://learning.careercoordinates.coach/products/live_events/career-strategy-consultation" style="font-size:0.82rem;color:#C0543A;font-weight:600;padding:6px 12px;border-radius:6px;transition:background 0.15s;" onmouseover="this.style.background='#fff4f2'" onmouseout="this.style.background='transparent'">→ Free Consultation</a>
+        <a href="https://learning.careercoordinates.coach/products/live_events/career-clarity-intensive" style="font-size:0.82rem;color:#555;padding:6px 12px;border-radius:6px;transition:background 0.15s;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='transparent'">Career Clarity Intensive</a>
+        <a href="https://learning.careercoordinates.coach/bundles/resume-interview-coaching-bundle" style="font-size:0.82rem;color:#555;padding:6px 12px;border-radius:6px;transition:background 0.15s;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='transparent'">Resume &amp; Interview Bundle</a>
+        <a href="https://learning.careercoordinates.coach/products/live_events/eqi-coaching-package" style="font-size:0.82rem;color:#555;padding:6px 12px;border-radius:6px;transition:background 0.15s;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='transparent'">EQ-i 2.0 Package</a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="pdl2-main">
+      <div class="pdl2-main-top">
+        <div class="pdl2-count" id="pdl2-count"><strong>24</strong> products</div>
+      </div>
+
+      <!-- COACHING -->
+      <div class="pdl2-section-head" data-section="coaching">
+        <div class="pdl2-section-head-label">Coaching Sessions</div>
+        <div class="pdl2-section-head-line"></div>
+      </div>
+      <div class="pdl2-grid">
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/career-strategy-consultation">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/iizzjNcLQevA42L6KPCX_Career%20Strategy%20Consultation%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill free">Free</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Career Strategy Consultation</h3>
+            <p>Book a virtual consultation to discuss your goals and answer your questions about career coaching.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Book Now →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/custom-coaching-consultation">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/6l37dIKQJ63YhbVR9m5p_Custom%20Coaching%20Plan%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill free">Free</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Custom Coaching Plan</h3>
+            <p>A free consultation for individuals considering ongoing, customized coaching to explore your goals and needs.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Book Now →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/disc-debrief">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/fTSWCiTk7iYrGdF674w6_DISC%20Think%20Logo.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$249</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>DISC Assessment &amp; Debrief</h3>
+            <p>Validated DiSC assessment measuring four primary behavioral styles with a detailed report on communication, conflict, and teamwork.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/via-assessment">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/W2FgGNoKRIatkFP1URsO_VIA%20Think%20Logo.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$249</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>VIA Character Strengths Assessment &amp; Debrief</h3>
+            <p>All 24 character strengths ranked and organized across six virtue categories, with coaching focused on your top signature strengths.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/pigment-debrief-package">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/9Qqx5xEYSnr67P4A1KRz_Image%201.jpeg" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$279</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Pigment Assessment &amp; Debrief Package</h3>
+            <p>The Pigment assessment surfaces insights about how you work, lead, and collaborate — unpacked together in a focused debrief session.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/eqi-assessment-debrief-package">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/CkI7SlNTIyHEgtQZYs4V_EQ-i%202.0%20Think%20Logo.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$349</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>EQ-i 2.0 Assessment &amp; Debrief</h3>
+            <p>One of the world's most extensively researched emotional intelligence assessments, backed by decades of reliability research.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/interview-confidence-sprint">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/DY0lqpQEmoCpAt3VP47A_Interview%20Confidence%20Sprint%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$295</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Interview Confidence Sprint</h3>
+            <p>Two-session sprint with interview strategy, mock interview, and practical tools to help you show up with confidence.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/resume-reset-sprint-coaching">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/LEnJUluTRiQfQE5mZdjJ_Resume%20Reset%20Sprint%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$295</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Resume Reset Sprint</h3>
+            <p>Guided resume overhaul with a 90-minute session, two rounds of async feedback, and tools that make your resume reflect your real value.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/pigment-coaching-package">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/XZXW8awJS1eYkrklt2bc_Image%201.jpeg" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$599</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Pigment Coaching Package</h3>
+            <p>Three focused sessions using your Pigment results to explore career direction, working style, and professional goals in depth.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/eqi-coaching-package">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/8FPz0pgrSZOslEgJSxAZ_EQ-i%202.0%20Think%20Logo.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$699</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>EQ-i 2.0 Assessment &amp; Coaching Package</h3>
+            <p>The EQ-i 2.0 assessment combined with three coaching sessions to deeply understand your EQ profile and apply it to your career.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/career-clarity-intensive">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/W2AsnixTma3mAnQt3iYx_Career%20Clarity%20Intensive%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$995</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Career Clarity Intensive</h3>
+            <p>Multi-session coaching to clarify direction, explore career paths, and build a focused action plan with strengths assessment included.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="coaching" href="https://learning.careercoordinates.coach/products/live_events/career-accountability-coaching">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/47V9HLQSTOyIsdEBBqDt_Career%20Accountability%20Coaching%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill" style="font-size:0.72rem;">6×$195/mo</span>
+            <span class="pdl2-type-tag">Coaching</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Career Accountability Coaching</h3>
+            <p>Monthly 60-minute 1:1 sessions for staying aligned, consistent, and intentional with your career goals.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Get Started →</span></div>
+        </a>
+
+      </div><!-- /coaching grid -->
+
+      <!-- BUNDLES -->
+      <div class="pdl2-section-head" data-section="bundle">
+        <div class="pdl2-section-head-label">Bundles</div>
+        <div class="pdl2-section-head-line"></div>
+      </div>
+      <div class="pdl2-grid">
+
+        <a class="pdl2-card" data-type="bundle" href="https://learning.careercoordinates.coach/bundles/job-interview-resource-bundle">
+          <div class="pdl2-card-img">
+            <img src="https://files.cdn.thinkific.com/bundles/bundle_card_image_000/332/906/1767301462.original.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill bundle">$39</span>
+            <span class="pdl2-type-tag">Bundle</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Job Interview Resource Bundle</h3>
+            <p>Four downloadable resources with expert interview strategies to help you show up confident on interview day.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Buy Bundle →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="bundle" href="https://learning.careercoordinates.coach/bundles/job-search-bundle">
+          <div class="pdl2-card-img">
+            <img src="https://files.cdn.thinkific.com/bundles/bundle_card_image_000/310/266/1767300869.original.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill bundle">$59</span>
+            <span class="pdl2-type-tag">Bundle</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Essential Job Search Bundle</h3>
+            <p>Six job search resources developed by an experienced hiring manager, HR professional, and career coach.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Buy Bundle →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="bundle" href="https://learning.careercoordinates.coach/bundles/resume-interview-coaching-bundle">
+          <div class="pdl2-card-img">
+            <img src="https://files.cdn.thinkific.com/bundles/bundle_card_image_000/332/908/1767301659.original.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill bundle">$495</span>
+            <span class="pdl2-type-tag">Bundle</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Resume &amp; Interview Coaching Bundle</h3>
+            <p>Interview prep + mock interview + resume optimization session + two async resume reviews. High impact at a great price.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Buy Bundle →</span></div>
+        </a>
+
+      </div><!-- /bundle grid -->
+
+      <!-- DOWNLOADS -->
+      <div class="pdl2-section-head" data-section="download">
+        <div class="pdl2-section-head-label">Digital Downloads &amp; Worksheets</div>
+        <div class="pdl2-section-head-line"></div>
+      </div>
+      <div class="pdl2-grid">
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/career-restlessness-reset">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/Qc8sIyE4QzyLXhGqv8vp_Career%20Restlessness%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill free">Free</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Career Restlessness Reset</h3>
+            <p>Free worksheet to identify what's driving your career restlessness and clarify your next step.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download Free →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/ai-placeholder">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/sr2KOKoISlmbj4K0DbSc_SMART%20Goals%20Thinkific.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$9</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>SMART Goals Worksheet</h3>
+            <p>Set clear, achievable professional goals with this structured worksheet built for career coaching clients.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/job-posting-review-guide">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/WWpEImGQiKsQhFWpgKi6_Job%20Posting%20Review%20Guide%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$19</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Job Posting Review Guide</h3>
+            <p>Learn how to extract everything a job posting tells you — and use it to tailor your resume and ace your interview.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/job-interview-best-practices-guide">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/uGcqvCHQbKibJ4rv9EGh_Mastering%20Job%20Interview%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$19</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Mastering Job Interviews: Essential Tips &amp; Best Practices</h3>
+            <p>Expert guide with behavioral question strategies and evaluation insights from a seasoned recruiter and coach.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/ace-your-interviews">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/Fz41hOnUTtvYb9lg8byL_Post%20Int%20Reflection%20Thinkific.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$9</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Post Interview Reflection Worksheet</h3>
+            <p>Evaluate your interview performance and uncover growth opportunities after every interview.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/job-interview-prep-worksheet">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/XKVKkcOTSm1KFF1PBQsC_Ace%20Your%20Interview%20Graphic.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$19</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Job Interview Prep Worksheet</h3>
+            <p>Walk through company research, question prep, achievement highlights, and closing questions — all in one place.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/professional-story-bank">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/to0VLgh4SUucs9DNSOHQ_Professional%20Story%20Thinkific.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$15</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Professional Story Bank</h3>
+            <p>Craft a compelling career narrative that stands out in interviews and on paper. A must-have for job seekers.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/professional-brand-worksheet">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/xtBzYqoTieRa9sbVW6fX_Professional%20Identity%20_%20Brand%20Worksheet.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$15</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Professional Identity &amp; Brand Worksheet</h3>
+            <p>Align your identity and messaging for a powerful professional brand that gets you noticed by the right people.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+        <a class="pdl2-card" data-type="download" href="https://learning.careercoordinates.coach/products/digital_downloads/job-search-tracker">
+          <div class="pdl2-card-img">
+            <img src="https://import.cdn.thinkific.com/1136436/WRB8E8AKQS2SJv2OZo8W_Job%20Search%20Tracker.png" alt="" loading="lazy">
+            <span class="pdl2-price-pill">$15</span>
+            <span class="pdl2-type-tag">Download</span>
+          </div>
+          <div class="pdl2-card-body">
+            <h3>Job Search Tracker</h3>
+            <p>Excel tracker for monitoring applications, interviews, and follow-ups — plus a guide to the best job search websites.</p>
+          </div>
+          <div class="pdl2-card-foot"><span class="pdl2-card-cta">Download →</span></div>
+        </a>
+
+      </div><!-- /download grid -->
+
+      <div id="pdl2-no-results">No products match your search. Try something else.</div>
+
+    </main>
+  </div><!-- /.pdl2-body -->
+
+  <!-- BOTTOM CTA -->
+  <div class="pdl2-cta">
+    <p>Not sure where to start? Book a free consultation and we'll find the right path together.</p>
+    <a href="https://learning.careercoordinates.coach/products/live_events/career-strategy-consultation">
+      Book Free Consultation
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div><!-- /.pdl2 -->
+
+<script>
+(function() {
+  var currentFilter = 'all';
+
+  window.pdl2SetFilter = function(type, btn) {
+    currentFilter = type;
+    document.querySelectorAll('.pdl2-filter-btn').forEach(function(b) {
+      b.classList.toggle('active', b === btn);
+    });
+    pdl2Filter();
+  };
+
+  window.pdl2Filter = function() {
+    var search = (document.getElementById('pdl2-search').value || '').toLowerCase().trim();
+    var cards = document.querySelectorAll('.pdl2-card');
+    var visible = 0;
+
+    cards.forEach(function(card) {
+      var type = card.dataset.type;
+      var pricePill = card.querySelector('.pdl2-price-pill');
+      var isFree = pricePill && pricePill.textContent.trim().toLowerCase() === 'free';
+
+      var typeMatch = (currentFilter === 'all')
+        || (currentFilter === 'free' ? isFree : type === currentFilter);
+      var textMatch = !search || card.textContent.toLowerCase().includes(search);
+      var show = typeMatch && textMatch;
+
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    // Show/hide section headers
+    document.querySelectorAll('.pdl2-section-head').forEach(function(head) {
+      var section = head.dataset.section;
+      var grid = head.nextElementSibling;
+      var hasVisible = grid && Array.from(grid.querySelectorAll('.pdl2-card')).some(function(c) {
+        return c.style.display !== 'none';
+      });
+      head.style.display = (currentFilter === 'all' || hasVisible) ? '' : 'none';
+      if (grid) grid.style.display = hasVisible ? '' : 'none';
+    });
+
+    var countEl = document.getElementById('pdl2-count');
+    if (countEl) countEl.innerHTML = '<strong>' + visible + '</strong> product' + (visible !== 1 ? 's' : '');
+    var noRes = document.getElementById('pdl2-no-results');
+    if (noRes) noRes.style.display = visible === 0 ? 'block' : 'none';
+  };
+
+  pdl2Filter();
+})();
+</script>
+
+</body>
+</html>

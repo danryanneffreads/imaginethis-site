@@ -5,21 +5,25 @@
 interface Props {
   title: string;
   subtitle: string;
+  smallText?: string;
   cta_text?: string;
   cta_link?: string;
 }
 
-const { title, subtitle, cta_text = "Get Started", cta_link = "#" } = Astro.props;
+const { title, subtitle, smallText, cta_text = "Get Started", cta_link = "#" } = Astro.props;
 ---
 
-<section class="bg-gradient-to-r from-amber-700 to-orange-600 text-white py-20">
+<section class="bg-white text-gray-900 py-24 md:py-32">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
-    <p class="text-lg md:text-xl text-amber-100 mb-8 max-w-2xl mx-auto">{subtitle}</p>
+    <h1 class="text-4xl md:text-6xl font-serif font-bold mb-8 max-w-4xl mx-auto leading-tight">{title}</h1>
+    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">{subtitle}</p>
+    {smallText && (
+      <p class="text-base text-gray-600 mb-10 max-w-2xl mx-auto">{smallText}</p>
+    )}
     {cta_text && (
       <a 
         href={cta_link} 
-        class="inline-block bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition"
+        class="inline-block bg-gray-900 text-white px-8 py-3 font-semibold hover:bg-gray-800 transition"
       >
         {cta_text}
       </a>

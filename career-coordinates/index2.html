@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Coordinates | Career Coach Madison, WI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CAREER COORDINATES v2 — "Warm & Editorial"
+   WordPress/Kadence Custom HTML Block Ready
+   Scoped under .cc2-page
+   ============================================ */
+
+.cc2-page *, .cc2-page *::before, .cc2-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.cc2-page {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  color: #2A2A2A;
+  background: #fff;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.cc2-page a { text-decoration: none; color: inherit; }
+.cc2-page img { max-width: 100%; display: block; }
+
+/* PALETTE
+   Navy:    #1D3557
+   Rust:    #C0543A
+   Sage:    #5C7A5E
+   Cream:   #FDF6EE  ← warm but safe for dark mode (very close to white)
+   Charcoal:#2A2A2A
+*/
+
+/* ── NAV ────────────────────────────────────── */
+.cc2-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #1D3557;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 60px;
+}
+.cc2-nav-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.cc2-nav-logo em { color: #C0543A; font-style: normal; }
+.cc2-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.cc2-nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.cc2-nav-links a:hover { color: #fff; }
+.cc2-nav-cta {
+  background: #C0543A !important;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase !important;
+  transition: background 0.2s !important;
+}
+.cc2-nav-cta:hover { background: #a8432a !important; color: #fff !important; }
+
+/* ── HERO — SPLIT SCREEN ────────────────────── */
+.cc2-hero {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 90vh;
+}
+.cc2-hero-left {
+  background: #1D3557;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px 80px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.cc2-hero-left::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(192,84,58,0.12);
+  pointer-events: none;
+}
+.cc2-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cc2-hero-eyebrow-line {
+  width: 32px;
+  height: 2px;
+  background: #C0543A;
+}
+.cc2-hero-eyebrow span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.6);
+}
+.cc2-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1.12;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.cc2-hero h1 em {
+  font-style: italic;
+  color: #C0543A;
+}
+.cc2-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 44px;
+  font-weight: 300;
+}
+.cc2-hero-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+}
+.cc2-btn-solid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #C0543A;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+.cc2-btn-solid:hover { background: #a8432a; transform: translateX(3px); color: #fff; }
+.cc2-btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+.cc2-btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+.cc2-hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.cc2-hero-stat-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cc2-hero-stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+
+.cc2-hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.cc2-hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cc2-hero-right-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(29,53,87,0.4) 0%, transparent 50%);
+}
+.cc2-hero-right-tag {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+.cc2-hero-right-tag-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #5C7A5E;
+  flex-shrink: 0;
+}
+.cc2-hero-right-tag-text strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #1D3557;
+  font-weight: 700;
+}
+.cc2-hero-right-tag-text span {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* ── STAT STRIP ─────────────────────────────── */
+.cc2-strip {
+  background: #5C7A5E;
+  display: flex;
+  align-items: stretch;
+}
+.cc2-strip-item {
+  flex: 1;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.cc2-strip-item:last-child { border-right: none; }
+.cc2-strip-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+.cc2-strip-text strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.cc2-strip-text span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+}
+
+/* ── ABOUT ──────────────────────────────────── */
+.cc2-about {
+  padding: 100px 64px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.cc2-about-img {
+  position: relative;
+}
+.cc2-about-img-main {
+  border-radius: 4px 40px 4px 40px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80') center/cover no-repeat;
+  box-shadow: 16px 16px 0 #5C7A5E;
+}
+.cc2-about-img-accent {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #C0543A;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.cc2-about-img-card {
+  position: absolute;
+  top: 32px;
+  right: -40px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  border-left: 4px solid #C0543A;
+}
+.cc2-about-img-card strong {
+  display: block;
+  font-size: 1rem;
+  color: #1D3557;
+  font-weight: 700;
+}
+.cc2-about-img-card span {
+  font-size: 0.8rem;
+  color: #888;
+}
+.cc2-about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.cc2-about-eyebrow-line { width: 28px; height: 2px; background: #C0543A; }
+.cc2-about-eyebrow span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C0543A;
+}
+.cc2-about h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #1D3557;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.cc2-about h2 em { font-style: italic; color: #5C7A5E; }
+.cc2-about p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.cc2-about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.cc2-about-tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1.5px solid;
+}
+.cc2-about-tag.navy  { border-color: #1D3557; color: #1D3557; }
+.cc2-about-tag.rust  { border-color: #C0543A; color: #C0543A; }
+.cc2-about-tag.sage  { border-color: #5C7A5E; color: #5C7A5E; }
+
+/* ── LAB BANNER ─────────────────────────────── */
+.cc2-lab {
+  margin: 0 48px 80px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #1D3557 0%, #243f66 100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+  padding: 56px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.cc2-lab::after {
+  content: '⬡';
+  position: absolute;
+  right: 200px;
+  top: -20px;
+  font-size: 180px;
+  color: rgba(255,255,255,0.04);
+  pointer-events: none;
+  line-height: 1;
+}
+.cc2-lab-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C0543A;
+  margin-bottom: 12px;
+}
+.cc2-lab h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.cc2-lab p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 520px;
+}
+.cc2-lab-btn {
+  background: #C0543A;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.cc2-lab-btn:hover { background: #a8432a; transform: translateY(-2px); color: #fff; }
+
+/* ── PODCAST ─────────────────────────────────── */
+.cc2-podcast {
+  background: #1D3557;
+  padding: 100px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.cc2-podcast::before {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 280px;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+.cc2-podcast-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.cc2-podcast-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C0543A;
+  margin-bottom: 16px;
+}
+.cc2-podcast h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.cc2-podcast h2 em { font-style: italic; color: rgba(255,255,255,0.6); }
+.cc2-podcast-desc {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+.cc2-podcast-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cc2-podcast-platform {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+}
+.cc2-podcast-platform:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+.cc2-podcast-platform svg { width: 20px; height: 20px; flex-shrink: 0; }
+.cc2-podcast-platform span { flex: 1; }
+.cc2-podcast-platform-arrow { opacity: 0.4; font-size: 0.85rem; }
+
+.cc2-podcast-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.cc2-podcast-art-bg {
+  width: 280px;
+  height: 280px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #C0543A 0%, #e8835f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  text-align: center;
+  padding: 32px;
+}
+.cc2-podcast-art-icon { font-size: 3rem; margin-bottom: 16px; }
+.cc2-podcast-art-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.cc2-podcast-art-sub {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 8px;
+}
+.cc2-podcast-art-wave {
+  position: absolute;
+  bottom: -16px;
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+}
+.cc2-podcast-art-wave span {
+  width: 5px;
+  border-radius: 3px;
+  background: #C0543A;
+  opacity: 0.6;
+}
+
+/* ── TESTIMONIALS ───────────────────────────── */
+.cc2-testimonials {
+  padding: 100px 0;
+  background: #fff;
+  overflow: hidden;
+}
+.cc2-testimonials-header {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 56px;
+}
+.cc2-testimonials-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C0543A;
+  margin-bottom: 12px;
+}
+.cc2-testimonials-header h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: #1D3557;
+  line-height: 1.2;
+}
+/* Featured large testimonial */
+.cc2-testimonial-featured {
+  max-width: 780px;
+  margin: 0 auto 56px;
+  padding: 0 32px;
+  text-align: center;
+}
+.cc2-testimonial-featured blockquote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #1D3557;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+.cc2-testimonial-featured-author {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 600;
+}
+.cc2-testimonial-featured-stars { color: #C0543A; font-size: 1rem; letter-spacing: 3px; margin-bottom: 20px; }
+
+/* Scrolling ticker strip */
+.cc2-ticker {
+  overflow: hidden;
+  width: 100%;
+}
+.cc2-ticker-track {
+  display: flex;
+  gap: 20px;
+  animation: cc2-scroll 40s linear infinite;
+  width: max-content;
+}
+.cc2-ticker-track:hover { animation-play-state: paused; }
+@keyframes cc2-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.cc2-ticker-card {
+  flex-shrink: 0;
+  width: 320px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.cc2-ticker-stars { color: #C0543A; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 12px; }
+.cc2-ticker-quote {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.cc2-ticker-author {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1D3557;
+}
+
+/* ── CTA ─────────────────────────────────────── */
+.cc2-cta {
+  padding: 100px 64px;
+  background: #fff;
+}
+.cc2-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #C0543A 0%, #e8835f 100%);
+  border-radius: 24px;
+  padding: 72px 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+}
+.cc2-cta h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.cc2-cta p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.cc2-cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 240px;
+}
+.cc2-cta-btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px;
+  background: #fff;
+  color: #C0543A;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: transform 0.2s;
+  text-align: center;
+}
+.cc2-cta-btn-white:hover { transform: translateY(-2px); color: #C0543A; }
+.cc2-cta-btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: transparent;
+  color: rgba(255,255,255,0.9);
+  border: 1.5px solid rgba(255,255,255,0.5);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+  text-align: center;
+}
+.cc2-cta-btn-ghost:hover { border-color: #fff; color: #fff; }
+
+/* ── FOOTER ──────────────────────────────────── */
+.cc2-footer {
+  background: #111827;
+  padding: 64px 64px 40px;
+  color: rgba(255,255,255,0.55);
+}
+.cc2-footer-inner { max-width: 1200px; margin: 0 auto; }
+.cc2-footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.cc2-footer-brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 12px;
+  display: block;
+}
+.cc2-footer-brand-name em { color: #C0543A; font-style: normal; }
+.cc2-footer-brand p { font-size: 0.875rem; line-height: 1.7; max-width: 280px; }
+.cc2-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.cc2-footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  color: rgba(255,255,255,0.6);
+}
+.cc2-footer-social a:hover { background: #C0543A; color: #fff; }
+.cc2-footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+.cc2-footer-col h4 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.3);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.cc2-footer-col a {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+.cc2-footer-col a:hover { color: #fff; }
+.cc2-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+.cc2-footer-bottom a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+.cc2-footer-bottom a:hover { color: #fff; }
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .cc2-hero { grid-template-columns: 1fr; }
+  .cc2-hero-right { height: 50vw; }
+  .cc2-hero-left { padding: 60px 40px; }
+  .cc2-about { grid-template-columns: 1fr; padding: 60px 32px; gap: 60px; }
+  .cc2-about-img-card { display: none; }
+  .cc2-about-img-main { aspect-ratio: 16/9; box-shadow: 8px 8px 0 #5C7A5E; }
+  .cc2-lab { margin: 0 24px 60px; padding: 40px; grid-template-columns: 1fr; }
+  .cc2-podcast-inner { grid-template-columns: 1fr; gap: 48px; }
+  .cc2-podcast { padding: 60px 32px; }
+  .cc2-cta-inner { grid-template-columns: 1fr; gap: 32px; padding: 48px 40px; }
+  .cc2-cta { padding: 60px 24px; }
+  .cc2-footer-top { grid-template-columns: 1fr 1fr; }
+  .cc2-footer { padding: 48px 32px 32px; }
+  .cc2-strip { flex-wrap: wrap; }
+  .cc2-strip-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+}
+@media (max-width: 640px) {
+  .cc2-nav { padding: 0 20px; }
+  .cc2-nav-links { display: none; }
+  .cc2-hero-left { padding: 48px 24px; }
+  .cc2-hero-btns { max-width: 100%; }
+  .cc2-hero-stats { gap: 20px; flex-wrap: wrap; }
+  .cc2-lab { margin: 0 16px 48px; padding: 32px 24px; }
+  .cc2-cta-inner { padding: 40px 24px; }
+  .cc2-footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .cc2-footer-bottom { flex-direction: column; text-align: center; }
+  .cc2-strip-item { flex: 1 1 100%; }
+  .cc2-testimonial-featured { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cc2-page">
+
+  <!-- NAV -->
+  <nav class="cc2-nav">
+    <a href="/" class="cc2-nav-logo">Career <em>Coordinates</em></a>
+    <div class="cc2-nav-links">
+      <a href="https://www.careercoordinates.coach">Home</a>
+      <a href="https://learning.careercoordinates.coach" target="_blank" rel="noopener">Coaching &amp; Learning</a>
+      <a href="https://www.careercoordinates.coach/assessments">Assessments</a>
+      <a href="https://www.careercoordinates.coach/about">About</a>
+      <a href="https://www.careercoordinates.coach/contact" class="cc2-nav-cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cc2-hero">
+    <div class="cc2-hero-left">
+      <div class="cc2-hero-eyebrow">
+        <div class="cc2-hero-eyebrow-line"></div>
+        <span>Madison, WI &mdash; Coaching Nationwide</span>
+      </div>
+      <h1>Your career,<br><em>navigated</em><br>with purpose.</h1>
+      <p class="cc2-hero-sub">Human-centered career coaching backed by 20+ years of real HR leadership — for transitions, leadership growth, and neurodivergent professionals.</p>
+      <div class="cc2-hero-btns">
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=GwUGBFiLdkCE4mmLwEUyjNgvRnwGXmlOtbzQ33EQ99BUM0VUQkNXTVFKUkpKMFhBQU1KUjFNV0lQVy4u" target="_blank" rel="noopener" class="cc2-btn-solid">
+          Request Coaching Proposal
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://outlook.office.com/book/CareerCoordinatesCoaching@careercoordinates.coach/s/4iDjqvO45UGIZRxEOLFm1A2?ismsaljsauthenabled" target="_blank" rel="noopener" class="cc2-btn-outline">
+          Book Free Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </a>
+      </div>
+      <div class="cc2-hero-stats">
+        <div>
+          <div class="cc2-hero-stat-num">20+</div>
+          <div class="cc2-hero-stat-label">Years HR Leadership</div>
+        </div>
+        <div>
+          <div class="cc2-hero-stat-num">EQ-i&reg;</div>
+          <div class="cc2-hero-stat-label">Certified Coach</div>
+        </div>
+        <div>
+          <div class="cc2-hero-stat-num">WI &amp; US</div>
+          <div class="cc2-hero-stat-label">In-Person &amp; Virtual</div>
+        </div>
+      </div>
+    </div>
+    <div class="cc2-hero-right">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Madison%2C_Wisconsin_skyline.jpg" alt="Madison, Wisconsin skyline">
+      <div class="cc2-hero-right-overlay"></div>
+      <div class="cc2-hero-right-tag">
+        <div class="cc2-hero-right-tag-dot"></div>
+        <div class="cc2-hero-right-tag-text">
+          <strong>Currently Accepting Clients</strong>
+          <span>Virtual &amp; In-Person Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="cc2-strip">
+    <div class="cc2-strip-item">
+      <div class="cc2-strip-icon">🧭</div>
+      <div class="cc2-strip-text">
+        <strong>Career Transitions</strong>
+        <span>Navigate change with clarity and confidence</span>
+      </div>
+    </div>
+    <div class="cc2-strip-item">
+      <div class="cc2-strip-icon">🌱</div>
+      <div class="cc2-strip-text">
+        <strong>Leadership Growth</strong>
+        <span>Build capacity and presence at every stage</span>
+      </div>
+    </div>
+    <div class="cc2-strip-item">
+      <div class="cc2-strip-icon">🧠</div>
+      <div class="cc2-strip-text">
+        <strong>Neurodivergent Support</strong>
+        <span>Work with your brain, not against it</span>
+      </div>
+    </div>
+    <div class="cc2-strip-item">
+      <div class="cc2-strip-icon">📊</div>
+      <div class="cc2-strip-text">
+        <strong>Validated Assessments</strong>
+        <span>EQ-i, DISC, VIA, Pigment &amp; more</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="cc2-about">
+    <div class="cc2-about-img">
+      <div class="cc2-about-img-main"></div>
+      <div class="cc2-about-img-accent"></div>
+      <div class="cc2-about-img-card">
+        <strong>Erich George</strong>
+        <span>Founder &amp; Career Coach</span>
+      </div>
+    </div>
+    <div class="cc2-about-text">
+      <div class="cc2-about-eyebrow">
+        <div class="cc2-about-eyebrow-line"></div>
+        <span>About Career Coordinates</span>
+      </div>
+      <h2>A coach who knows<br>how <em>organizations</em><br>actually work.</h2>
+      <p>Career Coordinates is a Madison, Wisconsin-based coaching practice serving individuals and organizations across the country. Whether you're navigating a career transition, feeling stuck, building leadership capacity, or learning to work with your neurodivergent brain — this work is built around you.</p>
+      <p>Erich George brings more than 20 years of HR leadership inside Wisconsin's public and private sectors, including directing civil service systems and leading large-scale recruiting operations. That insider knowledge shapes every coaching conversation.</p>
+      <div class="cc2-about-tags">
+        <span class="cc2-about-tag navy">Career Transitions</span>
+        <span class="cc2-about-tag rust">EQ-i&reg; Certified</span>
+        <span class="cc2-about-tag sage">Neurodivergent Support</span>
+        <span class="cc2-about-tag navy">Leadership Coaching</span>
+        <span class="cc2-about-tag rust">DISC &amp; VIA</span>
+        <span class="cc2-about-tag sage">Madison, WI + Nationwide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAB BANNER -->
+  <div class="cc2-lab">
+    <div>
+      <div class="cc2-lab-label">Professional Development Lab</div>
+      <h2>Coaching, assessments, workshops &amp; resources</h2>
+      <p>Explore the full catalog of coaching services, downloadable tools, and bundled resources designed to help you move forward — on your own terms, at your own pace.</p>
+    </div>
+    <a href="https://learning.careercoordinates.coach/" target="_blank" rel="noopener" class="cc2-lab-btn">
+      Explore the Lab
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+
+  <!-- PODCAST -->
+  <section class="cc2-podcast">
+    <div class="cc2-podcast-inner">
+      <div>
+        <div class="cc2-podcast-label">The Podcast</div>
+        <h2>Where Coffee<br>Gets <em>Spilled</em></h2>
+        <p class="cc2-podcast-desc">Real stories behind people's careers. Not the tidy, linear paths we're told to expect — the unexpected twists, turns, detours, and "well… that wasn't the plan" moments. Co-hosted with Lindsay Mayer.</p>
+        <div class="cc2-podcast-platforms">
+          <a href="https://www.youtube.com/channel/UCQBvs29r90aZMsao31zE4Yg/" target="_blank" rel="noopener" class="cc2-podcast-platform">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Listen on YouTube</span>
+            <span class="cc2-podcast-platform-arrow">→</span>
+          </a>
+          <a href="https://podcasts.apple.com/us/podcast/where-coffee-gets-spilled/id1884382784" target="_blank" rel="noopener" class="cc2-podcast-platform">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.2 16.4l-5.4 3.12a.58.58 0 01-.868-.5V9.48a.58.58 0 01.868-.5l5.4 3.12v4.3z"/></svg>
+            <span>Listen on Apple Podcasts</span>
+            <span class="cc2-podcast-platform-arrow">→</span>
+          </a>
+          <a href="https://open.spotify.com/show/7y3ZX8aNbZwhzcdKKwtZ82" target="_blank" rel="noopener" class="cc2-podcast-platform">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span>Listen on Spotify</span>
+            <span class="cc2-podcast-platform-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="cc2-podcast-art">
+        <div class="cc2-podcast-art-bg">
+          <div class="cc2-podcast-art-icon">☕</div>
+          <div class="cc2-podcast-art-title">Where Coffee Gets Spilled</div>
+          <div class="cc2-podcast-art-sub">with Erich George &amp; Lindsay Mayer</div>
+        </div>
+        <div class="cc2-podcast-art-wave" style="display:none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="cc2-testimonials">
+    <div class="cc2-testimonials-header">
+      <div class="cc2-testimonials-eyebrow">Client Feedback</div>
+      <h2>What clients are saying</h2>
+    </div>
+    <div class="cc2-testimonial-featured">
+      <div class="cc2-testimonial-featured-stars">★★★★★</div>
+      <blockquote>"Before starting coaching with Erich, I was feeling burnout and discouraged after six months of looking for a new public health job. Erich not only validated these feelings but helped me feel more confident in myself as a strong job applicant. Ultimately, Erich is passionate about helping you meet your goals, instilling confidence, and customizing coaching to meet each client's needs."</blockquote>
+      <div class="cc2-testimonial-featured-author">Isabella W. &mdash; Public Health Professional</div>
+    </div>
+    <!-- Scrolling ticker -->
+    <div class="cc2-ticker">
+      <div class="cc2-ticker-track">
+        <!-- First set -->
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Thank you for being personable, building me up, and helping me regain my confidence."</p>
+          <div class="cc2-ticker-author">Allisa B. &mdash; Human Resources Manager</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Erich was very personable and genuine while creating a plan personalized to my situation. It really helped instill the confidence I needed."</p>
+          <div class="cc2-ticker-author">Zach R.</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Erich brought such a warm and grounded energy to each of our sessions. Thanks to his support, I also got a job offer before our final session!"</p>
+          <div class="cc2-ticker-author">Raphie T. &mdash; Public Health Professional</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Working with Erich helped me get the career clarity and confidence I had been looking for. He helped me put together attainable goals to take my career in the direction I want."</p>
+          <div class="cc2-ticker-author">Creative Professional &mdash; Large Grocery Retailer</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Erich is passionate about helping you meet your goals, instilling confidence, and customizing coaching to meet each client's needs."</p>
+          <div class="cc2-ticker-author">Isabella W. &mdash; Public Health Professional</div>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Thank you for being personable, building me up, and helping me regain my confidence."</p>
+          <div class="cc2-ticker-author">Allisa B. &mdash; Human Resources Manager</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Erich was very personable and genuine while creating a plan personalized to my situation. It really helped instill the confidence I needed."</p>
+          <div class="cc2-ticker-author">Zach R.</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Erich brought such a warm and grounded energy to each of our sessions. Thanks to his support, I also got a job offer before our final session!"</p>
+          <div class="cc2-ticker-author">Raphie T. &mdash; Public Health Professional</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Working with Erich helped me get the career clarity and confidence I had been looking for. He helped me put together attainable goals to take my career in the direction I want."</p>
+          <div class="cc2-ticker-author">Creative Professional &mdash; Large Grocery Retailer</div>
+        </div>
+        <div class="cc2-ticker-card">
+          <div class="cc2-ticker-stars">★★★★★</div>
+          <p class="cc2-ticker-quote">"Erich is passionate about helping you meet your goals, instilling confidence, and customizing coaching to meet each client's needs."</p>
+          <div class="cc2-ticker-author">Isabella W. &mdash; Public Health Professional</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cc2-cta">
+    <div class="cc2-cta-inner">
+      <div>
+        <h2>Ready to move forward with clarity?</h2>
+        <p>Serving individuals in Madison, Dane County, and throughout Wisconsin. Virtual coaching available nationwide. Start with a free consultation — no pressure, no pitch.</p>
+      </div>
+      <div class="cc2-cta-btns">
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=GwUGBFiLdkCE4mmLwEUyjNgvRnwGXmlOtbzQ33EQ99BUM0VUQkNXTVFKUkpKMFhBQU1KUjFNV0lQVy4u" target="_blank" rel="noopener" class="cc2-cta-btn-white">Request Coaching Proposal</a>
+        <a href="https://outlook.office.com/book/CareerCoordinatesCoaching@careercoordinates.coach/s/4iDjqvO45UGIZRxEOLFm1A2?ismsaljsauthenabled" target="_blank" rel="noopener" class="cc2-cta-btn-ghost">Book Free 30-Min Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="cc2-footer">
+    <div class="cc2-footer-inner">
+      <div class="cc2-footer-top">
+        <div class="cc2-footer-brand">
+          <span class="cc2-footer-brand-name">Career <em>Coordinates</em></span>
+          <p>Career coaching and professional development based in Madison, WI. Virtual coaching available nationwide.</p>
+          <div class="cc2-footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61571668264646" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/105591769" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@careercoordinates" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="cc2-footer-col">
+          <h4>Coaching</h4>
+          <a href="https://learning.careercoordinates.coach" target="_blank" rel="noopener">Explore Offers</a>
+          <a href="https://www.careercoordinates.coach/assessments">Assessments</a>
+          <a href="https://www.careercoordinates.coach/business-organizations">Business &amp; Orgs</a>
+          <a href="https://www.careercoordinates.coach/standard-coaching-agreement">Coaching Agreement</a>
+        </div>
+        <div class="cc2-footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.careercoordinates.coach/about">About Erich</a>
+          <a href="https://www.careercoordinates.coach/contact">Contact</a>
+          <a href="https://www.youtube.com/channel/UCQBvs29r90aZMsao31zE4Yg/" target="_blank" rel="noopener">Podcast</a>
+        </div>
+      </div>
+      <div class="cc2-footer-bottom">
+        <p>Career Coordinates, LLC &middot; 2921 Landmark Place, Suite 215, Madison, WI &middot; <a href="tel:6082590581">608-259-0581</a></p>
+        <p>&copy; 2026 Career Coordinates, LLC</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
