@@ -22,6 +22,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# Ignore duplicate project directory (source of truth is at repo root)
+ImagineThis.Site/
+
 # Workspace junk — never commit
 .ICEauthority
 .XDG
