@@ -1,0 +1,123 @@
+---
+// sync-coffee/about.astro
+// About page for Synchronize Coffee
+
+import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
+---
+
+<SyncCoffeeLayout 
+  title="About - Synchronize Coffee"
+  description="The story of Synchronize Coffee — a community third space rooted in art, connection, and exceptional coffee."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-green-50 dark:from-green-950 to-white dark:to-gray-950 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-green-900 dark:text-green-300 mb-6">Our Story</h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">Community. Art. Connection. Coffee.</p>
+    </div>
+  </section>
+
+  <!-- Main Story -->
+  <section class="py-20 bg-white dark:bg-gray-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+        Synchronize Coffee began with a simple question: <em>What if a coffee shop was more than just a place to grab a drink?</em>
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+        We opened Synchronize in 2019 as a response to a neighborhood that felt fragmented. We saw artists with nowhere to display work. Musicians with no platform. Cyclists looking for community. Remote workers needing a desk and a sense of belonging.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+        So we created a third space — not home, not work, but a place to synchronize. To find your rhythm. To connect with people doing interesting things.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
+        Today, Synchronize is a gathering place where exceptional coffee fuels conversation, art adorns the walls, musicians perform, and community members find their place.
+      </p>
+
+      <div class="border-t border-green-200 dark:border-green-800 pt-12">
+        <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-10">Our Values</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-2xl font-serif font-bold text-green-900 dark:text-green-300 mb-4">Quality First</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              We source single-origin beans directly from growers we know and trust. Every cup reflects our commitment to excellence and transparency.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-serif font-bold text-green-900 dark:text-green-300 mb-4">Community Centered</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              We're here for people. Artists, cyclists, remote workers, students, families. We listen, we adapt, we make space for what matters to you.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-serif font-bold text-green-900 dark:text-green-300 mb-4">Sustainability</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              We partner with farmers practicing sustainable agriculture. We minimize waste, support local suppliers, and care for the land that feeds us.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-serif font-bold text-green-900 dark:text-green-300 mb-4">Creativity & Connection</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Art, music, collaboration — we believe creativity thrives when people gather with intention. We make space for all of it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-20 bg-green-50 dark:bg-green-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12 text-center">Meet the Team</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-32 h-32 bg-green-200 dark:bg-green-800 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-4xl">☕</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Alex</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-3">Owner & Coffee Roaster</p>
+          <p class="text-sm text-gray-700 dark:text-gray-300">Built Synchronize to be a gathering place. Coffee obsessive. Bicycle commuter.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-32 h-32 bg-green-200 dark:bg-green-800 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-4xl">🎨</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Jordan</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-3">Curator & Community Liaison</p>
+          <p class="text-sm text-gray-700 dark:text-gray-300">Connects artists to our space. Organizes events. Makes sure we're listening to the community.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-32 h-32 bg-green-200 dark:bg-green-800 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-4xl">🍰</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Sam</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-3">Baker & Kitchen Lead</p>
+          <p class="text-sm text-gray-700 dark:text-gray-300">Bakes everything fresh. Sources local ingredients. Loves feeding people well.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-green-900 dark:bg-green-950 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold mb-6">Join Us</h2>
+      <p class="text-lg text-green-100 mb-8">
+        Come experience Synchronize. Whether you're here for the coffee, the community, or just a quiet space to think — we're glad you stopped by.
+      </p>
+      <a href="/sync-coffee/contact/" class="inline-block bg-white text-green-900 px-8 py-3 font-semibold hover:bg-green-50 transition">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</SyncCoffeeLayout>
