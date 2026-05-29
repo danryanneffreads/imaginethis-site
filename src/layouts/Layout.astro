@@ -29,13 +29,20 @@ const { title = "ImagineThis.Site - Websites Built on How You Serve", descriptio
         --font-sans: 'Inter', sans-serif;
       }
     </style>
-    <script>
-      // Dark mode toggle script - runs before render
+    <script is:inline>
+      // Dark mode persistence - runs immediately before page renders
       (function() {
-        // Check localStorage for saved preference, default to light
-        const isDark = localStorage.getItem('darkMode') === 'true';
-        if (isDark) {
-          document.documentElement.classList.add('dark');
+        // Prevent FOUC (flash of unstyled content) by applying class synchronously
+        try {
+          const isDark = localStorage.getItem('darkMode') === 'true';
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          // localStorage may be unavailable in some contexts
+          console.warn('Dark mode persistence unavailable:', e);
         }
       })();
     </script>
