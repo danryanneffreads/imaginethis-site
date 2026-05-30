@@ -3,7 +3,7 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -11,6 +11,9 @@ jobs:
     permissions:
       contents: read
       deployments: write
+    defaults:
+      run:
+        working-directory: ./ImagineThis.Site
     steps:
       - uses: actions/checkout@v4
       
@@ -19,6 +22,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
+          cache-dependency-path: ImagineThis.Site/package-lock.json
       
       - name: Install dependencies
         run: npm install
@@ -31,4 +35,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=imaginethis-site
+          command: pages deploy ImagineThis.Site/dist --project-name=imaginethis-site
+          workingDirectory: ./ImagineThis.Site
