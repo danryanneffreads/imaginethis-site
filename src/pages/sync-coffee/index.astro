@@ -10,8 +10,11 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   description="Synchronize Coffee — where the community gathers, artists display work, and everyone finds their rhythm."
 >
   <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-24 md:py-32 relative overflow-hidden">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 opacity-20 dark:opacity-10 bg-cover bg-center" style="background-image: url('/coffee_house_exterior.webp')"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <h1 class="text-5xl md:text-6xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-6">Find Your Rhythm</h1>
       <p class="text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
         Synchronize Coffee is where community gathers. Good coffee fuels good conversation. Art adorns the walls. And everyone finds their place.

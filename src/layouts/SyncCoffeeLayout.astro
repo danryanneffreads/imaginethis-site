@@ -53,6 +53,12 @@ const {
           <li><a href="/sync-coffee/menu/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Menu</a></li>
           <li><a href="/sync-coffee/about/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">About</a></li>
           <li><a href="/sync-coffee/contact/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Contact</a></li>
+          <li>
+            <button id="darkModeToggle" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition" aria-label="Toggle dark mode">
+              <span id="sunIcon" class="inline dark:hidden">☀️</span>
+              <span id="moonIcon" class="hidden dark:inline">🌙</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -91,5 +97,36 @@ const {
         </div>
       </div>
     </footer>
+
+    <script is:inline>
+      // Dark mode toggle functionality - runs inline for immediate availability
+      (function() {
+        function initToggle() {
+          const toggle = document.getElementById('darkModeToggle');
+          const html = document.documentElement;
+
+          if (!toggle) return;
+
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+              html.classList.remove('dark');
+              localStorage.setItem('darkMode', 'false');
+            } else {
+              html.classList.add('dark');
+              localStorage.setItem('darkMode', 'true');
+            }
+          });
+        }
+
+        // Run immediately if DOM is ready, otherwise wait
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initToggle);
+        } else {
+          initToggle();
+        }
+      })();
+    </script>
   </body>
 </html>
