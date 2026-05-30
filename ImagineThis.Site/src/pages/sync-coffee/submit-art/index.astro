@@ -1,0 +1,129 @@
+---
+// sync-coffee/submit-art/index.astro
+// Art submission form page with file upload
+
+import SyncCoffeeLayout from "../../../layouts/SyncCoffeeLayout.astro";
+---
+
+<SyncCoffeeLayout 
+  title="Submit Art - Synchronize Coffee"
+  description="Submit your artwork to display at Synchronize Coffee."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Show Your Work</h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">Submit your artwork to be featured on our gallery walls.</p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="py-20 bg-white dark:bg-gray-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
+        We showcase rotating art from local artists. Our walls are a living gallery where community members display work, find inspiration, and connect with each other. Submit your work below and our curation team will review your submission within 5 business days.
+      </p>
+
+      <form class="space-y-6 bg-stone-50 dark:bg-emerald-950 p-8 rounded-lg" onsubmit="handleArtSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="artist-name" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Artist Name *</label>
+            <input 
+              type="text" 
+              id="artist-name" 
+              name="artist-name"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="title" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Artwork Title *</label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="medium" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Medium *</label>
+            <select 
+              id="medium" 
+              name="medium"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
+              required
+            >
+              <option value="">Select a medium</option>
+              <option value="painting">Painting</option>
+              <option value="photography">Photography</option>
+              <option value="sculpture">Sculpture</option>
+              <option value="digital">Digital Art</option>
+              <option value="mixed">Mixed Media</option>
+              <option value="drawing">Drawing</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="description" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Tell Us About Your Work</label>
+          <textarea 
+            id="description" 
+            name="description"
+            rows="4"
+            placeholder="What inspired this piece? What should viewers know about it?"
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
+          ></textarea>
+        </div>
+
+        <div>
+          <label for="file" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Upload Image or File *</label>
+          <input 
+            type="file" 
+            id="file" 
+            name="file"
+            accept="image/*,.pdf"
+            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
+            required
+          />
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-2">Supported formats: JPG, PNG, PDF (up to 10MB)</p>
+        </div>
+
+        <button 
+          type="submit"
+          class="w-full bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-4 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg"
+        >
+          Submit Artwork
+        </button>
+      </form>
+
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-6 text-center">
+        This is a demo. Files are not collected, but you can select a file to complete the form.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    function handleArtSubmit(e) {
+      e.preventDefault();
+      window.location.href = '/sync-coffee/submit-art/confirmed/';
+      return false;
+    }
+  </script>
+</SyncCoffeeLayout>

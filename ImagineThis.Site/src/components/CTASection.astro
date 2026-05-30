@@ -1,0 +1,49 @@
+---
+// CTASection.astro
+// Reusable call-to-action section for encouraging engagement
+
+interface Props {
+  heading: string;
+  description?: string;
+  button_text?: string;
+  button_link?: string;
+  dark?: boolean;
+}
+
+const { 
+  heading, 
+  description, 
+  button_text = "Get Started", 
+  button_link = "#",
+  dark = false
+} = Astro.props;
+
+const bgClass = dark 
+  ? "bg-gray-900 dark:bg-gray-950 text-white dark:text-white" 
+  : "bg-white dark:bg-gray-900 text-gray-900 dark:text-white";
+const textClass = dark 
+  ? "text-gray-300 dark:text-gray-300" 
+  : "text-gray-700 dark:text-gray-300";
+const buttonClass = dark 
+  ? "bg-white dark:bg-gray-100 text-gray-900 dark:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-200" 
+  : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100";
+---
+
+<section class={`py-20 ${bgClass}`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8">{heading}</h2>
+    {description && (
+      <p class={`text-lg mb-10 ${textClass}`}>
+        {description}
+      </p>
+    )}
+    {button_text && (
+      <a 
+        href={button_link}
+        class={`inline-block px-8 py-3 font-semibold transition ${buttonClass}`}
+      >
+        {button_text}
+      </a>
+    )}
+  </div>
+</section>

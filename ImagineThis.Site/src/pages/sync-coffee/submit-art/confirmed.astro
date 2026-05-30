@@ -1,0 +1,37 @@
+---
+// sync-coffee/submit-art/confirmed.astro
+// Art submission confirmation page
+
+import SyncCoffeeLayout from "../../../layouts/SyncCoffeeLayout.astro";
+---
+
+<SyncCoffeeLayout 
+  title="Submission Confirmed - Synchronize Coffee"
+  description="Your artwork submission has been received."
+>
+  <section class="py-32 bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-4">
+        Thank You!
+      </h1>
+      
+      <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+        Your artwork submission has been received. Our curation team will review it within 5 business days.
+      </p>
+
+      <p class="text-base text-gray-600 dark:text-gray-400 mb-12 italic">
+        In a real version, you would receive an email confirmation with next steps.
+      </p>
+
+      <div class="bg-yellow-50 dark:bg-yellow-950 border-l-4 border-yellow-500 p-6 mb-12 text-left">
+        <p class="text-yellow-800 dark:text-yellow-200 text-sm">
+          <strong>Concept Demo:</strong> This is a concept website built by ImagineThis.Site to demonstrate what a thoughtfully designed web presence could do for Synchronize Coffee. No artwork has been submitted.
+        </p>
+      </div>
+
+      <a href="/sync-coffee/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-8 py-3 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
+        Back to Home
+      </a>
+    </div>
+  </section>
+</SyncCoffeeLayout>

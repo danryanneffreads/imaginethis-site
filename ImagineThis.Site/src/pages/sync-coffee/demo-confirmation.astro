@@ -1,0 +1,75 @@
+---
+// sync-coffee/demo-confirmation.astro
+// Generic demo confirmation page for all interactive flows
+
+import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
+
+const queryParams = new URL(Astro.request.url).searchParams;
+const type = queryParams.get('type') || 'general';
+
+const confirmationMessages = {
+  'order': {
+    title: 'Coffee Order Received!',
+    message: 'Your order for fresh-roasted Synchronize Coffee beans has been submitted.',
+    details: 'In a real version, you would receive an order confirmation and tracking information.'
+  },
+  'submit-art': {
+    title: 'Art Submission Received!',
+    message: 'Thank you for submitting your work to display at Synchronize Coffee.',
+    details: 'Our curation team will review your submission and get back to you within 5 business days.'
+  },
+  'perform': {
+    title: 'Performance Booking Received!',
+    message: 'Your performance booking request has been submitted.',
+    details: 'Our events team will reach out within 48 hours to confirm your date and time.'
+  },
+  'reserve': {
+    title: 'Space Reservation Received!',
+    message: 'Your request to reserve a space at Synchronize Coffee has been submitted.',
+    details: 'You will receive a confirmation email with details about your reservation.'
+  },
+  'contact': {
+    title: '💬 Message Received!',
+    message: 'Thanks for reaching out to Synchronize Coffee.',
+    details: 'We will get back to you as soon as we can. Check your email for updates!'
+  },
+  'general': {
+    title: '✨ Demo Submitted!',
+    message: 'Your submission has been received.',
+    details: 'This is a concept demo. In a real version, your information would be processed.'
+  }
+};
+
+const current = confirmationMessages[type] || confirmationMessages['general'];
+---
+
+<SyncCoffeeLayout 
+  title="Thank You - Synchronize Coffee"
+  description="Your submission to Synchronize Coffee has been received."
+>
+  <section class="py-32 bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-4">
+        {current.title}
+      </h1>
+      
+      <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+        {current.message}
+      </p>
+
+      <p class="text-base text-gray-600 dark:text-gray-400 mb-12 italic">
+        {current.details}
+      </p>
+
+      <div class="bg-yellow-50 dark:bg-yellow-950 border-l-4 border-yellow-500 p-6 mb-12 text-left">
+        <p class="text-yellow-800 dark:text-yellow-200 text-sm">
+          <strong>Concept Demo:</strong> This is a concept website built by ImagineThis.Site to demonstrate what a thoughtfully designed web presence could do for Synchronize Coffee. No real submissions are being collected.
+        </p>
+      </div>
+
+      <a href="/sync-coffee/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-8 py-3 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
+        Back to Home
+      </a>
+    </div>
+  </section>
+</SyncCoffeeLayout>
