@@ -10,9 +10,9 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   description="The story of Synchronize Coffee — a community third space rooted in art, connection, and exceptional coffee."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-emerald-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
+  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-6">Our Story</h1>
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Our Story</h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">Community. Art. Connection. Coffee.</p>
     </div>
   </section>
@@ -36,33 +36,33 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
         Today, Synchronize is a gathering place where exceptional coffee fuels conversation, art adorns the walls, musicians perform, and community members find their place.
       </p>
 
-      <div class="border-t border-emerald-200 dark:border-emerald-800 pt-12">
+      <div class="border-t border-stone-200 dark:border-emerald-800 pt-12">
         <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-10">Our Values</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
-            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-4">Quality First</h3>
+            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-4">Quality First</h3>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               We source single-origin beans directly from growers we know and trust. Every cup reflects our commitment to excellence and transparency.
             </p>
           </div>
 
           <div>
-            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-4">Community Centered</h3>
+            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-4">Community Centered</h3>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               We're here for people. Artists, cyclists, remote workers, students, families. We listen, we adapt, we make space for what matters to you.
             </p>
           </div>
 
           <div>
-            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-4">Sustainability</h3>
+            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-4">Sustainability</h3>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               We partner with farmers practicing sustainable agriculture. We minimize waste, support local suppliers, and care for the land that feeds us.
             </p>
           </div>
 
           <div>
-            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-4">Creativity & Connection</h3>
+            <h3 class="text-2xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-4">Creativity & Connection</h3>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
               Art, music, collaboration — we believe creativity thrives when people gather with intention. We make space for all of it.
             </p>
@@ -72,6 +72,12 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
     </div>
   </section>
 
+  <!-- Warm divider -->
+  <div class="relative h-48 md:h-64 overflow-hidden">
+    <img src="/light_colored_wood.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-white dark:from-gray-950 via-transparent to-white dark:to-gray-950"></div>
+  </div>
+
   <!-- Team Section -->
   <section class="py-20 bg-stone-50 dark:bg-emerald-950">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,27 +85,21 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="w-32 h-32 bg-emerald-200 dark:bg-emerald-800 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <span class="text-4xl"></span>
-          </div>
+          <img src="/casey-kim.webp" alt="Alex — Owner & Coffee Roaster" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
           <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Alex</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-3">Owner & Coffee Roaster</p>
           <p class="text-sm text-gray-700 dark:text-gray-300">Built Synchronize to be a gathering place. Coffee obsessive. Bicycle commuter.</p>
         </div>
 
         <div class="text-center">
-          <div class="w-32 h-32 bg-emerald-200 dark:bg-emerald-800 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <span class="text-4xl"></span>
-          </div>
+          <img src="/leila-navarro.webp" alt="Jordan — Curator & Community Liaison" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
           <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Jordan</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-3">Curator & Community Liaison</p>
           <p class="text-sm text-gray-700 dark:text-gray-300">Connects artists to our space. Organizes events. Makes sure we're listening to the community.</p>
         </div>
 
         <div class="text-center">
-          <div class="w-32 h-32 bg-emerald-200 dark:bg-emerald-800 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <span class="text-4xl"></span>
-          </div>
+          <img src="/noah-bennett-example.webp" alt="Sam — Baker & Kitchen Lead" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
           <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Sam</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-3">Baker & Kitchen Lead</p>
           <p class="text-sm text-gray-700 dark:text-gray-300">Bakes everything fresh. Sources local ingredients. Loves feeding people well.</p>
@@ -112,10 +112,10 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   <section class="py-16 bg-emerald-900 dark:bg-emerald-950 text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold mb-6">Join Us</h2>
-      <p class="text-lg text-emerald-100 mb-8">
+      <p class="text-lg text-stone-100 mb-8">
         Come experience Synchronize. Whether you're here for the coffee, the community, or just a quiet space to think — we're glad you stopped by.
       </p>
-      <a href="/sync-coffee/contact/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold rounded-lg hover:bg-emerald-50 transition">
+      <a href="/sync-coffee/contact/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold hover:bg-stone-50 transition rounded-lg">
         Get in Touch
       </a>
     </div>

@@ -10,9 +10,9 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   description="Discover our coffee, food, and drink offerings — thoughtfully curated for our community."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-emerald-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
+  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-6">Menu</h1>
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Menu</h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">Everything we serve is thoughtfully selected and prepared.</p>
     </div>
   </section>
@@ -20,28 +20,28 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   <!-- Coffee Section -->
   <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12"> Coffee</h2>
+      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12">Coffee</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Espresso Shots</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Single | Double | Triple</p>
           <p class="text-gray-700 dark:text-gray-300">Our signature house blend — bright, balanced, with notes of chocolate and citrus.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Single-Origin Pour Over</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Rotating selection</p>
           <p class="text-gray-700 dark:text-gray-300">Experience the terroir. Each month we feature a different origin and share the story of the grower.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Lattes & Cappuccinos</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">With oat, almond, or dairy milk</p>
           <p class="text-gray-700 dark:text-gray-300">Silky microfoam and espresso in perfect harmony. A comfort drink done right.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Cold Brew</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Year-round favorite</p>
           <p class="text-gray-700 dark:text-gray-300">Smooth, less acidic, perfect for any season. Try it over ice or with a splash of cream.</p>
@@ -51,27 +51,28 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   </section>
 
   <!-- Food Section -->
-  <section class="py-16 bg-stone-50 dark:bg-emerald-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-16 bg-stone-50 dark:bg-emerald-950 relative overflow-hidden">
+    <img src="/beautiful_wood_table.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-10 dark:opacity-5">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12">Food</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Pastries & Baked Goods</h3>
           <p class="text-gray-700 dark:text-gray-300">Croissants, scones, muffins, and sourdough bread — baked fresh each morning by our in-house baker.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Breakfast Sandwiches</h3>
           <p class="text-gray-700 dark:text-gray-300">Egg, cheese, and your choice of locally sourced meats or vegetables on fresh bread.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Lunch Options</h3>
           <p class="text-gray-700 dark:text-gray-300">Salads, grain bowls, and sandwiches prepared with seasonal ingredients from local farmers.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Sweets & Treats</h3>
           <p class="text-gray-700 dark:text-gray-300">Cookies, brownies, chocolate confections, and seasonal desserts to pair with your coffee.</p>
         </div>
@@ -85,17 +86,17 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
       <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12">Other Drinks</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Tea Selection</h3>
           <p class="text-gray-700 dark:text-gray-300">Loose-leaf teas sourced from small growers around the world.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Hot Chocolate</h3>
           <p class="text-gray-700 dark:text-gray-300">Rich, made with real chocolate and your choice of milk.</p>
         </div>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-500 pl-6">
+        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
           <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Fresh Juices</h3>
           <p class="text-gray-700 dark:text-gray-300">Seasonal fresh-pressed juices and smoothies.</p>
         </div>
@@ -107,10 +108,10 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   <section class="py-16 bg-emerald-900 dark:bg-emerald-950 text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl font-serif font-bold mb-6">Buy Our Beans</h2>
-      <p class="text-lg text-emerald-100 mb-8 max-w-2xl mx-auto">
+      <p class="text-lg text-stone-100 mb-8 max-w-2xl mx-auto">
         Love what you taste? Take home our single-origin roasts and house blend. Available in 12 oz, 1 lb, and subscription options.
       </p>
-      <a href="/sync-coffee/order/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold rounded-lg hover:bg-emerald-50 transition">
+      <a href="/sync-coffee/order/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold hover:bg-stone-50 transition rounded-lg">
         Order Now
       </a>
     </div>

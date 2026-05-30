@@ -60,15 +60,10 @@ This builds the site and publishes to Cloudflare Pages via `wrangler`. Requires:
 - `CLOUDFLARE_API_TOKEN` environment variable
 - `CLOUDFLARE_ACCOUNT_ID` environment variable
 
-#### Option 2: Automatic deploy on git push
-1. Set up GitHub repository
-2. Connect it to Cloudflare Pages
-3. Add secrets to GitHub Actions:
-   - `CLOUDFLARE_API_TOKEN`
-   - `CLOUDFLARE_ACCOUNT_ID`
-4. Push to `master` branch — automatic build and deploy
-
-See `.github/workflows/deploy.yml` for the CI/CD configuration.
+#### Option 2: Automatic deploy on git push (recommended)
+1. Connect your GitHub repository to [Cloudflare Pages](https://developers.cloudflare.com/pages/)
+2. Set build command to `npm run build` and output directory to `dist`
+3. Push to your production branch — Cloudflare builds and deploys automatically
 
 ## Creating New Pages
 

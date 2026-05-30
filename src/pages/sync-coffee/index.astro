@@ -10,16 +10,14 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   description="Synchronize Coffee — where the community gathers, artists display work, and everyone finds their rhythm."
 >
   <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-24 md:py-32 relative overflow-hidden">
-    <!-- Background image with overlay -->
-    <div class="absolute inset-0 opacity-20 dark:opacity-10 bg-cover bg-center" style="background-image: url('/coffee_house_exterior.webp')"></div>
-    
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h1 class="text-5xl md:text-6xl font-serif font-bold text-emerald-900 dark:text-emerald-200 mb-6">Find Your Rhythm</h1>
+  <section class="relative bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-24 md:py-32 overflow-hidden">
+    <img src="/coffee_house_exterior.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-15 dark:opacity-10">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Find Your Rhythm</h1>
       <p class="text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
         Synchronize Coffee is where community gathers. Good coffee fuels good conversation. Art adorns the walls. And everyone finds their place.
       </p>
-      <p class="text-base text-gray-700 dark:text-gray-300 mb-10">Your neighborhood third space</p>
+      <p class="text-base text-emerald-800 dark:text-emerald-400 mb-10">Your neighborhood third space</p>
     </div>
   </section>
 
@@ -45,45 +43,45 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Bean Ordering -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border-l-4 border-emerald-700 dark:border-emerald-500">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
           <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Order Beans</h3>
           <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Discover our single-origin roasts and house blends. We ship fresh-roasted beans to your door, or grab a bag in the cafe.
           </p>
-          <a href="/sync-coffee/order/" class="inline-block bg-emerald-800 dark:bg-emerald-700 text-white px-6 py-2 font-semibold rounded-lg hover:bg-emerald-900 dark:hover:bg-emerald-800 transition">
+          <a href="/sync-coffee/order/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
             Order Now
           </a>
         </div>
 
         <!-- Art Submissions -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border-l-4 border-emerald-700 dark:border-emerald-500">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
           <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Show Your Art</h3>
           <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Our walls are a rotating gallery. Local artists display work, find inspiration, and connect with community.
           </p>
-          <a href="/sync-coffee/submit-art/" class="inline-block bg-emerald-800 dark:bg-emerald-700 text-white px-6 py-2 font-semibold rounded-lg hover:bg-emerald-900 dark:hover:bg-emerald-800 transition">
+          <a href="/sync-coffee/submit-art/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
             Submit Work
           </a>
         </div>
 
         <!-- Music Booking -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border-l-4 border-emerald-700 dark:border-emerald-500">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
           <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Book a Performance</h3>
           <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Host a live performance. Coffee, community, and music — a perfect trio. We host musicians, poets, and storytellers.
           </p>
-          <a href="/sync-coffee/perform/" class="inline-block bg-emerald-800 dark:bg-emerald-700 text-white px-6 py-2 font-semibold rounded-lg hover:bg-emerald-900 dark:hover:bg-emerald-800 transition">
+          <a href="/sync-coffee/perform/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
             Schedule a Time
           </a>
         </div>
 
         <!-- Room Reservation -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border-l-4 border-emerald-700 dark:border-emerald-500">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
           <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Reserve a Space</h3>
           <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Need a workspace? Host a small meeting? We have cozy corners, community tables, and bike parking out front.
           </p>
-          <a href="/sync-coffee/reserve/" class="inline-block bg-emerald-800 dark:bg-emerald-700 text-white px-6 py-2 font-semibold rounded-lg hover:bg-emerald-900 dark:hover:bg-emerald-800 transition">
+          <a href="/sync-coffee/reserve/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
             Reserve Now
           </a>
         </div>
@@ -95,10 +93,10 @@ import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
   <section class="py-20 bg-emerald-900 dark:bg-emerald-950 text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl font-serif font-bold mb-6">Come Find Your Rhythm</h2>
-      <p class="text-lg text-emerald-100 mb-10 leading-relaxed">
+      <p class="text-lg text-stone-100 mb-10 leading-relaxed">
         Stop by in person, order online, or reach out to learn more. We're here, we're connected, and we're always brewing something good.
       </p>
-      <a href="/sync-coffee/contact/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold rounded-lg hover:bg-emerald-50 transition rounded-lg">
+      <a href="/sync-coffee/contact/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold hover:bg-stone-50 transition rounded-lg">
         Get in Touch
       </a>
     </div>
