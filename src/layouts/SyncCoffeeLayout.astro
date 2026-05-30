@@ -38,16 +38,21 @@ const {
     </style>
   </head>
   <body class="flex flex-col min-h-screen bg-white dark:bg-gray-950 dark:text-white" style="font-family: var(--font-sans)">
-    <header class="bg-white dark:bg-gray-950 dark:border-gray-800 sticky top-0 z-50 border-b border-green-100 dark:border-green-900">
+    <header class="bg-white dark:bg-gray-950 dark:border-gray-800 sticky top-0 z-50 border-b border-emerald-100 dark:border-emerald-900">
+      <!-- Breadcrumb/Back link -->
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-sm text-gray-600 dark:text-gray-400">
+        <a href="/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition">← Back to ImagineThis.Site</a>
+      </div>
+      
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
         <div class="flex items-center">
-          <a href="/sync-coffee/" class="text-2xl font-serif font-bold text-green-700 dark:text-green-400">Synchronize Coffee</a>
+          <a href="/sync-coffee/" class="text-2xl font-serif font-bold text-emerald-800 dark:text-emerald-400">Synchronize Coffee</a>
         </div>
         <ul class="hidden md:flex gap-8 text-gray-700 dark:text-gray-300 items-center">
-          <li><a href="/sync-coffee/" class="hover:text-green-700 dark:hover:text-green-400 transition font-medium">Home</a></li>
-          <li><a href="/sync-coffee/menu/" class="hover:text-green-700 dark:hover:text-green-400 transition font-medium">Menu</a></li>
-          <li><a href="/sync-coffee/about/" class="hover:text-green-700 dark:hover:text-green-400 transition font-medium">About</a></li>
-          <li><a href="/sync-coffee/contact/" class="hover:text-green-700 dark:hover:text-green-400 transition font-medium">Contact</a></li>
+          <li><a href="/sync-coffee/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Home</a></li>
+          <li><a href="/sync-coffee/menu/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Menu</a></li>
+          <li><a href="/sync-coffee/about/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">About</a></li>
+          <li><a href="/sync-coffee/contact/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -56,16 +61,16 @@ const {
       <slot />
     </main>
 
-    <footer class="bg-green-900 dark:bg-green-950 text-white py-12 mt-16">
+    <footer class="bg-emerald-900 dark:bg-emerald-950 text-white py-12 mt-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 class="font-serif text-lg font-bold mb-4">Synchronize Coffee</h3>
-            <p class="text-green-100 text-sm">A community third space where art, coffee, and connection flourish.</p>
+            <p class="text-emerald-100 text-sm">A community third space where art, coffee, and connection flourish.</p>
           </div>
           <div>
             <h4 class="font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-sm text-green-100">
+            <ul class="space-y-2 text-sm text-emerald-100">
               <li><a href="/sync-coffee/" class="hover:text-white transition">Home</a></li>
               <li><a href="/sync-coffee/menu/" class="hover:text-white transition">Menu</a></li>
               <li><a href="/sync-coffee/about/" class="hover:text-white transition">About</a></li>
@@ -74,15 +79,15 @@ const {
           </div>
           <div>
             <h4 class="font-semibold mb-4">Follow</h4>
-            <ul class="space-y-2 text-sm text-green-100">
+            <ul class="space-y-2 text-sm text-emerald-100">
               <li><a href="#" class="hover:text-white transition">Instagram</a></li>
               <li><a href="#" class="hover:text-white transition">Twitter</a></li>
               <li><a href="#" class="hover:text-white transition">Facebook</a></li>
             </ul>
           </div>
         </div>
-        <div class="border-t border-green-800 pt-8 text-center text-sm text-green-200">
-          <p>🎨 Concept demo by ImagineThis.Site — not a real website</p>
+        <div class="border-t border-emerald-800 pt-8 text-center text-sm text-emerald-200">
+          <p>Concept demo by <a href="/" class="hover:text-white transition underline">ImagineThis.Site</a> — not a real website</p>
         </div>
       </div>
     </footer>
