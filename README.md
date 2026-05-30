@@ -155,3 +155,4 @@ In addition to the core components, you can extend or create new ones:
 ---
 
 Built by ImagineThis.Site. Learning Astro, designing concepts, shipping fast.
+
