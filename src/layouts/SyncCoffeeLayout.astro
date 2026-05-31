@@ -2,18 +2,26 @@
 // SyncCoffeeLayout.astro
 // Layout for Synchronize Coffee — warm, artsy, community-focused
 // Color scheme: warm greens, natural wood tones, clean minimal design inspired by NKORA
+// Handles page lifecycle states: draft, published, unpublished
 
 import "../styles/global.css";
+import Unpublished from "../components/Unpublished.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  status?: "draft" | "published" | "unpublished";
 }
 
 const { 
   title = "Synchronize Coffee - Community Third Space",
-  description = "Synchronize Coffee — where community gathers, art is displayed, and good coffee fuels connection."
+  description = "Synchronize Coffee — where community gathers, art is displayed, and good coffee fuels connection.",
+  status = "published",
+  ...rest
 } = Astro.props;
+
+// Handle page lifecycle
+const isUnpublished = status === "unpublished";
 ---
 
 <!doctype html>
@@ -60,11 +68,15 @@ const {
       </nav>
     </header>
 
-    <main class="flex-grow">
-      <slot />
-    </main>
+    {isUnpublished ? (
+      <Unpublished />
+    ) : (
+      <>
+        <main class="flex-grow">
+          <slot />
+        </main>
 
-    <footer class="bg-emerald-900 dark:bg-emerald-950 text-white py-12 mt-16">
+        <footer class="bg-emerald-900 dark:bg-emerald-950 text-white py-12 mt-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -93,7 +105,9 @@ const {
           <p>Concept demo by <a href="/" class="underline hover:text-white transition">ImagineThis.Site</a> — not a real website</p>
         </div>
       </div>
-    </footer>
+        </footer>
+      </>
+    )}
     <script is:inline>
       const toggle = document.getElementById('theme-toggle');
       if (toggle) {

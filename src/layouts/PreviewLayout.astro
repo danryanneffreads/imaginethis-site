@@ -5,11 +5,12 @@ import Hero from '../components/Hero.astro';
 const {
   title = "Preview",
   eyebrow = "ImagineThis Preview",
-  description = ""
+  description = "",
+  status = "published"
 } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} status={status}>
   <Hero
     eyebrow={eyebrow}
     title={title}
