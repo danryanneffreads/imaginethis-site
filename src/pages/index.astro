@@ -1,13 +1,5 @@
 ---
 status: "published"
-// Home page - ImagineThis.Site
-
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Card from "../components/Card.astro";
-import CTASection from "../components/CTASection.astro";
----
-status: "published"
 
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
@@ -17,12 +9,12 @@ import CTASection from "../components/CTASection.astro";
 const examples = [
   {
     title: "Synchronize Coffee",
-    description: "A warm, community‑focused coffee shop concept with clear events and simple paths to visit and engage.",
+    description: "A warm, community-focused coffee shop concept with clear events and simple paths to visit and engage.",
     link: "/sync-coffee/"
   },
   {
     title: "AI & Human Systems Summit",
-    description: "A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
+    description: "A premium one-page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
     link: "/examples/human-ai-systems-summit/"
   }
 ];
@@ -34,8 +26,8 @@ const examples = [
 >
   <Hero
     title="Make your website reflect how you actually serve people."
-    subtitle="When a site matches your real operations, everything gets easier — customers understand you faster, trust you sooner, and know the next step. That’s the point."
-    smallText="Over 20 years I’ve coordinated teams, improved operations, and built systems. The website is part of that system."
+    subtitle="When a site matches your real operations, everything gets easier — customers understand you faster, trust you sooner, and know the next step. That's the point."
+    smallText="Over 20 years I've coordinated teams, improved operations, and built systems. The website is part of that system."
     cta_text="See Examples"
     cta_link="#examples"
   />
@@ -44,63 +36,13 @@ const examples = [
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Examples</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {examples.map(ex => (
-          <Card title={ex.title} description={ex.description} image={ex.image} link={ex.link} />
+        {examples.map((ex) => (
+          <Card title={ex.title} description={ex.description} link={ex.link} />
         ))}
       </div>
     </div>
   </section>
 
-  <CTASection
-    heading="I'm Dan. If you want a website that matches how you actually serve people, let's talk."
-    description="We can prototype a focused concept, or map the path from vision to launch. Either way, it should help real work happen."
-    button_text="Send me a message"
-    button_link="mailto:danryanneff@gmail.com"
-    dark={false}
-  />
-</Layout>
-const examples = [
-  {
-    title: "Synchronize Coffee",
-    description: "A warm, community‑focused coffee shop concept with clear events and simple paths to visit and engage.",
-    // image omitted intentionally to avoid broken paths; Card handles it
-    link: "/examples/synchronize-coffee"
-  },
-  {
-    title: "AI & Human Systems Summit",
-    description: "A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
-    image: "/images/summit/atrium-human-ai-summit.webp",
-    link: "/examples/human-ai-systems-summit"
-  }
-];
----
-
-<Layout
-  title="ImagineThis.Site - Websites Built on How You Serve"
-  description="Design, prototype, and ship concept sites that reflect how you actually serve people — so the website works with your operations, not against them."
->
-  <!-- Hero -->
-  <Hero
-    title="Make your website reflect how you actually serve people."
-    subtitle="When a site matches your real operations, everything gets easier — customers understand you faster, trust you sooner, and know the next step. That’s the point."
-    smallText="Over 20 years I’ve coordinated teams, improved operations, and built systems. The website is part of that system."
-    cta_text="See Examples"
-    cta_link="#examples"
-  />
-
-  <!-- Examples -->
-  <section id="examples" class="py-16 bg-stone-50 dark:bg-gray-900">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Examples</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {examples.map(ex => (
-          <Card title={ex.title} description={ex.description} image={ex.image} link={ex.link} />
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Closing CTA -->
   <CTASection
     heading="I'm Dan. If you want a website that matches how you actually serve people, let's talk."
     description="We can prototype a focused concept, or map the path from vision to launch. Either way, it should help real work happen."
