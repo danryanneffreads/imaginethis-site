@@ -1,34 +1,12 @@
-// FILE: src/pages/demos/demo-template.astro
 ---
 import DemoLayout from "../../layouts/DemoLayout.astro";
-
-// HOW TO USE:
-// 1) Duplicate this file in VS Code (right‑click > Copy, then Paste).
-// 2) Rename the copy to a secret slug, e.g., src/pages/demos/x9a7b2c3.astro
-// 3) Update the props below and the H1 text.
-// 4) Commit, push, and share only the full URL (do not link it publicly).
 ---
 
-<DemoLayout
-  title="Concept Demo — First Test"
-  description="Private First Test"
-  business="First Test Business"
->
+<DemoLayout title="Concept Demo — Example Co." business="Example Co.">
   <section class="py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose dark:prose-invert">
-      <h1>Concept Demo First Test</h1>
-      <p>
-        This is a private, unlisted concept preview. Share this URL only with stakeholders.
-      </p>
-
-      <h2>Suggested Sections</h2>
-      <ul>
-        <li>Hero with value proposition and next step</li>
-        <li>How it works / What to expect</li>
-        <li>Key features or services</li>
-        <li>Proof (logos, testimonials, track record)</li>
-        <li>Clear CTA</li>
-      </ul>
+      <h1>Concept Demo for Example Co.</h1>
+      <p>Private, unlisted concept preview. Please don’t share publicly.</p>
     </div>
   </section>
 </DemoLayout>
