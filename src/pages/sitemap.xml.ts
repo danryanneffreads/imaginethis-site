@@ -1,26 +1,37 @@
- export const prerender = true;
- 
-// Update this list if you add/remove public pages.
+export const prerender = true;
+
+// Public routes to include in the sitemap
 const routes = [
-"/",                                  // Home
-"/sync-coffee/",                      // Synchronize Coffee example (your existing public page)
-"/examples/human-ai-systems-summit/", // Summit example (now public under /examples/)
-"/web-builders",                      // Web Builders Guide
+  "/",                                  // Home
+  "/sync-coffee/",                      // Synchronize Coffee example
+  "/examples/human-ai-systems-summit/", // Summit example (public)
+  "/web-builders",                      // Web Builders Guide
 ];
 
-export function GET({ request }) {
-const origin = new URL(request.url).origin;
-const lastmod = new Date().toISOString();
+export function GET({ request }: { request: Request }) {
+  const origin = new URL(request.url).origin;
+  const lastmod = new Date().toISOString();
 
-const urls = routes
-.map(
-(path) =>        <url>         <loc>${origin}${path}</loc>         <lastmod>${lastmod}</lastmod>         <changefreq>weekly</changefreq>         <priority>${path === "/" ? "1.0" : "0.7"}</priority>       </url>
-)
-.join("");
+  let urls = "";
+  for (const path of routes) {
+    const priority = path === "/" ? "1.0" : "0.7";
+    urls +=
+      "<url>" +
+      `<loc>${origin}${path}</loc>` +
+      `<lastmod>${lastmod}</lastmod>` +
+      "<changefreq>weekly</changefreq>" +
+      `<priority>${priority}</priority>` +
+      "</url>";
+  }
 
-const xml = <?xml version="1.0" encoding="UTF-8"?>   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">     ${urls}   </urlset>.trim();
+  const xml =
+    '<?xml version="1.0" encoding="UTF-8"?>' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
+    urls +
+    "</urlset>";
 
-return new Response(xml, {
-headers: { "Content-Type": "application/xml; charset=utf-8" },
-});
+  return new Response(xml, {
+    headers: { "Content-Type": "application/xml; charset=utf-8" },
+  });
 }
+
