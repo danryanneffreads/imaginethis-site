@@ -13,7 +13,7 @@ interface Props {
   status?: "draft" | "published" | "unpublished";
 }
 
-const { 
+const {
   title = "Synchronize Coffee - Community Third Space",
   description = "Synchronize Coffee — where community gathers, art is displayed, and good coffee fuels connection.",
   status = "published",
@@ -22,6 +22,9 @@ const {
 
 // Handle page lifecycle
 const isUnpublished = status === "unpublished";
+
+// Show example banner only on /examples/* paths
+const isExample = Astro.url?.pathname?.startsWith("/examples/");
 ---
 
 <!doctype html>
@@ -46,19 +49,25 @@ const isUnpublished = status === "unpublished";
     </style>
   </head>
   <body class="flex flex-col min-h-screen bg-white dark:bg-gray-950 dark:text-white" style="font-family: var(--font-sans)">
+    {isExample && (
+      <div role="note" class="bg-indigo-50 text-indigo-900 border-b border-indigo-200 px-4 py-2 text-sm text-center">
+        Example concept site (public showcase)
+      </div>
+    )}
+
     <header class="bg-white dark:bg-gray-950 dark:border-gray-800 sticky top-0 z-50 border-b border-stone-100 dark:border-emerald-900">
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div class="flex items-center gap-4">
           <a href="/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition">ImagineThis.Site</a>
           <span class="text-gray-300 dark:text-gray-600">/</span>
-          <a href="/sync-coffee/" class="text-2xl font-serif font-bold text-emerald-700 dark:text-emerald-400">Synchronize Coffee</a>
+          <a href="/examples/sync-coffee/" class="text-2xl font-serif font-bold text-emerald-700 dark:text-emerald-400">Synchronize Coffee</a>
         </div>
         <div class="flex items-center gap-6">
           <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 items-center">
-            <li><a href="/sync-coffee/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Home</a></li>
-            <li><a href="/sync-coffee/menu/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Menu</a></li>
-            <li><a href="/sync-coffee/about/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">About</a></li>
-            <li><a href="/sync-coffee/contact/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Contact</a></li>
+            <li><a href="/examples/sync-coffee/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Home</a></li>
+            <li><a href="/examples/sync-coffee/menu/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Menu</a></li>
+            <li><a href="/examples/sync-coffee/about/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">About</a></li>
+            <li><a href="/examples/sync-coffee/contact/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Contact</a></li>
           </ul>
           <button id="theme-toggle" type="button" class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition" aria-label="Toggle dark mode">
             <svg id="sun-icon" class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
@@ -77,37 +86,38 @@ const isUnpublished = status === "unpublished";
         </main>
 
         <footer class="bg-emerald-900 dark:bg-emerald-950 text-white py-12 mt-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <h3 class="font-serif text-lg font-bold mb-4">Synchronize Coffee</h3>
-            <p class="text-stone-100 text-sm">A community third space where art, coffee, and connection flourish.</p>
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <h3 class="font-serif text-lg font-bold mb-4">Synchronize Coffee</h3>
+                <p class="text-stone-100 text-sm">A community third space where art, coffee, and connection flourish.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-stone-100">
+                  <li><a href="/examples/sync-coffee/" class="hover:text-white transition">Home</a></li>
+                  <li><a href="/examples/sync-coffee/menu/" class="hover:text-white transition">Menu</a></li>
+                  <li><a href="/examples/sync-coffee/about/" class="hover:text-white transition">About</a></li>
+                  <li><a href="/examples/sync-coffee/contact/" class="hover:text-white transition">Contact</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-4">Follow</h4>
+                <ul class="space-y-2 text-sm text-stone-100">
+                  <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+                  <li><a href="#" class="hover:text-white transition">Twitter</a></li>
+                  <li><a href="#" class="hover:text-white transition">Facebook</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="border-t border-emerald-800 pt-8 text-center text-sm text-stone-200">
+              <p>Concept demo by <a href="/" class="underline hover:text-white transition">ImagineThis.Site</a> — not a real website</p>
+            </div>
           </div>
-          <div>
-            <h4 class="font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-sm text-stone-100">
-              <li><a href="/sync-coffee/" class="hover:text-white transition">Home</a></li>
-              <li><a href="/sync-coffee/menu/" class="hover:text-white transition">Menu</a></li>
-              <li><a href="/sync-coffee/about/" class="hover:text-white transition">About</a></li>
-              <li><a href="/sync-coffee/contact/" class="hover:text-white transition">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-4">Follow</h4>
-            <ul class="space-y-2 text-sm text-stone-100">
-              <li><a href="#" class="hover:text-white transition">Instagram</a></li>
-              <li><a href="#" class="hover:text-white transition">Twitter</a></li>
-              <li><a href="#" class="hover:text-white transition">Facebook</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="border-t border-emerald-800 pt-8 text-center text-sm text-stone-200">
-          <p>Concept demo by <a href="/" class="underline hover:text-white transition">ImagineThis.Site</a> — not a real website</p>
-        </div>
-      </div>
         </footer>
       </>
     )}
+
     <script is:inline>
       const toggle = document.getElementById('theme-toggle');
       if (toggle) {
@@ -116,7 +126,10 @@ const isUnpublished = status === "unpublished";
           localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
         });
       }
-      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (
+        localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
         document.documentElement.classList.add('dark');
       }
     </script>
