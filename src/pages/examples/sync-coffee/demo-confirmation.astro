@@ -3,7 +3,7 @@ status: "published"
 // sync-coffee/demo-confirmation.astro
 // Generic demo confirmation page for all interactive flows
 
-import SyncCoffeeLayout from "../../layouts/SyncCoffeeLayout.astro";
+import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
 
 const queryParams = new URL(Astro.request.url).searchParams;
 const type = queryParams.get('type') || 'general';

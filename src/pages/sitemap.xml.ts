@@ -2,13 +2,13 @@ export const prerender = true;
 
 // Public routes to include in the sitemap
 const routes = [
-  "/",                                  // Home
-  "/sync-coffee/",                      // Synchronize Coffee example
-  "/examples/human-ai-systems-summit/", // Summit example (public)
-  "/web-builders",                      // Web Builders Guide
+  "/",                                   // Home
+  "/examples/sync-coffee/",              // Synchronize Coffee (now under /examples)
+  "/examples/human-ai-systems-summit/",  // Summit example
+  "/web-builders",                       // Web Builders Guide
 ];
 
-export function GET({ request }: { request: Request }) {
+export function GET({ request }) {
   const origin = new URL(request.url).origin;
   const lastmod = new Date().toISOString();
 

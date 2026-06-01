@@ -8,6 +8,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Unpublished from "../components/Unpublished.astro";
+const isExample = Astro.url?.pathname?.startsWith("/examples/");
 
 interface Props {
   title?: string;
@@ -111,6 +112,9 @@ const jsonLd = {
       <Unpublished />
     ) : (
       <>
+      {isExample && (
+
+<div role="note" class="bg-indigo-50 text-indigo-900 border-b border-indigo-200 px-4 py-2 text-sm text-center"> Example concept site (public showcase) </div> )}
         <Header />
         <main class="flex-grow">
           <slot />

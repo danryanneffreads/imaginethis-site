@@ -1,3 +1,4 @@
 /preview/human-ai-systems-summit /examples/human-ai-systems-summit 301
 /preview/human-ai-systems-summit/ /examples/human-ai-systems-summit/ 301
 /* /404.html 404
+/sync-coffee /examples/sync-coffee 301 /sync-coffee/ /examples/sync-coffee/ 301 /sync-coffee/* /examples/sync-coffee/:splat 301
