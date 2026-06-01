@@ -97,6 +97,7 @@ function pagePathToDist(srcPath, distDir) {
 
 // https://astro.build/config
 export default defineConfig({
+  site:"https://imaginethis.site",
   vite: {
     plugins: [tailwindcss()]
   },

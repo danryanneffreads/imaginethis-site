@@ -2,6 +2,7 @@
 // Layout.astro
 // Base layout for all pages - includes Header, Footer, and meta setup
 // Handles page lifecycle states: draft, published, unpublished
+// Adds SEO enhancements: canonical URL, optional noindex, OG/Twitter tags, JSON-LD
 
 import "../styles/global.css";
 import Header from "../components/Header.astro";
@@ -11,20 +12,37 @@ import Unpublished from "../components/Unpublished.astro";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;        // Optional OG/Twitter image
+  noindex?: boolean;     // Force noindex for pages like private demos
   status?: "draft" | "published" | "unpublished";
 }
 
 const { 
   title = "ImagineThis.Site - Websites Built on How You Serve", 
   description = "Your website is part of your business operations. When it reflects how you actually serve people, everything gets easier.",
+  image,              // Only render OG/Twitter image tags if provided
+  noindex = false,
   status = "published",
   ...rest
 } = Astro.props;
 
-// Handle page lifecycle states
-// In production build, draft pages should be excluded (handled in astro.config.mjs)
-// Unpublished pages show a takedown message instead of content
+// Lifecycle handling
 const isUnpublished = status === "unpublished";
+
+// Canonical URL (falls back to site root if unavailable)
+const canonical = Astro.url?.href ?? "https://imaginethis.site";
+
+// Simple JSON-LD for the site
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ImagineThis.Site",
+  "url": canonical,
+  "publisher": {
+    "@type": "Person",
+    "name": "Dan Neff"
+  }
+};
 ---
 
 <!doctype html>
@@ -32,9 +50,38 @@ const isUnpublished = status === "unpublished";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content={description} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    {/* Robots: noindex for explicit noindex pages or unpublished state */}
+    {(noindex || isUnpublished) && <meta name="robots" content="noindex, nofollow" />}
+
+    {/* Canonical */}
+    <link rel="canonical" href={canonical} />
+
+    {/* Favicon (kept as SVG as in your current layout) */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={image} />}
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+
+    {/* JSON-LD */}
+    <script type="application/ld+json">
+      {JSON.stringify(jsonLd)}
+    </script>
+
+    {/* Fonts + CSS variables (preserved) */}
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
@@ -42,10 +89,10 @@ const isUnpublished = status === "unpublished";
         --font-sans: 'Inter', sans-serif;
       }
     </style>
+
+    {/* Dark mode persistence (preserved) */}
     <script is:inline>
-      // Dark mode persistence - runs immediately before page renders
       (function() {
-        // Prevent FOUC (flash of unstyled content) by applying class synchronously
         try {
           const isDark = localStorage.getItem('darkMode') === 'true';
           if (isDark) {
@@ -54,7 +101,6 @@ const isUnpublished = status === "unpublished";
             document.documentElement.classList.remove('dark');
           }
         } catch (e) {
-          // localStorage may be unavailable in some contexts
           console.warn('Dark mode persistence unavailable:', e);
         }
       })();

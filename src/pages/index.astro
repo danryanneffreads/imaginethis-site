@@ -1,12 +1,78 @@
 ---
 status: "published"
 // Home page - ImagineThis.Site
-// Clean, modern, example-forward homepage using local images and current examples
 
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
 import CTASection from "../components/CTASection.astro";
+---
+status: "published"
+
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Card from "../components/Card.astro";
+import CTASection from "../components/CTASection.astro";
+
+const examples = [
+  {
+    title: "Synchronize Coffee",
+    description: "A warm, community‑focused coffee shop concept with clear events and simple paths to visit and engage.",
+    link: "/sync-coffee/"
+  },
+  {
+    title: "AI & Human Systems Summit",
+    description: "A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
+    link: "/examples/human-ai-systems-summit/"
+  }
+];
+---
+
+<Layout
+  title="ImagineThis.Site - Websites Built on How You Serve"
+  description="Design, prototype, and ship concept sites that reflect how you actually serve people — so the website works with your operations, not against them."
+>
+  <Hero
+    title="Make your website reflect how you actually serve people."
+    subtitle="When a site matches your real operations, everything gets easier — customers understand you faster, trust you sooner, and know the next step. That’s the point."
+    smallText="Over 20 years I’ve coordinated teams, improved operations, and built systems. The website is part of that system."
+    cta_text="See Examples"
+    cta_link="#examples"
+  />
+
+  <section id="examples" class="py-16 bg-stone-50 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Examples</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {examples.map(ex => (
+          <Card title={ex.title} description={ex.description} image={ex.image} link={ex.link} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    heading="I'm Dan. If you want a website that matches how you actually serve people, let's talk."
+    description="We can prototype a focused concept, or map the path from vision to launch. Either way, it should help real work happen."
+    button_text="Send me a message"
+    button_link="mailto:danryanneff@gmail.com"
+    dark={false}
+  />
+</Layout>
+const examples = [
+  {
+    title: "Synchronize Coffee",
+    description: "A warm, community‑focused coffee shop concept with clear events and simple paths to visit and engage.",
+    // image omitted intentionally to avoid broken paths; Card handles it
+    link: "/examples/synchronize-coffee"
+  },
+  {
+    title: "AI & Human Systems Summit",
+    description: "A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
+    image: "/images/summit/atrium-human-ai-summit.webp",
+    link: "/examples/human-ai-systems-summit"
+  }
+];
 ---
 
 <Layout
@@ -22,87 +88,14 @@ import CTASection from "../components/CTASection.astro";
     cta_link="#examples"
   />
 
-  <!-- The Idea -->
-  <section id="idea" class="py-20 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-8">
-          Think of your website as an extension of how you serve.
-        </h2>
-        <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          <p>
-            Every visit does something: it either clarifies what you offer and invites the next step — or it leaves people unsure.
-            That’s not just “design”; it’s how your business functions online.
-          </p>
-          <p>
-            When a site reflects your real process and the way people engage with you, it stops being a placeholder and starts working.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="py-20 bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div>
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-4">Understand</h3>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Learn how you serve customers today — where clarity is strong, where friction shows up, and what outcomes matter.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-4">Envision</h3>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Build a focused concept site that demonstrates what’s possible for your brand and operations — no generic templates.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-4">Decide</h3>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Choose the next step: hand to a dev team, build it with us, or learn the system and run it yourself. Tools follow needs.
-          </p>
-        </div>
-      </div>
-      <p class="text-center text-gray-600 dark:text-gray-400 italic mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
-        Sometimes I’ll share a concept first — to show what your online experience could be and start a real conversation.
-      </p>
-    </div>
-  </section>
-
   <!-- Examples -->
-  <section id="examples" class="py-20 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <p class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Example Sites</p>
-        <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white">Imagine what's possible</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Synchronize Coffee (mini-site) -->
-        <Card
-          title="Synchronize Coffee"
-          description="A warm, community‑forward mini‑site with menu, events, and submissions — the digital feel matches walking in the door."
-          image="/images/coffee/coffee_house_exterior.webp"
-          link="/sync-coffee/"
-        />
-
-        <!-- Coffee Example (single page) -->
-        <Card
-          title="Coffee Example Page"
-          description="A single‑page showcase with strong typography, testimonials, and a clear CTA — fast to ship, easy to extend."
-          image="images/coffee/coffee-steam.webp"
-          link="/sync-coffee"
-        />
-
-        <!-- AI & Human Systems Summit (event landing) -->
-        <Card
-          title="AI & Human Systems Summit"
-          description="A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm."
-          image="/images/summit/atrium-human-ai-summit.webp"
-          link="/preview/human-ai-systems-summit"
-        />
+  <section id="examples" class="py-16 bg-stone-50 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Examples</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {examples.map(ex => (
+          <Card title={ex.title} description={ex.description} image={ex.image} link={ex.link} />
+        ))}
       </div>
     </div>
   </section>

@@ -1,21 +1,29 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import Hero from '../components/Hero.astro';
+import Layout from "./Layout.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  business?: string;  // Optional label in the banner
+  banner?: boolean;   // Set to false to hide the banner
+}
 
 const {
-  title = "Preview",
-  eyebrow = "ImagineThis Preview",
+  title = "Private Preview",
   description = "",
-  status = "published"
+  business = "Private Client",
+  banner = true
 } = Astro.props;
 ---
 
-<BaseLayout title={title} status={status}>
-  <Hero
-    eyebrow={eyebrow}
-    title={title}
-    description={description}
-  />
-
+<Layout title={title} description={description} noindex={true}>
+  {banner && (
+    <div class="bg-amber-100 text-amber-900 border-b border-amber-300 px-4 py-2 text-sm">
+      <div class="mx-auto max-w-7xl">
+        <strong>Private preview{business ? ` — ${business}` : ""}.</strong>
+        Not for public distribution. This page is unlisted and noindexed.
+      </div>
+    </div>
+  )}
   <slot />
-</BaseLayout>
+</Layout>

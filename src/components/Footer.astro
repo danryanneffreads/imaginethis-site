@@ -1,28 +1,19 @@
 ---
-// Footer.astro
-// Reusable footer component for all pages
+const year = new Date().getFullYear();
 ---
 
-<footer class="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 py-12">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-gray-200 dark:border-gray-800">
-      <div class="text-center md:text-left">
-        <p class="text-gray-700 dark:text-gray-300">
-          <a href="/" class="hover:text-gray-900 dark:hover:text-white transition">Home</a>
-          <span class="text-gray-400 dark:text-gray-600 mx-3">·</span>
-          <a href="#examples" class="hover:text-gray-900 dark:hover:text-white transition">Examples</a>
-          <span class="text-gray-400 dark:text-gray-600 mx-3">·</span>
-          <a href="/web-builders/" class="hover:text-gray-900 dark:hover:text-white transition">Web Builders</a>
-        </p>
-      </div>
-      <div class="text-center md:text-right">
-        <p class="text-gray-700 dark:text-gray-300">
-          <a href="https://danryanneff.com" class="hover:text-gray-900 dark:hover:text-white transition">About Dan</a>
-        </p>
-      </div>
+<footer class="mt-16 border-t border-gray-200 dark:border-gray-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600 dark:text-gray-400">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p>&copy; {year} ImagineThis.Site — Built with Astro and Tailwind</p>
+      <nav class="flex items-center gap-4" aria-label="Footer">
+        <a href="/#examples" class="hover:text-gray-900 dark:hover:text-white">Examples</a>
+        <a href="/web-builders" class="hover:text-gray-900 dark:hover:text-white">Web Builders Guide</a>
+        <a href="mailto:danryanneff@gmail.com" class="hover:text-gray-900 dark:hover:text-white">Contact</a>
+      </nav>
     </div>
-    <div class="text-center text-sm text-gray-500 dark:text-gray-500 pt-8">
-      <p>&copy; 2026 ImagineThis.Site</p>
-    </div>
+    <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+      Private previews are shared via unlisted links and are not indexed by search engines.
+    </p>
   </div>
 </footer>
