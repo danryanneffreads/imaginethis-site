@@ -1,0 +1,51 @@
+/* Human Rhythm Health — shared styles */
+
+:root {
+  --hrh-forest: #2F6F55;
+  --hrh-teal: #2C5F63;
+  --hrh-moss: #8AA27E;
+  --hrh-amber: #E3A135;
+  --hrh-terracotta: #B75A2E;
+  --hrh-cream: #F7F5EE;
+  --hrh-sand: #E8D7B9;
+  --hrh-stone: #6E655C;
+  --hrh-ink: #0F1A14;
+}
+
+.hrh-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--hrh-forest), var(--hrh-amber));
+}
+
+.hrh-btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  transition: all .2s ease;
+  text-decoration: none;
+}
+
+.hrh-btn-primary {
+  background: var(--hrh-forest);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+.hrh-btn-primary:hover { filter: brightness(0.95); }
+.hrh-btn-primary:active { transform: translateY(1px); }
+
+.hrh-btn-secondary {
+  color: #0f172a; /* slate-900 */
+  border: 1px solid rgba(0,0,0,0.2);
+  background: transparent;
+}
+.hrh-btn-secondary:hover { background: rgba(0,0,0,0.03); }
+.dark .hrh-btn-secondary {
+  color: #fff;
+  border-color: rgba(255,255,255,0.35);
+}
+.dark .hrh-btn-secondary:hover { background: rgba(255,255,255,0.06); }
+
+.hrh-link { color: var(--hrh-forest); font-weight: 600; text-decoration: none; }
+.hrh-link:hover { text-decoration: underline; }

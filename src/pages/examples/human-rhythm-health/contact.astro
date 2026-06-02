@@ -1,0 +1,157 @@
+---
+import '@/styles/global.css';
+import '@/styles/hrh.css';
+status: "published";
+const isExample = Astro.url?.pathname?.startsWith("/examples/");
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Contact — Human Rhythm Health</title>
+    <meta name="description" content="Contact Human Rhythm Health. Book a chat, request a studio visit, or ask a question." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Initial theme (dark/light) -->
+    <script is:inline>
+      (function () {
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const useDark = stored ? stored === 'dark' : prefersDark;
+          document.documentElement.classList.toggle('dark', useDark);
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-950 dark:text-white" style="font-family: Inter, system-ui, sans-serif">
+    {isExample && (
+      <div class="bg-indigo-50 text-indigo-900 border-b border-indigo-200 px-4 py-2 text-sm text-center">
+        Example concept site (public showcase)
+      </div>
+    )}
+
+    <!-- Header -->
+    <header class="bg-white/90 dark:bg-gray-950/70 backdrop-blur sticky top-0 z-50 border-b border-stone-100 dark:border-gray-800">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+          <a href="/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-teal-700 dark:hover:text-teal-400 transition">ImagineThis.Site</a>
+          <span class="text-gray-300 dark:text-gray-600">/</span>
+          <a href="/examples/human-rhythm-health/" class="text-2xl font-serif font-bold hover:opacity-90 transition" style="color: var(--hrh-forest)">Human Rhythm Health</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 items-center">
+            <li><a href="/examples/human-rhythm-health/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Home</a></li>
+            <li><a href="/examples/human-rhythm-health/programs/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Programs</a></li>
+            <li><a href="/examples/human-rhythm-health/studio/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Studio</a></li>
+            <li><a href="/examples/human-rhythm-health/about/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">About</a></li>
+            <li><a href="/examples/human-rhythm-health/contact/" class="text-teal-700 dark:text-teal-400 font-semibold">Contact</a></li>
+          </ul>
+
+          <!-- Dark mode toggle -->
+          <button
+            id="theme-toggle"
+            type="button"
+            class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <!-- Sun (shows in dark mode) -->
+            <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0L17.95 7.05M7.05 16.95l-1.414 1.414M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
+            </svg>
+            <!-- Moon (shows in light mode) -->
+            <svg class="block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="hrh-accent"></div>
+    </header>
+
+    <main class="py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10">
+        <!-- Contact methods -->
+        <section class="lg:col-span-2">
+          <h1 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">Contact</h1>
+          <p class="mt-2 text-gray-700 dark:text-gray-300">Questions, studio tour, or ready to start? Send a note.</p>
+
+          <div class="mt-8 grid sm:grid-cols-2 gap-6">
+            <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6">
+              <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Email</h2>
+              <p class="mt-2">
+                <a href="mailto:hello@humanrhythm.example" class="hrh-link">hello@humanrhythm.example</a>
+              </p>
+            </div>
+
+            <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6">
+              <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Hours</h2>
+              <p class="mt-2 text-gray-700 dark:text-gray-300">Mon–Fri: 7:00–11:00, 4:00–7:00</p>
+              <p class="text-gray-700 dark:text-gray-300">Sat: 8:00–12:00 • Sun: closed</p>
+            </div>
+          </div>
+
+          <!-- Simple non-posting form (for visuals only) -->
+          <form class="mt-8 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6" onsubmit="return false;">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Send a message</h2>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm text-gray-700 dark:text-gray-300">Name</label>
+                <input id="name" name="name" type="text" class="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-white" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm text-gray-700 dark:text-gray-300">Email</label>
+                <input id="email" name="email" type="email" class="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-white" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label for="message" class="block text-sm text-gray-700 dark:text-gray-300">Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-white" placeholder="How can we help?"></textarea>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a href="mailto:hello@humanrhythm.example" class="hrh-btn hrh-btn-primary">Email us</a>
+              <a href="/examples/human-rhythm-health/programs/" class="hrh-btn hrh-btn-secondary">See programs</a>
+            </div>
+          </form>
+        </section>
+
+        <!-- Visit info -->
+        <aside>
+          <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden">
+            <img src="/images/health/wellness_studio_open.webp" alt="Studio exterior and trees" class="w-full h-40 object-cover" />
+            <div class="p-6">
+              <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Visit</h2>
+              <p class="mt-2 text-gray-700 dark:text-gray-300">123 Daylight Ave, Suite 2 • Your City</p>
+              <p class="mt-1 text-gray-700 dark:text-gray-300">Free street parking</p>
+              <div class="mt-4 flex gap-3">
+                <a href="/examples/human-rhythm-health/studio/" class="hrh-btn hrh-btn-secondary">See the space</a>
+                <a href="/examples/human-rhythm-health/contact/" class="hrh-btn hrh-btn-primary">Book a chat</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="border-t border-stone-100 dark:border-gray-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600 dark:text-gray-400">
+        © {new Date().getFullYear()} Human Rhythm Health — Example concept
+      </div>
+    </footer>
+
+    <!-- Toggle behavior -->
+    <script is:inline>
+      const btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const root = document.documentElement;
+          const nowDark = root.classList.toggle('dark');
+          try { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); } catch (_) {}
+        });
+      }
+    </script>
+  </body>
+</html>
