@@ -1,8 +1,6 @@
 ---
 status: "published"
-// sync-coffee/index.astro
 // Home page for Synchronize Coffee concept site
-
 import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
 ---
 
@@ -10,96 +8,202 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
   title="Synchronize Coffee - Community Coffee Roastery & Third Space"
   description="Synchronize Coffee — where the community gathers, artists display work, and everyone finds their rhythm."
 >
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-24 md:py-32 overflow-hidden">
-    <img src="/images/coffee/coffee_house_exterior.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 dark:opacity-15">
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-5xl md:text-6xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Find Your Rhythm</h1>
+  <!-- Rotating Hero -->
+  <section class="relative bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-24 md:py-32 overflow-hidden">
+    <!-- Slides container (images inserted by script) -->
+    <div id="hero-slides" class="absolute inset-0 z-0"></div>
+
+    <!-- Readability overlay -->
+    <div class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-white/0 via-white/0 to-white/0 dark:from-blue-950/40 dark:via-blue-950/30 dark:to-gray-950/40"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">
+        Find Your Rhythm
+      </h1>
       <p class="text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
         Synchronize Coffee is where community gathers. Good coffee fuels good conversation. Art adorns the walls. And everyone finds their place.
       </p>
-      <p class="text-base text-emerald-800 dark:text-emerald-400 mb-10">Your neighborhood third space</p>
-    </div>
-  </section>
-
-  <!-- Intro Section -->
-  <section class="py-20 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-4xl font-serif font-bold text-gray-900 dark:text-white mb-6">More Than Coffee</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-          Synchronize Coffee isn't just about the beans—though those are exceptional. It's a community gathering place where artists display work, musicians perform, cyclists meet, and conversations flow as freely as espresso.
-        </p>
-        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          Whether you're ordering single-origin bags, submitting art for our walls, booking a performance, or just needing a workspace, you belong here.
-        </p>
+      <p class="text-base text-blue-800 dark:text-blue-300 mb-10">Your neighborhood third space</p>
+      <div class="flex gap-4 justify-center">
+        <a href="/examples/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-8 py-3 font-semibold rounded-lg hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Order Coffee</a>
+        <a href="/examples/sync-coffee/about/" class="inline-block border border-blue-700 text-blue-700 px-8 py-3 font-semibold rounded-lg hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Our Story</a>
       </div>
     </div>
+
+    <!-- Controls: dots + play/pause -->
+    <div class="absolute z-30 bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
+      <div id="hero-dots" class="flex gap-2" aria-label="Hero image selector"></div>
+      <button id="hero-toggle" type="button" class="px-2 py-1 text-xs rounded-md bg-white/30 text-white ring-1 ring-white/40 hover:bg-white/40 dark:bg-blue-900/50 dark:hover:bg-blue-900/70">
+        Pause
+      </button>
+    </div>
   </section>
 
-  <!-- Featured Demo Flows -->
-  <section class="py-20 bg-stone-50 dark:bg-emerald-950">
+  <!-- Link Cards (Home hub) -->
+  <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-serif font-bold text-gray-900 dark:text-white mb-12 text-center">What You Can Do Here</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Bean Ordering -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Order Beans</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-            Discover our single-origin roasts and house blends. We ship fresh-roasted beans to your door, or grab a bag in the cafe.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- Order Beans -->
+        <article class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm">
+          <h3 class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2">Order Beans</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-5">
+            Discover our single-origin roasts and house blends. We ship fresh-roasted beans to your door, or grab a bag in the café.
           </p>
-          <a href="/sync-coffee/order/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
-            Order Now
-          </a>
-        </div>
+          <a href="/examples/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Order Now</a>
+        </article>
 
-        <!-- Art Submissions -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Show Your Art</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+        <!-- Show Your Art -->
+        <article class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm">
+          <h3 class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2">Show Your Art</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-5">
             Our walls are a rotating gallery. Local artists display work, find inspiration, and connect with community.
           </p>
-          <a href="/sync-coffee/submit-art/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
-            Submit Work
-          </a>
-        </div>
+          <a href="/examples/sync-coffee/submit-art/" class="inline-block border border-blue-700 text-blue-700 px-5 py-2.5 rounded-md font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Submit Work</a>
+        </article>
 
-        <!-- Music Booking -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Book a Performance</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+        <!-- Book a Performance -->
+        <article class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm">
+          <h3 class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2">Book a Performance</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-5">
             Host a live performance. Coffee, community, and music — a perfect trio. We host musicians, poets, and storytellers.
           </p>
-          <a href="/sync-coffee/perform/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
-            Schedule a Time
-          </a>
-        </div>
+          <a href="/examples/sync-coffee/perform/" class="inline-block border border-blue-700 text-blue-700 px-5 py-2.5 rounded-md font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Schedule a Time</a>
+        </article>
 
-        <!-- Room Reservation -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg border-l-4 border-emerald-700 dark:border-emerald-400">
-          <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3">Reserve a Space</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+        <!-- Reserve a Space -->
+        <article class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm">
+          <h3 class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2">Reserve a Space</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-5">
             Need a workspace? Host a small meeting? We have cozy corners, community tables, and bike parking out front.
           </p>
-          <a href="/sync-coffee/reserve/" class="inline-block bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-2 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg">
-            Reserve Now
-          </a>
-        </div>
+          <a href="/examples/sync-coffee/reserve/" class="inline-block bg-orange-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Reserve Now</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="py-20 bg-emerald-900 dark:bg-emerald-950 text-white text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-serif font-bold mb-6">Come Find Your Rhythm</h2>
-      <p class="text-lg text-stone-100 mb-10 leading-relaxed">
-        Stop by in person, order online, or reach out to learn more. We're here, we're connected, and we're always brewing something good.
+  <!-- Closing CTA -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">
+        Come Find Your Rhythm
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+        Stop by in person, order online, or reach out to learn more. We’re here, we’re connected, and we’re always brewing something good.
       </p>
-      <a href="/sync-coffee/contact/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold hover:bg-stone-50 transition rounded-lg">
+      <a href="/examples/sync-coffee/contact/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">
         Get in Touch
       </a>
     </div>
   </section>
+
+  <!-- Optional collage (remove this whole section later if you decide against it) -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200">From the Café</h2>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">Scenes, craft, and textures from Synchronize.</p>
+      </header>
+
+      <!-- Clean responsive grid: 1 / 2 / 3 columns -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="/images/coffee/coffee-steam.webp" alt="Blue ceramic mug with rising coffee steam on a wooden table" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="/images/coffee/coffee-ceramic-handmade-mug.webp" alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table" class="w-full h-full object-cover object-right">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="/images/coffee/square-golden.webp" alt="Ornate golden square pattern with red border on a dark background" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="/images/coffee/coffeeshop-interior.webp" alt="Coffee shop interior with bar, seating, plants, and tall windows" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="/images/coffee/beautiful_wood_table.webp" alt="" role="presentation" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="/images/coffee/blueswirl.webp" alt="Abstract blue and white fluid swirl pattern" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rotating hero script -->
+  <script is:inline>
+    // Slides to rotate through
+    const slideUrls = [
+      '/images/coffee/coffee_house_exterior.webp',
+      '/images/coffee/coffeeshop-interior.webp',
+      '/images/coffee/coffee-steam.webp',
+      '/images/coffee/blueswirl.webp'
+    ];
+
+    const container = document.getElementById('hero-slides');
+    const dots = document.getElementById('hero-dots');
+    const toggleBtn = document.getElementById('hero-toggle');
+
+    // Build slides and dots
+    const slides = slideUrls.map((src, idx) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.setAttribute('aria-hidden', 'true');
+      img.loading = idx === 0 ? 'eager' : 'lazy';
+      img.className = [
+        'absolute','inset-0','w-full','h-full','object-cover',
+        idx === 0 ? 'opacity-100' : 'opacity-0',
+        'transition-opacity','duration-700','ease-in-out'
+      ].join(' ');
+      container.appendChild(img);
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'h-2.5 w-2.5 rounded-full ' + (idx === 0 ? 'bg-white/80' : 'bg-white/40') + ' ring-1 ring-white/40';
+      dot.setAttribute('aria-label', 'Show hero image ' + (idx + 1));
+      dot.addEventListener('click', () => goTo(idx));
+      dots.appendChild(dot);
+
+      return img;
+    });
+
+    let current = 0;
+    let timer = null;
+    const intervalMs = 6000;
+
+    function show(i) {
+      slides[current].classList.replace('opacity-100','opacity-0');
+      dots.children[current].classList.replace('bg-white/80','bg-white/40');
+      current = i;
+      slides[current].classList.replace('opacity-0','opacity-100');
+      dots.children[current].classList.replace('bg-white/40','bg-white/80');
+    }
+
+    function next() { show((current + 1) % slides.length); }
+    function goTo(i) { show(i); if (isPlaying) restartTimer(); }
+
+    // Autoplay control with persistence; defaults to ON
+    const stored = localStorage.getItem('heroMotion');
+    let isPlaying = stored ? stored === 'on' : true; // default ON
+    function startTimer() { if (!timer) timer = setInterval(next, intervalMs); }
+    function stopTimer()  { if (timer) { clearInterval(timer); timer = null; } }
+    function restartTimer(){ stopTimer(); startTimer(); }
+
+    function updateButton() {
+      toggleBtn.textContent = isPlaying ? 'Pause' : 'Play';
+      toggleBtn.setAttribute('aria-pressed', isPlaying ? 'true' : 'false');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      localStorage.setItem('heroMotion', isPlaying ? 'on' : 'off');
+      updateButton();
+      if (isPlaying) startTimer(); else stopTimer();
+    });
+
+    // Initialize
+    updateButton();
+    if (isPlaying) startTimer();
+  </script>
 </SyncCoffeeLayout>

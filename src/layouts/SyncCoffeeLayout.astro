@@ -1,137 +1,129 @@
 ---
-// SyncCoffeeLayout.astro
-// Layout for Synchronize Coffee — warm, artsy, community-focused
-// Color scheme: warm greens, natural wood tones, clean minimal design inspired by NKORA
-// Handles page lifecycle states: draft, published, unpublished
-
-import "../styles/global.css";
-import Unpublished from "../components/Unpublished.astro";
-
-interface Props {
-  title?: string;
+export interface Props {
+  title: string;
   description?: string;
-  status?: "draft" | "published" | "unpublished";
 }
+import "../styles/global.css"; // Pulls in Tailwind and site styles
 
-const {
-  title = "Synchronize Coffee - Community Third Space",
-  description = "Synchronize Coffee — where community gathers, art is displayed, and good coffee fuels connection.",
-  status = "published",
-  ...rest
-} = Astro.props;
-
-// Handle page lifecycle
-const isUnpublished = status === "unpublished";
-
-// Show example banner only on /examples/* paths
-const isExample = Astro.url?.pathname?.startsWith("/examples/");
+const { title, description } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content={description} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --font-serif: 'Lora', serif;
-        --font-sans: 'Inter', sans-serif;
-        --color-sage: #6B8B6B;
-        --color-sage-dark: #4A5E4A;
-        --color-sage-light: #8FA88F;
-        --color-cream: #F7F5F1;
-        --color-wood: #8B7355;
-      }
-    </style>
+    {description && <meta name="description" content={description} />}
+    <meta name="theme-color" content="#0a3a6b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Set initial theme early to avoid flash -->
+    <script is:inline>
+      (function () {
+        try {
+          const saved = localStorage.getItem('theme');
+          if (
+            saved === 'dark' ||
+            (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          ) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="flex flex-col min-h-screen bg-white dark:bg-gray-950 dark:text-white" style="font-family: var(--font-sans)">
-    {isExample && (
-      <div role="note" class="bg-indigo-50 text-indigo-900 border-b border-indigo-200 px-4 py-2 text-sm text-center">
-        Example concept site (public showcase)
-      </div>
-    )}
+  <body class="min-h-screen bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100">
+    <!-- Skip link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-blue-700 focus:px-3 focus:py-2 focus:text-white">
+      Skip to content
+    </a>
 
-    <header class="bg-white dark:bg-gray-950 dark:border-gray-800 sticky top-0 z-50 border-b border-stone-100 dark:border-emerald-900">
+    <!-- Site Header -->
+    <header class="bg-white dark:bg-gray-950 sticky top-0 z-50 border-b border-stone-100 dark:border-blue-900">
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div class="flex items-center gap-4">
-          <a href="/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition">ImagineThis.Site</a>
+          <a href="/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-300 transition">ImagineThis.Site</a>
           <span class="text-gray-300 dark:text-gray-600">/</span>
-          <a href="/examples/sync-coffee/" class="text-2xl font-serif font-bold text-emerald-700 dark:text-emerald-400">Synchronize Coffee</a>
+          <a href="/examples/sync-coffee/" class="text-2xl font-serif font-bold text-blue-700 dark:text-blue-300">
+            Synchronize Coffee
+          </a>
         </div>
-        <div class="flex items-center gap-6">
+
+        <div class="flex items-center gap-3">
           <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 items-center">
-            <li><a href="/examples/sync-coffee/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Home</a></li>
-            <li><a href="/examples/sync-coffee/menu/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Menu</a></li>
-            <li><a href="/examples/sync-coffee/about/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">About</a></li>
-            <li><a href="/examples/sync-coffee/contact/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition font-medium">Contact</a></li>
+            <li><a href="/examples/sync-coffee/" class="hover:text-blue-800 dark:hover:text-blue-200 transition font-medium">Home</a></li>
+            <li><a href="/examples/sync-coffee/menu/" class="hover:text-blue-800 dark:hover:text-blue-200 transition font-medium">Menu</a></li>
+            <li><a href="/examples/sync-coffee/about/" class="hover:text-blue-800 dark:hover:text-blue-200 transition font-medium">About</a></li>
+            <li><a href="/examples/sync-coffee/contact/" class="hover:text-blue-800 dark:hover:text-blue-200 transition font-medium">Contact</a></li>
           </ul>
-          <button id="theme-toggle" type="button" class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition" aria-label="Toggle dark mode">
-            <svg id="sun-icon" class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
-            <svg id="moon-icon" class="w-5 h-5 block dark:hidden text-gray-700" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+
+          <!-- Global Dark/Light toggle -->
+          <button
+            id="theme-toggle"
+            type="button"
+            class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <!-- Sun (shows in dark mode) -->
+            <svg class="w-5 h-5 hidden dark:block text-amber-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0L17.95 7.05M7.05 16.95l-1.414 1.414M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
+            </svg>
+            <!-- Moon (shows in light mode) -->
+            <svg class="w-5 h-5 block dark:hidden text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+            </svg>
           </button>
         </div>
       </nav>
     </header>
 
-    {isUnpublished ? (
-      <Unpublished />
-    ) : (
-      <>
-        <main class="flex-grow">
-          <slot />
-        </main>
+    <!-- Page Content -->
+    <main id="main">
+      <slot />
+    </main>
 
-        <footer class="bg-emerald-900 dark:bg-emerald-950 text-white py-12 mt-16">
-          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <h3 class="font-serif text-lg font-bold mb-4">Synchronize Coffee</h3>
-                <p class="text-stone-100 text-sm">A community third space where art, coffee, and connection flourish.</p>
-              </div>
-              <div>
-                <h4 class="font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm text-stone-100">
-                  <li><a href="/examples/sync-coffee/" class="hover:text-white transition">Home</a></li>
-                  <li><a href="/examples/sync-coffee/menu/" class="hover:text-white transition">Menu</a></li>
-                  <li><a href="/examples/sync-coffee/about/" class="hover:text-white transition">About</a></li>
-                  <li><a href="/examples/sync-coffee/contact/" class="hover:text-white transition">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-semibold mb-4">Follow</h4>
-                <ul class="space-y-2 text-sm text-stone-100">
-                  <li><a href="#" class="hover:text-white transition">Instagram</a></li>
-                  <li><a href="#" class="hover:text-white transition">Twitter</a></li>
-                  <li><a href="#" class="hover:text-white transition">Facebook</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="border-t border-emerald-800 pt-8 text-center text-sm text-stone-200">
-              <p>Concept demo by <a href="/" class="underline hover:text-white transition">ImagineThis.Site</a> — not a real website</p>
-            </div>
+    <!-- Site Footer -->
+    <footer class="bg-blue-900 dark:bg-blue-950 text-white py-12 mt-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-serif text-lg font-bold mb-4">Synchronize Coffee</h3>
+            <p class="text-stone-100/90 text-sm">A community third space where art, coffee, and connection flourish.</p>
           </div>
-        </footer>
-      </>
-    )}
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm text-stone-100/90">
+              <li><a href="/examples/sync-coffee/" class="hover:text-amber-300 transition">Home</a></li>
+              <li><a href="/examples/sync-coffee/menu/" class="hover:text-amber-300 transition">Menu</a></li>
+              <li><a href="/examples/sync-coffee/about/" class="hover:text-amber-300 transition">About</a></li>
+              <li><a href="/examples/sync-coffee/contact/" class="hover:text-amber-300 transition">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Follow</h4>
+            <ul class="space-y-2 text-sm text-stone-100/90">
+              <li><a href="#" class="hover:text-orange-300 transition">Instagram</a></li>
+              <li><a href="#" class="hover:text-orange-300 transition">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-xs text-stone-200/70">© Synchronize Coffee</p>
+      </div>
+    </footer>
 
+    <!-- Toggle logic: persists globally via localStorage('theme') -->
     <script is:inline>
-      const toggle = document.getElementById('theme-toggle');
-      if (toggle) {
-        toggle.addEventListener('click', () => {
-          document.documentElement.classList.toggle('dark');
-          localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      (function () {
+        const btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          const root = document.documentElement;
+          const next = root.classList.toggle('dark') ? 'dark' : 'light';
+          try { localStorage.setItem('theme', next); } catch (e) {}
         });
-      }
-      if (
-        localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark');
-      }
+      })();
     </script>
   </body>
 </html>

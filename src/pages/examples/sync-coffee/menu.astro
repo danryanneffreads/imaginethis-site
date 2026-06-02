@@ -1,8 +1,6 @@
 ---
 status: "published"
-// sync-coffee/menu.astro
 // Menu page for Synchronize Coffee
-
 import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
 ---
 
@@ -11,110 +9,127 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
   description="Discover our coffee, food, and drink offerings — thoughtfully curated for our community."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
+  <section class="bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Menu</h1>
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Menu</h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">Everything we serve is thoughtfully selected and prepared.</p>
     </div>
   </section>
 
-  <!-- Coffee Section -->
-  <section class="py-16 bg-white dark:bg-gray-950">
+  <!-- Coffee & Espresso -->
+  <section class="py-14 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12">Coffee</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Espresso Shots</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Single | Double | Triple</p>
-          <p class="text-gray-700 dark:text-gray-300">Our signature house blend — bright, balanced, with notes of chocolate and citrus.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Single-Origin Pour Over</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Rotating selection</p>
-          <p class="text-gray-700 dark:text-gray-300">Experience the terroir. Each month we feature a different origin and share the story of the grower.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Lattes & Cappuccinos</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">With oat, almond, or dairy milk</p>
-          <p class="text-gray-700 dark:text-gray-300">Silky microfoam and espresso in perfect harmony. A comfort drink done right.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Cold Brew</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Year-round favorite</p>
-          <p class="text-gray-700 dark:text-gray-300">Smooth, less acidic, perfect for any season. Try it over ice or with a splash of cream.</p>
-        </div>
+      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Coffee & Espresso</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Espresso</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Balanced, syrupy, notes of cocoa and stone fruit.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Cappuccino</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Classic 6 oz with silky microfoam.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Latte</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">12 oz; add house syrups: vanilla, caramel, seasonal.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Drip Coffee</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Fresh-brewed, rotating single origin or house blend.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Pour-Over</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Made to order for clarity and nuance.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Cold Brew</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Slow-steeped, smooth, naturally sweet.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Food Section -->
-  <section class="py-16 bg-stone-50 dark:bg-emerald-950 relative overflow-hidden">
-    <img src="/coffee/beautiful_wood_table.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-10 dark:opacity-5">
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12">Food</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Pastries & Baked Goods</h3>
-          <p class="text-gray-700 dark:text-gray-300">Croissants, scones, muffins, and sourdough bread — baked fresh each morning by our in-house baker.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Breakfast Sandwiches</h3>
-          <p class="text-gray-700 dark:text-gray-300">Egg, cheese, and your choice of locally sourced meats or vegetables on fresh bread.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Lunch Options</h3>
-          <p class="text-gray-700 dark:text-gray-300">Salads, grain bowls, and sandwiches prepared with seasonal ingredients from local farmers.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Sweets & Treats</h3>
-          <p class="text-gray-700 dark:text-gray-300">Cookies, brownies, chocolate confections, and seasonal desserts to pair with your coffee.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Other Drinks Section -->
-  <section class="py-16 bg-white dark:bg-gray-950">
+  <!-- Seasonal Features (uses your images) -->
+  <section class="py-14 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-12">Other Drinks</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Tea Selection</h3>
-          <p class="text-gray-700 dark:text-gray-300">Loose-leaf teas sourced from small growers around the world.</p>
-        </div>
+      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Seasonal Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Image card: coffee-steam -->
+        <article class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/coffee/coffee-steam.webp" alt="Blue ceramic mug with rising coffee steam on a wooden table" class="w-full h-full object-cover">
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Morning Blend — Seasonal Roast</h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">Comforting and bright — great black or with milk.</p>
+            <a href="/examples/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Order Beans</a>
+          </div>
+        </article>
 
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Hot Chocolate</h3>
-          <p class="text-gray-700 dark:text-gray-300">Rich, made with real chocolate and your choice of milk.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-700 dark:border-emerald-400 pl-6">
-          <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-2">Fresh Juices</h3>
-          <p class="text-gray-700 dark:text-gray-300">Seasonal fresh-pressed juices and smoothies.</p>
-        </div>
+        <!-- Patterned tile: square-golden -->
+        <article class="relative rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800">
+          <div class="aspect-[4/3] relative">
+            <img src="/images/coffee/square-golden.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-45">
+            <div class="absolute inset-0 bg-amber-200/10 dark:bg-blue-900/25"></div>
+            <div class="absolute inset-0 flex items-end p-5">
+              <div class="bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm rounded-lg p-4">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Limited Release: Golden Spice Latte</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1 mb-3">House-made turmeric syrup, espresso, and steamed milk.</p>
+                <a href="/examples/sync-coffee/order/" class="inline-block border border-blue-700 text-blue-700 px-4 py-2 rounded-md font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">See Options</a>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Bean Store Section -->
-  <section class="py-16 bg-emerald-900 dark:bg-emerald-950 text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-serif font-bold mb-6">Buy Our Beans</h2>
-      <p class="text-lg text-stone-100 mb-8 max-w-2xl mx-auto">
-        Love what you taste? Take home our single-origin roasts and house blend. Available in 12 oz, 1 lb, and subscription options.
-      </p>
-      <a href="/sync-coffee/order/" class="inline-block bg-white text-emerald-900 px-8 py-3 font-semibold hover:bg-stone-50 transition rounded-lg">
-        Order Now
-      </a>
+  <!-- Pastries & Small Bites -->
+  <section class="py-14 bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Pastries & Small Bites</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Croissant</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Flaky, buttery, baked fresh daily.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Banana Bread</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">Moist and nutty with a hint of cinnamon.</p>
+        </article>
+        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Granola Yogurt Bowl</h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">House granola, Greek yogurt, honey drizzle.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merchandise (uses handmade mug image) -->
+  <section class="py-14 bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Merchandise</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/coffee/coffee-ceramic-handmade-mug.webp" alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table" class="w-full h-full object-cover object-right">
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Handmade Ceramic Mug</h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">Wheel-thrown, dishwasher safe, 12 oz.</p>
+            <a href="/examples/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Shop Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order CTA -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Order Beans Online</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Fresh-roasted, ethically sourced coffee delivered to your door.</p>
+      <a href="/examples/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Start an Order</a>
     </div>
   </section>
 </SyncCoffeeLayout>

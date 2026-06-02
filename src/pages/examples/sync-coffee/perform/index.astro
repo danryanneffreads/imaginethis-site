@@ -1,8 +1,6 @@
 ---
 status: "published"
-// sync-coffee/perform/index.astro
-// Music performance booking form
-
+// Perform booking page for Synchronize Coffee
 import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
 ---
 
@@ -10,125 +8,172 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
   title="Book a Performance - Synchronize Coffee"
   description="Schedule a live performance at Synchronize Coffee."
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-b from-stone-50 dark:from-emerald-950 to-white dark:to-gray-950 py-16 md:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-emerald-900 dark:text-emerald-300 mb-6">Book a Performance</h1>
+  <!-- Hero (warm wood texture) -->
+  <section class="relative bg-white dark:bg-gray-950 overflow-hidden py-16 md:py-24">
+    <div class="absolute inset-0 z-0">
+      <img src="/images/coffee/beautiful_wood_table.webp" alt="" role="presentation" class="w-full h-full object-cover opacity-25 dark:opacity-35">
+      <div class="absolute inset-0 bg-amber-200/10 dark:bg-blue-900/20"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Book a Performance</h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">Live music, poetry, storytelling — whatever moves people.</p>
     </div>
   </section>
 
-  <!-- Form Section -->
-  <section class="py-20 bg-white dark:bg-gray-950">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
-        We host live music, poetry readings, storytelling, and other performances. Our cafe provides an intimate setting where artists connect with community members who care about creativity. Submit your details below and our events team will get back to you within 48 hours to discuss availability and logistics.
-      </p>
+  <!-- Booking form -->
+  <section class="py-16 bg-white dark:bg-gray-950" id="booking">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6 text-center">Request a Date</h2>
 
-      <form class="space-y-6 bg-stone-50 dark:bg-emerald-950 p-8 rounded-lg" onsubmit="handlePerformanceSubmit(event)">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 rounded-r-md mb-6">
+        <p class="text-amber-800 dark:text-amber-200 text-sm">
+          <strong>Concept Demo:</strong> This is a concept site for demonstration. No real booking will be made.
+        </p>
+      </div>
+
+      <form action="#" method="post" class="grid grid-cols-1 gap-5">
+        <!-- Performer / contact -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="performer-name" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Performer/Band Name *</label>
-            <input 
-              type="text" 
-              id="performer-name" 
-              name="performer-name"
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-              required
-            />
+            <label for="actName" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Performer/Act Name</label>
+            <input id="actName" name="actName" type="text" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
           </div>
-
           <div>
-            <label for="email" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Contact Email *</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email"
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-              required
-            />
+            <label for="contactName" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Contact Name</label>
+            <input id="contactName" name="contactName" type="text" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="genre" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Genre/Style *</label>
-            <input 
-              type="text" 
-              id="genre" 
-              name="genre"
-              placeholder="e.g., Indie folk, Jazz, Poetry, Spoken word"
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-              required
-            />
+            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Email</label>
+            <input id="email" name="email" type="email" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
           </div>
-
           <div>
-            <label for="duration" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Expected Duration *</label>
-            <input 
-              type="text" 
-              id="duration" 
-              name="duration"
-              placeholder="e.g., 1 hour, 45 minutes"
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-              required
-            />
+            <label for="phone" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Phone</label>
+            <input id="phone" name="phone" type="tel" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+          </div>
+        </div>
+
+        <!-- Basics -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label for="date" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Preferred Date</label>
+            <input id="date" name="date" type="date" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+          </div>
+          <div>
+            <label for="time" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Start Time</label>
+            <input id="time" name="time" type="time" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+          </div>
+          <div>
+            <label for="length" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Set Length</label>
+            <select id="length" name="length" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400">
+              <option>30 minutes</option>
+              <option>45 minutes</option>
+              <option>60 minutes</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Act details -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="type" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Act Type</label>
+            <select id="type" name="type" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400">
+              <option>Music</option>
+              <option>Poetry</option>
+              <option>Storytelling</option>
+              <option>Comedy</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="size" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Performers (count)</label>
+            <input id="size" name="size" type="number" min="1" value="1" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+          </div>
+        </div>
+
+        <!-- Equipment & links -->
+        <fieldset class="border border-stone-200 dark:border-stone-800 rounded-md p-4">
+          <legend class="px-2 text-sm font-medium text-gray-800 dark:text-gray-200">Equipment Needed</legend>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3 text-sm text-gray-800 dark:text-gray-200">
+            <label class="inline-flex items-center gap-2"><input type="checkbox" name="gear" value="PA" class="accent-blue-700">PA</label>
+            <label class="inline-flex items-center gap-2"><input type="checkbox" name="gear" value="Mic" class="accent-blue-700">Mic</label>
+            <label class="inline-flex items-center gap-2"><input type="checkbox" name="gear" value="DI" class="accent-blue-700">DI</label>
+            <label class="inline-flex items-center gap-2"><input type="checkbox" name="gear" value="Power" class="accent-blue-700">Power</label>
+          </div>
+        </fieldset>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="links" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Sample Links</label>
+            <input id="links" name="links" type="url" placeholder="Website, video, or audio" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+          </div>
+          <div>
+            <label for="social" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Social Handle</label>
+            <input id="social" name="social" type="text" placeholder="@yourhandle" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
           </div>
         </div>
 
         <div>
-          <label for="available-dates" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Available Dates *</label>
-          <input 
-            type="text" 
-            id="available-dates" 
-            name="available-dates"
-            placeholder="e.g., Weekends in June, Specific dates"
-            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-            required
-          />
+          <label for="notes" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Notes</label>
+          <textarea id="notes" name="notes" rows="4" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" placeholder="Anything else we should know?"></textarea>
         </div>
 
-        <div>
-          <label for="description" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">About Your Work</label>
-          <textarea 
-            id="description" 
-            name="description"
-            rows="4"
-            placeholder="Tell us about your music, your style, and what you'd bring to Synchronize Coffee."
-            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-          ></textarea>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="comp" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Compensation Preference</label>
+            <select id="comp" name="comp" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400">
+              <option>Tip Jar</option>
+              <option>Guarantee</option>
+              <option>Merch Table</option>
+              <option>Open to discuss</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-2 pt-6">
+            <input id="agree" name="agree" type="checkbox" required class="accent-blue-700">
+            <label for="agree" class="text-sm text-gray-700 dark:text-gray-300">I agree to follow venue volume and space guidelines.</label>
+          </div>
         </div>
 
-        <div>
-          <label for="samples-link" class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">Link to Samples (optional)</label>
-          <input 
-            type="url" 
-            id="samples-link" 
-            name="samples-link"
-            placeholder="Bandcamp, SoundCloud, YouTube, etc."
-            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded focus:outline-none focus:border-stone-500 dark:focus:border-emerald-400 transition"
-          />
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-gray-600 dark:text-gray-400">We’ll review and reply within one business day.</p>
+          <button type="submit" class="bg-orange-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">
+            Submit Request
+          </button>
         </div>
-
-        <button 
-          type="submit"
-          class="w-full bg-emerald-700 dark:bg-emerald-600 text-white px-6 py-4 font-semibold hover:bg-emerald-800 dark:hover:bg-emerald-700 transition rounded-lg"
-        >
-          Submit Performance Request
-        </button>
       </form>
-
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-6 text-center">
-        This is a demo. Your information won't be collected.
-      </p>
     </div>
   </section>
 
-  <script>
-    function handlePerformanceSubmit(e) {
-      e.preventDefault();
-      window.location.href = '/sync-coffee/perform/confirmed/';
-      return false;
-    }
-  </script>
+  <!-- Stage info -->
+  <section class="py-12 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">Equipment</h3>
+        <p class="text-gray-700 dark:text-gray-300">Compact PA, 2 mics, 1 DI, basic cables and power.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">Sets</h3>
+        <p class="text-gray-700 dark:text-gray-300">Typical sets are 45–60 minutes. Two sets by request.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">Audience</h3>
+        <p class="text-gray-700 dark:text-gray-300">Cozy space, great for intimate shows and community events.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA row -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Looking for a different setup?</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Tell us what you’re planning — we’ll see what’s possible.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="/examples/sync-coffee/reserve/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Reserve a Space</a>
+        <a href="/examples/sync-coffee/contact/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Contact Us</a>
+      </div>
+    </div>
+  </section>
 </SyncCoffeeLayout>
