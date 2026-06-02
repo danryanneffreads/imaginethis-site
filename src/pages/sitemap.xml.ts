@@ -3,8 +3,8 @@ export const prerender = true;
 // Public routes to include in the sitemap
 const routes = [
   "/",                                   // Home
-  "/examples/sync-coffee/",              // Synchronize Coffee (now under /examples)
-  "/examples/human-ai-systems-summit/",  // Summit example
+  "/concept/sync-coffee/",              // Synchronize Coffee (now under /examples)
+  "/concept/human-ai-systems-summit/",  // Summit example
   "/web-builders",                       // Web Builders Guide
 ];
 

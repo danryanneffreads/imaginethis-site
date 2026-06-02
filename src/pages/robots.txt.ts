@@ -6,7 +6,7 @@ const body =
 "User-agent: *\n" +
 "Allow: /\n" +
 "Disallow: /preview/\n" +
-"Disallow: /demos/\n" +
+"Disallow: /preview/\n" +
 "Sitemap: " + origin + "/sitemap.xml";
 return new Response(body, {
 headers: { "Content-Type": "text/plain; charset=utf-8" },
