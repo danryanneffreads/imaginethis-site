@@ -1,22 +1,35 @@
 ---
-status: "published"
-
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Card from "../components/Card.astro";
 import CTASection from "../components/CTASection.astro";
 
+// Examples to display on the homepage grid.
+// Titles are clickable and each card shows an image.
 const examples = [
   {
     title: "Synchronize Coffee",
-    description: "A warm, community-focused coffee shop concept with clear events and simple paths to visit and engage.",
-    link: "/examples/sync-coffee/"
+    description:
+      "A warm, community‑focused coffee shop concept with clear events and simple paths to visit and engage.",
+    link: "/examples/sync-coffee/",
+    imageSrc: "/images/health/coffee_house_exterior.webp",
+    imageAlt: "Breakfast bowl and coffee in warm morning light",
   },
   {
     title: "AI & Human Systems Summit",
-    description: "A premium one-page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
-    link: "/examples/human-ai-systems-summit/"
-  }
+    description:
+      "A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
+    link: "/examples/human-ai-systems-summit/",
+    imageSrc: "/images/atrium-human-ai-summit.webp",
+    imageAlt: "Abstract cloudy earth graphic",
+  },
+  {
+    title: "Human Rhythm Health",
+    description:
+      "Programs, studio, and habits aligned to your biology—sleep, movement, meals, and light.",
+    link: "/examples/human-rhythm-health/",
+    imageSrc: "/images/health/bicycling-person-trees.webp",
+    imageAlt: "Cyclist under tree canopy in warm afternoon light",
+  },
 ];
 ---
 
@@ -35,9 +48,25 @@ const examples = [
   <section id="examples" class="py-16 bg-stone-50 dark:bg-gray-900">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Examples</h2>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {examples.map((ex) => (
-          <Card title={ex.title} description={ex.description} link={ex.link} />
+          <article class="group rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden hover:shadow-sm transition flex flex-col">
+            {ex.imageSrc && (
+              <a href={ex.link} aria-label={`${ex.title} — open`}>
+                <img src={ex.imageSrc} alt={ex.imageAlt} class="w-full h-44 object-cover" loading="lazy" />
+              </a>
+            )}
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href={ex.link} class="hover:underline">{ex.title}</a>
+              </h3>
+              {ex.description && <p class="mt-2 text-gray-700 dark:text-gray-300 flex-1">{ex.description}</p>}
+              <div class="mt-3">
+                <a href={ex.link} class="text-emerald-700 dark:text-emerald-400 hover:underline font-medium">Learn more</a>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
     </div>
