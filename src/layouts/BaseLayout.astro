@@ -1,42 +1,54 @@
 ---
-import Header from "../components/Header.astro";
-import Unpublished from "../components/Unpublished.astro";
-import "../styles/global.css";
+// src/layouts/BaseLayout.astro
+import Header from '../components/Header.astro';
+import Unpublished from '../components/Unpublished.astro';
+import Head from '../components/Head.astro';
+import '../styles/global.css';
 
 interface Props {
   title?: string;
-  status?: "draft" | "published" | "unpublished";
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  status?: 'draft' | 'published' | 'unpublished';
 }
 
 const {
-  title = "ImagineThis.Site",
-  status = "published",
+  title = 'ImagineThis.Site',
+  description,
+  image,
+  noindex = false,
+  status = 'published',
   ...rest
 } = Astro.props;
 
-// Handle page lifecycle
-const isUnpublished = status === "unpublished";
+const isUnpublished = status === 'unpublished';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <!-- Centralized head (icons, OG/Twitter, canonical, etc.) -->
+    <Head
+      {title}
+      {description}
+      image={image}
+      status={status}
+      noindex={noindex}
+    />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
 
   <body>
-    {isUnpublished ? (
-      <Unpublished />
-    ) : (
-      <>
-        <Header />
-        <slot />
-      </>
-    )}
+    {
+      isUnpublished ? (
+        <Unpublished />
+      ) : (
+        <>
+          <Header />
+          <slot />
+        </>
+      )
+    }
   </body>
 </html>

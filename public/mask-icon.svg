@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>ImagineThis.Site Mask Icon</title>
+  <g fill="#000">
+    <rect x="78" y="88" width="22" height="88" rx="11"></rect>
+    <circle cx="89" cy="72" r="10"></circle>
+    <rect x="122" y="72" width="22" height="104" rx="11"></rect>
+    <rect x="110" y="104" width="70" height="22" rx="11"></rect>
+  </g>
+</svg>
