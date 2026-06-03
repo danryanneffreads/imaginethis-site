@@ -11,7 +11,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler pages deploy dist",
-    "astro": "astro"
+    "astro": "astro",
+
+    "clean": "node -e \"try{require('fs').rmSync('.astro',{recursive:true,force:true});require('fs').rmSync('dist',{recursive:true,force:true});}catch(e){}\"",
+    "clean-install": "node -e \"try{require('fs').rmSync('node_modules',{recursive:true,force:true});require('fs').rmSync('.astro',{recursive:true,force:true});}catch(e){}\" && npm ci",
+
+    "kill-locks:win": "cmd /c \"for %p in (node.exe esbuild.exe vite.exe astro.exe) do taskkill /F /IM %p 2>nul\"",
+    "clean-install:win": "npm run kill-locks:win && npm run clean-install"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
