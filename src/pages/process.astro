@@ -1,0 +1,107 @@
+---
+// src/pages/process.astro
+status: 'published';
+import Layout from '../layouts/Layout.astro';
+
+const title = 'How Drafts & Prototypes Work';
+const description =
+  'A calm, private way to iterate on real client work — unlisted links, clear review steps, and practical constraints.';
+---
+
+<Layout title={title} description={description}>
+  <!-- Intro -->
+  <section
+    class="bg-gradient-to-b from-stone-50 dark:from-gray-900 to-white dark:to-gray-950 py-20 md:py-24"
+  >
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1
+        class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6"
+      >
+        How Drafts & Prototypes Work
+      </h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+        Drafts are shared privately so decisions stay focused and calm. We work
+        in small steps, review together, and move forward when it’s clear.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key principles -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+        <h2
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+        >
+          Private by default
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          Draft links are unlisted and not indexed. They’re shared only with the
+          people doing the work.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+        <h2
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+        >
+          Small, clear steps
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          Each iteration has a narrow goal — structure, language, or flow. We
+          review what matters and move on.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+        <h2
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+        >
+          Operationally grounded
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          Prototypes reflect how you actually serve people. Simple patterns,
+          calm defaults, and lightweight tech.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+        <h2
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+        >
+          What you’ll see
+        </h2>
+        <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+          <li>Clear structure and pacing</li>
+          <li>Plain-language copy</li>
+          <li>Functional, realistic layouts</li>
+        </ul>
+      </div>
+
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+        <h2
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+        >
+          Next steps
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-2">
+          If you want to work together, the best starting point is a focused
+          session.
+        </p>
+        <a
+          href="https://danryanneff.com/work-with-me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block text-sm font-semibold underline underline-offset-2 text-gray-900 dark:text-white hover:no-underline"
+        >
+          Book a session at danryanneff.com
+        </a>
+      </div>
+
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        Note: Public “concept sites” on this domain demonstrate possibilities;
+        live client drafts remain private.
+      </p>
+    </div>
+  </section>
+</Layout>

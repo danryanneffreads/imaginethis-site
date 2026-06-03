@@ -1,41 +1,122 @@
 ---
+// src/components/Header.astro
+
 const nav = [
-  { href: "/", label: "Home" },
-  { href: "/#concept", label: "Concept" },
-  { href: "/web-builders", label: "Web Builders Guide" },
-  { href: "mailto:danryanneff@gmail.com", label: "Contact" }
+  { href: '/#concepts', label: 'Concepts' },
+  { href: '/web-builders', label: 'Guides' },
+  { href: '/process', label: 'Process' },
 ];
 
-const pathname = Astro.url?.pathname ?? "/";
+const pathname = Astro.url?.pathname ?? '/';
 const isActive = (href: string) => {
-  if (href === "/") return pathname === "/";
-  if (href.startsWith("/#")) return false;
-  return pathname.startsWith(href);
+  // Treat hash anchors as non-route for "active" state
+  if (href.startsWith('/#')) return false;
+  return pathname === href || pathname.startsWith(href + '/');
 };
 ---
 
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200 dark:bg-gray-950/70 dark:border-gray-800">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-    <a href="/" class="font-semibold tracking-tight text-gray-900 dark:text-white">ImagineThis.Site</a>
-    <nav class="flex items-center gap-4 sm:gap-6 text-sm" aria-label="Main">
-      {nav.map((item) => (
-        <a
-          href={item.href}
-          class={`hover:text-gray-900 dark:hover:text-white ${
-            isActive(item.href) ? "text-gray-900 dark:text-white" : "text-gray-700 dark:text-gray-300"
-          }`}
-          aria-current={isActive(item.href) ? "page" : undefined}
-        >
-          {item.label}
-        </a>
-      ))}
-      <!-- Dark mode toggle -->
-      <button id="theme-toggle" type="button" class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition" aria-label="Toggle dark mode">
-        <!-- Sun (shows in dark mode) -->
-        <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414z" clip-rule="evenodd"/></svg>
-        <!-- Moon (shows in light mode) -->
-        <svg class="w-5 h-5 block dark:hidden text-gray-700" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
-      </button>
+<header
+  class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200 dark:bg-gray-950/70 dark:border-gray-800"
+>
+  <div
+    class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between"
+  >
+    <!-- Site name links to home -->
+    <a
+      href="/"
+      class="font-semibold tracking-tight text-gray-900 dark:text-white"
+      >ImagineThis.Site</a
+    >
+
+    <!-- Primary nav -->
+    <nav
+      class="hidden sm:flex items-center gap-4 sm:gap-6 text-sm"
+      aria-label="Main"
+    >
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class={`hover:text-gray-900 dark:hover:text-white ${
+              isActive(item.href)
+                ? 'text-gray-900 dark:text-white'
+                : 'text-gray-700 dark:text-gray-300'
+            }`}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </nav>
+
+    <!-- Right-side controls (theme toggle) -->
+    <div class="flex items-center gap-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition"
+        aria-label="Toggle dark mode"
+      >
+        <!-- Sun (shows in dark mode) -->
+        <svg
+          class="hidden dark:block h-5 w-5 text-yellow-400"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M12 3v2m0 14v2m7.071-13.071-1.414 1.414M6.343 17.657l-1.414 1.414M21 12h-2M5 12H3m13.657 6.657-1.414-1.414M7.757 7.757 6.343 6.343M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"
+          ></path>
+        </svg>
+        <!-- Moon (shows in light mode) -->
+        <svg
+          class="block dark:hidden h-5 w-5 text-gray-700 dark:text-gray-300"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"></path>
+        </svg>
+      </button>
+    </div>
   </div>
+
+  <!-- Optional: mobile nav could be added here later if needed -->
 </header>
+
+<!-- Theme toggle behavior -->
+<script>
+  (function () {
+    const storageKey = 'theme';
+    const root = document.documentElement;
+
+    // Initialize theme from localStorage or prefers-color-scheme
+    const stored = localStorage.getItem(storageKey);
+    if (
+      stored === 'dark' ||
+      (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      root.classList.add('dark');
+    }
+
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const isDark = root.classList.toggle('dark');
+      localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+    });
+  })();
+</script>

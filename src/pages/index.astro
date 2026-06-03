@@ -1,77 +1,253 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import CTASection from "../components/CTASection.astro";
+// src/pages/index.astro
+status: 'published';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import CTASection from '../components/CTASection.astro';
 
-// Examples to display on the homepage grid.
-// Titles are clickable and each card shows an image.
-const examples = [
+// Page meta
+const title = 'ImagineThis.Site — Websites Built on How You Serve';
+const description =
+  'A calm, structured studio for concept sites, private client drafts, and clear resources on modern web building.';
+
+// Concept cards (equal emphasis, with images)
+const concepts = [
   {
-    title: "Synchronize Coffee",
+    title: 'Synchronize Coffee',
     description:
-      "A warm, community‑focused coffee shop concept with clear events and simple paths to visit and engage.",
-    link: "/concept/sync-coffee/",
-    imageSrc: "/images/coffee/coffee_house_exterior.webp",
-    imageAlt: "Coffee house exterior with people talking and parked bicycles",
+      'A neighborhood coffee roastery and third space. Warm, community-forward structure and flows.',
+    link: '/concept/sync-coffee/',
+    image: '/images/coffee/coffee-steam.webp',
   },
   {
-    title: "AI & Human Systems Summit",
+    title: 'Human Rhythm Health',
     description:
-      "A premium one‑page event site with themes, program, timeline, pricing, partners, and a confident CTA rhythm.",
-    link: "/concept/human-ai-systems-summit/",
-    imageSrc: "/images/summit/atrium-human-ai-summit.webp",
-    imageAlt: "Futuristic atrium with people gathered",
+      'A health studio pattern—clear programs, scheduling, and a gentle design system.',
+    link: '/concept/human-rhythm-health/',
+    image: '/images/health/bicycling-person-trees.webp',
   },
   {
-    title: "Human Rhythm Health",
+    title: 'Human + AI Systems Summit',
     description:
-      "Programs, studio, and habits aligned to your biology—sleep, movement, meals, and light.",
-    link: "/concept/human-rhythm-health/",
-    imageSrc: "/images/health/bicycling-person-trees.webp",
-    imageAlt: "Cyclist under tree canopy in warm afternoon light",
+      'An event site pattern for programs, speakers, and schedules. Clear information hierarchy.',
+    link: '/concept/human-ai-systems-summit/',
+    image: '/images/summit/atrium-human-ai-summit.webp',
   },
 ];
 ---
 
-<Layout
-  title="ImagineThis.Site - Websites Built on How You Serve"
-  description="Design, prototype, and ship concept sites that reflect how you actually serve people — so the website works with your operations, not against them."
->
+<Layout title={title} description={description}>
+  <!-- Hero (restored copy) -->
   <Hero
     title="Make your website reflect how you actually serve people."
     subtitle="When a site matches your real operations, everything gets easier — customers understand you faster, trust you sooner, and know the next step. That's the point."
     smallText="Over 20 years I've coordinated teams, improved operations, and built systems. The website is part of that system."
-    cta_text="See Examples"
-    cta_link="#examples"
   />
 
-  <section id="concept" class="py-16 bg-stone-50 dark:bg-gray-900">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Examples</h2>
+  <!-- Section A: How this site works -->
+  <section
+    class="bg-gradient-to-b from-stone-50 dark:from-gray-900 to-white dark:to-gray-950 py-24 md:py-28"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p
+        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
+      >
+        A working space for building websites
+      </p>
+      <h2
+        class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-5"
+      >
+        Part portfolio. Part workshop. Part guide.
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+        ImagineThis.Site is where I design concept sites, draft real client
+        work, and share clear notes on modern web tools. It’s an active studio
+        space, not a static brochure.
+      </p>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {examples.map((ex) => (
-          <article class="group rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden hover:shadow-sm transition flex flex-col">
-            {ex.imageSrc && (
-              <a href={ex.link} aria-label={`${ex.title} — open`}>
-                <img src={ex.imageSrc} alt={ex.imageAlt} class="w-full h-44 object-cover" loading="lazy" />
-              </a>
-            )}
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                <a href={ex.link} class="hover:underline">{ex.title}</a>
-              </h3>
-              {ex.description && <p class="mt-2 text-gray-700 dark:text-gray-300 flex-1">{ex.description}</p>}
-              <div class="mt-3">
-                <a href={ex.link} class="text-emerald-700 dark:text-emerald-400 hover:underline font-medium">Learn more</a>
-              </div>
-            </div>
-          </article>
-        ))}
+  <!-- Section B: The three roles -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Concept sites -->
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3
+            class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+          >
+            Concept sites
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Self-initiated sites that demonstrate possibilities—structure, tone,
+            and flow. Built to show how the web can reflect how you actually
+            serve people.
+          </p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+            <li>Realistic layouts and language</li>
+            <li>Operationally grounded patterns</li>
+            <li>Built with Astro + Tailwind</li>
+          </ul>
+        </article>
+
+        <!-- Client drafts & prototypes -->
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3
+            class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+          >
+            Client drafts & prototypes
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Live drafts for real projects. Shared privately with clients and
+            collaborators.
+          </p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+            <li>Unlisted URLs, not indexed</li>
+            <li>Calm defaults for fast iteration</li>
+            <li>Clear next steps for review</li>
+          </ul>
+        </article>
+
+        <!-- Guides & resources -->
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3
+            class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+          >
+            Guides & resources
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Practical explanations of tools, workflows, and tradeoffs—so choices
+            become easier.
+          </p>
+          <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+            <li>Platform overviews and tradeoffs</li>
+            <li>Real examples, no hype</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- Section C: Pathways -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h4
+        class="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-6"
+      >
+        Explore by type
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Concepts -->
+        <a
+          href="/#concepts"
+          class="group rounded-lg border border-stone-200 dark:border-stone-800 p-5 hover:bg-stone-50 dark:hover:bg-gray-900 transition"
+        >
+          <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+            Concept sites
+          </h5>
+          <p class="text-gray-700 dark:text-gray-300">
+            See selected concept sites and what they enable.
+          </p>
+        </a>
+
+        <!-- Drafts & prototypes -->
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-5"
+        >
+          <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+            Drafts & prototypes
+          </h5>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">
+            Shared privately with clients. No public index.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/process"
+              class="text-sm font-semibold text-gray-900 dark:text-white underline underline-offset-2 hover:no-underline"
+            >
+              How drafts work
+            </a>
+            <a
+              href="https://danryanneff.com/work-with-me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-gray-700 dark:text-gray-300 hover:underline"
+            >
+              Book a session
+            </a>
+          </div>
+        </div>
+
+        <!-- Guides & resources -->
+        <a
+          href="/web-builders"
+          class="group rounded-lg border border-stone-200 dark:border-stone-800 p-5 hover:bg-stone-50 dark:hover:bg-gray-900 transition"
+        >
+          <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+            Guides & resources
+          </h5>
+          <p class="text-gray-700 dark:text-gray-300">
+            Clear, practical notes on modern web building.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section D: Concept sites (framing + grid with images) -->
+  <section
+    id="concepts"
+    class="py-24 md:py-28 border-t border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
+      >
+        Selected work
+      </p>
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-3"
+      >
+        Concept sites
+      </h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-10">
+        Working examples that show structure, pacing, and language—not just
+        visuals.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          concepts.map((c) => (
+            <Card
+              title={c.title}
+              description={c.description}
+              link={c.link}
+              image={c.image}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Section E: Visibility note -->
+  <section class="py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        Client drafts are shared via unlisted links and are not indexed by
+        search engines.
+      </p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
   <CTASection
     heading="I'm Dan. If you want a website that matches how you actually serve people, let's talk."
     description="We can prototype a focused concept, or map the path from vision to launch. Either way, it should help real work happen."

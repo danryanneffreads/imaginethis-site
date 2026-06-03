@@ -2,36 +2,36 @@ export const prerender = true;
 
 // Public routes to include in the sitemap
 const routes = [
-  "/",                                   // Home
-  "/concept/sync-coffee/",              // Synchronize Coffee (now under /examples)
-  "/concept/human-ai-systems-summit/",  // Summit example
-  "/web-builders",                       // Web Builders Guide
+  '/', // Home
+  '/concept/sync-coffee/', // Synchronize Coffee (concept)
+  '/concept/human-ai-systems-summit/', // Summit example (concept)
+  '/web-builders', // Guides overview
+  '/process', // How drafts & prototypes work
 ];
 
 export function GET({ request }) {
   const origin = new URL(request.url).origin;
   const lastmod = new Date().toISOString();
 
-  let urls = "";
+  let urls = '';
   for (const path of routes) {
-    const priority = path === "/" ? "1.0" : "0.7";
+    const priority = path === '/' ? '1.0' : '0.7';
     urls +=
-      "<url>" +
+      '<url>' +
       `<loc>${origin}${path}</loc>` +
       `<lastmod>${lastmod}</lastmod>` +
-      "<changefreq>weekly</changefreq>" +
+      '<changefreq>weekly</changefreq>' +
       `<priority>${priority}</priority>` +
-      "</url>";
+      '</url>';
   }
 
   const xml =
     '<?xml version="1.0" encoding="UTF-8"?>' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
     urls +
-    "</urlset>";
+    '</urlset>';
 
   return new Response(xml, {
-    headers: { "Content-Type": "application/xml; charset=utf-8" },
+    headers: { 'Content-Type': 'application/xml; charset=utf-8' },
   });
 }
-
