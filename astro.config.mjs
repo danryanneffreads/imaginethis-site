@@ -18,28 +18,37 @@ const draftPageFilter = {
         const draftPages = findDraftPages(srcPagesDir);
         if (!draftPages.length) return;
 
-        console.log(`\n[draft-page-filter] Removing ${draftPages.length} draft page(s) from build output...`);
+        console.log(
+          `\n[draft-page-filter] Removing ${draftPages.length} draft page(s) from build output...`
+        );
         for (const pagePath of draftPages) {
           const distPath = pagePathToDist(pagePath, distDir);
           try {
             fs.rmSync(distPath, { force: true });
             const parentDir = path.dirname(distPath);
             try {
-              if (fs.existsSync(parentDir) && fs.readdirSync(parentDir).length === 0) {
+              if (
+                fs.existsSync(parentDir) &&
+                fs.readdirSync(parentDir).length === 0
+              ) {
                 fs.rmdirSync(parentDir);
               }
             } catch {}
             console.log(`  ✓ Removed: ${pagePath}`);
           } catch (e) {
-            console.warn(`  ⚠ Skipped ${pagePath}: ${e instanceof Error ? e.message : String(e)}`);
+            console.warn(
+              `  ⚠ Skipped ${pagePath}: ${e instanceof Error ? e.message : String(e)}`
+            );
           }
         }
         console.log('[draft-page-filter] Done.\n');
       } catch (e) {
-        console.warn(`[draft-page-filter] Non-fatal error: ${e instanceof Error ? e.message : String(e)}`);
+        console.warn(
+          `[draft-page-filter] Non-fatal error: ${e instanceof Error ? e.message : String(e)}`
+        );
       }
-    }
-  }
+    },
+  },
 };
 
 function findDraftPages(dir, fileList = []) {

@@ -16,14 +16,15 @@ const canonical = Astro.url?.href ?? 'https://imaginethis.site';
 const DEFAULT_OG = '/images/og-default.jpg';
 
 // Make og:image absolute for social scrapers
-const siteOrigin = (() => {
+const siteOrigin: string = (() => {
   try {
     return new URL(canonical).origin;
   } catch {
     return '';
   }
 })();
-const toAbsolute = (u) => {
+
+const toAbsolute = (u?: string): string | undefined => {
   if (!u) return undefined;
   try {
     return u.startsWith('http') ? u : siteOrigin ? `${siteOrigin}${u}` : u;
@@ -31,6 +32,7 @@ const toAbsolute = (u) => {
     return u;
   }
 };
+
 const ogImage = toAbsolute(image ?? DEFAULT_OG);
 ---
 
