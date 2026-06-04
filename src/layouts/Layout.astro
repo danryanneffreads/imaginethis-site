@@ -1,86 +1,82 @@
 ---
-// src/layouts/Layout.astro
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Unpublished from "../components/Unpublished.astro";
-import Head from "../components/Head.astro";
+/* src/layouts/Layout.astro
+   Base layout for the site. Adds correct mobile viewport and basic SEO/meta.
+*/
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
-interface Props {
+export interface Props {
   title?: string;
   description?: string;
   image?: string;
+  status?: 'draft' | 'published' | 'unpublished';
   noindex?: boolean;
-  status?: "draft" | "published" | "unpublished";
 }
 
 const {
-  title = "ImagineThis.Site",
-  description = "A calm, structured studio for concept sites, private client drafts, and clear resources on modern web building.",
+  title = 'ImagineThis.Site - Websites Built on How You Serve',
+  description = 'Your website is part of your business operations. When it reflects how you actually serve people, everything gets easier.',
   image,
-  noindex = false,
-  status = "published",
-  ...rest
+  status = 'published',
+  noindex = false
 } = Astro.props;
 
-const isUnpublished = status === "unpublished";
-const canonical = Astro.url?.href ?? "https://imaginethis.site";
+const isUnpublished = status === 'unpublished';
+const canonical = Astro.url?.href ?? 'https://imaginethis.site';
+
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "ImagineThis.Site",
-  "url": canonical,
-  "publisher": { "@type": "Person", "name": "Dan Neff" }
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ImagineThis.Site',
+  url: canonical,
+  publisher: { '@type': 'Person', name: 'Dan Neff' }
 };
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Centralized head: icons, OG/Twitter, canonical, etc. -->
-    <Head {title} {description} image={image} status={status} noindex={noindex} />
+    <meta charset="UTF-8" />
+    <!-- Fix mobile scaling globally -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <!-- JSON-LD (kept from your original layout) -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {(noindex || isUnpublished) && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+
+    <!-- Structured data -->
     <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-
-    <!-- Fonts (kept) -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <style>
-      :root { --font-serif: 'Lora', serif; --font-sans: 'Inter', sans-serif; }
-    </style>
-
-    <!-- Early theme initialization (kept) -->
-    <script is:inline>
-      (function () {
-        try {
-          var saved = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (saved === 'dark' || (!saved && prefersDark)) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        } catch (e) {}
-      })();
-    </script>
   </head>
-
   <body class="min-h-screen bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100">
-    <!-- Skip link -->
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-blue-700 focus:px-3 focus:py-2 focus:text-white">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-blue-700 focus:px-3 focus:py-2 focus:text-white"
+    >
       Skip to content
     </a>
 
-    {isUnpublished ? (
-      <Unpublished />
-    ) : (
-      <>
-        <Header />
-        <main id="main">
-          <slot />
-        </main>
-        <Footer />
-      </>
-    )}
+    <Header />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer />
   </body>
 </html>
