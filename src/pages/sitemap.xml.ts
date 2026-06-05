@@ -1,37 +1,34 @@
-export const prerender = true;
+import type { APIRoute } from 'astro';
 
-// Public routes to include in the sitemap
-const routes = [
-  '/', // Home
-  '/concept/sync-coffee/', // Synchronize Coffee (concept)
-  '/concept/human-ai-systems-summit/', // Summit example (concept)
-  '/web-builders', // Guides overview
-  '/process', // How drafts & prototypes work
-];
+export const GET: APIRoute = ({ site }) => {
+  const base = (site?.href ?? 'https://imaginethis.site').replace(/\/$/, '');
+  const today = new Date().toISOString().split('T')[0];
 
-export function GET({ request }) {
-  const origin = new URL(request.url).origin;
-  const lastmod = new Date().toISOString();
+  const routes = [
+    '/', // Home
+    '/guides', // Guides hub
+    '/guides/planning', // Planning
+    '/guides/web-builders', // Platform overview
+  ];
 
-  let urls = '';
-  for (const path of routes) {
-    const priority = path === '/' ? '1.0' : '0.7';
-    urls +=
-      '<url>' +
-      `<loc>${origin}${path}</loc>` +
-      `<lastmod>${lastmod}</lastmod>` +
-      '<changefreq>weekly</changefreq>' +
-      `<priority>${priority}</priority>` +
-      '</url>';
-  }
+  const urlset = routes
+    .map((path) => {
+      return `
+    <url>
+      <loc>${base}${path}</loc>
+      <lastmod>${today}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>${path === '/' ? '1.0' : '0.8'}</priority>
+    </url>`;
+    })
+    .join('');
 
-  const xml =
-    '<?xml version="1.0" encoding="UTF-8"?>' +
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
-    urls +
-    '</urlset>';
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlset}
+</urlset>`;
 
   return new Response(xml, {
     headers: { 'Content-Type': 'application/xml; charset=utf-8' },
   });
-}
+};

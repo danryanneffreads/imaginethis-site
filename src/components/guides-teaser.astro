@@ -1,0 +1,64 @@
+---
+/*
+  guides-teaser.astro
+  A concise, welcoming entry to the Guides. Paragraph-first, then light bullets.
+*/
+---
+
+<section
+  class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18">
+    <p
+      class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2"
+    >
+      Start here
+    </p>
+    <h2
+      class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
+    >
+      Imagine a website that truly serves
+    </h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-5 max-w-3xl">
+      A good site is a clear doorway. It tells people who you help, how to
+      start, and shows just enough proof. Begin with the outcome you want, then
+      choose a simple path and add depth over time.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-5">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          If you are still shaping the idea
+        </h3>
+        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+          <li>Clarify the outcome, audience, and pages you really need.</li>
+          <li>Decide what to ship first and what can wait.</li>
+        </ul>
+      </div>
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-5">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          If you are ready to choose a platform
+        </h3>
+        <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+          <li>Pick the fit based on update rhythm and ownership.</li>
+          <li>Keep tools minimal and durable.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+      <a
+        href="/guides"
+        class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition dark:bg-blue-500 dark:hover:bg-blue-400"
+      >
+        Open Guides
+      </a>
+    </div>
+
+    <!-- Optional: subtle secondary link under the button
+    <p class="text-center text-sm text-gray-600 dark:text-gray-400 mt-2">
+      Or start with <a href="/guides/planning" class="text-blue-700 dark:text-blue-300 underline hover:no-underline">Planning</a>.
+    </p>
+    -->
+  </div>
+</section>

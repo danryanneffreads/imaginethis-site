@@ -8,4 +8,8 @@
 
 /examples/* /concept/:splat 301
 
+/web-builders /guides/web-builders 301
+/guides/tools-overview /guides/planning 301
+/guides/business-website-needs /guides#business-website-needs 301
+
 /* /404.html 404

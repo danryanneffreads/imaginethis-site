@@ -9,78 +9,130 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-  <!-- Intro -->
+  <!-- Intro with side image (smaller, contained) -->
   <section
     class="bg-gradient-to-b from-stone-50 dark:from-gray-900 to-white dark:to-gray-950 py-20 md:py-24"
   >
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1
-        class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6"
-      >
-        Imagine it, privately—then make it real
-      </h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        Sometimes I send you a private draft. Sometimes you reach out. Either
-        way, we think critically about what your website should do—and make it
-        reflect the quality of your work.
-      </p>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1
+            class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6"
+          >
+            Imagine it, privately—then make it real
+          </h1>
+          <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            Sometimes I send you a private draft. Sometimes you reach out.
+            Either way, we think critically about what your website should
+            do—and make it reflect the quality of your work.
+          </p>
+        </div>
+        <div class="hidden md:flex justify-end">
+          <img
+            src="/images/shared/SubtleCircles.webp"
+            alt="Calm, layered circles—exploring structure without noise"
+            class="w-full max-w-sm object-contain rounded-xl shadow-sm ring-1 ring-stone-200 dark:ring-stone-800"
+            decoding="async"
+          />
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Main content -->
   <section class="py-12 md:py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       <!-- Two ways we start -->
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+      <div
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8"
+      >
         <h2
-          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-5"
         >
           Two ways we start
         </h2>
-        <div class="space-y-4">
-          <div>
-            <h3 class="font-medium text-gray-900 dark:text-white">
-              I send you a draft
-            </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card: I send you a draft -->
+          <article
+            class="group rounded-lg bg-white/70 dark:bg-gray-900/40 border border-stone-200 dark:border-stone-800 overflow-hidden transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+              >
+                I send you a draft
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                If I see a clear opportunity, I’ll share an unlisted page that
+                imagines what your site could be. No pressure. Just a private
+                starting point.
+              </p>
+            </div>
+            <img
+              src="/images/shared/dot-compilation.webp"
+              alt="A compilation of idea circles—an early, exploratory draft"
+              class="w-full h-32 md:h-36 object-contain p-2 border-t border-stone-200 dark:border-stone-800 bg-transparent dark:bg-transparent"
+              loading="lazy"
+              decoding="async"
+            />
+          </article>
+
+          <!-- Card: You reach out -->
+          <article
+            class="group rounded-lg bg-white/70 dark:bg-gray-900/40 border border-stone-200 dark:border-stone-800 overflow-hidden transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <div class="p-5">
+              <h3
+                class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+              >
+                You reach out
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Tell me what you’re hoping your website will unlock. We’ll
+                sketch a first draft quickly and quietly.
+              </p>
+            </div>
+            <img
+              src="/images/shared/DOT_artist_with_ideas.webp"
+              alt="A person surrounded by ideas—shaping direction together"
+              class="w-full h-32 md:h-36 object-contain p-2 border-t border-stone-200 dark:border-stone-800 bg-transparent dark:bg-transparent"
+              loading="lazy"
+              decoding="async"
+            />
+          </article>
+        </div>
+      </div>
+
+      <!-- Private by default -->
+      <div
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8 bg-stone-50/70 dark:bg-gray-900/40"
+      >
+        <div class="flex items-start gap-6">
+          <div class="flex-1">
+            <h2
+              class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Private by default
+            </h2>
             <p class="text-gray-700 dark:text-gray-300">
-              If I see a clear opportunity, I’ll share an unlisted page that
-              imagines what your site could be. No pressure. Just a private
-              starting point.
-            </p>
-          </div>
-          <div>
-            <h3 class="font-medium text-gray-900 dark:text-white">
-              You reach out
-            </h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              Tell me what you’re hoping your website will unlock. We’ll sketch
-              a first draft quickly and quietly.
+              Draft links are unlisted and not indexed. They’re shared only with
+              the people doing the work. Review happens in private, one-on-one
+              loops.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Private by default -->
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
-        <h2
-          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
-        >
-          Private by default
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Draft links are unlisted and not indexed. They’re shared only with the
-          people doing the work. Review happens in private, one-on-one loops.
-        </p>
-      </div>
-
       <!-- Why we work this way -->
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+      <div
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8"
+      >
         <h2
-          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
         >
           Why we work this way
         </h2>
-        <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
           <li>Your website should reflect the quality of your work.</li>
           <li>
             We start from something tangible — a first draft you can react to.
@@ -93,13 +145,15 @@ const description =
       </div>
 
       <!-- What we’ll discuss -->
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+      <div
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8"
+      >
         <h2
-          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
         >
           What we’ll discuss
         </h2>
-        <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
           <li>Purpose: who it serves and what actions matter</li>
           <li>Fit: brand voice, credibility, and proof</li>
           <li>
@@ -115,9 +169,11 @@ const description =
       </div>
 
       <!-- Paths we can take -->
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+      <div
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8"
+      >
         <h2
-          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
         >
           Paths we can take
         </h2>
@@ -150,21 +206,41 @@ const description =
         </ul>
       </div>
 
-      <!-- CTA -->
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
-        <h2
-          class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
+      <!-- CTA (with smaller thumbnail, transparent background) -->
+      <div
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8 bg-white/70 dark:bg-gray-900/40"
+      >
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
         >
-          Ready to start a quiet draft?
-        </h2>
-        <a
-          href="https://danryanneff.com/contact/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block text-sm font-semibold underline underline-offset-2 text-gray-900 dark:text-white hover:no-underline"
-        >
-          Book a meeting
-        </a>
+          <div>
+            <h2
+              class="text-2xl font-serif font-semibold text-gray-900 dark:text-white"
+            >
+              Ready to start a quiet draft?
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300">
+              Let’s talk through what your website should unlock.
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <a
+              href="https://danryanneff.com/contact/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-sm font-semibold underline underline-offset-2 text-gray-900 dark:text-white hover:no-underline"
+            >
+              Book a meeting
+            </a>
+            <img
+              src="/images/shared/mandala-blue-labyrinth-660.webp"
+              alt="A quiet, structured motif—privacy and clarity"
+              class="w-16 h-16 rounded-md ring-1 ring-stone-200 dark:ring-stone-800 object-contain p-1 bg-transparent dark:bg-transparent"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
 
       <p class="text-sm text-gray-600 dark:text-gray-400">
