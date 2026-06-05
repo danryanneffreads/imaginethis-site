@@ -1,76 +1,131 @@
 ---
-status: "published"
+status: 'published';
 // About page for Synchronize Coffee
-import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
+import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 ---
 
-<SyncCoffeeLayout 
+<SyncCoffeeLayout
   title="About - Synchronize Coffee"
   description="The story of Synchronize Coffee — a community third space rooted in art, connection, and exceptional coffee."
 >
   <!-- Hero (coffeeshop interior) -->
-  <section class="relative bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24 overflow-hidden">
+  <section
+    class="relative bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24 overflow-hidden"
+  >
     <div class="absolute inset-0 z-0">
-      <img src="/images/coffee/coffeeshop-interior.webp" alt="" class="w-full h-full object-cover opacity-25 dark:opacity-35">
-      <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-white/25 to-white/0 dark:from-blue-950/55 dark:via-blue-950/40 dark:to-gray-950/55"></div>
+      <img
+        src="/images/coffee/coffeeshop-interior.webp"
+        alt=""
+        class="w-full h-full object-cover opacity-25 dark:opacity-35"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-white/50 via-white/25 to-white/0 dark:from-blue-950/55 dark:via-blue-950/40 dark:to-gray-950/55"
+      >
+      </div>
     </div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Our Story</h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">Community. Art. Connection. Coffee.</p>
+    <div
+      class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+      >
+        Our Story
+      </h1>
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        Community. Art. Connection. Coffee.
+      </p>
     </div>
   </section>
 
   <!-- Main Story -->
   <section class="py-20 bg-white dark:bg-gray-950">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 text-lg leading-relaxed">
+    <div
+      class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 text-lg leading-relaxed"
+    >
       <p class="text-gray-700 dark:text-gray-300">
-        Synchronize Coffee began with a simple question: <em>What if a coffee shop was more than just a place to grab a drink?</em>
-        We imagined a third space where neighbors cross paths, ideas take shape, and local creativity is part of the everyday experience.
+        Synchronize Coffee began with a simple question: <em
+          >What if a coffee shop was more than just a place to grab a drink?</em
+        >
+        We imagined a third space where neighbors cross paths, ideas take shape, and
+        local creativity is part of the everyday experience.
       </p>
       <p class="text-gray-700 dark:text-gray-300">
-        From day one, we set out to roast with intention and host the community with care. We curate small-batch coffees,
-        keep the doors open to artists and performers, and aim for that just‑right balance of calm and energy that makes a café feel like home.
+        From day one, we set out to roast with intention and host the community
+        with care. We curate small-batch coffees, keep the doors open to artists
+        and performers, and aim for that just‑right balance of calm and energy
+        that makes a café feel like home.
       </p>
       <p class="text-gray-700 dark:text-gray-300">
-        Today, you’ll find regulars at the corner table, new faces reading by the window, art rotating on the walls, and 
-        the steady rhythm of great coffee. We hope you’ll find your rhythm here, too.
+        Today, you’ll find regulars at the corner table, new faces reading by
+        the window, art rotating on the walls, and the steady rhythm of great
+        coffee. We hope you’ll find your rhythm here, too.
       </p>
     </div>
   </section>
 
   <!-- Craft Matters (handmade mug image) -->
   <section class="py-16 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 items-center">
+    <div
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 items-center"
+    >
       <div>
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Craft Matters</h2>
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Craft Matters
+        </h2>
         <p class="text-gray-700 dark:text-gray-300 mb-4">
-          From beans to vessels, we partner with local makers. Our handmade mugs are fired nearby and built for everyday ritual.
-          It’s one more way we keep our community close to the work we do.
+          From beans to vessels, we partner with local makers. Our handmade mugs
+          are fired nearby and built for everyday ritual. It’s one more way we
+          keep our community close to the work we do.
         </p>
-        <a href="/concept/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">
+        <a
+          href="/concept/sync-coffee/order/"
+          class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+        >
           Shop Mugs & Gear
         </a>
       </div>
-      <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800">
-        <img src="/images/coffee/coffee-ceramic-handmade-mug.webp" alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table" class="w-full h-full object-cover object-right">
+      <div
+        class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800"
+      >
+        <img
+          src="/images/coffee/coffee-ceramic-handmade-mug.webp"
+          alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table"
+          class="w-full h-full object-cover object-right"
+        />
       </div>
     </div>
   </section>
 
   <!-- Values row -->
   <section class="py-12 bg-amber-50 dark:bg-blue-950/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+    >
       <div class="text-center">
-        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">Community First</h3>
-        <p class="text-gray-700 dark:text-gray-300">A welcoming third space where everyone belongs.</p>
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Community First
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          A welcoming third space where everyone belongs.
+        </p>
       </div>
       <div class="text-center">
-        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">Thoughtful Coffee</h3>
-        <p class="text-gray-700 dark:text-gray-300">Small-batch roasts and careful sourcing.</p>
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Thoughtful Coffee
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Small-batch roasts and careful sourcing.
+        </p>
       </div>
       <div class="text-center">
-        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">Art & Events</h3>
-        <p class="text-gray-700 dark:text-gray-300">Rotating shows and live performances.</p>
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Art & Events
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Rotating shows and live performances.
+        </p>
       </div>
     </div>
   </section>
@@ -78,15 +133,36 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
   <!-- CTA band -->
   <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Be Part of the Story</h2>
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+      >
+        Be Part of the Story
+      </h2>
       <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-        Host an event, share your artwork, or reserve a cozy corner. We’ll make the coffee — you bring the spark.
+        Host an event, share your artwork, or reserve a cozy corner. We’ll make
+        the coffee — you bring the spark.
       </p>
       <div class="flex flex-wrap gap-3 justify-center">
-        <a href="/concept/sync-coffee/reserve/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Reserve a Space</a>
-        <a href="/concept/sync-coffee/perform/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Book a Performance</a>
-        <a href="/concept/sync-coffee/submit-art/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Submit Art</a>
-        <a href="/concept/sync-coffee/contact/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Contact Us</a>
+        <a
+          href="/concept/sync-coffee/reserve/"
+          class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+          >Reserve a Space</a
+        >
+        <a
+          href="/concept/sync-coffee/perform/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+          >Book a Performance</a
+        >
+        <a
+          href="/concept/sync-coffee/submit-art/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+          >Submit Art</a
+        >
+        <a
+          href="/concept/sync-coffee/contact/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+          >Contact Us</a
+        >
       </div>
     </div>
   </section>
