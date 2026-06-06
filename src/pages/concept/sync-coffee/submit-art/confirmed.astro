@@ -1,30 +1,111 @@
 ---
-// FILE: src/pages/concept/sync-coffee/submit-art/confirmed.astro
-status: "published"
-import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
+status: 'published';
+import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 ---
 
-<SyncCoffeeLayout 
+<SyncCoffeeLayout
   title="Art Submission Received - Synchronize Coffee"
   description="Your art submission has been received."
 >
-  <section class="py-32 bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950">
+  <section
+    class="py-32 bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950"
+  >
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Submission Received!</h1>
-      <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-        Thanks for sharing your work. Our curation team will review and get back to you within one business day.
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+      >
+        Art submission received
       </p>
 
-      <div class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-6 mb-12 text-left rounded-r-md">
+      <h1
+        class="text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        Thanks for Sharing Your Work
+      </h1>
+
+      <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+        Your submission has been received. In a real gallery program, our team
+        would review your work and follow up about availability, timing, and
+        exhibition opportunities.
+      </p>
+
+      <div
+        class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-6 mb-12 text-left rounded-r-md"
+      >
         <p class="text-amber-800 dark:text-amber-200 text-sm">
-          <strong>Concept Demo:</strong> This site is a demo by ImagineThis.Site. No real submission has been made.
+          <strong>Concept Demo:</strong> Synchronize Coffee is a fictional business
+          created by ImagineThis.Site to demonstrate how a coffee shop website could
+          support artists, exhibitions, community participation, and local culture.
+          No real artwork has been submitted.
         </p>
       </div>
 
+      <div class="space-y-6 mb-12">
+        <h2
+          class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200"
+        >
+          What Happens Next?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+          <div
+            class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-4"
+          >
+            <h3 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">
+              Review
+            </h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300">
+              We would review your work and determine whether it fits an
+              upcoming exhibition.
+            </p>
+          </div>
+
+          <div
+            class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-4"
+          >
+            <h3 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">
+              Planning
+            </h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300">
+              We would discuss timing, display needs, and how the work would be
+              presented.
+            </p>
+          </div>
+
+          <div
+            class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-4"
+          >
+            <h3 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">
+              Exhibition
+            </h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300">
+              Your work becomes part of the shared experience of the space.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div class="flex flex-wrap gap-3 justify-center">
-        <a href="/concept/sync-coffee/submit-art/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Submit More Work</a>
-        <a href="/concept/sync-coffee/about/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">About the Gallery</a>
-        <a href="/concept/sync-coffee/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Back to Home</a>
+        <a
+          href="/concept/sync-coffee/submit-art/"
+          class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+        >
+          Submit More Work
+        </a>
+
+        <a
+          href="/concept/sync-coffee/about/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+        >
+          About Synchronize
+        </a>
+
+        <a
+          href="/concept/sync-coffee/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+        >
+          Back to Home
+        </a>
       </div>
     </div>
   </section>

@@ -6,9 +6,9 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 
 <SyncCoffeeLayout
   title="Order Coffee - Synchronize Coffee"
-  description="Order fresh-roasted Synchronize Coffee beans for home delivery."
+  description="Order fresh-roasted Synchronize Coffee beans and handmade mugs for home delivery."
 >
-  <!-- Hero (coffee-steam) -->
+  <!-- Hero -->
   <section
     class="relative bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24 overflow-hidden"
   >
@@ -19,43 +19,127 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         class="w-full h-full object-cover object-center opacity-30 dark:opacity-35"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white/0 dark:from-blue-950/50 dark:via-blue-950/40 dark:to-gray-950/50"
+        class="absolute inset-0 bg-gradient-to-b from-white/60 via-white/35 to-white/10 dark:from-blue-950/65 dark:via-blue-950/50 dark:to-gray-950/65"
       >
       </div>
     </div>
+
     <div
-      class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
     >
       <h1
         class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
       >
-        Order Our Beans
+        Fresh Roasted Coffee, Shipped Directly
       </h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">
-        Fresh-roasted, ethically sourced coffee delivered to your door.
+      <p
+        class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+      >
+        Bring home the beans, mugs, and small rituals that keep the rhythm of
+        Synchronize going beyond the café.
       </p>
     </div>
   </section>
 
-  <!-- Featured Beans -->
-  <section class="py-16 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2
-        class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+  <!-- Intro -->
+  <section class="py-20 bg-white dark:bg-gray-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
       >
-        Featured Beans
+        Roasted in small batches
+      </p>
+
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        Coffee from the café, made for your kitchen.
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div
+        class="space-y-5 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+      >
+        <p>
+          We roast our coffee in small batches so each bag arrives fresh,
+          balanced, and ready for the way you like to brew.
+        </p>
+
+        <p>
+          Whether you visit every week or discovered Synchronize online,
+          ordering beans is one way to bring a little of the café home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Order Coffee
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          Choose a dependable house blend, a brighter morning roast, a seasonal
+          rotation, or something handmade for your daily cup.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- House Blend -->
         <article
-          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col"
+          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col shadow-sm"
+        >
+          <div class="aspect-[4/3] relative overflow-hidden">
+            <img
+              src="/images/coffee/coffee-steam.webp"
+              alt="Blue ceramic mug with rising coffee steam on a wooden table"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="p-5 flex-1 flex flex-col">
+            <h3
+              class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200"
+            >
+              House Blend
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-2 mb-4">
+              Smooth, balanced, and dependable. Chocolate, toasted nuts, and an
+              easy everyday finish.
+            </p>
+
+            <div class="mt-auto flex flex-wrap gap-2 mb-4">
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >12 oz</span
+              >
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >2 lb</span
+              >
+            </div>
+
+            <a
+              href="#order-form"
+              class="inline-block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+              >Add to Order</a
+            >
+          </div>
+        </article>
+
+        <!-- Morning Blend -->
+        <article
+          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col shadow-sm"
         >
           <div class="aspect-[4/3] relative overflow-hidden">
             <img
               src="/images/coffee/beautiful_wood_table.webp"
               alt=""
               role="presentation"
-              class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-35"
+              class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-45"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-white/70 via-white/30 to-white/10 dark:from-gray-950/70 dark:via-gray-950/40 dark:to-gray-950/10"
@@ -67,140 +151,180 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
               class="absolute bottom-3 right-3 w-32 h-32 object-cover rounded-lg shadow-lg"
             />
           </div>
+
           <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-              House Blend
+            <h3
+              class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200"
+            >
+              Morning Blend
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">
-              Chocolate, toasted nuts, smooth body. Everyday favorite.
+            <p class="text-gray-600 dark:text-gray-400 mt-2 mb-4">
+              Bright and lively with citrus, caramel, and enough body to start
+              the day well.
             </p>
-            <div class="mt-auto flex items-center justify-between">
-              <div class="flex gap-2">
-                <span
-                  class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
-                  >12 oz</span
-                >
-                <span
-                  class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
-                  >2 lb</span
-                >
-              </div>
-              <a
-                href="#order-form"
-                class="text-sm bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-                >Add to Order</a
+
+            <div class="mt-auto flex flex-wrap gap-2 mb-4">
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >12 oz</span
+              >
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >2 lb</span
               >
             </div>
+
+            <a
+              href="#order-form"
+              class="inline-block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+              >Add to Order</a
+            >
           </div>
         </article>
 
-        <!-- Single Origin -->
+        <!-- Seasonal Rotation -->
         <article
-          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col"
+          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col shadow-sm"
         >
           <div class="aspect-[4/3] relative overflow-hidden">
             <img
-              src="/images/coffee/beautiful_wood_table.webp"
-              alt=""
-              role="presentation"
-              class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-35"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-white/70 via-white/30 to-white/10 dark:from-gray-950/70 dark:via-gray-950/40 dark:to-gray-950/10"
-            >
-            </div>
-            <img
-              src="/images/coffee/coffeeshop-interior.webp"
-              alt="Coffee shop interior with bar, seating, plants, and tall windows"
-              class="absolute bottom-3 right-3 w-32 h-32 object-cover rounded-lg shadow-lg"
+              src="/images/coffee/square-golden.webp"
+              alt="Ornate golden square pattern with red border on a dark background"
+              class="w-full h-full object-cover"
             />
           </div>
+
           <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-              Single Origin
+            <h3
+              class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200"
+            >
+              Seasonal Rotation
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">
-              Rotating microlots. Citrus, florals, sparkling acidity.
+            <p class="text-gray-600 dark:text-gray-400 mt-2 mb-4">
+              Limited-release coffees that shift with the season. A good choice
+              when you want something new.
             </p>
-            <div class="mt-auto flex items-center justify-between">
-              <div class="flex gap-2">
-                <span
-                  class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
-                  >12 oz</span
-                >
-                <span
-                  class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
-                  >2 lb</span
-                >
-              </div>
-              <a
-                href="#order-form"
-                class="text-sm bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-                >Add to Order</a
+
+            <div class="mt-auto flex flex-wrap gap-2 mb-4">
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >12 oz</span
+              >
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >2 lb</span
               >
             </div>
+
+            <a
+              href="#order-form"
+              class="inline-block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+              >Add to Order</a
+            >
           </div>
         </article>
 
-        <!-- Decaf -->
+        <!-- Handmade Mug -->
         <article
-          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col"
+          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 flex flex-col shadow-sm"
         >
-          <div class="aspect-[4/3] relative overflow-hidden">
-            <img
-              src="/images/coffee/beautiful_wood_table.webp"
-              alt=""
-              role="presentation"
-              class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-35"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-white/70 via-white/30 to-white/10 dark:from-gray-950/70 dark:via-gray-950/40 dark:to-gray-950/10"
-            >
-            </div>
+          <div class="aspect-[4/3] overflow-hidden">
             <img
               src="/images/coffee/coffee-ceramic-handmade-mug.webp"
               alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table"
-              class="absolute bottom-3 right-3 w-32 h-32 object-cover rounded-lg shadow-lg"
+              class="w-full h-full object-cover object-right"
             />
           </div>
+
           <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-              Decaf
+            <h3
+              class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200"
+            >
+              Handmade Ceramic Mug
             </h3>
-            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">
-              Swiss Water Process — mellow, chocolatey, satisfying.
+            <p class="text-gray-600 dark:text-gray-400 mt-2 mb-4">
+              Wheel-thrown locally and made for everyday use. A small piece of
+              the café ritual.
             </p>
-            <div class="mt-auto flex items-center justify-between">
-              <div class="flex gap-2">
-                <span
-                  class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
-                  >12 oz</span
-                >
-                <span
-                  class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
-                  >2 lb</span
-                >
-              </div>
-              <a
-                href="#order-form"
-                class="text-sm bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-                >Add to Order</a
+
+            <div class="mt-auto flex flex-wrap gap-2 mb-4">
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >12 oz</span
+              >
+              <span
+                class="inline-flex items-center px-2 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-medium dark:bg-amber-900/40 dark:text-amber-200"
+                >Local maker</span
               >
             </div>
+
+            <a
+              href="#order-form"
+              class="inline-block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+              >Add to Order</a
+            >
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Build Your Order (simple concept form) -->
+  <!-- Why Order -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+    >
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Fresh roast
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          We roast in small batches so each bag ships close to its roast date.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Brew it your way
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Choose whole bean or a grind style that fits your home setup.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Café rhythm at home
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Beans and mugs that carry a little of Synchronize into your daily
+          routine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Your Order -->
   <section id="order-form" class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2
-        class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6 text-center"
-      >
-        Build Your Order
-      </h2>
+      <div class="mb-8 text-center">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          Build your order
+        </p>
+
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Choose what you'd like us to prepare.
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          This demo form routes to a confirmation page, but no real order is
+          placed.
+        </p>
+      </div>
 
       <div
         class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 rounded-r-md mb-6"
@@ -219,40 +343,22 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label
-              for="coffee"
+              for="product"
               class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
-              >Coffee</label
+              >Product</label
             >
             <select
-              id="coffee"
-              name="coffee"
+              id="product"
+              name="product"
               class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
             >
               <option>House Blend</option>
-              <option>Single Origin</option>
-              <option>Decaf</option>
+              <option>Morning Blend</option>
+              <option>Seasonal Rotation</option>
+              <option>Handmade Ceramic Mug</option>
             </select>
           </div>
-          <div>
-            <label
-              for="grind"
-              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
-              >Grind</label
-            >
-            <select
-              id="grind"
-              name="grind"
-              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
-            >
-              <option>Whole Bean</option>
-              <option>Espresso</option>
-              <option>Drip</option>
-              <option>Pour-Over</option>
-              <option>French Press</option>
-            </select>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
           <div>
             <label
               for="size"
@@ -266,13 +372,37 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
             >
               <option>12 oz</option>
               <option>2 lb</option>
+              <option>Single Mug</option>
             </select>
           </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label
+              for="grind"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Preparation</label
+            >
+            <select
+              id="grind"
+              name="grind"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            >
+              <option>Whole Bean</option>
+              <option>Drip</option>
+              <option>Pour-Over</option>
+              <option>French Press</option>
+              <option>Espresso</option>
+              <option>Not applicable</option>
+            </select>
+          </div>
+
           <div>
             <label
               for="qty"
               class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
-              >Qty</label
+              >Quantity</label
             >
             <input
               id="qty"
@@ -283,6 +413,7 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
               class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
             />
           </div>
+
           <div>
             <label
               for="frequency"
@@ -316,6 +447,7 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
               class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
             />
           </div>
+
           <div>
             <label
               for="email"
@@ -331,6 +463,7 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
             />
           </div>
         </div>
+
         <div>
           <label
             for="address"
@@ -345,82 +478,54 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
           ></textarea>
         </div>
 
-        <div class="flex items-center justify-between">
+        <div>
+          <label
+            for="notes"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+            >Notes</label
+          >
+          <textarea
+            id="notes"
+            name="notes"
+            rows="3"
+            class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            placeholder="Anything we should know about this order?"></textarea>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
           <p class="text-sm text-gray-600 dark:text-gray-400">
-            You’ll receive a confirmation email with details in a real shop.
+            In a real shop, you would receive an email with order details.
           </p>
           <button
             type="submit"
             class="bg-orange-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
           >
-            Place Concept Order
+            Order Coffee
           </button>
         </div>
       </form>
     </div>
   </section>
 
-  <!-- Merch highlight -->
-  <section class="py-14 bg-white dark:bg-gray-950">
-    <div
-      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
-    >
-      <div class="md:col-span-2">
-        <h2
-          class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
-        >
-          Handmade Ceramic Mugs
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          Wheel-thrown locally, built for everyday ritual, and dishwasher safe.
-        </p>
-        <a
-          href="#order-form"
-          class="inline-block bg-orange-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-          >Add a Mug</a
-        >
-      </div>
-      <div
-        class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800"
+  <!-- Closing CTA -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
       >
-        <img
-          src="/images/coffee/coffee-ceramic-handmade-mug.webp"
-          alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table"
-          class="w-full h-full object-cover object-right"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Info band -->
-  <section class="py-12 bg-amber-50 dark:bg-blue-950/40">
-    <div
-      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
-    >
-      <div class="text-center">
-        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
-          Fresh Roast
-        </h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          We roast in small batches for peak flavor.
-        </p>
-      </div>
-      <div class="text-center">
-        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
-          Ethically Sourced
-        </h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          Relationships with producers and importers we trust.
-        </p>
-      </div>
-      <div class="text-center">
-        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
-          Fast Shipping
-        </h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          Bags ship within 2–3 business days.
-        </p>
-      </div>
+        Prefer to visit in person?
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Stop by the café for a drink, pick up a bag, or see what we’re roasting
+        this week.
+      </p>
+      <a
+        href="/concept/sync-coffee/contact/"
+        class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+        >Plan Your Visit</a
+      >
     </div>
   </section>
 </SyncCoffeeLayout>
