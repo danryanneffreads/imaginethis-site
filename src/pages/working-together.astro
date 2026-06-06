@@ -1,0 +1,314 @@
+---
+// src/pages/working-together.astro
+status: 'published';
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Working Together: From Idea to Website';
+const description =
+  'How website projects can begin: with a conversation, a private draft, a prototype, or a clear path from idea to launch.';
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section
+    class="bg-gradient-to-b from-stone-50 dark:from-gray-900 to-white dark:to-gray-950 py-20 md:py-28"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300 mb-2"
+          >
+            Working Together
+          </p>
+
+          <h1
+            class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-5"
+          >
+            From idea to website
+          </h1>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            Sometimes the easiest way to discuss an idea is to make it visible.
+            A sketch, prototype, or draft website can reveal possibilities that
+            are difficult to describe in words alone.
+          </p>
+        </div>
+
+        <div class="hidden md:flex justify-end">
+          <img
+            src="/images/shared/SubtleCircles.webp"
+            alt="Exploring possibilities through structure and iteration"
+            class="w-full max-w-sm object-contain rounded-xl shadow-sm ring-1 ring-stone-200 dark:ring-stone-800"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="bg-white dark:bg-gray-950 py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <!-- Two ways we begin -->
+      <section>
+        <h2
+          class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
+        >
+          Two ways we begin
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-6">
+          Sometimes you reach out with an idea. Sometimes I notice an
+          opportunity and share a draft. Either way, the goal is the same: to
+          explore what would genuinely help and whether it is worth building.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              You reach out
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              You have an idea, a challenge, or a website that no longer
+              reflects the work behind it. We talk through what the site should
+              accomplish, who it serves, and what a useful first version might
+              look like.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              I share a draft
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Occasionally I come across a business, project, or organization
+              that sparks my imagination. If I create a private concept, it is
+              because I see genuine potential and believe there may be a
+              worthwhile opportunity to explore.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Why start with a draft -->
+      <section
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8 bg-stone-50/70 dark:bg-gray-900/40"
+      >
+        <h2
+          class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
+        >
+          Why start with a draft?
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Many people discover what they want by reacting to something concrete.
+          A draft creates a shared reference point. It turns abstract
+          conversations into practical ones.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-5 bg-white/80 dark:bg-gray-950/50"
+          >
+            <p class="text-gray-700 dark:text-gray-300">
+              What feels right here?
+            </p>
+          </div>
+
+          <div
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-5 bg-white/80 dark:bg-gray-950/50"
+          >
+            <p class="text-gray-700 dark:text-gray-300">What feels missing?</p>
+          </div>
+
+          <div
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-5 bg-white/80 dark:bg-gray-950/50"
+          >
+            <p class="text-gray-700 dark:text-gray-300">
+              What should this communicate?
+            </p>
+          </div>
+        </div>
+
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          A draft is not the answer. It is a tool for thinking.
+        </p>
+      </section>
+
+      <!-- Private by default -->
+      <section
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8"
+      >
+        <h2
+          class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
+        >
+          Private by default
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+          Drafts are shared through private links and are not indexed by search
+          engines. They are intended for the people involved in the project and
+          provide a quiet space to explore ideas, gather feedback, and make
+          decisions before anything becomes public.
+        </p>
+      </section>
+
+      <!-- Ways we can work together -->
+      <section>
+        <h2
+          class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
+        >
+          Ways we can work together
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Prototype
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A focused concept that explores structure, language, and direction
+              before larger decisions are made.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Build
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A complete website designed around the goals of the project and
+              the people it serves.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Collaborate
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A shared process where we shape decisions together and you remain
+              closely involved throughout.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Stewardship
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Ongoing improvements, updates, and refinements as the website
+              evolves.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Handoff
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A completed site with guidance, documentation, and a clear
+              transition so you can manage it independently.
+            </p>
+          </article>
+
+          <article
+            class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-2"
+            >
+              Referral
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              If a project needs deeper development, complex ecommerce, or a
+              custom app, I can help clarify the need and point toward a
+              specialist.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- The goal -->
+      <section
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8 bg-stone-50/70 dark:bg-gray-900/40"
+      >
+        <h2
+          class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
+        >
+          The goal
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-4">
+          The goal is not simply to launch a website. The goal is to create
+          something that reflects the quality of your work, helps people
+          understand what you do, and supports the next stage of the journey.
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+          Sometimes that begins with a conversation. Sometimes it begins with a
+          draft. Either way, we start by making the idea visible.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <section
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8 bg-white/70 dark:bg-gray-900/40"
+      >
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
+          <div>
+            <h2
+              class="text-2xl font-serif font-semibold text-gray-900 dark:text-white"
+            >
+              Ready to explore an idea?
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300">
+              Bring a rough concept, an existing website, or just the sense that
+              something could work better.
+            </p>
+          </div>
+
+          <a
+            href="https://danryanneff.com/contact/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-sm font-semibold underline underline-offset-2 text-gray-900 dark:text-white hover:no-underline"
+          >
+            Book a meeting
+          </a>
+        </div>
+      </section>
+    </div>
+  </section>
+</Layout>

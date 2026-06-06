@@ -8,11 +8,11 @@ import Card from '../components/Card.astro';
 import CTASection from '../components/CTASection.astro';
 
 // Page meta
-const title = 'ImagineThis.Site — Websites Built on How You Serve';
+const title = 'ImagineThis.Site — Websites That Fit the Work';
 const description =
-  'A calm, structured studio for concept sites, private client drafts, and clear resources on modern web building.';
+  'A calm, structured space for figuring out the right website and bringing it into reality through concept sites, private drafts, and practical guides.';
 
-// Concept cards (equal emphasis, with images)
+// Concept cards
 const concepts = [
   {
     title: 'Synchronize Coffee',
@@ -24,13 +24,14 @@ const concepts = [
   {
     title: 'Human Rhythm Health',
     description:
-      'A health studio — clear programs, scheduling, and a gentle design system.',
+      'A health studio with clear programs, scheduling, and a gentle design system.',
     link: '/concept/human-rhythm-health/',
     image: '/images/health/bicycling-person-trees.webp',
   },
   {
     title: 'Human + AI Systems Summit',
-    description: 'An event site for programs, speakers, and schedules.',
+    description:
+      'An event site for programs, speakers, schedules, and human-centered technology conversations.',
     link: '/concept/human-ai-systems-summit/',
     image: '/images/summit/atrium-human-ai-summit.webp',
   },
@@ -38,32 +39,32 @@ const concepts = [
 ---
 
 <Layout title={title} description={description}>
-  <!-- Hero (with Learn More CTA to next section) -->
+  <!-- Hero -->
   <Hero
     title="Your website should reflect the quality of your work."
-    subtitle="A weak website quietly costs you trust, clarity, and opportunities.<br /><br />But when a site matches your real operations, customers understand you faster, trust you sooner, and know the next step."
-    smallText="Over 20 years I've coordinated teams, improved operations, and built systems. Your website is part of that system."
+    subtitle="A weak website quietly costs trust, clarity, and opportunities.<br /><br />When a site reflects the work behind it, people understand you faster, trust you sooner, and know the next step."
+    smallText="I'm Dan. I help people figure out the right website and then bring it into reality."
     cta_text="Learn More"
     cta_link="#intro"
   />
 
-  <!-- Section A: How this site works -->
+  <!-- Section A: What this site is -->
   <section
     id="intro"
     class="bg-gradient-to-b from-stone-50 dark:from-gray-900 to-white dark:to-gray-950 py-24 md:py-28"
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2
-        class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-4"
-      >
-        What is ImagineThis.Site?
-      </h2>
-
       <p
         class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
       >
-        A working space for building websites
+        A working space for better websites
       </p>
+
+      <h2
+        class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-5"
+      >
+        What is ImagineThis.Site?
+      </h2>
 
       <h3
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-5"
@@ -72,8 +73,9 @@ const concepts = [
       </h3>
 
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        ImagineThis.Site is where I design concept sites, draft client work, and
-        share clear notes on modern web tools.
+        ImagineThis.Site is where I explore what a website could become. It
+        includes concept sites, private drafts for real projects, and practical
+        guides for thinking through structure, tools, and next steps.
       </p>
     </div>
   </section>
@@ -92,25 +94,26 @@ const concepts = [
             Concept sites
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-4">
-            Sites that demonstrate possibilities — structure, tone, and flow.
-            Built to show how a website can reflect how you serve people.
+            Working examples that show possibilities for structure, tone,
+            pacing, and flow. They demonstrate how a site can fit the work
+            behind it.
           </p>
           <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
             <li>
               <a
-                class="text-blue-600 hover:underline"
+                class="text-blue-600 hover:underline dark:text-blue-300"
                 href="/concept/sync-coffee/">Synchronize Coffee</a
               >
             </li>
             <li>
               <a
-                class="text-blue-600 hover:underline"
+                class="text-blue-600 hover:underline dark:text-blue-300"
                 href="/concept/human-rhythm-health/">Human Rhythm Health</a
               >
             </li>
             <li>
               <a
-                class="text-blue-600 hover:underline"
+                class="text-blue-600 hover:underline dark:text-blue-300"
                 href="/concept/human-ai-systems-summit/"
                 >Human + AI Systems Summit</a
               >
@@ -118,30 +121,31 @@ const concepts = [
           </ul>
         </article>
 
-        <!-- Client drafts & prototypes -->
+        <!-- Drafts and prototypes -->
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6 bg-blue-50 dark:bg-blue-900/15 hover:bg-blue-50/80 dark:hover:bg-blue-900/20 transition-colors"
         >
           <h3
             class="text-2xl font-serif font-semibold text-gray-900 dark:text-white mb-2"
           >
-            Client drafts & prototypes
+            Drafts & prototypes
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-4">
-            Live drafts for real projects. Shared privately with clients and
-            collaborators.
+            Private working pages for real projects. A draft can make an idea
+            easier to discuss, test, revise, and bring into focus.
           </p>
           <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
-            <li>Unlisted URLs, not indexed</li>
+            <li>Unlisted URLs for clients and collaborators</li>
             <li>
-              <a class="text-blue-600 hover:underline" href="/process"
-                >How drafts work</a
+              <a
+                class="text-blue-600 hover:underline dark:text-blue-300"
+                href="/working-together">How drafts work</a
               >
             </li>
           </ul>
         </article>
 
-        <!-- Guides & resources -->
+        <!-- Guides and resources -->
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6 bg-emerald-50 dark:bg-emerald-900/15 hover:bg-emerald-50/80 dark:hover:bg-emerald-900/20 transition-colors"
         >
@@ -151,13 +155,14 @@ const concepts = [
             Guides & resources
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-4">
-            Practical explanations of tools, workflows, and tradeoffs — so
-            choices become easier.
+            Practical notes on planning, platforms, and tradeoffs. The goal is
+            to make website decisions clearer before building begins.
           </p>
           <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
             <li>
-              <a class="text-blue-600 hover:underline" href="/guides"
-                >Guides & resources</a
+              <a
+                class="text-blue-600 hover:underline dark:text-blue-300"
+                href="/guides">Guides & resources</a
               >
             </li>
           </ul>
@@ -166,7 +171,7 @@ const concepts = [
     </div>
   </section>
 
-  <!-- Section D: Concept sites (framing + grid with images) -->
+  <!-- Section C: Concept sites -->
   <section
     id="concepts"
     class="py-24 md:py-28 border-t border-stone-200 dark:border-stone-800"
@@ -175,16 +180,17 @@ const concepts = [
       <p
         class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
       >
-        Selected work
+        Explore possibilities
       </p>
       <h2
         class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-3"
       >
-        Concept sites
+        Explore concept sites
       </h2>
       <p class="text-gray-700 dark:text-gray-300 mb-10">
-        Working examples that show structure, pacing, and language—not just
-        visuals.
+        These are not just visual mockups. They are working examples of how
+        structure, language, and design can shape the way people understand a
+        business, event, or service.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -202,17 +208,7 @@ const concepts = [
     </div>
   </section>
 
-  <!-- Section E: Visibility note -->
-  <section class="py-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-sm text-gray-600 dark:text-gray-400">
-        Client drafts are shared via unlisted links and are not indexed by
-        search engines.
-      </p>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
+  <!-- Guides teaser -->
   <GuidesTeaser
     image_src="/images/door-mandala.webp"
     image_alt="Small abstract badge for Guides"
@@ -220,8 +216,8 @@ const concepts = [
 
   <!-- Final CTA -->
   <CTASection
-    heading="I'm Dan. If you want a website that matches how you actually serve people, let's talk."
-    description="We can prototype a focused concept, or map the path from vision to launch. Either way, it should help real work happen."
+    heading="I'm Dan. I help people figure out the right website and then bring it into reality."
+    description="Whether you're starting with a rough idea, exploring possibilities, or ready to build, I can help clarify the path and create a website that fits the work behind it."
     button_text="Send me a message"
     button_link="mailto:danryanneff@gmail.com"
     dark={false}
