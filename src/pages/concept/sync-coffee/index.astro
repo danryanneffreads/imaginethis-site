@@ -6,7 +6,7 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 
 <SyncCoffeeLayout
   title="Synchronize Coffee - Community Coffee Roastery & Third Space"
-  description="Synchronize Coffee — where the community gathers, artists display work, and everyone finds their rhythm."
+  description="Synchronize Coffee — coffee, creativity, and community in rhythm."
 >
   <!-- Video Hero -->
   <section
@@ -28,19 +28,16 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         src="/images/coffee/steam_rising_from_coffee.mp4"
         type="video/mp4"
       />
-      <!-- If you later add a WebM, put it first:
-      <source src="/images/coffee/steam_1280_24fps_vp9.webm" type="video/webm" />
-      -->
       Your browser does not support the video tag.
     </video>
 
-    <!-- Readability overlay (stronger in light mode) -->
+    <!-- Stronger readability overlay -->
     <div
-      class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/40 via-black/25 to-black/10 dark:from-blue-950/60 dark:via-blue-950/50 dark:to-gray-950/60"
+      class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/60 via-black/45 to-black/30 dark:from-blue-950/70 dark:via-blue-950/60 dark:to-gray-950/65"
     >
     </div>
 
-    <!-- Hero content (lifted slightly on desktop) -->
+    <!-- Hero content -->
     <div
       class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:-mt-10 lg:-mt-14"
     >
@@ -49,16 +46,14 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
       >
         Find Your Rhythm
       </h1>
+
       <p
-        class="text-xl text-white/90 dark:text-gray-300 drop-shadow max-w-2xl mx-auto leading-relaxed mb-6"
+        class="text-xl md:text-2xl font-medium text-white drop-shadow-lg max-w-3xl mx-auto leading-relaxed mb-10"
       >
-        Synchronize Coffee is where community gathers. Good coffee fuels good
-        conversation. Art adorns the walls. And everyone finds their place.
+        Coffee is the starting point. Community is the destination.
       </p>
-      <p class="text-base text-white/80 dark:text-blue-300 mb-10">
-        Your neighborhood third space
-      </p>
-      <div class="flex gap-4 justify-center">
+
+      <div class="flex gap-4 justify-center flex-wrap">
         <a
           href="/concept/sync-coffee/order/"
           class="inline-block bg-orange-600 text-white px-8 py-3 font-semibold rounded-lg hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
@@ -86,42 +81,83 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
     </div>
   </section>
 
-  <!-- Link Cards (Home hub) -->
-  <section class="py-16 bg-white dark:bg-gray-950">
+  <!-- Identity Section -->
+  <section class="py-20 bg-white dark:bg-gray-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+      >
+        More than a coffee shop
+      </p>
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        A place to gather, linger, create, and connect.
+      </h2>
+      <div
+        class="space-y-5 text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+      >
+        <p>
+          Synchronize Coffee is built around the kind of café experience people
+          remember: good coffee, familiar faces, local art, shared tables, and
+          conversations that unfold naturally.
+        </p>
+        <p>
+          Some people come for a morning pour-over. Some come to work for an
+          afternoon, meet a friend, share their art, or bring music and stories
+          into the room.
+        </p>
+        <p>The coffee matters. So does everything that can happen around it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ways to Participate -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+        >
+          Ways to Participate
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          Whether you are stopping in, stocking up, sharing work, or planning a
+          gathering, Synchronize gives you a clear place to begin.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <!-- Order Beans -->
         <article
           class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm"
         >
           <h3
             class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
           >
-            Order Beans
+            Bring the Coffee Home
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-5">
-            Discover our single-origin roasts and house blends. We ship
-            fresh-roasted beans to your door, or grab a bag in the café.
+            Order fresh-roasted beans, choose your grind, and keep the rhythm of
+            the café going from your own kitchen.
           </p>
           <a
             href="/concept/sync-coffee/order/"
             class="inline-block bg-orange-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-            >Order Now</a
+            >Order Beans</a
           >
         </article>
 
-        <!-- Show Your Art -->
         <article
           class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm"
         >
           <h3
             class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
           >
-            Show Your Art
+            Share Your Art
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-5">
-            Our walls are a rotating gallery. Local artists display work, find
-            inspiration, and connect with community.
+            Local artists help shape the room. Submit work for the rotating
+            gallery and let the neighborhood encounter what you make.
           </p>
           <a
             href="/concept/sync-coffee/submit-art/"
@@ -130,45 +166,84 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
           >
         </article>
 
-        <!-- Book a Performance -->
         <article
           class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm"
         >
           <h3
             class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
           >
-            Book a Performance
+            Bring Something Into the Room
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-5">
-            Host a live performance. Coffee, community, and music — a perfect
-            trio. We host musicians, poets, and storytellers.
+            Music, poetry, storytelling, and small performances belong here.
+            Send a booking request and tell us what you would like to share.
           </p>
           <a
             href="/concept/sync-coffee/perform/"
             class="inline-block border border-blue-700 text-blue-700 px-5 py-2.5 rounded-md font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
-            >Schedule a Time</a
+            >Book a Performance</a
           >
         </article>
 
-        <!-- Reserve a Space -->
         <article
           class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-sm"
         >
           <h3
             class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
           >
-            Reserve a Space
+            Make Space for a Gathering
           </h3>
           <p class="text-gray-700 dark:text-gray-300 mb-5">
-            Need a workspace? Host a small meeting? We have cozy corners,
-            community tables, and bike parking out front.
+            Reserve a cozy corner, community table, or meeting nook for focused
+            work, small groups, and conversations that need a place to land.
           </p>
           <a
             href="/concept/sync-coffee/reserve/"
             class="inline-block bg-orange-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-            >Reserve Now</a
+            >Reserve a Space</a
           >
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept Note -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          What this concept shows
+        </p>
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          An imagined coffee shop. Real website possibilities.
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          Synchronize Coffee is a concept business, but the opportunities are
+          real: telling a story, inviting participation, handling requests, and
+          helping people understand the life of a place before they walk through
+          the door.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          This example explores how a neighborhood coffee shop website could
+          become more than a simple online listing. It can act as an extension
+          of the space itself.
+        </p>
+      </div>
+
+      <div
+        class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800"
+      >
+        <img
+          src="/images/coffee/coffeeshop-interior.webp"
+          alt="Coffee shop interior with bar, seating, plants, and tall windows"
+          class="w-full h-full object-cover"
+        />
       </div>
     </div>
   </section>
@@ -182,8 +257,8 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         Come Find Your Rhythm
       </h2>
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-        Stop by in person, order online, or reach out to learn more. We’re here,
-        we’re connected, and we’re always brewing something good.
+        Stop by for coffee, share your work, reserve a table, or bring something
+        creative into the room.
       </p>
       <a
         href="/concept/sync-coffee/contact/"
@@ -194,7 +269,7 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
     </div>
   </section>
 
-  <!-- Optional collage (remove this whole section later if you decide against it) -->
+  <!-- From the Café -->
   <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <header class="mb-6 text-center">
@@ -208,7 +283,6 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         </p>
       </header>
 
-      <!-- Clean responsive grid: 1 / 2 / 3 columns -->
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
       >
@@ -264,11 +338,9 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
     const video = document.getElementById('hero-video');
     const toggleBtn = document.getElementById('hero-toggle');
 
-    // Slow the video down to 75%
     video.playbackRate = 0.75;
 
-    // Respect saved preference + reduced motion + data saver
-    const stored = localStorage.getItem('heroMotion'); // 'on' | 'off' | null
+    const stored = localStorage.getItem('heroMotion');
     const prefersReduced = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
@@ -297,7 +369,6 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
       updateButton();
     }
 
-    // Initial state
     if (!allowAutoplay) {
       video.pause();
       video.removeAttribute('autoplay');
@@ -306,7 +377,6 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
       setPlaying(true);
     }
 
-    // Pause when offscreen to save CPU/battery
     let wasPlaying = false;
     const io = new IntersectionObserver(
       (entries) => {
@@ -323,7 +393,6 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
     );
     io.observe(video);
 
-    // Toggle button
     toggleBtn.addEventListener('click', () => {
       const wantPlay = video.paused;
       allowAutoplay = wantPlay;
@@ -331,7 +400,6 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
       setPlaying(wantPlay);
     });
 
-    // Keep label in sync if browser auto-pauses
     video.addEventListener('play', updateButton);
     video.addEventListener('pause', updateButton);
     updateButton();

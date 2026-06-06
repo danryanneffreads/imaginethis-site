@@ -1,76 +1,303 @@
 ---
-status: "published"
+status: 'published';
 // Reserve page for Synchronize Coffee
-import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
+import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 ---
 
-<SyncCoffeeLayout 
+<SyncCoffeeLayout
   title="Reserve a Space - Synchronize Coffee"
-  description="Reserve a meeting space or work area at Synchronize Coffee."
+  description="Reserve a table or meeting space at Synchronize Coffee."
 >
-  <!-- Hero (blueswirl abstract) -->
-  <section class="relative overflow-hidden py-16 md:py-24 bg-white dark:bg-gray-950">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden py-16 md:py-24 bg-white dark:bg-gray-950"
+  >
     <div class="absolute inset-0 z-0">
-      <img src="/images/coffee/blueswirl.webp" alt="" role="presentation" class="w-full h-full object-cover opacity-25 dark:opacity-30">
-      <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-blue-950/60 dark:via-blue-950/40 dark:to-gray-950/50"></div>
+      <img
+        src="/images/coffee/blueswirl.webp"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover opacity-25 dark:opacity-30"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-white/75 via-white/45 to-white/15 dark:from-blue-950/70 dark:via-blue-950/50 dark:to-gray-950/65"
+      >
+      </div>
     </div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Reserve a Space</h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">Cozy corners, community tables, and meeting rooms.</p>
+
+    <div
+      class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        Reserve a Space
+      </h1>
+      <p
+        class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+      >
+        Some conversations happen naturally. Others need a little space set
+        aside.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-20 bg-white dark:bg-gray-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+      >
+        Gather with intention
+      </p>
+
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        Find the right place for the conversation.
+      </h2>
+
+      <div
+        class="space-y-5 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+      >
+        <p>
+          Synchronize is open for everyday visits, but some gatherings benefit
+          from a little planning: a project meeting, a book discussion, a small
+          team conversation, or a focused work session.
+        </p>
+
+        <p>
+          Reserve a table or nook when you want to know there will be room.
+          We’ll help match the size and feel of the space to what you’re
+          planning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spaces overview -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Spaces at Synchronize
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          Choose the setting that fits the way you want to gather.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 text-center shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
+          >
+            Window Table
+          </h3>
+          <p
+            class="text-sm font-semibold text-orange-600 dark:text-orange-400 mb-3"
+          >
+            1–3 people
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            A good fit for reading, focused work, one-on-one conversation, or a
+            small catch-up over coffee.
+          </p>
+        </article>
+
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 text-center shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
+          >
+            Community Table
+          </h3>
+          <p
+            class="text-sm font-semibold text-orange-600 dark:text-orange-400 mb-3"
+          >
+            4–6 people
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Shared space for collaboration, casual meetings, planning sessions,
+            and groups that want to stay connected to the room.
+          </p>
+        </article>
+
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 text-center shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-2"
+          >
+            Meeting Nook
+          </h3>
+          <p
+            class="text-sm font-semibold text-orange-600 dark:text-orange-400 mb-3"
+          >
+            6–8 people
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            A more focused setting for organized conversations, small group
+            discussions, and meetings that need a little more privacy.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- Reservation form -->
   <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6 text-center">Request a Reservation</h2>
+      <div class="mb-8 text-center">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          Request a reservation
+        </p>
 
-      <div class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 rounded-r-md mb-6">
-        <p class="text-amber-800 dark:text-amber-200 text-sm">
-          <strong>Concept Demo:</strong> This is a concept site for demonstration. No real reservation will be made.
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Tell us what you’re planning.
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Share the date, time, group size, and type of space you have in mind.
+          This demo form routes to a confirmation page, but no real reservation
+          is made.
         </p>
       </div>
 
-      <form action="#" method="post" class="grid grid-cols-1 gap-5">
+      <div
+        class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 rounded-r-md mb-6"
+      >
+        <p class="text-amber-800 dark:text-amber-200 text-sm">
+          <strong>Concept Demo:</strong> This is a concept site for demonstration.
+          No real reservation will be made.
+        </p>
+      </div>
+
+      <form
+        action="/concept/sync-coffee/reserve/confirmed/"
+        method="get"
+        class="grid grid-cols-1 gap-5"
+      >
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Full Name</label>
-            <input id="name" name="name" type="text" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Full Name</label
+            >
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Email</label>
-            <input id="email" name="email" type="email" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Email</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div>
-            <label for="date" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Date</label>
-            <input id="date" name="date" type="date" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="date"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Date</label
+            >
+            <input
+              id="date"
+              name="date"
+              type="date"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="time" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Time</label>
-            <input id="time" name="time" type="time" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="time"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Time</label
+            >
+            <input
+              id="time"
+              name="time"
+              type="time"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="party" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Party Size</label>
-            <input id="party" name="party" type="number" min="1" value="2" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="party"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Group Size</label
+            >
+            <input
+              id="party"
+              name="party"
+              type="number"
+              min="1"
+              value="2"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="space" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Space Type</label>
-            <select id="space" name="space" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400">
-              <option>Cozy Corner (2–3)</option>
+            <label
+              for="space"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Space Type</label
+            >
+            <select
+              id="space"
+              name="space"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            >
+              <option>Window Table (1–3)</option>
               <option>Community Table (4–6)</option>
-              <option>Meeting Table (6–8)</option>
-              <option>Whole Nook (up to 12)</option>
+              <option>Meeting Nook (6–8)</option>
+              <option>Not sure yet</option>
             </select>
           </div>
+
           <div>
-            <label for="needs" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Special Needs</label>
-            <select id="needs" name="needs" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400">
+            <label
+              for="needs"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Helpful Details</label
+            >
+            <select
+              id="needs"
+              name="needs"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            >
               <option>None</option>
               <option>Power outlets</option>
               <option>Quiet area</option>
@@ -81,13 +308,44 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
         </div>
 
         <div>
-          <label for="notes" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Notes</label>
-          <textarea id="notes" name="notes" rows="4" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" placeholder="Anything else we should know?"></textarea>
+          <label
+            for="purpose"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+            >What are you gathering for?</label
+          >
+          <input
+            id="purpose"
+            name="purpose"
+            type="text"
+            placeholder="e.g., work session, book club, planning meeting"
+            class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+          />
         </div>
 
-        <div class="flex items-center justify-between">
-          <p class="text-sm text-gray-600 dark:text-gray-400">We’ll confirm by email within one business day.</p>
-          <button type="submit" class="bg-orange-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">
+        <div>
+          <label
+            for="notes"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+            >Notes</label
+          >
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            placeholder="Anything else we should know?"></textarea>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            In a real café, we would confirm by email within one business day.
+          </p>
+          <button
+            type="submit"
+            class="bg-orange-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+          >
             Submit Request
           </button>
         </div>
@@ -95,33 +353,23 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
     </div>
   </section>
 
-  <!-- Spaces overview -->
-  <section class="py-14 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6 text-center">Spaces at Synchronize</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5 text-center">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Cozy Corners</h3>
-          <p class="text-gray-700 dark:text-gray-300">Perfect for pairs and quiet work sessions.</p>
-        </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5 text-center">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Community Tables</h3>
-          <p class="text-gray-700 dark:text-gray-300">Gather, collaborate, and meet new people.</p>
-        </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5 text-center">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Meeting Nooks</h3>
-          <p class="text-gray-700 dark:text-gray-300">A bit more privacy for small groups.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA band -->
+  <!-- Closing CTA -->
   <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Need Something Specific?</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Tell us what you’re planning — we’ll help make it happen.</p>
-      <a href="/concept/sync-coffee/contact/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Contact Us</a>
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+      >
+        Not sure what you need?
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Tell us what you're planning, and we'll help you think through the best
+        fit.
+      </p>
+      <a
+        href="/concept/sync-coffee/contact/"
+        class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+        >Contact Us</a
+      >
     </div>
   </section>
 </SyncCoffeeLayout>

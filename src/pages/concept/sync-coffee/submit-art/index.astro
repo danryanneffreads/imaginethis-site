@@ -1,46 +1,187 @@
 ---
-status: "published"
+status: 'published';
 // Submit Art page for Synchronize Coffee
-import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
+import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 ---
 
-<SyncCoffeeLayout 
+<SyncCoffeeLayout
   title="Submit Art - Synchronize Coffee"
-  description="Show your work at Synchronize Coffee — our walls are a rotating gallery for local artists."
+  description="Submit your artwork for the rotating gallery at Synchronize Coffee."
 >
-  <!-- Hero (golden pattern for art vibe) -->
-  <section class="relative overflow-hidden py-16 md:py-24 bg-white dark:bg-gray-950">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden py-16 md:py-24 bg-white dark:bg-gray-950"
+  >
     <div class="absolute inset-0 z-0">
-      <img src="/images/coffee/square-golden.webp" alt="" role="presentation" class="w-full h-full object-cover opacity-35 dark:opacity-45">
-      <div class="absolute inset-0 bg-amber-200/10 dark:bg-blue-900/30"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/10 dark:from-blue-950/60 dark:via-blue-950/40 dark:to-gray-950/50"></div>
+      <img
+        src="/images/shared/orange-loops-green-background.webp"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover opacity-35 dark:opacity-45"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-white/75 via-white/45 to-white/15 dark:from-blue-950/70 dark:via-blue-950/50 dark:to-gray-950/65"
+      >
+      </div>
     </div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Show Your Art</h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">Our walls are a rotating gallery. Share your work and connect with the neighborhood.</p>
+
+    <div
+      class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        Share Your Art
+      </h1>
+      <p
+        class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+      >
+        Our walls are a rotating gallery for local creativity. Submit your work
+        and help shape the room.
+      </p>
     </div>
   </section>
 
-  <!-- Guidelines -->
-  <section class="py-12 bg-white dark:bg-gray-950">
+  <!-- Why We Display Art -->
+  <section class="py-20 bg-white dark:bg-gray-950">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Submission Guidelines</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li>We accept photography, painting, illustration, textiles, mixed media, and more.</li>
-        <li>Exhibits typically run 4–6 weeks. We’ll coordinate hanging and dates with you.</li>
-        <li>Artists may list work for sale; 80% to the artist, 20% venue support.</li>
-        <li>Please share samples or a portfolio link so we can get a sense of your work.</li>
-      </ul>
-    </div>
-  </section>
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+      >
+        Why we display art
+      </p>
 
-  <!-- Concept notice -->
-  <section class="py-2 bg-white dark:bg-gray-950">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 rounded-r-md">
-        <p class="text-amber-800 dark:text-amber-200 text-sm">
-          <strong>Concept Demo:</strong> This is a concept website built by ImagineThis.Site to demonstrate possibilities. No real submission will be sent.
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        The walls are part of the conversation.
+      </h2>
+
+      <div
+        class="space-y-5 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+      >
+        <p>
+          Art changes the feeling of a place. It gives people something to
+          notice, talk about, return to, and remember.
         </p>
+
+        <p>
+          Synchronize regularly features work by local and regional artists
+          because creative work helps make the café feel connected to the people
+          around it.
+        </p>
+
+        <p>
+          Every exhibition brings a new perspective into the room and gives
+          visitors something unexpected to discover while they drink, work,
+          gather, or linger.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Looking For -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          What We're Looking For
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          We review all submissions and look for work that fits the space,
+          contributes to the atmosphere of the café, and creates a meaningful
+          experience for visitors.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+          >
+            Broad mediums
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Painting, photography, illustration, printmaking, textiles, mixed
+            media, and other wall-friendly work are welcome.
+          </p>
+        </article>
+
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+          >
+            Local perspective
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            We especially enjoy work connected to the neighborhood, region,
+            everyday life, imagination, place, or community.
+          </p>
+        </article>
+
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+          >
+            Café-friendly scale
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Work should be ready to hang, safe for a public setting, and suited
+            to a shared room where people gather throughout the day.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artwork Feature -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          A rotating gallery
+        </p>
+
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Every show changes the room.
+        </h2>
+
+        <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p>
+            Exhibits typically run for several weeks. We coordinate timing,
+            hanging needs, artwork labels, and sale details with each selected
+            artist.
+          </p>
+
+          <p>
+            Our goal is to make the process clear and approachable while still
+            caring for the quality and feel of the space.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900"
+      >
+        <img
+          src="/images/shared/orange-loops-green-background.webp"
+          alt="Abstract orange loop artwork on a green background"
+          class="w-full h-full object-cover"
+        />
       </div>
     </div>
   </section>
@@ -48,89 +189,267 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
   <!-- Submission Form -->
   <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Submit Your Work</h2>
+      <div class="mb-8">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          Submit your work
+        </p>
 
-      <form action="#" method="post" class="grid grid-cols-1 gap-5">
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Tell us what you'd like to share.
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Share a little about yourself, your work, and when it may be
+          available. This demo form routes to a confirmation page, but no real
+          submission is collected.
+        </p>
+      </div>
+
+      <div
+        class="bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 p-4 rounded-r-md mb-6"
+      >
+        <p class="text-amber-800 dark:text-amber-200 text-sm">
+          <strong>Concept Demo:</strong> This is a concept website built by ImagineThis.Site
+          to demonstrate possibilities. No real submission will be sent.
+        </p>
+      </div>
+
+      <form
+        action="/concept/sync-coffee/submit-art/confirmed/"
+        method="get"
+        class="grid grid-cols-1 gap-5"
+      >
         <!-- Artist info -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="artistName" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Artist Name</label>
-            <input id="artistName" name="artistName" type="text" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="artistName"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Artist Name</label
+            >
+            <input
+              id="artistName"
+              name="artistName"
+              type="text"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Email</label>
-            <input id="email" name="email" type="email" required class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Email</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="phone" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Phone (optional)</label>
-            <input id="phone" name="phone" type="tel" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="phone"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Phone <span class="text-gray-500">(optional)</span></label
+            >
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="portfolio" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Portfolio / Social Link</label>
-            <input id="portfolio" name="portfolio" type="url" placeholder="https://…" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="portfolio"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Portfolio / Social Link</label
+            >
+            <input
+              id="portfolio"
+              name="portfolio"
+              type="url"
+              placeholder="https://…"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
         </div>
 
         <!-- Work details -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="title" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Artwork / Series Title</label>
-            <input id="title" name="title" type="text" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="title"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Artwork / Series Title</label
+            >
+            <input
+              id="title"
+              name="title"
+              type="text"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="medium" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Medium</label>
-            <input id="medium" name="medium" type="text" placeholder="e.g., watercolor, film, mixed media" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="medium"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Medium</label
+            >
+            <input
+              id="medium"
+              name="medium"
+              type="text"
+              placeholder="e.g., watercolor, film, mixed media"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div>
-            <label for="dimensions" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Dimensions</label>
-            <input id="dimensions" name="dimensions" type="text" placeholder="e.g., 16x20 in" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="dimensions"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Dimensions</label
+            >
+            <input
+              id="dimensions"
+              name="dimensions"
+              type="text"
+              placeholder="e.g., 16x20 in"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="availabilityStart" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Available From</label>
-            <input id="availabilityStart" name="availabilityStart" type="date" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="availabilityStart"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Available From</label
+            >
+            <input
+              id="availabilityStart"
+              name="availabilityStart"
+              type="date"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div>
-            <label for="availabilityEnd" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Available Until</label>
-            <input id="availabilityEnd" name="availabilityEnd" type="date" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="availabilityEnd"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Available Until</label
+            >
+            <input
+              id="availabilityEnd"
+              name="availabilityEnd"
+              type="date"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label for="price" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Price (optional)</label>
-            <input id="price" name="price" type="text" placeholder="$" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" />
+            <label
+              for="price"
+              class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+              >Price <span class="text-gray-500">(optional)</span></label
+            >
+            <input
+              id="price"
+              name="price"
+              type="text"
+              placeholder="$"
+              class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            />
           </div>
+
           <div class="flex items-center gap-2 pt-6">
-            <input id="nfs" name="nfs" type="checkbox" class="accent-blue-700">
-            <label for="nfs" class="text-sm text-gray-700 dark:text-gray-300">Not for sale</label>
+            <input
+              id="nfs"
+              name="nfs"
+              type="checkbox"
+              class="accent-blue-700"
+            />
+            <label for="nfs" class="text-sm text-gray-700 dark:text-gray-300">
+              Not for sale
+            </label>
           </div>
         </div>
 
         <div>
-          <label for="statement" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Artist Statement / Notes</label>
-          <textarea id="statement" name="statement" rows="5" class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400" placeholder="Tell us about this work."></textarea>
+          <label
+            for="statement"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+            >Artist Statement / Notes</label
+          >
+          <textarea
+            id="statement"
+            name="statement"
+            rows="5"
+            class="w-full rounded-md border border-stone-300 dark:border-stone-700 bg-white dark:bg-gray-900 px-3 py-2 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+            placeholder="Tell us about this work."></textarea>
         </div>
 
         <div>
-          <label for="images" class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">Upload Images (optional)</label>
-          <input id="images" name="images" type="file" accept="image/*" multiple class="block w-full text-sm text-gray-700 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-blue-900/30 dark:file:text-blue-200" />
-          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Uploads are not processed on this demo.</p>
+          <label
+            for="images"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-1"
+            >Upload Images <span class="text-gray-500">(optional)</span></label
+          >
+          <input
+            id="images"
+            name="images"
+            type="file"
+            accept="image/*"
+            multiple
+            class="block w-full text-sm text-gray-700 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-blue-900/30 dark:file:text-blue-200"
+          />
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            Uploads are not processed on this demo.
+          </p>
         </div>
 
         <div class="flex items-center gap-2">
-          <input id="agree" name="agree" type="checkbox" required class="accent-blue-700">
-          <label for="agree" class="text-sm text-gray-700 dark:text-gray-300">I agree to the hanging and venue guidelines.</label>
+          <input
+            id="agree"
+            name="agree"
+            type="checkbox"
+            required
+            class="accent-blue-700"
+          />
+          <label for="agree" class="text-sm text-gray-700 dark:text-gray-300">
+            I understand this is a concept form and agree to the hanging and
+            venue guidelines.
+          </label>
         </div>
 
-        <div class="flex items-center justify-between">
-          <p class="text-sm text-gray-600 dark:text-gray-400">We’ll review and reply within one business day.</p>
-          <button type="submit" class="bg-orange-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            In a real café, we would review and reply within one business day.
+          </p>
+          <button
+            type="submit"
+            class="bg-orange-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+          >
             Submit Proposal
           </button>
         </div>
@@ -138,14 +457,38 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
     </div>
   </section>
 
-  <!-- CTA row -->
+  <!-- Other Ways to Participate -->
   <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Other Ways to Get Involved</h2>
+      <h2
+        class="text-2xl md:text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+      >
+        Not submitting art right now?
+      </h2>
+      <p
+        class="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto"
+      >
+        You can still be part of what happens here. Come by to see the work on
+        the walls, attend a performance, or reserve a table for your own
+        gathering.
+      </p>
+
       <div class="flex flex-wrap gap-3 justify-center">
-        <a href="/concept/sync-coffee/perform/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Book a Performance</a>
-        <a href="/concept/sync-coffee/reserve/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Reserve a Space</a>
-        <a href="/concept/sync-coffee/contact/" class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">Contact Us</a>
+        <a
+          href="/concept/sync-coffee/perform/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+          >Book a Performance</a
+        >
+        <a
+          href="/concept/sync-coffee/reserve/"
+          class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+          >Reserve a Space</a
+        >
+        <a
+          href="/concept/sync-coffee/contact/"
+          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+          >Contact Us</a
+        >
       </div>
     </div>
   </section>

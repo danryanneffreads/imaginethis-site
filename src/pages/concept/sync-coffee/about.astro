@@ -6,9 +6,9 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 
 <SyncCoffeeLayout
   title="About - Synchronize Coffee"
-  description="The story of Synchronize Coffee — a community third space rooted in art, connection, and exceptional coffee."
+  description="The story of Synchronize Coffee — a neighborhood gathering place for coffee, creativity, and connection."
 >
-  <!-- Hero (coffeeshop interior) -->
+  <!-- Hero -->
   <section
     class="relative bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24 overflow-hidden"
   >
@@ -19,10 +19,11 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         class="w-full h-full object-cover opacity-25 dark:opacity-35"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-b from-white/50 via-white/25 to-white/0 dark:from-blue-950/55 dark:via-blue-950/40 dark:to-gray-950/55"
+        class="absolute inset-0 bg-gradient-to-b from-white/60 via-white/35 to-white/10 dark:from-blue-950/65 dark:via-blue-950/45 dark:to-gray-950/60"
       >
       </div>
     </div>
+
     <div
       class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
     >
@@ -32,60 +33,152 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         Our Story
       </h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">
-        Community. Art. Connection. Coffee.
+        Coffee is the starting point. Community is the destination.
       </p>
     </div>
   </section>
 
-  <!-- Main Story -->
+  <!-- Opening Story -->
   <section class="py-20 bg-white dark:bg-gray-950">
-    <div
-      class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 text-lg leading-relaxed"
-    >
-      <p class="text-gray-700 dark:text-gray-300">
-        Synchronize Coffee began with a simple question: <em
-          >What if a coffee shop was more than just a place to grab a drink?</em
-        >
-        We imagined a third space where neighbors cross paths, ideas take shape, and
-        local creativity is part of the everyday experience.
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+      >
+        Why Synchronize exists
       </p>
-      <p class="text-gray-700 dark:text-gray-300">
-        From day one, we set out to roast with intention and host the community
-        with care. We curate small-batch coffees, keep the doors open to artists
-        and performers, and aim for that just‑right balance of calm and energy
-        that makes a café feel like home.
-      </p>
-      <p class="text-gray-700 dark:text-gray-300">
-        Today, you’ll find regulars at the corner table, new faces reading by
-        the window, art rotating on the walls, and the steady rhythm of great
-        coffee. We hope you’ll find your rhythm here, too.
-      </p>
+
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        A coffee shop is made by the people who gather there.
+      </h2>
+
+      <div
+        class="space-y-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+      >
+        <p>
+          Synchronize Coffee was imagined as a neighborhood place with a steady
+          rhythm: the morning regular, the student with a notebook, the artist
+          hanging new work, the friends taking over a corner table, the musician
+          tuning quietly before a small evening set.
+        </p>
+
+        <p>
+          The coffee matters. We care about the roast, the pour, the cup, and
+          the ritual of beginning again. But coffee is also an invitation. It
+          gives people a reason to enter, pause, look around, and stay awhile.
+        </p>
+
+        <p>
+          What happens next is the real life of the café. People read, work,
+          meet, draw, listen, talk, plan, and sometimes simply sit near other
+          people. Synchronize exists for those ordinary moments that become part
+          of a neighborhood’s culture.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Craft Matters (handmade mug image) -->
-  <section class="py-16 bg-white dark:bg-gray-950">
-    <div
-      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 items-center"
-    >
-      <div>
+  <!-- People Section -->
+  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
         <h2
           class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
         >
-          Craft Matters
+          Who gathers here
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          From beans to vessels, we partner with local makers. Our handmade mugs
-          are fired nearby and built for everyday ritual. It’s one more way we
-          keep our community close to the work we do.
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          A good café holds many kinds of days at once. Synchronize is designed
+          for the different ways people use a shared place.
         </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+          >
+            The regulars
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            People who stop in before work, know their favorite table, and help
+            make the room feel familiar.
+          </p>
+        </article>
+
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+          >
+            The makers
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Artists, writers, musicians, and organizers who bring work,
+            questions, and creative energy into the space.
+          </p>
+        </article>
+
+        <article
+          class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-6 shadow-sm"
+        >
+          <h3
+            class="text-xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+          >
+            The gatherers
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Friends, neighbors, teams, and small groups looking for a place that
+            feels welcoming without feeling anonymous.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffee + Community -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center"
+    >
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          The everyday ritual
+        </p>
+
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Good coffee creates the opening.
+        </h2>
+
+        <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p>
+            A well-made cup can change the pace of a day. It can mark the start
+            of a conversation, a project, a quiet hour, or a walk through the
+            neighborhood.
+          </p>
+          <p>
+            At Synchronize, coffee is treated with care because it anchors the
+            experience. The beans, mugs, tables, light, and music all contribute
+            to the feeling of being able to settle in.
+          </p>
+        </div>
+
         <a
           href="/concept/sync-coffee/order/"
-          class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+          class="inline-block mt-6 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
         >
-          Shop Mugs & Gear
+          Order Beans
         </a>
       </div>
+
       <div
         class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800"
       >
@@ -98,6 +191,64 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
     </div>
   </section>
 
+  <!-- Art and Events -->
+  <section class="py-16 bg-white dark:bg-gray-950">
+    <div
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center"
+    >
+      <div
+        class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 md:order-1"
+      >
+        <img
+          src="/images/coffee/coffeeshop-interior.webp"
+          alt="Coffee shop interior with bar, seating, plants, and tall windows"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="md:order-2">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-4"
+        >
+          Art, music, and shared attention
+        </p>
+
+        <h2
+          class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          The room changes when people contribute.
+        </h2>
+
+        <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p>
+            Local art on the walls makes the café feel connected to the people
+            around it. A small performance changes the mood of an evening. A
+            reading, song, or story can turn a familiar room into a shared
+            experience.
+          </p>
+          <p>
+            Synchronize makes space for those contributions because they help
+            the café become more than a place of transaction. They make it a
+            place of participation.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a
+            href="/concept/sync-coffee/submit-art/"
+            class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+            >Submit Art</a
+          >
+          <a
+            href="/concept/sync-coffee/perform/"
+            class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+            >Book a Performance</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Values row -->
   <section class="py-12 bg-amber-50 dark:bg-blue-950/40">
     <div
@@ -105,65 +256,56 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
     >
       <div class="text-center">
         <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
-          Community First
+          Coffee with care
         </h3>
         <p class="text-gray-700 dark:text-gray-300">
-          A welcoming third space where everyone belongs.
+          Roasts, drinks, and small rituals prepared with attention.
         </p>
       </div>
+
       <div class="text-center">
         <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
-          Thoughtful Coffee
+          Culture at human scale
         </h3>
         <p class="text-gray-700 dark:text-gray-300">
-          Small-batch roasts and careful sourcing.
+          Art, music, readings, and gatherings that fit the room.
         </p>
       </div>
+
       <div class="text-center">
         <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
-          Art & Events
+          A place to belong
         </h3>
         <p class="text-gray-700 dark:text-gray-300">
-          Rotating shows and live performances.
+          A welcoming third place shaped by the people who use it.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- CTA band -->
+  <!-- Closing CTA -->
   <section class="py-16 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2
         class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
       >
-        Be Part of the Story
+        Be Part of the Rhythm
       </h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-        Host an event, share your artwork, or reserve a cozy corner. We’ll make
-        the coffee — you bring the spark.
+
+      <p
+        class="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto"
+      >
+        Stop in for coffee, bring a friend, notice the art, stay for a song, or
+        claim a table for the afternoon. Synchronize is made by what people do
+        here.
       </p>
-      <div class="flex flex-wrap gap-3 justify-center">
-        <a
-          href="/concept/sync-coffee/reserve/"
-          class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
-          >Reserve a Space</a
-        >
-        <a
-          href="/concept/sync-coffee/perform/"
-          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
-          >Book a Performance</a
-        >
-        <a
-          href="/concept/sync-coffee/submit-art/"
-          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
-          >Submit Art</a
-        >
-        <a
-          href="/concept/sync-coffee/contact/"
-          class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
-          >Contact Us</a
-        >
-      </div>
+
+      <a
+        href="/concept/sync-coffee/contact/"
+        class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+      >
+        Plan Your Visit
+      </a>
     </div>
   </section>
 </SyncCoffeeLayout>

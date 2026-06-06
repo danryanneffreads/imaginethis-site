@@ -1,81 +1,212 @@
 ---
-status: "published"
+status: 'published';
 // Menu page for Synchronize Coffee
-import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
+import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 ---
 
-<SyncCoffeeLayout 
+<SyncCoffeeLayout
   title="Menu - Synchronize Coffee"
-  description="Discover our coffee, food, and drink offerings — thoughtfully curated for our community."
+  description="Discover the coffee, food, seasonal drinks, and small rituals of Synchronize Coffee."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Menu</h1>
-      <p class="text-lg text-gray-700 dark:text-gray-300">Everything we serve is thoughtfully selected and prepared.</p>
+  <section
+    class="relative bg-gradient-to-b from-amber-50 to-white dark:from-blue-950 dark:to-gray-950 py-16 md:py-24 overflow-hidden"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/coffee/coffee-steam.webp"
+        alt=""
+        class="w-full h-full object-cover opacity-25 dark:opacity-35"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-white/65 via-white/40 to-white/10 dark:from-blue-950/65 dark:via-blue-950/50 dark:to-gray-950/65"
+      >
+      </div>
+    </div>
+
+    <div
+      class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
+      >
+        Menu
+      </h1>
+      <p
+        class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+      >
+        Our menu is built around good coffee, thoughtful preparation, and the
+        moments that happen around them.
+      </p>
     </div>
   </section>
 
   <!-- Coffee & Espresso -->
   <section class="py-14 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Coffee & Espresso</h2>
+      <div class="mb-8">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3"
+        >
+          Coffee & Espresso
+        </p>
+        <h2
+          class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+        >
+          The daily rhythm
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+          From a quick espresso to a pour-over worth settling into, these are
+          the drinks that anchor the day.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Espresso</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Balanced, syrupy, notes of cocoa and stone fruit.</p>
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Espresso
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Balanced and syrupy, with notes of cocoa and stone fruit.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Cappuccino</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Classic 6 oz with silky microfoam.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Cappuccino
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            A classic 6 oz cup with silky microfoam and a steady espresso base.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Latte</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">12 oz; add house syrups: vanilla, caramel, seasonal.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Latte
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Smooth and familiar, with house syrups including vanilla, caramel,
+            and seasonal options.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Drip Coffee</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Fresh-brewed, rotating single origin or house blend.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Drip Coffee
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Fresh-brewed throughout the day with a rotating single origin or
+            house blend.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Pour-Over</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Made to order for clarity and nuance.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Pour-Over
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Made to order for clarity, nuance, and a little more attention.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Cold Brew</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Slow-steeped, smooth, naturally sweet.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Cold Brew
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Slow-steeped, smooth, and naturally sweet over ice.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Seasonal Features (uses your images) -->
-  <section class="py-14 bg-white dark:bg-gray-950">
+  <!-- Seasonal Features -->
+  <section class="py-14 bg-amber-50 dark:bg-blue-950/40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Seasonal Features</h2>
+      <div class="mb-8">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3"
+        >
+          Seasonal features
+        </p>
+        <h2
+          class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+        >
+          Drinks for the moment
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+          Seasonal drinks give the menu a little movement — something new to try
+          while the familiar favorites stay close.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Image card: coffee-steam -->
-        <article class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900">
+        <article
+          class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900"
+        >
           <div class="aspect-[4/3] overflow-hidden">
-            <img src="/images/coffee/coffee-steam.webp" alt="Blue ceramic mug with rising coffee steam on a wooden table" class="w-full h-full object-cover">
+            <img
+              src="/images/coffee/coffee-steam.webp"
+              alt="Blue ceramic mug with rising coffee steam on a wooden table"
+              class="w-full h-full object-cover"
+            />
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Morning Blend — Seasonal Roast</h3>
-            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">Comforting and bright — great black or with milk.</p>
-            <a href="/concept/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Order Beans</a>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              Morning Blend — Seasonal Roast
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">
+              Comforting and bright, roasted for the first cup of the day.
+            </p>
+            <a
+              href="/concept/sync-coffee/order/"
+              class="inline-block bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+              >Order Beans</a
+            >
           </div>
         </article>
 
-        <!-- Patterned tile: square-golden -->
-        <article class="relative rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800">
+        <article
+          class="relative rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900"
+        >
           <div class="aspect-[4/3] relative">
-            <img src="/images/coffee/square-golden.webp" alt="" role="presentation" class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-45">
-            <div class="absolute inset-0 bg-amber-200/10 dark:bg-blue-900/25"></div>
+            <img
+              src="/images/coffee/square-golden.webp"
+              alt=""
+              role="presentation"
+              class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-45"
+            />
+            <div class="absolute inset-0 bg-amber-200/10 dark:bg-blue-900/25">
+            </div>
             <div class="absolute inset-0 flex items-end p-5">
-              <div class="bg-white/80 dark:bg-gray-900/70 backdrop-blur-sm rounded-lg p-4">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Limited Release: Golden Spice Latte</h3>
-                <p class="text-gray-700 dark:text-gray-300 mt-1 mb-3">House-made turmeric syrup, espresso, and steamed milk.</p>
-                <a href="/concept/sync-coffee/order/" class="inline-block border border-blue-700 text-blue-700 px-4 py-2 rounded-md font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30">See Options</a>
+              <div
+                class="bg-white/85 dark:bg-gray-900/75 backdrop-blur-sm rounded-lg p-4"
+              >
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Golden Spice Latte
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-1 mb-3">
+                  House-made turmeric syrup, espresso, steamed milk, and a warm
+                  finish.
+                </p>
+                <a
+                  href="/concept/sync-coffee/order/"
+                  class="inline-block border border-blue-700 text-blue-700 px-4 py-2 rounded-md font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
+                  >See Options</a
+                >
               </div>
             </div>
           </div>
@@ -87,49 +218,158 @@ import SyncCoffeeLayout from "@/layouts/SyncCoffeeLayout.astro";
   <!-- Pastries & Small Bites -->
   <section class="py-14 bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Pastries & Small Bites</h2>
+      <div class="mb-8">
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3"
+        >
+          Pastries & small bites
+        </p>
+        <h2
+          class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-3"
+        >
+          Something alongside the cup
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+          Simple, satisfying food for breakfast, a working afternoon, or the
+          pause between one thing and the next.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Croissant</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Flaky, buttery, baked fresh daily.</p>
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Croissant
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Flaky, buttery, and baked fresh daily.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Banana Bread</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">Moist and nutty with a hint of cinnamon.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Banana Bread
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Moist and nutty with a hint of cinnamon.
+          </p>
         </article>
-        <article class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Granola Yogurt Bowl</h3>
-          <p class="text-gray-600 dark:text-gray-400 mt-1">House granola, Greek yogurt, honey drizzle.</p>
+
+        <article
+          class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900 p-5"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Granola Yogurt Bowl
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            House granola, Greek yogurt, honey drizzle, and seasonal fruit.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Merchandise (uses handmade mug image) -->
+  <!-- Coffee Beyond the Café -->
   <section class="py-14 bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6">Merchandise</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="/images/coffee/coffee-ceramic-handmade-mug.webp" alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table" class="w-full h-full object-cover object-right">
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Handmade Ceramic Mug</h3>
-            <p class="text-gray-600 dark:text-gray-400 mt-1 mb-4">Wheel-thrown, dishwasher safe, 12 oz.</p>
-            <a href="/concept/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Shop Now</a>
-          </div>
-        </article>
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3"
+        >
+          Coffee beyond the café
+        </p>
+        <h2
+          class="text-3xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+        >
+          Take home the ritual.
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          Some parts of Synchronize can travel with you: a bag of beans, a
+          handmade mug, or the small habit of making coffee with care.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          Our mugs are wheel-thrown locally and made for everyday use. Our beans
+          are roasted in small batches so the café can follow you home.
+        </p>
+        <a
+          href="/concept/sync-coffee/order/"
+          class="inline-block bg-orange-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+          >Shop Beans & Mugs</a
+        >
+      </div>
+
+      <div
+        class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 bg-white dark:bg-gray-900"
+      >
+        <div class="aspect-[4/3] overflow-hidden">
+          <img
+            src="/images/coffee/coffee-ceramic-handmade-mug.webp"
+            alt="Handcrafted ceramic mug with turquoise glaze on a rustic wooden table"
+            class="w-full h-full object-cover object-right"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu note -->
+  <section class="py-12 bg-amber-50 dark:bg-blue-950/40">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+    >
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Thoughtful coffee
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Drinks prepared with care, without making the experience feel
+          complicated.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Room to settle in
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          A menu made for conversation, focus, breaks, and small rituals.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-2">
+          Made to share
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          Beans, mugs, pastries, and seasonal drinks that connect the café to
+          daily life.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Order CTA -->
-  <section class="py-16 bg-amber-50 dark:bg-blue-950/40">
+  <section class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4">Order Beans Online</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Fresh-roasted, ethically sourced coffee delivered to your door.</p>
-      <a href="/concept/sync-coffee/order/" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400">Start an Order</a>
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-4"
+      >
+        Bring Synchronize Home
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Order fresh-roasted beans, choose your grind, and keep the café rhythm
+        going from your own kitchen.
+      </p>
+      <a
+        href="/concept/sync-coffee/order/"
+        class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition dark:bg-orange-500 dark:hover:bg-orange-400"
+        >Start an Order</a
+      >
     </div>
   </section>
 </SyncCoffeeLayout>
