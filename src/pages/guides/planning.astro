@@ -4,8 +4,8 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Planning - A simple way to plan your website"
-  description="Clarify outcomes, audience, scope, proof, and practical constraints. Choose the smallest effective site and what to ship first."
+  title="Planning - Think through your website before building"
+  description="A concise planning guide to clarify what your website should do, who it serves, what belongs in the first version, and how it may evolve."
 >
   <!-- Intro -->
   <section class="bg-white dark:bg-gray-950">
@@ -21,14 +21,14 @@ import Layout from '../../layouts/Layout.astro';
         Planning
       </h1>
       <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-        Plan the smallest effective website. Use the prompts below to clarify
-        outcomes, audience, scope, proof, and practical choices. Then decide
-        what to ship first.
+        You know you need a website. Now the question is what it should do.
+        Planning does not mean having every answer in advance. It means getting
+        clear enough to choose the right first version.
       </p>
     </div>
   </section>
 
-  <!-- How to use this + Figure (image 1 of 2) -->
+  <!-- How to use this + Figure -->
   <section
     class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
   >
@@ -39,20 +39,20 @@ import Layout from '../../layouts/Layout.astro';
         <h2
           class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
         >
-          How to use this
+          Use this to prepare for the conversation.
         </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          This page is not meant to become homework. It is a way to notice the
+          decisions that matter most before a website takes shape.
+        </p>
         <div
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
-          <ol
-            class="list-decimal pl-6 space-y-2 text-gray-700 dark:text-gray-300"
-          >
-            <li>
-              Answer each section in 1 to 2 lines. Keep it simple and specific.
-            </li>
-            <li>Pick the smallest site that clearly serves your outcome.</li>
-            <li>Ship that version, then add one proof item per month.</li>
-          </ol>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Answer briefly. A sentence or two is enough.</li>
+            <li>Focus on what the site needs to accomplish first.</li>
+            <li>Bring rough notes, examples, links, or questions.</li>
+          </ul>
         </div>
       </div>
 
@@ -71,30 +71,33 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Outcomes and audience -->
+  <!-- What should the site do? -->
   <section class="bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Outcomes and audience
+        What should the site do?
       </h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
+        Every website exists to help someone take a step. The step might be
+        booking a call, understanding your work, visiting a location, reading
+        more, making a purchase, or deciding you are credible.
+      </p>
+
       <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
         <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-          <li>What is the one action a first-time visitor should take?</li>
           <li>
-            Who is this for, and what do they need to trust to move forward?
+            What should a first-time visitor understand within thirty seconds?
           </li>
-          <li>What problem are they trying to solve, in their words?</li>
-          <li>
-            How do people find you now (search, referrals, events, partners)?
-          </li>
+          <li>What action should they take next?</li>
+          <li>What would make the site successful in the next 90 days?</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Decide the smallest effective site -->
+  <!-- Who is it for? -->
   <section
     class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
   >
@@ -102,94 +105,79 @@ import Layout from '../../layouts/Layout.astro';
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Decide the smallest effective site
+        Who is it for?
       </h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <article
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            One-page site
-          </h3>
-          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Clear intro, who it is for, proof, next step.</li>
-            <li>Fast to ship; strong for single-offer or early-stage.</li>
-          </ul>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            Ask: Is one action obvious? What proof best supports it?
-          </p>
-        </article>
-        <article
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Case-study or portfolio
-          </h3>
-          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Home, about or approach, 2 to 4 case studies, contact.</li>
-            <li>Great for consultants, coaches, studios, and makers.</li>
-          </ul>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            Ask: Which 2 examples best show outcomes and fit?
-          </p>
-        </article>
-        <article
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Content-led
-          </h3>
-          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Home, about, articles or resources hub, contact.</li>
-            <li>Works when you will publish regularly and compound trust.</li>
-          </ul>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            Ask: What cadence is sustainable for the next 90 days?
-          </p>
-        </article>
+      <p class="text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
+        A website works better when it speaks clearly to the people it is meant
+        to serve. You do not need to define everyone. You need a useful sense of
+        who matters most.
+      </p>
+
+      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
+        <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+          <li>Who is the site primarily for?</li>
+          <li>What are they trying to understand, solve, or decide?</li>
+          <li>What would help them trust you enough to take the next step?</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Content and proof -->
+  <!-- What belongs in the first version? -->
   <section class="bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Content and proof
+        What belongs in the first version?
       </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div
+      <p class="text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
+        Many website projects become harder than they need to be because
+        everything is treated as equally important. A strong first version gives
+        the site a clear job and leaves room to grow.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            What you already have
+            Needs to launch
           </h3>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Client messages and common questions.</li>
-            <li>Slides, proposals, posts, talks, and notes.</li>
-            <li>Testimonials, outcomes, and before or after examples.</li>
-            <li>Images that show real work or context.</li>
-          </ul>
-        </div>
-        <div
+          <p class="text-gray-700 dark:text-gray-300">
+            The pages, sections, or details the site needs in order to be useful
+            immediately.
+          </p>
+        </article>
+
+        <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            What to show
+            Can wait
           </h3>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>2 to 4 short case studies with outcome and result.</li>
-            <li>Testimonials with a one-line context.</li>
-            <li>Logos only if they add clarity or trust.</li>
-          </ul>
-        </div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Good ideas that may matter later, but do not need to slow down the
+            first version.
+          </p>
+        </article>
+
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Might not belong
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Features, pages, or flourishes that add complexity without helping
+            the visitor.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Decorative band (image 2 of 2) -->
+  <!-- Decorative band -->
   <div class="relative">
     <img
       src="/images/guides/dots-blue-yellow-tws-thin.webp"
@@ -204,91 +192,57 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- Structure and navigation -->
+  <!-- What proof already exists? -->
   <section class="bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Structure and navigation
+        What proof already exists?
       </h2>
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
-        <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-          <li>What are the 3 to 5 core pages and in what order?</li>
-          <li>What is the primary next step on each page?</li>
-          <li>What do you remove to keep it focused and faster?</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <p class="text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
+        You may already have more useful material than you think. A first
+        version of a website is often shaped from existing examples, messages,
+        images, notes, and conversations.
+      </p>
 
-  <!-- Editing rhythm and ownership -->
-  <section
-    class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
-  >
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      <h2
-        class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
-      >
-        Editing rhythm and ownership
-      </h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div
+        <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Useful material
+          </h3>
           <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Client messages and common questions.</li>
+            <li>Testimonials, reviews, or informal praise.</li>
             <li>
-              How often will you update content (rarely, monthly, weekly)?
+              Project examples, photos, outcomes, or before-and-after notes.
             </li>
-            <li>Who will own edits and what feels natural for them?</li>
-            <li>What must be easy to change without friction?</li>
+            <li>
+              Presentations, proposals, posts, talks, articles, or drafts.
+            </li>
           </ul>
-        </div>
-        <div
+        </article>
+
+        <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Questions to ask
+          </h3>
           <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Where will images and assets live?</li>
-            <li>What is your backup or versioning approach?</li>
-            <li>How will you review and publish changes?</li>
+            <li>What examples best show the quality of the work?</li>
+            <li>What do people usually ask before they are ready?</li>
+            <li>What existing material could be reused or reshaped?</li>
+            <li>What is missing, but important enough to create?</li>
           </ul>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Privacy, analytics, performance, accessibility -->
-  <section class="bg-white dark:bg-gray-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      <h2
-        class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
-      >
-        Privacy, analytics, performance, accessibility
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Any privacy constraints or tracking preferences?</li>
-            <li>Do you need analytics and what decisions will it inform?</li>
-            <li>What legal or compliance notes should appear?</li>
-          </ul>
-        </div>
-        <div
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Are pages fast and readable by default?</li>
-            <li>Is contrast, font size, and keyboard use considered?</li>
-            <li>Do images have alt text where it helps meaning?</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Adjacent channels and integrations -->
+  <!-- How will the site evolve? -->
   <section
     class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
   >
@@ -296,79 +250,92 @@ import Layout from '../../layouts/Layout.astro';
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Adjacent channels and integrations
+        How will the site evolve?
       </h2>
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
-        <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-          <li>Do you need a calendar for calls or sessions?</li>
-          <li>Would periodic email updates help compound trust?</li>
-          <li>Any simple payments or forms needed at launch?</li>
-          <li>Where else should key info stay accurate for discovery?</li>
-        </ul>
+      <p class="text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
+        Some sites stay mostly stable for years. Others grow through articles,
+        events, resources, new projects, or changing offers. The expected rhythm
+        affects the structure and the tools.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Mostly stable
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Best when the site mainly needs to explain who you are, what you do,
+            and how to begin.
+          </p>
+        </article>
+
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Occasionally updated
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Good for adding new proof, changing offers, updating photos, or
+            improving copy over time.
+          </p>
+        </article>
+
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Actively maintained
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Useful when publishing, events, resources, memberships, or ongoing
+            communication are central to the site.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Budget, timeline, and success -->
+  <!-- Before we talk -->
   <section class="bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Budget, timeline, and success
+        Before we talk
       </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>What is the budget and the smallest scope that fits?</li>
-            <li>What is the deadline and what is truly required by then?</li>
-            <li>What can wait for a follow-up release?</li>
-          </ul>
-        </div>
-        <div
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>What is your 90-day goal for the site?</li>
-            <li>What indicates it is working (signals, not vanity)?</li>
-            <li>What small habits will sustain it over time?</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Launch and next 90 days -->
-  <section
-    class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
-  >
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      <h2
-        class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
-      >
-        Launch and the next 90 days
-      </h2>
-      <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-6">
-        <ol
-          class="list-decimal pl-6 space-y-2 text-gray-700 dark:text-gray-300"
-        >
-          <li>
-            Ship the smallest effective site. Do not wait on perfect images.
-          </li>
-          <li>Share it with a small circle and collect specific feedback.</li>
-          <li>
-            Add one proof item per month (case study, testimonial, example).
-          </li>
-          <li>Review analytics lightly: what do people read and click?</li>
-          <li>Decide on the next smallest improvement or page.</li>
-        </ol>
-      </div>
+      <p class="text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
+        You do not need a complete plan. A few rough answers are enough to begin
+        a useful conversation.
+      </p>
 
       <div
-        class="flex flex-col md:flex-row items-center justify-center gap-4 mt-8"
+        class="rounded-xl border border-stone-200 dark:border-stone-800 p-6 md:p-8"
       >
+        <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+          <li>What should the site help people understand or do?</li>
+          <li>Who matters most as the audience?</li>
+          <li>What examples, links, images, or materials already exist?</li>
+          <li>What feels confusing, missing, or unresolved?</li>
+          <li>What would make this project worthwhile in the next 90 days?</li>
+        </ul>
+      </div>
+
+      <p class="text-gray-700 dark:text-gray-300 mt-6 max-w-3xl">
+        Bring your ideas, questions, examples, rough notes, or half-formed
+        thoughts. We can shape the rest together.
+      </p>
+    </div>
+  </section>
+
+  <!-- Next steps -->
+  <section
+    class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
         <a
           href="/guides"
           class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition dark:bg-blue-500 dark:hover:bg-blue-400"
@@ -379,18 +346,13 @@ import Layout from '../../layouts/Layout.astro';
           href="/guides/web-builders"
           class="inline-block border border-blue-700 text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition dark:border-blue-300 dark:text-blue-300 dark:hover:bg-blue-900/30"
         >
-          Read Web Builders Guide
+          Read Platform Overview
         </a>
-        <p
-          class="text-center text-sm text-gray-600 dark:text-gray-400 md:ml-4 mt-3 md:mt-0"
-        >
-          Or compare needs by type on the <a
-            href="/guides#business-website-needs"
-            class="text-blue-700 dark:text-blue-300 underline hover:no-underline"
-            >Guides hub</a
-          >.
-        </p>
       </div>
+      <p class="text-center text-sm text-gray-600 dark:text-gray-400 mt-3">
+        The plan does not need to be perfect. It just needs to be clear enough
+        to start.
+      </p>
     </div>
   </section>
 </Layout>

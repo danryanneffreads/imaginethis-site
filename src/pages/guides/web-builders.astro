@@ -4,10 +4,10 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Web Builders Guide - Pick a platform that fits how you work"
-  description="A calm, vendor-light overview to help you choose a website platform based on goals, update rhythm, and maintenance appetite."
+  title="Web Builders Guide - Choose the approach that fits"
+  description="A practical guide to website builders, custom websites, content management systems, and drag-and-drop platforms."
 >
-  <!-- Hero with background image (fixed stacking) -->
+  <!-- Hero with background image -->
   <section class="relative overflow-hidden bg-white dark:bg-gray-950">
     <div class="absolute inset-0">
       <img
@@ -38,16 +38,15 @@ import Layout from '../../layouts/Layout.astro';
           Web Builders Guide
         </h1>
         <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-          The goal is not to pick a trendy tool. It is to choose a stable
-          platform that supports your outcomes, update rhythm, and maintenance
-          preferences. Specific tool choices happen in conversation. This page
-          frames how to decide.
+          A website platform is a means, not a destination. The right choice
+          depends on what you are building, how often it will change, who will
+          maintain it, and how much flexibility you need over time.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section: Quick orientation -->
+  <!-- Section: Start with fit -->
   <section
     class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
   >
@@ -55,72 +54,18 @@ import Layout from '../../layouts/Layout.astro';
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Quick orientation
+        Start with fit, not favorites.
       </h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <article
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Astro (custom, fast)
-          </h3>
-          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-            <li>
-              Great for small, crafted sites where performance, structure, and
-              longevity matter.
-            </li>
-            <li>Edits can be file-based or through a light CMS added later.</li>
-            <li>Best when layouts are stable and changes are purposeful.</li>
-          </ul>
-        </article>
-
-        <article
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            WordPress (familiar, flexible)
-          </h3>
-          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-            <li>
-              Solid for ongoing publishing and when non-technical editing
-              matters.
-            </li>
-            <li>
-              Large ecosystem; needs mindful curation and light maintenance.
-            </li>
-            <li>
-              Light ecommerce with WooCommerce works well for small catalogs;
-              larger or more complex shops are evaluated case-by-case (often
-              with a partner).
-            </li>
-          </ul>
-        </article>
-
-        <article
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Visual builders (template-driven)
-          </h3>
-          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Fast to launch and edit in the browser.</li>
-            <li>
-              Strong fit for simple sites, landing pages, and DIY changes.
-            </li>
-            <li>Less control over deep structure and performance details.</li>
-          </ul>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
-            Examples: Webflow, Framer, Squarespace. Examples only — we will
-            choose the simplest tool that fits your outcomes and how you will
-            edit.
-          </p>
-        </article>
-      </div>
-
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">
-        I primarily build custom sites in Astro and WordPress. I can
-        design/structure and hand off in visual builders; heavier builds get a
-        specialist referral.
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-4">
+        Most modern website tools can produce a good-looking site. The
+        differences show up later: how easy it is to update, how much control
+        you have, what it costs to maintain, and whether the platform still
+        feels right as your work evolves.
+      </p>
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+        I do not start by forcing every project into one builder. I start with
+        the work, the people maintaining the site, and the kind of experience
+        the website needs to support.
       </p>
     </div>
   </section>
@@ -140,112 +85,70 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- Section: Map your choice -->
+  <!-- Section: Three broad approaches -->
   <section class="bg-white dark:bg-gray-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        Map your choice
+        Three broad approaches
       </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            By outcomes
-          </h3>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>
-              Inquiries and credibility: one-page or light multi-section site.
-            </li>
-            <li>
-              Portfolio trust: case studies, visuals, and a clear process page.
-            </li>
-            <li>
-              Content visibility: articles and resources that compound over
-              time.
-            </li>
-            <li>
-              Transactions or integrations: add modules or choose a suite with
-              those built-in.
-            </li>
-          </ul>
-        </div>
-        <div
-          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            By update rhythm
-          </h3>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Rarely: keep it simple and durable.</li>
-            <li>
-              Monthly: maintain a small set of pages and a cadence for updates.
-            </li>
-            <li>
-              Weekly: choose an editor that feels natural; keep the structure
-              tidy.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-6">
+        The names of the platforms matter less than the kind of ownership
+        experience they create.
+      </p>
 
-  <!-- Section: How editing works -->
-  <section
-    class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
-  >
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      <h2
-        class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
-      >
-        How editing works
-      </h2>
       <div class="grid md:grid-cols-3 gap-6">
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Astro
+            Custom websites
           </h3>
-          <p class="text-gray-700 dark:text-gray-300">
-            Content can live in simple files or a light CMS. Edits are
-            intentional, releases are clean, and performance stays strong.
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            Built specifically around the project. A good fit when structure,
+            performance, expression, and long-term flexibility matter.
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Examples: Astro, custom WordPress, or other developer-led builds.
           </p>
         </article>
+
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            WordPress
+            Content-managed websites
           </h3>
-          <p class="text-gray-700 dark:text-gray-300">
-            Edit in the browser with a block editor. Good for adding posts,
-            light pages, and updates without touching code.
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            Designed so content can be updated through a browser-based editor. A
+            good fit when publishing, updating, or collaboration matter.
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Examples: WordPress and similar content management systems.
           </p>
         </article>
+
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Visual builders
+            Drag-and-drop builders
           </h3>
-          <p class="text-gray-700 dark:text-gray-300">
-            Edit layouts and text directly in the browser. Best when you want to
-            change copy or sections yourself.
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            Fast to launch and easier to edit directly. A good fit when
+            simplicity, speed, and self-sufficiency matter more than deep
+            customization.
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Examples: Squarespace, Wix, Webflow, Framer, and similar builders.
           </p>
         </article>
       </div>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
-        We can also connect a privacy-first analytics view and a simple form or
-        booking page. No heavy tracking by default.
-      </p>
     </div>
   </section>
 
-  <!-- Section: When to choose which -->
+  <!-- Section: Tradeoffs -->
   <section
     class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
   >
@@ -253,46 +156,167 @@ import Layout from '../../layouts/Layout.astro';
       <h2
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
       >
-        When to choose which
+        Strengths and tradeoffs
       </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-6">
+        No platform is best for every situation. The goal is to understand what
+        each path makes easier and what it may make harder later.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>
-              Astro: you want speed, tight structure, and a site that ages well
-              with small purposeful changes.
-            </li>
-            <li>
-              WordPress: you plan to publish content and want a familiar browser
-              editor.
-            </li>
-            <li>
-              Visual builder: you want a fast start and expect to tweak layouts
-              yourself.
-            </li>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            Custom websites
+          </h3>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-1">
+            Strengths
+          </h4>
+          <ul
+            class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1 mb-4"
+          >
+            <li>High control over structure and design.</li>
+            <li>Strong performance when built well.</li>
+            <li>Good fit for crafted, stable, expressive sites.</li>
           </ul>
-        </div>
-        <div
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-1">
+            Tradeoffs
+          </h4>
+          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1">
+            <li>Often requires more technical involvement.</li>
+            <li>Some edits may need a developer or careful workflow.</li>
+            <li>Not always ideal for frequent non-technical editing.</li>
+          </ul>
+        </article>
+
+        <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>
-              If you need memberships, courses, or robust e-commerce, we will
-              evaluate options together and bring in a specialist when it helps.
-            </li>
-            <li>
-              If you need a complex web app, we will refer you to a developer
-              with that focus.
-            </li>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            Content-managed websites
+          </h3>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-1">
+            Strengths
+          </h4>
+          <ul
+            class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1 mb-4"
+          >
+            <li>Good for publishing and ongoing updates.</li>
+            <li>Browser-based editing can be approachable.</li>
+            <li>Flexible enough for many kinds of projects.</li>
           </ul>
-        </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-1">
+            Tradeoffs
+          </h4>
+          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1">
+            <li>Benefits from occasional maintenance.</li>
+            <li>Plugins and themes need thoughtful choices.</li>
+            <li>More flexibility can also create more complexity.</li>
+          </ul>
+        </article>
+
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            Drag-and-drop builders
+          </h3>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-1">
+            Strengths
+          </h4>
+          <ul
+            class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1 mb-4"
+          >
+            <li>Fast to launch.</li>
+            <li>Lower technical barrier.</li>
+            <li>Hosting and maintenance are mostly handled for you.</li>
+          </ul>
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-1">
+            Tradeoffs
+          </h4>
+          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1">
+            <li>Less control than a custom-built site.</li>
+            <li>You usually work within the platform's ecosystem.</li>
+            <li>Moving later may require rebuilding parts of the site.</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Section: Micro‑FAQ -->
+  <!-- Section: How to choose -->
+  <section class="bg-white dark:bg-gray-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <h2
+        class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
+      >
+        How to choose
+      </h2>
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-6">
+        The right tool usually becomes clearer when you think about control,
+        editing, complexity, and future changes.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Choose more control when...
+          </h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>The site should feel highly tailored to the work.</li>
+            <li>Performance, structure, or longevity matter.</li>
+            <li>
+              You want something more distinctive than a standard template.
+            </li>
+            <li>You are comfortable getting help for some changes.</li>
+          </ul>
+        </article>
+
+        <article
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Choose easier self-editing when...
+          </h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>You want to change text, images, or sections yourself.</li>
+            <li>The site will be updated often by non-technical people.</li>
+            <li>Speed and convenience matter more than deep customization.</li>
+            <li>You prefer an all-in-one platform with fewer moving parts.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: My role -->
+  <section
+    class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <h2
+        class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-4"
+      >
+        Where I can help
+      </h2>
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl mb-4">
+        I can help clarify the project, shape the structure, compare practical
+        options, and build when the fit is right. I am comfortable working with
+        custom sites, WordPress, and learning or adapting to simpler builder
+        platforms when they are the better choice.
+      </p>
+      <p class="text-gray-700 dark:text-gray-300 max-w-3xl">
+        Some projects need deeper development, complex ecommerce, advanced
+        memberships, or custom apps. In those cases, I can help define the
+        project clearly and involve or recommend a specialist.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section: Common questions -->
   <section
     id="faq"
     class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
@@ -303,6 +327,7 @@ import Layout from '../../layouts/Layout.astro';
       >
         Common questions
       </h2>
+
       <div class="grid md:grid-cols-3 gap-6">
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
@@ -311,30 +336,34 @@ import Layout from '../../layouts/Layout.astro';
             Can I edit it myself?
           </h3>
           <p class="text-gray-700 dark:text-gray-300">
-            Yes. WordPress and visual builders are browser‑editable. Astro can
-            be file‑based or paired with a light CMS.
+            Usually, yes. The question is how much you want to edit and how
+            often. Some platforms are built around direct self-editing; others
+            offer more control but require a more careful workflow.
           </p>
         </article>
+
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Which is best for SEO?
+            Which is best for search?
           </h3>
           <p class="text-gray-700 dark:text-gray-300">
-            Clear structure and readable pages matter more than platform. We
-            keep it fast, accessible, and organized.
+            Clear structure, useful content, readable pages, performance, and
+            accurate business information matter more than the builder name.
           </p>
         </article>
+
         <article
           class="rounded-lg border border-stone-200 dark:border-stone-800 p-6"
         >
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Do you build in Webflow/Squarespace?
+            What if I choose the wrong platform?
           </h3>
           <p class="text-gray-700 dark:text-gray-300">
-            For straightforward sites, yes. For app‑like needs or heavy
-            commerce, we will bring in a specialist.
+            It is usually fixable, but switching later can take work. That is
+            why it helps to think about ownership, editing, and future needs
+            before building.
           </p>
         </article>
       </div>
@@ -361,8 +390,8 @@ import Layout from '../../layouts/Layout.astro';
         </a>
       </div>
       <p class="text-center text-sm text-gray-600 dark:text-gray-400 mt-3">
-        We will finalize tool choices together based on your goals and
-        maintenance appetite.
+        The best platform is the one that fits the work and the people who will
+        live with it.
       </p>
     </div>
   </section>
