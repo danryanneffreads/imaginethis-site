@@ -2,30 +2,67 @@
 /*
   guides-teaser.astro
   A concise, welcoming entry to the Guides. Paragraph-first, then light bullets.
+  Now supports an optional small image above the heading.
 */
+
+interface Props {
+  image_src?: string; // e.g., "/images/guides/badge.webp"
+  image_alt?: string; // describe meaning; use "" if decorative
+  image_width?: number; // intrinsic width for CLS (default 80)
+  image_height?: number; // intrinsic height for CLS (default 80)
+}
+
+const {
+  image_src,
+  image_alt = '',
+  image_width = 80,
+  image_height = 80,
+} = Astro.props;
 ---
 
 <section
   class="bg-white dark:bg-gray-950 border-t border-stone-200 dark:border-stone-800"
 >
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18">
+  <div
+    class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18 text-center"
+  >
+    {
+      image_src && (
+        <div class="flex justify-center mb-4">
+          <img
+            src={image_src}
+            alt={image_alt}
+            width={image_width}
+            height={image_height}
+            loading="lazy"
+            decoding="async"
+            class="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover border border-stone-200 dark:border-stone-800 shadow-sm"
+          />
+        </div>
+      )
+    }
+
     <p
       class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2"
     >
       Start here
     </p>
+
     <h2
       class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-3"
     >
-      Imagine a website that truly serves
+      Imagine your one-of-a-kind website
     </h2>
-    <p class="text-gray-700 dark:text-gray-300 mb-5 max-w-3xl">
-      A good site is a clear doorway. It tells people who you help, how to
-      start, and shows just enough proof. Begin with the outcome you want, then
-      choose a simple path and add depth over time.
+
+    <p
+      class="text-gray-700 dark:text-gray-300 mb-5 max-w-3xl mx-auto text-left md:text-center"
+    >
+      A good site is a clear doorway. It tells people who you help and how they
+      can start. As you imagine your site, think about the outcome you want, and
+      create a path to guide people. You can always add more depth over time.
     </p>
 
-    <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="grid md:grid-cols-2 gap-6 mb-6 text-left">
       <div class="rounded-lg border border-stone-200 dark:border-stone-800 p-5">
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
           If you are still shaping the idea
@@ -40,7 +77,10 @@
           If you are ready to choose a platform
         </h3>
         <ul class="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
-          <li>Pick the fit based on update rhythm and ownership.</li>
+          <li>
+            Pick what fits. Think about how often you will update the site and
+            who needs to handle site ownership.
+          </li>
           <li>Keep tools minimal and durable.</li>
         </ul>
       </div>

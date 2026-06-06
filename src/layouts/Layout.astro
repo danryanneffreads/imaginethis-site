@@ -37,9 +37,18 @@ const jsonLd = {
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!-- Keep charset first to ensure correct parsing -->
+    <meta charset="utf-8" />
+    <!-- Defensive: explicitly declare UTF-8 via http-equiv as well -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <!-- Fix mobile scaling globally -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Let the UA know we support dark mode colors for form controls, etc. -->
+    <meta name="color-scheme" content="light dark" />
+    <!-- Theme colors (optional polish) -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
 
     <title>{title}</title>
     <meta name="description" content={description} />

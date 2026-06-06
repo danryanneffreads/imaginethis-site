@@ -7,6 +7,8 @@ import { fileURLToPath } from 'node:url';
 
 /**
  * Draft page filter integration (hardened)
+ * Removes any pages with `status: "draft"` from the built output.
+ * (Runs only on build, not during dev.)
  */
 const draftPageFilter = {
   name: 'draft-page-filter',
@@ -18,34 +20,14 @@ const draftPageFilter = {
         const draftPages = findDraftPages(srcPagesDir);
         if (!draftPages.length) return;
 
-        console.log(
-          `\n[draft-page-filter] Removing ${draftPages.length} draft page(s) from build output...`
-        );
-        for (const pagePath of draftPages) {
-          const distPath = pagePathToDist(pagePath, distDir);
-          try {
-            fs.rmSync(distPath, { force: true });
-            const parentDir = path.dirname(distPath);
-            try {
-              if (
-                fs.existsSync(parentDir) &&
-                fs.readdirSync(parentDir).length === 0
-              ) {
-                fs.rmdirSync(parentDir);
-              }
-            } catch {}
-            console.log(`  ✓ Removed: ${pagePath}`);
-          } catch (e) {
-            console.warn(
-              `  ⚠ Skipped ${pagePath}: ${e instanceof Error ? e.message : String(e)}`
-            );
+        for (const page of draftPages) {
+          const outPath = pagePathToDist(page, distDir);
+          if (fs.existsSync(outPath)) {
+            fs.rmSync(outPath, { force: true });
           }
         }
-        console.log('[draft-page-filter] Done.\n');
       } catch (e) {
-        console.warn(
-          `[draft-page-filter] Non-fatal error: ${e instanceof Error ? e.message : String(e)}`
-        );
+        console.warn('[draft-page-filter] Warning:', e?.message || e);
       }
     },
   },
@@ -77,19 +59,50 @@ function pagePathToDist(srcPath, distDir) {
   return path.join(distDir, rel, 'index.html');
 }
 
+/**
+ * Vite dev middleware to ensure HTML is always served with UTF-8 charset.
+ * This fixes mojibake in development when the header would otherwise omit the charset.
+ */
+function forceUtf8ForHtml() {
+  return {
+    name: 'force-utf8-for-html',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        // Heuristic: only touch HTML document requests
+        const accept = req.headers.accept || '';
+        const isHtml =
+          accept.includes('text/html') ||
+          (req.url && req.url.endsWith('.html')) ||
+          req.url === '/' ||
+          (req.url && req.url.endsWith('/'));
+        if (isHtml) {
+          const existing = res.getHeader('Content-Type');
+          if (typeof existing === 'string') {
+            if (!existing.toLowerCase().includes('charset=')) {
+              res.setHeader('Content-Type', existing + '; charset=utf-8');
+            }
+          } else if (!existing) {
+            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          }
+        }
+        next();
+      });
+    },
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://imaginethis.site',
 
-  // Astro alias (Astro will also apply to Vite, but we mirror it below for safety)
+  // Astro alias (mirrored into Vite resolve below)
   alias: {
     '@': fileURLToPath(new URL('./src', import.meta.url)),
   },
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), forceUtf8ForHtml()],
     resolve: {
-      // Ensure Vite/Rollup see the alias during build
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
