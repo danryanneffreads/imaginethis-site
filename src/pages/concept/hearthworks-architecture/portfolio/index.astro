@@ -1,0 +1,323 @@
+---
+import HearthworksLayout from '../../../../layouts/HearthworksLayout.astro';
+import ProjectCard from '../../../../components/hearthworks/ProjectCard.astro';
+import { projects, enums } from '../../../../data/hearthworks-projects';
+
+const allProjects = projects;
+const typeOptions = enums.types;
+const spaceOptions = enums.spaces;
+const materialOptions = enums.materials;
+---
+
+<HearthworksLayout
+  title="Portfolio — Hearthworks Architecture"
+  description="Browse projects by type, space, and material."
+>
+  <!-- Header with subtle background image -->
+  <section
+    class="py-10 border-b border-stone-200 dark:border-stone-800 bg-white/80 dark:bg-gray-950/70 hw-portfolio-hero"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-serif font-bold mb-1">Portfolio</h1>
+      <p class="text-gray-700 dark:text-gray-300 max-w-2xl">
+        Filter by project type, space, and material. Filters can be combined.
+      </p>
+
+      <!-- Filters -->
+      <div id="filters" class="mt-6 space-y-4">
+        <div>
+          <p
+            class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2"
+          >
+            Project Type
+          </p>
+          <div class="flex flex-wrap gap-2" id="facet-type">
+            {
+              typeOptions.map((opt) => (
+                <label class="hw-chip cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    class="sr-only"
+                    value={opt}
+                    data-facet="type"
+                    aria-label={opt}
+                  />
+                  <span>{opt}</span>
+                </label>
+              ))
+            }
+          </div>
+        </div>
+
+        <div>
+          <p
+            class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2"
+          >
+            Space
+          </p>
+          <div class="flex flex-wrap gap-2" id="facet-space">
+            {
+              spaceOptions.map((opt) => (
+                <label class="hw-chip cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    class="sr-only"
+                    value={opt}
+                    data-facet="space"
+                    aria-label={opt}
+                  />
+                  <span>{opt}</span>
+                </label>
+              ))
+            }
+          </div>
+        </div>
+
+        <div>
+          <p
+            class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2"
+          >
+            Material
+          </p>
+          <div class="flex flex-wrap gap-2" id="facet-material">
+            {
+              materialOptions.map((opt) => (
+                <label class="hw-chip cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    class="sr-only"
+                    value={opt}
+                    data-facet="material"
+                    aria-label={opt}
+                  />
+                  <span>{opt}</span>
+                </label>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Active filters ribbon (auto-hides when empty) -->
+        <div id="activeBar" class="hw-activebar mt-3"></div>
+
+        <div class="flex items-center gap-4 mt-3">
+          <button id="clearAll" class="hw-clear">Clear all</button>
+          <span id="count" class="text-sm text-gray-700 dark:text-gray-300"
+            >Showing {allProjects.length} projects</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        id="results"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {
+          allProjects.map((p) => (
+            <div
+              class="project-card"
+              data-type={p.type}
+              data-spaces={p.spaces.join('|')}
+              data-materials={p.materials.join('|')}
+            >
+              <ProjectCard project={p} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    // Simple, robust filtering with event delegation and DOM-derived state
+    (() => {
+      const filtersRoot = document.getElementById('filters');
+      const checkboxes = Array.from(
+        document.querySelectorAll('input[type="checkbox"][data-facet]')
+      );
+      const cards = Array.from(document.querySelectorAll('.project-card'));
+      const activeBar = document.getElementById('activeBar');
+      const countEl = document.getElementById('count');
+      const clearAllBtn = document.getElementById('clearAll');
+
+      function gatherStateFromDOM() {
+        const checked = checkboxes.filter((cb) => cb.checked);
+        return {
+          type: checked
+            .filter((cb) => cb.dataset.facet === 'type')
+            .map((cb) => cb.value),
+          space: checked
+            .filter((cb) => cb.dataset.facet === 'space')
+            .map((cb) => cb.value),
+          material: checked
+            .filter((cb) => cb.dataset.facet === 'material')
+            .map((cb) => cb.value),
+        };
+      }
+
+      function applyURL(state) {
+        const next = new URL(location.href);
+        ['type', 'space', 'material'].forEach((k) =>
+          next.searchParams.delete(k)
+        );
+        Object.entries(state).forEach(([k, arr]) =>
+          arr.forEach((v) => next.searchParams.append(k, v))
+        );
+        history.replaceState(null, '', next.toString());
+      }
+
+      function matches(card, state) {
+        const type = card.getAttribute('data-type');
+        const spaces = (card.getAttribute('data-spaces') || '')
+          .split('|')
+          .filter(Boolean);
+        const materials = (card.getAttribute('data-materials') || '')
+          .split('|')
+          .filter(Boolean);
+        const typeOK = state.type.length ? state.type.includes(type) : true;
+        const spaceOK = state.space.length
+          ? state.space.some((s) => spaces.includes(s))
+          : true;
+        const materialOK = state.material.length
+          ? state.material.some((m) => materials.includes(m))
+          : true;
+        return typeOK && spaceOK && materialOK;
+      }
+
+      function renderResults(state) {
+        let visible = 0;
+        cards.forEach((c) => {
+          if (matches(c, state)) {
+            c.style.display = '';
+            visible++;
+          } else {
+            c.style.display = 'none';
+          }
+        });
+        if (countEl)
+          countEl.textContent = `Showing ${visible} project${visible === 1 ? '' : 's'}`;
+      }
+
+      function renderActiveBar(state) {
+        const active = [
+          ...state.type.map((v) => ({ facet: 'type', value: v })),
+          ...state.space.map((v) => ({ facet: 'space', value: v })),
+          ...state.material.map((v) => ({ facet: 'material', value: v })),
+        ];
+        if (!activeBar) return;
+        if (active.length === 0) {
+          activeBar.style.display = 'none';
+          activeBar.innerHTML = '';
+          return;
+        }
+        activeBar.style.display = '';
+        activeBar.innerHTML = `
+          <div class="flex flex-wrap items-center gap-2">
+            ${active
+              .map(
+                (
+                  a
+                ) => `<button class="hw-chip hw-chip--activebar" data-remove-facet="${a.facet}" data-remove-value="${a.value}" aria-label="Remove ${a.value}">
+              ${a.value}<span class="hw-x" aria-hidden="true">×</span>
+            </button>`
+              )
+              .join('')}
+            <button id="barClear" class="hw-clear" aria-label="Clear all filters">Clear all</button>
+          </div>
+        `;
+
+        // Remove one chip via ribbon
+        activeBar.querySelectorAll('[data-remove-facet]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const facet = btn.getAttribute('data-remove-facet');
+            const value = btn.getAttribute('data-remove-value');
+            const cb = document.querySelector(
+              'input[type="checkbox"][data-facet="' +
+                facet +
+                '"][value="' +
+                value +
+                '"]'
+            );
+            if (cb) {
+              cb.checked = false;
+              update();
+            }
+          });
+        });
+
+        // Clear all via ribbon
+        const barClear = document.getElementById('barClear');
+        if (barClear)
+          barClear.addEventListener('click', (e) => {
+            e.preventDefault();
+            clearAll();
+          });
+      }
+
+      function update() {
+        const state = gatherStateFromDOM();
+        applyURL(state);
+        renderResults(state);
+        renderActiveBar(state);
+      }
+
+      function clearAll() {
+        checkboxes.forEach((cb) => {
+          cb.checked = false;
+        });
+        update();
+      }
+
+      // Initialize from URL query params
+      (function initFromURL() {
+        const q = new URLSearchParams(location.search);
+        ['type', 'space', 'material'].forEach((facet) => {
+          const selected = new Set(q.getAll(facet));
+          checkboxes
+            .filter((cb) => cb.dataset.facet === facet)
+            .forEach((cb) => {
+              cb.checked = selected.has(cb.value);
+            });
+        });
+      })();
+
+      // Event delegation: any click on a label toggles the input and updates
+      if (filtersRoot) {
+        filtersRoot.addEventListener('click', (e) => {
+          const target = e.target instanceof Element ? e.target : null;
+          const label = target ? target.closest('label.hw-chip') : null;
+          if (!label) return;
+          const cb = label.querySelector('input[type="checkbox"]');
+          if (!cb) return;
+          e.preventDefault(); // normalize behavior
+          cb.checked = !cb.checked;
+          update();
+        });
+
+        // Support keyboard/assistive tech toggling directly on inputs
+        filtersRoot.addEventListener('change', (e) => {
+          const t = e.target;
+          if (t && t.matches && t.matches('input[type="checkbox"][data-facet]'))
+            update();
+        });
+      }
+
+      if (clearAllBtn)
+        clearAllBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          clearAll();
+        });
+
+      // First paint
+      update();
+
+      // Debug helpers (optional)
+      window.__hw = { gather: gatherStateFromDOM, update };
+    })();
+  </script>
+</HearthworksLayout>

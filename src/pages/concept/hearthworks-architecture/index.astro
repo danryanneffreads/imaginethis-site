@@ -1,0 +1,120 @@
+---
+import HearthworksLayout from '../../../layouts/HearthworksLayout.astro';
+import ProjectCard from '../../../components/hearthworks/ProjectCard.astro';
+import { projects } from '../../../data/hearthworks-projects';
+---
+
+<HearthworksLayout
+  title="Hearthworks Architecture"
+  description="Homes, neighborhood buildings, libraries, workplaces, and civic places—crafted for daily life."
+>
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 border-b border-gray-200/70 dark:border-gray-800/70"
+  >
+    <div
+      class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-12 gap-10 items-center"
+    >
+      <div class="md:col-span-6">
+        <h1
+          class="text-4xl md:text-6xl font-serif font-bold text-gray-900 dark:text-white leading-tight"
+        >
+          We design places people grow attached to.
+        </h1>
+        <p
+          class="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+        >
+          Midwest-rooted practice with work in Chicago and Madison—and selected
+          projects on the coast and in the mountains.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="hw-chip">Homes</span>
+          <span class="hw-chip">Neighborhood buildings</span>
+          <span class="hw-chip">Libraries</span>
+          <span class="hw-chip">Workplaces</span>
+          <span class="hw-chip">Cafés</span>
+          <span class="hw-chip">Community spaces</span>
+          <span class="hw-chip">Adaptive reuse</span>
+        </div>
+        <div class="mt-8 flex items-center gap-3">
+          <a
+            href="/concept/hearthworks-architecture/portfolio/"
+            class="inline-block px-5 py-3 rounded-md bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+            >View the portfolio</a
+          >
+          <a
+            href="#projects"
+            class="inline-block px-5 py-3 rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white"
+            >Selected projects</a
+          >
+        </div>
+      </div>
+      <div class="md:col-span-6">
+        <div class="grid grid-cols-2 gap-4">
+          <img
+            src="/images/architecture/library-garden.webp"
+            alt="Library garden"
+            class="h-60 md:h-72 w-full object-cover rounded-xl border border-gray-200 dark:border-gray-800"
+          />
+          <img
+            src="/images/architecture/residence-porch2.webp"
+            alt="Porch and garden"
+            class="h-60 md:h-72 w-full object-cover rounded-xl border border-gray-200 dark:border-gray-800 mt-6 md:mt-12"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials and craft -->
+  <section
+    class="py-12 hw-texture border-b border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
+      >
+        Materials & Craft
+      </p>
+      <div class="hw-accent mb-4"></div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+        {
+          [
+            'Brick',
+            'Wood',
+            'Stone',
+            'Glass',
+            'Tile',
+            'Plaster',
+            'Ironwork',
+          ].map((m) => (
+            <div class="rounded-md border border-stone-200 dark:border-stone-800 p-3 text-center bg-white/70 dark:bg-gray-900/40 text-gray-800 dark:text-gray-200">
+              {m}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected projects -->
+  <section id="projects" class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-6"
+      >
+        Selected projects
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => <ProjectCard project={p} />)}
+      </div>
+      <div class="mt-8">
+        <a
+          href="/concept/hearthworks-architecture/portfolio/"
+          class="inline-flex items-center gap-2 text-blue-700 dark:text-blue-300 hover:underline"
+          >Explore all projects →</a
+        >
+      </div>
+    </div>
+  </section>
+</HearthworksLayout>

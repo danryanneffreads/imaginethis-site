@@ -1,0 +1,193 @@
+:root {
+  --hw-brick: #8B4A3C;
+  --hw-sand: #E8DCCF;
+  --hw-moss: #859D7A;
+  --hw-forest: #2D4B3C;
+  --hw-iron: #3C3C42;
+  --hw-cream: #F6F1E8;
+  --hw-patina: #5F7C8A;
+
+  --hw-text-ink: #1d1d1f;
+  --hw-text-soft: #4b4b50;
+}
+
+.dark:root {
+  --hw-brick: #A96657;
+  --hw-sand: #CFC3B6;
+  --hw-moss: #9CB390;
+  --hw-forest: #2C3F36;
+  --hw-iron: #C5C6CF;
+  --hw-cream: #E8E2D8;
+  --hw-patina: #7FA0AE;
+
+  --hw-text-ink: #EDEDED;
+  --hw-text-soft: #B7B7BD;
+}
+
+/* --- Surfaces & textures --- */
+.hw-texture {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.02), transparent),
+    radial-gradient(1200px 600px at 10% 0%, rgba(0,0,0,0.03), transparent);
+}
+
+.hw-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--hw-brick), var(--hw-moss));
+  border-radius: 2px;
+}
+
+/* Portfolio header background (very subtle image) */
+.hw-portfolio-hero {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+}
+.hw-portfolio-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/architecture/walkable-neighborhood2.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  filter: saturate(0.85) contrast(0.9);
+  z-index: -1;
+  pointer-events: none;
+}
+.dark .hw-portfolio-hero::before { opacity: 0.08; }
+
+/* --- Chips (tags / filters) --- */
+.hw-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1;
+  background: color-mix(in oklab, var(--hw-cream) 88%, white);
+  color: var(--hw-iron);
+  border: 1px solid color-mix(in oklab, var(--hw-iron) 22%, transparent);
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease, transform .06s ease;
+  user-select: none;
+}
+.hw-chip:hover { transform: translateY(-0.5px); }
+.hw-chip:focus-visible {
+  outline: 2px solid var(--hw-patina);
+  outline-offset: 2px;
+}
+.dark .hw-chip {
+  background: color-mix(in oklab, var(--hw-iron) 10%, black);
+  color: var(--hw-cream);
+  border-color: color-mix(in oklab, var(--hw-cream) 12%, transparent);
+}
+
+/* CSS-only active state using :has() so labels turn on even before JS runs */
+label.hw-chip:has(input:checked) {
+  background: var(--hw-brick);
+  color: #fff;
+  border-color: color-mix(in oklab, var(--hw-brick) 60%, black);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--hw-brick) 22%, transparent);
+}
+.dark label.hw-chip:has(input:checked) {
+  background: color-mix(in oklab, var(--hw-brick) 80%, black);
+  color: var(--hw-cream);
+  border-color: color-mix(in oklab, var(--hw-brick) 40%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--hw-brick) 18%, transparent);
+}
+
+/* JS-applied active class (kept for compatibility) */
+.hw-chip.active {
+  background: var(--hw-brick);
+  color: #fff;
+  border-color: color-mix(in oklab, var(--hw-brick) 60%, black);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--hw-brick) 22%, transparent);
+}
+.dark .hw-chip.active {
+  background: color-mix(in oklab, var(--hw-brick) 80%, black);
+  color: var(--hw-cream);
+  border-color: color-mix(in oklab, var(--hw-brick) 40%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--hw-brick) 18%, transparent);
+}
+
+/* Chips used in the active-filters ribbon (removable) */
+.hw-chip--activebar {
+  background: color-mix(in oklab, var(--hw-patina) 18%, var(--hw-cream));
+  color: color-mix(in oklab, var(--hw-iron) 90%, black);
+  border-color: color-mix(in oklab, var(--hw-patina) 30%, transparent);
+}
+.dark .hw-chip--activebar {
+  background: color-mix(in oklab, var(--hw-patina) 22%, black);
+  color: var(--hw-cream);
+  border-color: color-mix(in oklab, var(--hw-cream) 14%, transparent);
+}
+
+/* Tiny close "x" inside removable chips */
+.hw-x {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  margin-left: 4px;
+  background: color-mix(in oklab, black 8%, transparent);
+  color: currentColor;
+}
+.dark .hw-x { background: color-mix(in oklab, white 10%, transparent); }
+
+/* Elsewhere pill (project card/meta) */
+.hw-elsewhere {
+  background: color-mix(in oklab, var(--hw-patina) 85%, white);
+  color: #0e2a32;
+}
+.dark .hw-elsewhere {
+  background: color-mix(in oklab, var(--hw-patina) 30%, black);
+  color: var(--hw-cream);
+}
+
+/* --- Active filters ribbon container --- */
+.hw-activebar {
+  display: none;           /* becomes block when there are selections */
+  border: 1px solid color-mix(in oklab, var(--hw-iron) 14%, transparent);
+  background: color-mix(in oklab, var(--hw-cream) 70%, white);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+.dark .hw-activebar {
+  border-color: color-mix(in oklab, var(--hw-cream) 12%, transparent);
+  background: color-mix(in oklab, var(--hw-iron) 16%, black);
+}
+
+/* "Clear all" button inside the ribbon */
+.hw-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  color: var(--hw-text-soft);
+  background: transparent;
+  border: 1px dashed color-mix(in oklab, var(--hw-iron) 18%, transparent);
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+.hw-clear:hover {
+  color: var(--hw-text-ink);
+  border-color: color-mix(in oklab, var(--hw-iron) 28%, transparent);
+  background: color-mix(in oklab, var(--hw-cream) 60%, white);
+}
+.dark .hw-clear {
+  color: var(--hw-cream);
+  border-color: color-mix(in oklab, var(--hw-cream) 16%, transparent);
+}
+.dark .hw-clear:hover {
+  background: color-mix(in oklab, var(--hw-iron) 20%, black);
+}
+
+/* Utility: hidden but keep layout height if needed */
+.hw-hidden { display: none !important; }
