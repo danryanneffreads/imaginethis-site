@@ -1,219 +1,284 @@
 ---
-import '@/styles/global.css';
-import '@/styles/hrh.css';
-status: "published";
-const isExample = Astro.url?.pathname?.startsWith("/concept/");
-const title = "Human Rhythm Health — Align your life with your biology";
-const description = "Sleep, movement, nutrition, light, environment, and relationships—woven into simple weekly rhythms.";
+import HumanRhythmHealthLayout from '@/layouts/HumanRhythmHealthLayout.astro';
+
+const title = 'Human Rhythm Health — Align your life with your biology';
+const description =
+  'Sleep, movement, nutrition, light, environment, and relationships woven into simple weekly rhythms.';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Set initial theme from localStorage or system preference -->
-    <script is:inline>
-      (function () {
-        try {
-          const stored = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          const useDark = stored ? stored === 'dark' : prefersDark;
-          document.documentElement.classList.toggle('dark', useDark);
-        } catch (_) {}
-      })();
-    </script>
-  </head>
-  <body class="flex flex-col min-h-screen bg-white dark:bg-gray-950 dark:text-white" style="font-family: Inter, system-ui, sans-serif">
-    {isExample && (
-      <div role="note" class="bg-indigo-50 text-indigo-900 border-b border-indigo-200 px-4 py-2 text-sm text-center">
-        Example concept site (public showcase)
-      </div>
-    )}
+<HumanRhythmHealthLayout
+  title={title}
+  description={description}
+  activePage="home"
+>
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src="/images/health/bicycling-person-trees.webp"
+      alt="Person cycling through a tree-lined neighborhood in warm afternoon light"
+      class="w-full h-[52vh] sm:h-[64vh] object-cover"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"
+    >
+    </div>
 
-    <!-- Header -->
-    <header class="bg-white/90 dark:bg-gray-950/70 backdrop-blur sticky top-0 z-50 border-b border-stone-100 dark:border-gray-800">
-      <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-          <a href="/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-teal-700 dark:hover:text-teal-400 transition">ImagineThis.Site</a>
-          <span class="text-gray-300 dark:text-gray-600">/</span>
-          <a href="/concept/human-rhythm-health/" class="text-2xl font-serif font-bold hover:opacity-90 transition" style="color: var(--hrh-forest)">Human Rhythm Health</a>
-        </div>
-        <div class="flex items-center gap-3">
-          <ul class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 items-center">
-            <li><a href="/concept/human-rhythm-health/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Home</a></li>
-            <li><a href="/concept/human-rhythm-health/programs/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Programs</a></li>
-            <li><a href="/concept/human-rhythm-health/studio/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Studio</a></li>
-            <li><a href="/concept/human-rhythm-health/about/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">About</a></li>
-            <li><a href="/concept/human-rhythm-health/contact/" class="hover:text-teal-700 dark:hover:text-teal-400 transition font-medium">Contact</a></li>
-          </ul>
-
-          <!-- Dark mode toggle -->
-          <button
-            id="theme-toggle"
-            type="button"
-            class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition"
-            aria-label="Toggle dark mode"
-            title="Toggle dark mode"
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-6xl mx-auto px-6 text-white">
+        <p
+          class="uppercase tracking-wider text-sm font-semibold"
+          style="color: var(--hrh-amber)"
+        >
+          Human Rhythm Health
+        </p>
+        <h1 class="mt-3 text-4xl sm:text-5xl font-serif font-bold">
+          Align your life with your biology.
+        </h1>
+        <p class="mt-4 text-white/85 max-w-xl">
+          Simple, durable habits for sleep, movement, meals, light, and recovery
+          — built around your actual life.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/concept/human-rhythm-health/programs/"
+            class="hrh-btn hrh-btn-primary">Explore programs</a
           >
-            <!-- Sun (shows in dark mode to indicate switching to light) -->
-            <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0L17.95 7.05M7.05 16.95l-1.414 1.414M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
-            </svg>
-            <!-- Moon (shows in light mode to indicate switching to dark) -->
-            <svg class="block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
-            </svg>
-          </button>
+          <a
+            href="/concept/human-rhythm-health/contact/"
+            class="hrh-btn hrh-btn-secondary">Book a chat</a
+          >
         </div>
-      </nav>
-      <div class="hrh-accent"></div>
-    </header>
-
-    <main>
-      <!-- Hero with cycling image -->
-      <section class="relative">
-        <img
-          src="/images/health/bicycling-person-trees.webp"
-          alt="Person cycling through a tree‑lined neighborhood in warm afternoon light"
-          class="w-full h-[52vh] sm:h-[64vh] object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
-        <div class="absolute inset-0 flex items-center">
-          <div class="max-w-6xl mx-auto px-6 text-white">
-            <p class="uppercase tracking-wider text-sm font-semibold" style="color: var(--hrh-amber)">Human Rhythm Health</p>
-            <h1 class="mt-3 text-4xl sm:text-5xl font-serif font-bold">Align your life with your biology.</h1>
-            <p class="mt-4 text-white/85 max-w-xl">Simple, durable habits—sleep, movement, meals, and light—synced to your rhythm.</p>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="/concept/human-rhythm-health/programs/" class="hrh-btn hrh-btn-primary">Explore Programs</a>
-              <a href="/concept/human-rhythm-health/contact/" class="hrh-btn hrh-btn-secondary">Book a chat</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Six pillars -->
-      <section class="py-16 bg-stone-50 dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">Six pillars. One rhythm.</h2>
-          <p class="mt-2 text-gray-700 dark:text-gray-300 max-w-2xl">We focus on what compounds: sleep, movement, nutrition, sunlight, environment, and relationships—integrated into weekly cycles you can actually keep.</p>
-          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: "Sleep", desc: "Wind‑down, light hygiene, and regularity that restores you." },
-              { title: "Movement", desc: "Strength, mobility, and daily steps—right dose for your season." },
-              { title: "Nutrition", desc: "Protein, color, and timing—simple meals that fuel your day." },
-              { title: "Sunlight & Rhythm", desc: "Morning light, meal anchors, and consistent cues." },
-              { title: "Environment", desc: "Air, light, sound, and toxin minimization at home and work." },
-              { title: "Social", desc: "Relationships and accountability that sustain change." },
-            ].map((c) => (
-              <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-gray-300 dark:hover:border-gray-700 transition">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{c.title}</h3>
-                <p class="mt-2 text-gray-700 dark:text-gray-300">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- Programs preview with texture -->
-      <section class="relative py-16">
-        <div class="absolute inset-0 -z-10">
-          <img src="/images/health/botanical-textures.webp" alt="" aria-hidden="true" class="w-full h-full object-cover" />
-          <div class="absolute inset-0" style="background: rgba(247,245,238,.88)"></div>
-        </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-end justify-between gap-6">
-            <div>
-              <h2 class="text-3xl font-serif font-bold" style="color: var(--hrh-ink)">Programs</h2>
-              <p class="mt-2 text-gray-700 dark:text-gray-300 max-w-2xl">Start with a reset, continue with coaching, or drop in for focused studio sessions.</p>
-            </div>
-            <a href="/concept/human-rhythm-health/programs/" class="hidden sm:inline-flex items-center font-medium hover:underline" style="color: var(--hrh-forest)">View all</a>
-          </div>
-          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: "28‑Day Rhythm Reset",
-                img: "/images/health/breakfast-coffee.webp",
-                alt: "Morning bowl with oats, blueberries, spinach, and nuts beside a cup of coffee in sunlight",
-                blurb: "Daily prompts, sleep and light anchors, and movement plan. Accountability built in."
-              },
-              {
-                name: "Strength & Mobility Track",
-                img: "/images/health/wellness_studio.webp",
-                alt: "Sunlit wellness studio with floor cushions, plants, and a wooden bench",
-                blurb: "2x/week coached sessions + home work. Build capacity without burnout."
-              },
-              {
-                name: "Sleep Clinic (Lite)",
-                img: "/images/health/tea-with-plants.webp",
-                alt: "Steaming mug of tea on a rustic wood bench surrounded by plants in soft morning light",
-                blurb: "Personalized wind‑down, environment audit, and two‑week optimization."
-              },
-            ].map((p) => (
-              <a href="/concept/human-rhythm-health/programs/" class="group rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-950 hover:shadow-sm transition flex flex-col">
-                <img src={p.img} alt={p.alt} class="w-full h-44 object-cover" loading="lazy" />
-                <div class="p-6 flex-1 flex flex-col">
-                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{p.name}</h3>
-                  <p class="mt-2 text-gray-700 dark:text-gray-300 flex-1">{p.blurb}</p>
-                  <span class="mt-3 group-hover:underline" style="color: var(--hrh-forest)">Learn more</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- Studio preview -->
-      <section class="py-16 bg-stone-50 dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">The Studio</h2>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">A calm, light‑filled space for breath, mobility, and strength. Small groups, measured progress, real life constraints respected.</p>
-            <ul class="mt-4 space-y-2 text-gray-700 dark:text-gray-300 list-disc pl-5">
-              <li>Morning and early‑evening sessions</li>
-              <li>Strength + mobility circuits, guided breathwork</li>
-              <li>Environment: air, light, and sound tuned for focus</li>
-            </ul>
-            <a href="/concept/human-rhythm-health/studio/" class="mt-6 inline-flex items-center font-medium hover:underline" style="color: var(--hrh-forest)">See the space</a>
-          </div>
-          <div class="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800">
-            <img src="/images/health/wellness_studio_open.webp" alt="Spacious stone‑walled studio with arched glass doors opening to trees and natural light" class="w-full h-80 object-cover" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Closing CTA -->
-      <section class="py-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">Start your 28‑day reset.</h2>
-          <p class="mt-2 text-gray-700 dark:text-gray-300">Simple anchors, coached consistency, and changes you can feel.</p>
-          <div class="mt-6 flex gap-3 justify-center">
-            <a href="/concept/human-rhythm-health/programs/" class="hrh-btn hrh-btn-primary">Explore programs</a>
-            <a href="/concept/human-rhythm-health/contact/" class="hrh-btn hrh-btn-secondary">Book a chat</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="mt-auto border-t border-stone-100 dark:border-gray-800">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-600 dark:text-gray-400">
-        © {new Date().getFullYear()} Human Rhythm Health — Example concept by ImagineThis.Site
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- Hook up the toggle -->
-    <script is:inline>
-      const btn = document.getElementById('theme-toggle');
-      if (btn) {
-        btn.addEventListener('click', () => {
-          const root = document.documentElement;
-          const nowDark = root.classList.toggle('dark');
-          try { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); } catch (_) {}
-        });
-      }
-    </script>
-  </body>
-</html>
+  <!-- Audience / positioning -->
+  <section class="py-14 bg-white dark:bg-gray-950">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start"
+    >
+      <div>
+        <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">
+          For people who need health habits that fit real life.
+        </h2>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="text-gray-700 dark:text-gray-300">
+          Human Rhythm Health helps busy adults rebuild energy, consistency, and
+          confidence through practical rhythms — not extreme routines.
+        </p>
+        <p class="mt-4 text-gray-700 dark:text-gray-300">
+          We focus on the ordinary things that compound: how you sleep, move,
+          eat, recover, shape your environment, and stay connected.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Six pillars -->
+  <section class="py-16 bg-stone-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">
+        Six pillars. One rhythm.
+      </h2>
+      <p class="mt-2 text-gray-700 dark:text-gray-300 max-w-2xl">
+        We turn health basics into a weekly pattern you can actually keep.
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              title: 'Sleep',
+              desc: 'Wind-down routines, light hygiene, and regularity that restores you.',
+            },
+            {
+              title: 'Movement',
+              desc: 'Strength, mobility, and daily steps at the right dose for your season.',
+            },
+            {
+              title: 'Nutrition',
+              desc: 'Simple meals, protein, color, and timing that support your day.',
+            },
+            {
+              title: 'Light & Rhythm',
+              desc: 'Morning light, meal anchors, and cues that help your body keep time.',
+            },
+            {
+              title: 'Environment',
+              desc: 'Air, light, sound, and space design that make better habits easier.',
+            },
+            {
+              title: 'Connection',
+              desc: 'Relationships and accountability that help change last.',
+            },
+          ].map((pillar) => (
+            <div class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-gray-300 dark:hover:border-gray-700 transition">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                {pillar.title}
+              </h3>
+              <p class="mt-2 text-gray-700 dark:text-gray-300">{pillar.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs preview -->
+  <section class="relative py-16">
+    <div class="absolute inset-0 -z-10">
+      <img
+        src="/images/health/botanical-textures.webp"
+        alt=""
+        aria-hidden="true"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-stone-50/90 dark:bg-gray-950/80"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2
+            class="text-3xl font-serif font-bold text-gray-900 dark:text-white"
+          >
+            Programs
+          </h2>
+          <p class="mt-2 text-gray-700 dark:text-gray-300 max-w-2xl">
+            Start with a reset, continue with coaching, or focus on sleep and
+            recovery.
+          </p>
+        </div>
+
+        <a
+          href="/concept/human-rhythm-health/programs/"
+          class="hidden sm:inline-flex items-center font-medium hover:underline"
+          style="color: var(--hrh-forest)"
+        >
+          View all
+        </a>
+      </div>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              name: '28-Day Rhythm Reset',
+              img: '/images/health/breakfast-coffee.webp',
+              alt: 'Morning bowl with oats, blueberries, spinach, and nuts beside a cup of coffee in sunlight',
+              blurb:
+                'Daily prompts, sleep and light anchors, and a simple movement plan.',
+            },
+            {
+              name: 'Strength & Mobility Track',
+              img: '/images/health/wellness_studio.webp',
+              alt: 'Sunlit wellness studio with floor cushions, plants, and a wooden bench',
+              blurb:
+                'Small-group coaching that builds capacity without burnout.',
+            },
+            {
+              name: 'Sleep Reset',
+              img: '/images/health/tea-with-plants.webp',
+              alt: 'Steaming mug of tea on a rustic wood bench surrounded by plants in soft morning light',
+              blurb:
+                'Wind-down support, environment tuning, and a two-week optimization loop.',
+            },
+          ].map((program) => (
+            <a
+              href="/concept/human-rhythm-health/programs/"
+              class="group rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-950 hover:shadow-sm transition flex flex-col"
+            >
+              <img
+                src={program.img}
+                alt={program.alt}
+                class="w-full h-44 object-cover"
+                loading="lazy"
+              />
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  {program.name}
+                </h3>
+                <p class="mt-2 text-gray-700 dark:text-gray-300 flex-1">
+                  {program.blurb}
+                </p>
+                <span
+                  class="mt-3 group-hover:underline"
+                  style="color: var(--hrh-forest)"
+                >
+                  Learn more
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- The Space -->
+  <section class="py-16 bg-stone-50 dark:bg-gray-900">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">
+          A calm space for breath, strength, and recovery.
+        </h2>
+        <p class="mt-3 text-gray-700 dark:text-gray-300">
+          The studio is designed around natural light, quiet textures, and
+          simple movement setups — a place to practice habits that carry into
+          the rest of your week.
+        </p>
+        <ul
+          class="mt-4 space-y-2 text-gray-700 dark:text-gray-300 list-disc pl-5"
+        >
+          <li>Morning and early-evening sessions</li>
+          <li>Strength, mobility, and guided breathwork</li>
+          <li>Air, light, and sound tuned for focus</li>
+        </ul>
+        <a
+          href="/concept/human-rhythm-health/about/"
+          class="mt-6 inline-flex items-center font-medium hover:underline"
+          style="color: var(--hrh-forest)"
+        >
+          Learn about the approach
+        </a>
+      </div>
+
+      <div
+        class="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800"
+      >
+        <img
+          src="/images/health/wellness_studio_open.webp"
+          alt="Spacious stone-walled studio with arched glass doors opening to trees and natural light"
+          class="w-full h-80 object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">
+        Start with one rhythm you can keep.
+      </h2>
+      <p class="mt-2 text-gray-700 dark:text-gray-300">
+        Simple anchors, coached consistency, and changes you can feel.
+      </p>
+      <div class="mt-6 flex gap-3 justify-center">
+        <a
+          href="/concept/human-rhythm-health/programs/"
+          class="hrh-btn hrh-btn-primary">Explore programs</a
+        >
+        <a
+          href="/concept/human-rhythm-health/contact/"
+          class="hrh-btn hrh-btn-secondary">Book a chat</a
+        >
+      </div>
+    </div>
+  </section>
+</HumanRhythmHealthLayout>
