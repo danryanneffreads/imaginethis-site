@@ -10,7 +10,7 @@ import CTASection from '../components/CTASection.astro';
 // Page meta
 const title = 'ImagineThis.Site — Websites That Fit the Work';
 const description =
-  'A calm, structured space for figuring out the right website and bringing it into reality through concept sites, private drafts, and practical guides.';
+  'Explore working concept sites, shape a private draft, and get practical guidance—so your website fits the work behind it.';
 
 // Concept cards
 const concepts = [
@@ -48,13 +48,50 @@ const concepts = [
 <Layout title={title} description={description}>
   <Hero
     title="Explore what your website could become."
-    subtitle="Through concept sites, private drafts, and practical guidance, ImagineThis.Site is a space for exploring possibilities before committing to a build."
+    subtitle="Try on structures, language, and flows before you commit to a build. When you're ready, we turn the right ideas into a private draft."
     smallText="I'm Dan. I help people explore website ideas and bring the right ones into reality."
-    cta_text="Learn More"
-    cta_link="#intro"
+    cta_text="Explore concept sites"
+    cta_link="#concepts"
   />
 
-  <!-- Section A: What this site is -->
+  <!-- Concepts first: Working examples -->
+  <section
+    id="concepts"
+    class="py-24 md:py-28 border-t border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p
+        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
+      >
+        Explore possibilities
+      </p>
+      <h2
+        class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-3"
+      >
+        Explore concept sites
+      </h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-10">
+        These are working examples, not just mockups. They show how structure,
+        language, and design can help people quickly understand your work. Pick
+        one close to your world and imagine how it could be yours.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          concepts.map((c) => (
+            <Card
+              title={c.title}
+              description={c.description}
+              link={c.link}
+              image={c.image}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- What this is / How it works -->
   <section
     id="intro"
     class="bg-gradient-to-b from-stone-50 dark:from-gray-900 to-white dark:to-gray-950 py-24 md:py-28"
@@ -63,32 +100,32 @@ const concepts = [
       <p
         class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
       >
-        A working space for better websites
+        A calm, structured space
       </p>
 
       <h2
         class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-5"
       >
-        What is ImagineThis.Site?
+        How this works
       </h2>
 
       <h3
         class="text-2xl md:text-3xl font-serif font-semibold text-gray-900 dark:text-white mb-5"
       >
-        Part portfolio. Part workshop. Part guide.
+        Start with examples. Move to a focused draft.
       </h3>
 
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        ImagineThis.Site is a place for exploring website possibilities. Some
-        projects begin as concept sites. Others begin as private drafts for real
-        people and organizations. Along the way, I share practical guidance
+        ImagineThis.Site is a place to try on website possibilities. Start by
+        exploring public concept sites. When something fits, we shape a private
+        draft for your specific work. Along the way, I share practical guidance
         about structure, platforms, and the decisions that shape a successful
         website.
       </p>
     </div>
   </section>
 
-  <!-- Section B: The three roles -->
+  <!-- The three roles -->
   <section class="py-16 md:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
@@ -110,27 +147,7 @@ const concepts = [
             <li>
               <a
                 class="text-blue-600 hover:underline dark:text-blue-300"
-                href="/concept/hearthworks-architecture/"
-                >Hearthworks Architecture</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-blue-600 hover:underline dark:text-blue-300"
-                href="/concept/sync-coffee/">Synchronize Coffee</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-blue-600 hover:underline dark:text-blue-300"
-                href="/concept/human-rhythm-health/">Human Rhythm Health</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-blue-600 hover:underline dark:text-blue-300"
-                href="/concept/human-ai-systems-summit/"
-                >Human + AI Systems Summit</a
+                href="#concepts">Explore the examples</a
               >
             </li>
           </ul>
@@ -182,43 +199,6 @@ const concepts = [
             </li>
           </ul>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section C: Concept sites -->
-  <section
-    id="concepts"
-    class="py-24 md:py-28 border-t border-stone-200 dark:border-stone-800"
-  >
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p
-        class="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3"
-      >
-        Explore possibilities
-      </p>
-      <h2
-        class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-3"
-      >
-        Explore concept sites
-      </h2>
-      <p class="text-gray-700 dark:text-gray-300 mb-10">
-        These are not just visual mockups. They are working examples of how
-        structure, language, and design can shape the way people understand a
-        business, event, or service.
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          concepts.map((c) => (
-            <Card
-              title={c.title}
-              description={c.description}
-              link={c.link}
-              image={c.image}
-            />
-          ))
-        }
       </div>
     </div>
   </section>
