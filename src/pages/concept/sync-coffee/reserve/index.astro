@@ -5,8 +5,8 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
 ---
 
 <SyncCoffeeLayout
-  title="Reserve a Space - Synchronize Coffee"
-  description="Reserve a table or meeting space at Synchronize Coffee."
+  title="Reserve a Meeting Space - Synchronize Coffee"
+  description="Walk-ins always welcome. Optionally reserve a meeting or gathering space at Synchronize Coffee."
 >
   <!-- Hero -->
   <section
@@ -31,14 +31,44 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
       <h1
         class="text-4xl md:text-5xl font-serif font-bold text-blue-900 dark:text-blue-200 mb-6"
       >
-        Reserve a Space
+        Reserve a Meeting Space
       </h1>
       <p
         class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
       >
-        Some conversations happen naturally. Others need a little space set
-        aside.
+        In addition to our open seating, we offer reservable rooms.
       </p>
+    </div>
+  </section>
+
+  <!-- Walk-in clarification band -->
+  <section
+    class="py-12 bg-white dark:bg-gray-950 border-y border-stone-200 dark:border-stone-800"
+  >
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 dark:text-orange-400 mb-3"
+        >
+          How it works
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Most seating at Synchronize is open and first‑come, first‑served—drop
+          in anytime. Additionally, we offer reservable spaces for meetups or
+          focused sessions.
+        </p>
+      </div>
+      <div
+        class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800"
+      >
+        <img
+          src="/images/coffee/coffeeshop-interior.webp"
+          alt="Coffee shop interior with bar, seating, plants, and tall windows"
+          class="w-full h-full object-cover"
+        />
+      </div>
     </div>
   </section>
 
@@ -61,15 +91,14 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         class="space-y-5 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
       >
         <p>
-          Synchronize is open for everyday visits, but some gatherings benefit
-          from a little planning: a project meeting, a book discussion, a small
-          team conversation, or a focused work session.
+          Most seating at Synchronize is open and first‑come, first‑served—drop
+          in anytime for coffee, work, or conversation.
         </p>
 
         <p>
-          Reserve a table or nook when you want to know there will be room.
-          We’ll help match the size and feel of the space to what you’re
-          planning.
+          If you want a guaranteed spot for a meetup or focused session, you can
+          reserve select areas. Tell us what you have in mind and we’ll match
+          you with the right nook or table.
         </p>
       </div>
     </div>
@@ -85,7 +114,8 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
           Spaces at Synchronize
         </h2>
         <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-          Choose the setting that fits the way you want to gather.
+          These are a few reservable areas. The rest of the café stays open for
+          walk-ins—no reservation needed.
         </p>
       </div>
 
@@ -167,9 +197,9 @@ import SyncCoffeeLayout from '@/layouts/SyncCoffeeLayout.astro';
         </h2>
 
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Share the date, time, group size, and type of space you have in mind.
-          This demo form routes to a confirmation page, but no real reservation
-          is made.
+          Walk-ins are always welcome. Use this form only if you’d like us to
+          hold a spot for your group. This demo routes to a confirmation page;
+          no real reservation is made.
         </p>
       </div>
 

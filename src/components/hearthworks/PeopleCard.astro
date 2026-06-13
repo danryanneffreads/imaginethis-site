@@ -1,0 +1,56 @@
+---
+import type { Person } from '../../data/hearthworks-people';
+const { person } = Astro.props as { person: Person };
+---
+
+<article
+  class="rounded-lg bg-white/80 dark:bg-gray-900/40 border border-stone-200 dark:border-stone-800 overflow-hidden"
+>
+  <div class="flex items-start gap-4 p-4">
+    <img
+      src={person.photo}
+      alt={`${person.name} — ${person.role}`}
+      class="w-20 h-20 object-cover rounded-md border border-stone-200 dark:border-stone-800"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="min-w-0">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+        {person.name}
+      </h3>
+      <p class="text-sm text-gray-700 dark:text-gray-300">{person.role}</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">{person.location}</p>
+    </div>
+  </div>
+  <div class="px-4 pb-4">
+    <p class="text-sm text-gray-700 dark:text-gray-300">{person.bio}</p>
+    {
+      person.email && (
+        <p class="mt-2 text-sm">
+          <a
+            class="text-blue-700 dark:text-blue-300 hover:underline"
+            href={`mailto:${person.email}`}
+          >
+            {person.email}
+          </a>
+        </p>
+      )
+    }
+    {
+      person.links && person.links.length > 0 && (
+        <div class="mt-3 flex flex-wrap gap-2">
+          {person.links.map((l) => (
+            <a
+              href={l.href}
+              class="hw-chip"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</article>

@@ -14,7 +14,7 @@ const {
   noindex={true}
 >
   <style is:global>
-    @import '/src/styles/hearthworks.css';
+    @import '../styles/hearthworks.css';
   </style>
 
   <!-- Top concept banner -->
@@ -26,7 +26,7 @@ const {
     architecture firm.
   </div>
 
-  <!-- Header crumb -->
+  <!-- Concept header: breadcrumb + local nav (Portfolio, People, About) -->
   <header
     class="bg-white dark:bg-gray-950 sticky top-0 z-40 border-b border-stone-100 dark:border-stone-800"
   >
@@ -37,27 +37,30 @@ const {
         <a
           href="/"
           class="text-xs text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-300 transition"
+          >ImagineThis.Site</a
         >
-          ImagineThis.Site
-        </a>
         <span class="text-gray-300 dark:text-gray-600">/</span>
         <a
           href="/concept/hearthworks-architecture/"
           class="text-xl font-serif font-bold text-blue-700 dark:text-blue-300"
+          >Hearthworks Architecture</a
         >
-          Hearthworks Architecture
-        </a>
       </div>
       <div class="hidden sm:flex items-center gap-4 text-sm">
         <a
-          href="/#concepts"
+          href="/concept/hearthworks-architecture/portfolio/"
           class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-          >All concepts</a
+          >Portfolio</a
         >
         <a
-          href="/working-together"
+          href="/concept/hearthworks-architecture/people/"
           class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-          >Working Together</a
+          >People</a
+        >
+        <a
+          href="/concept/hearthworks-architecture/about/"
+          class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+          >About</a
         >
       </div>
     </nav>

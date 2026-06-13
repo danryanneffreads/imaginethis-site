@@ -52,7 +52,7 @@ const isActive = (href: string) => {
 
     <!-- Right-side controls -->
     <div class="flex items-center gap-2">
-      <!-- Theme toggle -->
+      <!-- Theme toggle (click handled globally in Layout.astro) -->
       <button
         id="theme-toggle"
         type="button"
@@ -148,21 +148,9 @@ const isActive = (href: string) => {
   </div>
 </header>
 
-<!-- Behavior: theme toggle + mobile menu -->
+<!-- Behavior: mobile menu only (theme handled in Layout.astro) -->
 <script>
   (function () {
-    // Theme toggle
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        const isDark = root.classList.toggle('dark');
-        try {
-          localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        } catch (e) {}
-      });
-    }
-
     // Mobile menu toggle
     const menuBtn = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');

@@ -1,0 +1,166 @@
+---
+import HearthworksLayout from '../../../../layouts/HearthworksLayout.astro';
+---
+
+<HearthworksLayout
+  title="About — Hearthworks Architecture"
+  description="Midwest-rooted architecture practice focused on homes, neighborhood buildings, libraries, workplaces, cafes, and community spaces."
+>
+  <!-- Intro -->
+  <section
+    class="py-10 border-b border-stone-200 dark:border-stone-800 bg-white/60 dark:bg-gray-950/60"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-serif font-bold">About Hearthworks</h1>
+      <p class="text-gray-700 dark:text-gray-300 mt-2 max-w-3xl">
+        We design places people grow attached to. Our work centers on homes,
+        neighborhood buildings, libraries, workplaces, cafes, and community
+        spaces—architecture that fits daily life and strengthens the character
+        of a place.
+      </p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+        Midwest-rooted (Chicago and Madison) with selected projects on the West
+        Coast and in mountain towns.
+      </p>
+    </div>
+  </section>
+
+  <!-- Practice focus -->
+  <section class="py-12">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8"
+    >
+      <div class="md:col-span-2 space-y-5">
+        <h2 class="text-xl font-semibold">Practice</h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          Hearthworks isn’t a luxury firm or a theoretical studio. We focus on
+          human-scale architecture: porches and entries that feel welcoming,
+          kitchens and offices that work day to day, courtyards and gardens that
+          invite people outside, and neighborhood buildings that fit their
+          streets.
+        </p>
+
+        <h2 class="text-xl font-semibold">Where we work</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+          <li>
+            <strong>Chicago + Madison:</strong> Core residential, mixed-use, library,
+            and community projects.
+          </li>
+          <li>
+            <strong>Beyond the region:</strong> Occasional work on the West Coast
+            and in mountain towns with local collaborators.
+          </li>
+        </ul>
+
+        <h2 class="text-xl font-semibold">Principles</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+          <li>Neighborhood first: fit the street, the block, the routines.</li>
+          <li>
+            Material honesty: brick, wood, stone, tile, plaster,
+            ironwork—detailed for touch and longevity.
+          </li>
+          <li>
+            Gardens and courtyards: outdoor rooms as part of everyday life.
+          </li>
+          <li>Repair before replace: adaptive reuse when possible.</li>
+          <li>Light, air, and comfortable entries.</li>
+          <li>Belonging over novelty.</li>
+        </ul>
+      </div>
+
+      <aside class="space-y-4">
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-2">What we work on</h3>
+          <div class="flex flex-wrap gap-2">
+            {
+              [
+                'Homes',
+                'Neighborhood buildings',
+                'Libraries',
+                'Workplaces',
+                'Cafés',
+                'Community spaces',
+                'Adaptive reuse',
+              ].map((t) => <span class="hw-chip">{t}</span>)
+            }
+          </div>
+        </div>
+
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-2">Based in</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            Chicago, IL and Madison, WI — with selected work nationally.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section
+    class="py-12 hw-texture border-t border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-serif font-semibold mb-4">Approach</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-1">Walk the block</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            Understand neighbors, trees, porches, and patterns of use.
+          </p>
+        </div>
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-1">Listen to routines</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            What needs to happen here every day? Where do people gather?
+          </p>
+        </div>
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-1">Sketch and iterate</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            Quick drawings and working mockups to find what fits.
+          </p>
+        </div>
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-1">Detail the craft</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            Durable, repairable materials; clear joints; good light.
+          </p>
+        </div>
+        <div
+          class="rounded-lg border border-stone-200 dark:border-stone-800 p-4 bg-white/70 dark:bg-gray-900/40"
+        >
+          <h3 class="font-semibold mb-1">Build what matters</h3>
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            Phase if helpful; adapt as the place teaches us.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="/concept/hearthworks-architecture/portfolio/"
+          class="inline-block px-5 py-3 rounded-md bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+          >See the portfolio</a
+        >
+        <a
+          href="/concept/hearthworks-architecture/people/"
+          class="inline-block px-5 py-3 rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white"
+          >Meet the people</a
+        >
+      </div>
+    </div>
+  </section>
+</HearthworksLayout>

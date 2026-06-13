@@ -1,27 +1,85 @@
 ---
 import HearthworksLayout from '../../../../layouts/HearthworksLayout.astro';
-import ProjectCard from '../../../../components/hearthworks/ProjectCard.astro';
+import PhotoCard from '../../../../components/hearthworks/PhotoCard.astro';
 import { projects, enums } from '../../../../data/hearthworks-projects';
 
-const allProjects = projects;
 const typeOptions = enums.types;
 const spaceOptions = enums.spaces;
 const materialOptions = enums.materials;
+
+// Build a flat list of all photos across projects, including hero (marked as Cover).
+// Avoid duplicates if the hero already exists in the gallery.
+const photos = projects.flatMap((p) => {
+  const galleryItems = p.gallery.map((g) => ({
+    src: g.src,
+    alt: g.alt,
+    projectSlug: p.slug,
+    projectTitle: p.title,
+    projectType: p.type,
+    spaces: g.spaces,
+    materials: g.materials,
+    isCover: false,
+    kind: 'detail',
+  }));
+  const heroAlreadyInGallery = p.gallery.some((g) => g.src === p.hero);
+  const heroItem = heroAlreadyInGallery
+    ? []
+    : [
+        {
+          src: p.hero,
+          alt: `${p.title} — cover`,
+          projectSlug: p.slug,
+          projectTitle: p.title,
+          projectType: p.type,
+          spaces: p.spaces,
+          materials: p.materials,
+          isCover: true,
+          kind: 'cover',
+        },
+      ];
+  return [...heroItem, ...galleryItems];
+});
 ---
 
 <HearthworksLayout
   title="Portfolio — Hearthworks Architecture"
-  description="Browse projects by type, space, and material."
+  description="Browse every photo. Filter by project type, space, and material."
 >
   <!-- Header with subtle background image -->
   <section
     class="py-10 border-b border-stone-200 dark:border-stone-800 bg-white/80 dark:bg-gray-950/70 hw-portfolio-hero"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-serif font-bold mb-1">Portfolio</h1>
-      <p class="text-gray-700 dark:text-gray-300 max-w-2xl">
-        Filter by project type, space, and material. Filters can be combined.
-      </p>
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-serif font-bold mb-1">Portfolio</h1>
+          <p class="text-gray-700 dark:text-gray-300 max-w-2xl">
+            Browse every photo. Filter by project type, space, and material. Use
+            “Cover photos only” to skim one image per project.
+          </p>
+        </div>
+
+        <!-- Photo type control -->
+        <div
+          class="inline-flex items-center rounded-md border border-stone-200 dark:border-stone-800 overflow-hidden"
+        >
+          <button
+            id="kindAll"
+            class="px-3 py-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+            aria-pressed="true">All photos</button
+          >
+          <button
+            id="kindCover"
+            class="px-3 py-2 text-sm bg-transparent text-gray-700 dark:text-gray-300"
+            aria-pressed="false">Cover photos only</button
+          >
+          <button
+            id="kindDetail"
+            class="px-3 py-2 text-sm bg-transparent text-gray-700 dark:text-gray-300"
+            aria-pressed="false">Detail photos only</button
+          >
+        </div>
+      </div>
 
       <!-- Filters -->
       <div id="filters" class="mt-6 space-y-4">
@@ -103,29 +161,30 @@ const materialOptions = enums.materials;
         <div class="flex items-center gap-4 mt-3">
           <button id="clearAll" class="hw-clear">Clear all</button>
           <span id="count" class="text-sm text-gray-700 dark:text-gray-300"
-            >Showing {allProjects.length} projects</span
+            >Showing {photos.length} photos</span
           >
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Results -->
+  <!-- Results: photos grid only -->
   <section class="py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div
-        id="results"
+        id="results-photos"
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {
-          allProjects.map((p) => (
+          photos.map((ph) => (
             <div
-              class="project-card"
-              data-type={p.type}
-              data-spaces={p.spaces.join('|')}
-              data-materials={p.materials.join('|')}
+              class="photo-card"
+              data-kind={ph.kind}
+              data-type={ph.projectType}
+              data-spaces={ph.spaces.join('|')}
+              data-materials={ph.materials.join('|')}
             >
-              <ProjectCard project={p} />
+              <PhotoCard photo={ph} />
             </div>
           ))
         }
@@ -134,18 +193,63 @@ const materialOptions = enums.materials;
   </section>
 
   <script is:inline>
-    // Simple, robust filtering with event delegation and DOM-derived state
+    // Photos-only portfolio with "Photo type" control (kind=all|cover|detail)
     (() => {
       const filtersRoot = document.getElementById('filters');
       const checkboxes = Array.from(
         document.querySelectorAll('input[type="checkbox"][data-facet]')
       );
-      const cards = Array.from(document.querySelectorAll('.project-card'));
       const activeBar = document.getElementById('activeBar');
       const countEl = document.getElementById('count');
+      const cards = Array.from(
+        document.querySelectorAll('#results-photos .photo-card')
+      );
+
+      const btnAll = document.getElementById('kindAll');
+      const btnCover = document.getElementById('kindCover');
+      const btnDetail = document.getElementById('kindDetail');
       const clearAllBtn = document.getElementById('clearAll');
 
-      function gatherStateFromDOM() {
+      function getKindFromURL() {
+        const q = new URLSearchParams(location.search);
+        const k = q.get('kind');
+        return k === 'cover' || k === 'detail' ? k : 'all';
+      }
+
+      function setKindToURL(kind) {
+        const next = new URL(location.href);
+        next.searchParams.set('kind', kind);
+        // keep current filter params
+        const state = getState();
+        ['type', 'space', 'material'].forEach((k) =>
+          next.searchParams.delete(k)
+        );
+        Object.entries(state).forEach(([k, arr]) =>
+          arr.forEach((v) => next.searchParams.append(k, v))
+        );
+        history.replaceState(null, '', next.toString());
+      }
+
+      function styleKind(kind) {
+        const active =
+          'px-3 py-2 text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-white';
+        const inactive =
+          'px-3 py-2 text-sm bg-transparent text-gray-700 dark:text-gray-300';
+        btnAll?.setAttribute('class', kind === 'all' ? active : inactive);
+        btnAll?.setAttribute('aria-pressed', kind === 'all' ? 'true' : 'false');
+        btnCover?.setAttribute('class', kind === 'cover' ? active : inactive);
+        btnCover?.setAttribute(
+          'aria-pressed',
+          kind === 'cover' ? 'true' : 'false'
+        );
+        btnDetail?.setAttribute('class', kind === 'detail' ? active : inactive);
+        btnDetail?.setAttribute(
+          'aria-pressed',
+          kind === 'detail' ? 'true' : 'false'
+        );
+      }
+
+      function getState() {
         const checked = checkboxes.filter((cb) => cb.checked);
         return {
           type: checked
@@ -160,23 +264,16 @@ const materialOptions = enums.materials;
         };
       }
 
-      function applyURL(state) {
-        const next = new URL(location.href);
-        ['type', 'space', 'material'].forEach((k) =>
-          next.searchParams.delete(k)
-        );
-        Object.entries(state).forEach(([k, arr]) =>
-          arr.forEach((v) => next.searchParams.append(k, v))
-        );
-        history.replaceState(null, '', next.toString());
-      }
+      function matches(el, kind, state) {
+        const elKind = el.getAttribute('data-kind'); // cover | detail
+        if (kind === 'cover' && elKind !== 'cover') return false;
+        if (kind === 'detail' && elKind !== 'detail') return false;
 
-      function matches(card, state) {
-        const type = card.getAttribute('data-type');
-        const spaces = (card.getAttribute('data-spaces') || '')
+        const type = el.getAttribute('data-type');
+        const spaces = (el.getAttribute('data-spaces') || '')
           .split('|')
           .filter(Boolean);
-        const materials = (card.getAttribute('data-materials') || '')
+        const materials = (el.getAttribute('data-materials') || '')
           .split('|')
           .filter(Boolean);
         const typeOK = state.type.length ? state.type.includes(type) : true;
@@ -189,27 +286,12 @@ const materialOptions = enums.materials;
         return typeOK && spaceOK && materialOK;
       }
 
-      function renderResults(state) {
-        let visible = 0;
-        cards.forEach((c) => {
-          if (matches(c, state)) {
-            c.style.display = '';
-            visible++;
-          } else {
-            c.style.display = 'none';
-          }
-        });
-        if (countEl)
-          countEl.textContent = `Showing ${visible} project${visible === 1 ? '' : 's'}`;
-      }
-
       function renderActiveBar(state) {
         const active = [
           ...state.type.map((v) => ({ facet: 'type', value: v })),
           ...state.space.map((v) => ({ facet: 'space', value: v })),
           ...state.material.map((v) => ({ facet: 'material', value: v })),
         ];
-        if (!activeBar) return;
         if (active.length === 0) {
           activeBar.style.display = 'none';
           activeBar.innerHTML = '';
@@ -230,8 +312,6 @@ const materialOptions = enums.materials;
             <button id="barClear" class="hw-clear" aria-label="Clear all filters">Clear all</button>
           </div>
         `;
-
-        // Remove one chip via ribbon
         activeBar.querySelectorAll('[data-remove-facet]').forEach((btn) => {
           btn.addEventListener('click', () => {
             const facet = btn.getAttribute('data-remove-facet');
@@ -249,8 +329,6 @@ const materialOptions = enums.materials;
             }
           });
         });
-
-        // Clear all via ribbon
         const barClear = document.getElementById('barClear');
         if (barClear)
           barClear.addEventListener('click', (e) => {
@@ -259,10 +337,46 @@ const materialOptions = enums.materials;
           });
       }
 
+      function renderResults(kind, state) {
+        let visible = 0;
+        let coversVisible = 0;
+        cards.forEach((el) => {
+          const ok = matches(el, kind, state);
+          el.style.display = ok ? '' : 'none';
+          if (ok) {
+            visible++;
+            if (el.getAttribute('data-kind') === 'cover') coversVisible++;
+          }
+        });
+        if (countEl) {
+          if (kind === 'all') {
+            countEl.textContent = `Showing ${visible} photos (${coversVisible} covers)`;
+          } else if (kind === 'cover') {
+            countEl.textContent = `Showing ${visible} project covers`;
+          } else {
+            countEl.textContent = `Showing ${visible} photos`;
+          }
+        }
+      }
+
+      function updateURL(kind, state) {
+        const next = new URL(location.href);
+        next.searchParams.set('kind', kind);
+        ['type', 'space', 'material'].forEach((k) =>
+          next.searchParams.delete(k)
+        );
+        Object.entries(state).forEach(([k, arr]) =>
+          arr.forEach((v) => next.searchParams.append(k, v))
+        );
+        history.replaceState(null, '', next.toString());
+      }
+
       function update() {
-        const state = gatherStateFromDOM();
-        applyURL(state);
-        renderResults(state);
+        const kind = getKindFromURL();
+        const state = getState();
+        styleKind(kind);
+        updateURL(kind, state);
+        renderResults(kind, state);
         renderActiveBar(state);
       }
 
@@ -273,9 +387,14 @@ const materialOptions = enums.materials;
         update();
       }
 
-      // Initialize from URL query params
+      // Initialize from URL
       (function initFromURL() {
         const q = new URLSearchParams(location.search);
+        const kind =
+          q.get('kind') === 'cover' || q.get('kind') === 'detail'
+            ? q.get('kind')
+            : 'all';
+        styleKind(kind || 'all');
         ['type', 'space', 'material'].forEach((facet) => {
           const selected = new Set(q.getAll(facet));
           checkboxes
@@ -284,40 +403,49 @@ const materialOptions = enums.materials;
               cb.checked = selected.has(cb.value);
             });
         });
+        update();
       })();
 
-      // Event delegation: any click on a label toggles the input and updates
-      if (filtersRoot) {
-        filtersRoot.addEventListener('click', (e) => {
-          const target = e.target instanceof Element ? e.target : null;
-          const label = target ? target.closest('label.hw-chip') : null;
-          if (!label) return;
-          const cb = label.querySelector('input[type="checkbox"]');
-          if (!cb) return;
-          e.preventDefault(); // normalize behavior
-          cb.checked = !cb.checked;
+      // Kind control
+      btnAll?.addEventListener('click', (e) => {
+        e.preventDefault();
+        setKindToURL('all');
+        update();
+      });
+      btnCover?.addEventListener('click', (e) => {
+        e.preventDefault();
+        setKindToURL('cover');
+        update();
+      });
+      btnDetail?.addEventListener('click', (e) => {
+        e.preventDefault();
+        setKindToURL('detail');
+        update();
+      });
+
+      // Event delegation for label clicks
+      filtersRoot?.addEventListener('click', (e) => {
+        const target = e.target instanceof Element ? e.target : null;
+        const label = target ? target.closest('label.hw-chip') : null;
+        if (!label) return;
+        const cb = label.querySelector('input[type="checkbox"]');
+        if (!cb) return;
+        e.preventDefault();
+        cb.checked = !cb.checked;
+        update();
+      });
+
+      // For keyboard/assistive tech
+      filtersRoot?.addEventListener('change', (e) => {
+        const t = e.target;
+        if (t && t.matches && t.matches('input[type="checkbox"][data-facet]'))
           update();
-        });
+      });
 
-        // Support keyboard/assistive tech toggling directly on inputs
-        filtersRoot.addEventListener('change', (e) => {
-          const t = e.target;
-          if (t && t.matches && t.matches('input[type="checkbox"][data-facet]'))
-            update();
-        });
-      }
-
-      if (clearAllBtn)
-        clearAllBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          clearAll();
-        });
-
-      // First paint
-      update();
-
-      // Debug helpers (optional)
-      window.__hw = { gather: gatherStateFromDOM, update };
+      clearAllBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearAll();
+      });
     })();
   </script>
 </HearthworksLayout>

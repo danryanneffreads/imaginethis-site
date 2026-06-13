@@ -100,6 +100,18 @@ export const projects: Project[] = [
         spaces: ['Porch', 'Entryway'],
         materials: ['Wood', 'Stone', 'Brick'],
       },
+      {
+        src: '/images/architecture/residence-arts-crafts.webp',
+        alt: 'Arts & Crafts residence with broad porch and brick base',
+        spaces: ['Porch', 'Entryway', 'Streetfront'],
+        materials: ['Wood', 'Brick', 'Stone'],
+      },
+      {
+        src: '/images/architecture/residence-arts-crafts3.webp',
+        alt: 'Deep front porch with timber posts and garden edge',
+        spaces: ['Porch', 'Garden', 'Entryway'],
+        materials: ['Wood', 'Stone'],
+      },
     ],
   },
   {
@@ -206,8 +218,8 @@ export const projects: Project[] = [
         materials: ['Brick', 'Wood', 'Glass'],
       },
       {
-        src: '/images/architecture/staircase2.webp',
-        alt: 'Curved stair with daylight',
+        src: '/images/architecture/staircase.webp',
+        alt: 'Daylit stair with wood treads and curved rail',
         spaces: ['Stair', 'Entryway'],
         materials: ['Wood', 'Glass', 'Ironwork'],
       },
