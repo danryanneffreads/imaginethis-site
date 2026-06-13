@@ -52,12 +52,13 @@ const isActive = (href: string) => {
 
     <!-- Right-side controls -->
     <div class="flex items-center gap-2">
-      <!-- Theme toggle (click handled globally in Layout.astro) -->
+      <!-- Theme toggle -->
       <button
         id="theme-toggle"
         type="button"
         class="p-2 rounded-lg hover:bg-stone-100 dark:hover:bg-gray-800 transition"
         aria-label="Toggle dark mode"
+        aria-pressed="false"
       >
         <!-- Sun (shows in dark mode) -->
         <svg
@@ -148,37 +149,76 @@ const isActive = (href: string) => {
   </div>
 </header>
 
-<!-- Behavior: mobile menu only (theme handled in Layout.astro) -->
+<!-- Behavior: theme toggle + mobile menu -->
 <script>
   (function () {
-    // Mobile menu toggle
+    const root = document.documentElement;
+
+    // ---- Theme toggle ----
+    const btn = document.getElementById('theme-toggle');
+
+    function prefersDark() {
+      return (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      );
+    }
+    function getSaved() {
+      try {
+        return localStorage.getItem('theme');
+      } catch {
+        return null;
+      }
+    }
+    function isDarkNow() {
+      const saved = getSaved();
+      return saved ? saved === 'dark' : prefersDark();
+    }
+    function applyTheme(isDark) {
+      root.classList.toggle('dark', isDark);
+      if (btn) btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    }
+
+    // Ensure button reflects current state on load
+    applyTheme(isDarkNow());
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = !root.classList.contains('dark');
+        applyTheme(next);
+        try {
+          localStorage.setItem('theme', next ? 'dark' : 'light');
+        } catch {}
+      });
+    }
+
+    // Keep in sync if changed in another tab/window
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'theme') applyTheme(e.newValue === 'dark');
+    });
+
+    // ---- Mobile menu ----
     const menuBtn = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');
-    if (!menuBtn || !menu) return;
-
-    function closeMenu() {
-      menu.classList.add('hidden');
-      menuBtn.setAttribute('aria-expanded', 'false');
+    if (menuBtn && menu) {
+      function closeMenu() {
+        menu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+      function openMenu() {
+        menu.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+      }
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        expanded ? closeMenu() : openMenu();
+      });
+      menu.querySelectorAll('[data-menu-close]').forEach((link) => {
+        link.addEventListener('click', () => closeMenu());
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
     }
-
-    function openMenu() {
-      menu.classList.remove('hidden');
-      menuBtn.setAttribute('aria-expanded', 'true');
-    }
-
-    menuBtn.addEventListener('click', () => {
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      expanded ? closeMenu() : openMenu();
-    });
-
-    // Close on link click
-    menu.querySelectorAll('[data-menu-close]').forEach((link) => {
-      link.addEventListener('click', () => closeMenu());
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
   })();
 </script>
