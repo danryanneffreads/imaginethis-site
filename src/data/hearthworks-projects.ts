@@ -112,6 +112,13 @@ export const projects: Project[] = [
         spaces: ['Porch', 'Garden', 'Entryway'],
         materials: ['Wood', 'Stone'],
       },
+      // New
+      {
+        src: '/images/architecture/oak-porch-dusk-lamplight.webp',
+        alt: 'Porch at dusk with warm lamplight and stone piers',
+        spaces: ['Porch', 'Garden', 'Streetfront', 'Entryway'],
+        materials: ['Wood', 'Stone', 'Brick', 'Glass'],
+      },
     ],
   },
   {
@@ -142,6 +149,19 @@ export const projects: Project[] = [
         alt: 'Brick corner building with upper residences',
         spaces: ['Streetfront'],
         materials: ['Brick', 'Glass', 'Ironwork'],
+      },
+      // New
+      {
+        src: '/images/architecture/daily-grind-evening-streetfront.webp',
+        alt: 'Evening streetfront with warm café interior glow',
+        spaces: ['Streetfront', 'Cafe'],
+        materials: ['Brick', 'Glass', 'Ironwork', 'Wood'],
+      },
+      {
+        src: '/images/architecture/daily-grind-signage-iron.webp',
+        alt: 'Iron bracket sign and brick storefront detail',
+        spaces: ['Streetfront', 'Entryway'],
+        materials: ['Ironwork', 'Brick', 'Wood'],
       },
     ],
   },
@@ -179,6 +199,25 @@ export const projects: Project[] = [
         alt: 'Garden seating among plantings',
         spaces: ['Garden', 'Courtyard'],
         materials: ['Wood', 'Stone'],
+      },
+      // New
+      {
+        src: '/images/architecture/prairie-leaf-entry-vestibule.webp',
+        alt: 'Library entry vestibule with wood and glass doors',
+        spaces: ['Entryway', 'Library'],
+        materials: ['Wood', 'Glass', 'Stone', 'Ironwork'],
+      },
+      {
+        src: '/images/architecture/prairie-leaf-reading-bay.webp',
+        alt: 'Reading bay with wood shelves and garden view',
+        spaces: ['Library', 'Garden'],
+        materials: ['Wood', 'Glass', 'Stone'],
+      },
+      {
+        src: '/images/architecture/prairie-leaf-exterior-dusk.webp',
+        alt: 'Library exterior at dusk with planted terrace',
+        spaces: ['Library', 'Streetfront', 'Garden'],
+        materials: ['Wood', 'Glass', 'Brick', 'Stone'],
       },
     ],
   },
@@ -222,6 +261,19 @@ export const projects: Project[] = [
         alt: 'Daylit stair with wood treads and curved rail',
         spaces: ['Stair', 'Entryway'],
         materials: ['Wood', 'Glass', 'Ironwork'],
+      },
+      // New
+      {
+        src: '/images/architecture/linden-court-balcony-threshold.webp',
+        alt: 'Balcony threshold with planter and curved railing',
+        spaces: ['Balcony', 'Entryway'],
+        materials: ['Wood', 'Ironwork', 'Brick', 'Glass'],
+      },
+      {
+        src: '/images/architecture/linden-court-stair-handrail-detail.webp',
+        alt: 'Stair handrail detail with wood and plaster',
+        spaces: ['Stair', 'Entryway'],
+        materials: ['Wood', 'Plaster', 'Ironwork', 'Glass'],
       },
     ],
   },
@@ -272,6 +324,19 @@ export const projects: Project[] = [
         spaces: ['Streetfront'],
         materials: ['Brick', 'Ironwork', 'Glass'],
       },
+      // New
+      {
+        src: '/images/architecture/wicker-row-stoop-rail-number.webp',
+        alt: 'Stoop with iron rail and house number plate',
+        spaces: ['Porch', 'Streetfront', 'Entryway'],
+        materials: ['Brick', 'Ironwork', 'Wood', 'Glass'],
+      },
+      {
+        src: '/images/architecture/wicker-row-courtyard-evening.webp',
+        alt: 'Townhome courtyard evening with string lights',
+        spaces: ['Courtyard', 'Garden'],
+        materials: ['Wood', 'Brick', 'Glass'],
+      },
     ],
   },
   {
@@ -315,6 +380,19 @@ export const projects: Project[] = [
         spaces: ['Balcony', 'Courtyard'],
         materials: ['Wood', 'Glass', 'Ironwork'],
       },
+      // New
+      {
+        src: '/images/architecture/sunwell-courtyard-night-walk.webp',
+        alt: 'Courtyard at night with soft lighting and balconies',
+        spaces: ['Courtyard', 'Balcony'],
+        materials: ['Plaster', 'Wood', 'Glass', 'Ironwork'],
+      },
+      {
+        src: '/images/architecture/sunwell-arch-stone-detail.webp',
+        alt: 'Entry arch with stone, plaster, and tile threshold',
+        spaces: ['Entryway'],
+        materials: ['Stone', 'Plaster', 'Tile', 'Ironwork'],
+      },
     ],
   },
   {
@@ -334,6 +412,13 @@ export const projects: Project[] = [
         spaces: ['Porch', 'Courtyard'],
         materials: ['Stone', 'Wood', 'Glass'],
       },
+      // New
+      {
+        src: '/images/architecture/headlands-porch-interior-evening.webp',
+        alt: 'Interior civic porch with lantern glow and stone columns',
+        spaces: ['Porch', 'Courtyard', 'Entryway'],
+        materials: ['Stone', 'Wood', 'Glass', 'Ironwork'],
+      },
     ],
   },
   {
@@ -351,6 +436,25 @@ export const projects: Project[] = [
         src: '/images/architecture/workplace-mountain2.webp',
         alt: 'Timber workshop with outdoor meeting terrace',
         spaces: ['Office', 'Porch', 'Garden'],
+        materials: ['Wood', 'Stone', 'Glass'],
+      },
+      // New
+      {
+        src: '/images/architecture/high-valley-workbay-window.webp',
+        alt: 'Workshop bay with workbench and operable window',
+        spaces: ['Office'],
+        materials: ['Wood', 'Stone', 'Glass', 'Ironwork'],
+      },
+      {
+        src: '/images/architecture/high-valley-workbay-window2.webp',
+        alt: 'Workshop bay with tools and timber structure',
+        spaces: ['Office'],
+        materials: ['Wood', 'Stone', 'Glass', 'Ironwork'],
+      },
+      {
+        src: '/images/architecture/high-valley-porch-meeting.webp',
+        alt: 'Covered porch meeting with timber posts and stone steps',
+        spaces: ['Porch', 'Garden'],
         materials: ['Wood', 'Stone', 'Glass'],
       },
     ],
