@@ -1,0 +1,91 @@
+---
+// src/components/sandy-city-inn/Footer.astro
+const year = new Date().getFullYear();
+---
+
+<footer class="sci-footer border-t sci-border mt-24">
+  <div class="container-wide py-16 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      <!-- Address -->
+      <div>
+        <p
+          class="font-serif text-2xl font-semibold text-stone-900 dark:text-[var(--sci-ink)] mb-1"
+        >
+          Sandy City Inn
+        </p>
+        <p class="text-sm text-stone-500 dark:text-stone-400 mb-4">
+          Sandy City, on Lake Michigan
+        </p>
+        <address
+          class="not-italic text-stone-700 dark:text-stone-300 leading-relaxed"
+        >
+          412 Cedar Street<br />
+          Sandy City, MI 49401
+        </address>
+      </div>
+
+      <!-- Reach us -->
+      <div>
+        <p class="text-eyebrow mb-3">Reach us</p>
+        <p class="text-stone-700 dark:text-stone-300">
+          <a
+            href="tel:+12345550199"
+            class="hover:text-[var(--sci-forest-800)] transition-colors"
+          >
+            (234) 555-0199
+          </a>
+        </p>
+        <p class="text-stone-700 dark:text-stone-300 mt-1">
+          <a
+            href="mailto:hello@sandycityinn.example"
+            class="hover:text-[var(--sci-forest-800)] transition-colors"
+          >
+            hello@sandycityinn.example
+          </a>
+        </p>
+        <p class="text-sm text-stone-500 dark:text-stone-400 mt-3">
+          We answer most messages within a day.
+        </p>
+      </div>
+
+      <!-- Wayfinding -->
+      <div>
+        <p class="text-eyebrow mb-3">Find your way</p>
+        <ul class="space-y-1.5">
+          <li>
+            <a href="/concept/sandy-city-inn/" class="transition-colors"
+              >The Inn</a>
+          </li>
+          <li>
+            <a href="/concept/sandy-city-inn/rooms/" class="transition-colors"
+              >The Rooms</a>
+          </li>
+          <li>
+            <a
+              href="/concept/sandy-city-inn/our-town/"
+              class="transition-colors">Our Town</a>
+          </li>
+          <li>
+            <a href="/concept/sandy-city-inn/visit/" class="transition-colors"
+              >Visit</a>
+          </li>
+          <li>
+            <a href="/concept/sandy-city-inn/about/" class="transition-colors"
+              >About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 pt-6 border-t sci-border flex flex-col md:flex-row justify-between items-start md:items-center gap-3"
+    >
+      <p class="text-sm text-stone-500 dark:text-stone-400">
+        © {year} Sandy City Inn. All rights reserved.
+      </p>
+      <p class="text-xs text-stone-500 dark:text-stone-400 italic">
+        A concept site, set on the shore of an imagined Lake Michigan.
+      </p>
+    </div>
+  </div>
+</footer>

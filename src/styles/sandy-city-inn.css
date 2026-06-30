@@ -1,0 +1,160 @@
+/* Sandy City Inn — Dune + Sky palette (light/dark) with contrast helpers */
+/* IMPORTANT: Do NOT import Tailwind here. Global Tailwind is in src/styles/global.css */
+
+/* Light mode tokens (sand + forest + lake + sunset) */
+:root {
+  /* Page + surface */
+  --sci-page-bg: #FBF3E6;  /* sand light */
+  --sci-surface: #F7EFE3;  /* lifted paper */
+  --sci-ink:     #232A2E;  /* harbor ink (soft charcoal) */
+
+  /* Accents */
+  --sci-forest-700: #2E6A4A;  /* hover */
+  --sci-forest-800: #2C5A43;  /* primary button base */
+  --sci-forest-900: #214635;  /* deep forest for text accents */
+  --sci-fern-500:   #58A272;  /* soft fern highlight */
+
+  /* Lake teal (links/accents) */
+  --sci-lake-600: #1F9CAB;
+  --sci-lake-700: #187E8A;    /* hover */
+
+  /* Sunset accent (numbers/eyebrows) */
+  --sci-sunset-600: #E2735D;
+  --sci-sunset-700: #D45E46;
+
+  /* Borders (light) */
+  --sci-border: #E6DFD5;
+
+  /* Footer band — extra dark like top band (in both modes) */
+  --sci-footer-bg: #0B1220;
+
+  /* Gentle card background for light sections (vs pure white) */
+  --sci-card: #FAF0E4;
+}
+
+/* Dark mode tokens (night sky + warm ivory + lifted accents) */
+.dark {
+  --sci-page-bg:  #0E1420;   /* night indigo */
+  --sci-surface:  #131A27;   /* slightly lifted surface */
+  --sci-ink:      #EEE9E2;   /* warm ivory text */
+
+  --sci-forest-700: #9AD1B1;
+  --sci-forest-800: #84C5A0;
+  --sci-forest-900: #6BB389;
+  --sci-fern-500:   #78C596;
+
+  --sci-lake-600: #79D3E2;   /* brighter lake accent for dark */
+  --sci-lake-700: #93DFEA;
+
+  --sci-sunset-600: #F08E78;
+  --sci-sunset-700: #F3A491;
+
+  --sci-border:     #3A4250;
+
+  /* Footer remains extra dark in dark mode too */
+  --sci-footer-bg:  #0B1220;
+
+  /* Card tint in dark (slightly above surface) */
+  --sci-card: #172133;
+}
+
+/* Page-level: let the palette show through on this concept */
+body {
+  background-color: var(--sci-page-bg) !important;
+  color: var(--sci-ink);
+}
+.dark body {
+  background-color: var(--sci-page-bg) !important; /* resolves to dark token */
+  color: var(--sci-ink);
+}
+
+/* Layout container */
+.container-wide {
+  max-width: 72rem; /* ~1152px */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) { .container-wide { padding-inline: 1.5rem; } }
+@media (min-width: 1024px) { .container-wide { padding-inline: 2rem; } }
+
+/* Concept-scoped helpers */
+.sci-surface { background-color: var(--sci-surface); }
+.sci-border  { border-color: var(--sci-border); }
+.sci-band    { background-color: var(--sci-surface); } /* soft “paper” bands */
+.sci-footer  { background-color: var(--sci-footer-bg); } /* extra-dark footer */
+.sci-card    { background-color: var(--sci-card); }      /* gentle card tint */
+
+/* Footer text/link legibility on the extra-dark band */
+.sci-footer, .sci-footer p, .sci-footer .text-stone-700, .sci-footer .text-stone-500 {
+  color: #ECE7E1; /* warm ivory on dark */
+}
+.sci-footer a {
+  color: var(--sci-lake-600);
+  text-underline-offset: 2px;
+}
+.sci-footer a:hover { color: var(--sci-lake-700); text-decoration: underline; }
+
+/* Eyebrow text */
+.text-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em; /* like tracking-wider */
+  font-size: 0.75rem;     /* text-xs */
+  font-weight: 600;       /* font-semibold */
+  color: #6b7280;         /* slate-500-ish in light */
+}
+.dark .text-eyebrow { color: #a3a3a3; }
+
+/* Buttons (forest) */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.625rem 1rem; border-radius: 0.5rem; border: 1px solid transparent;
+  background-color: var(--sci-forest-800); color: white; font-weight: 600;
+  transition: background-color 150ms, color 150ms, border-color 150ms, box-shadow 150ms;
+}
+.btn-primary:hover { background-color: var(--sci-forest-700); }
+.btn-primary:focus-visible {
+  outline: none; box-shadow: 0 0 0 3px color-mix(in oklch, var(--sci-forest-800), white 70%);
+}
+
+.btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.625rem 1rem; border-radius: 0.5rem;
+  border: 1px solid var(--sci-forest-800); background-color: transparent; color: var(--sci-forest-800);
+  font-weight: 600; transition: background-color 150ms, color 150ms, border-color 150ms, box-shadow 150ms;
+}
+.btn-secondary:hover { background-color: var(--sci-forest-800); color: var(--sci-surface); }
+.btn-secondary:focus-visible {
+  outline: none; box-shadow: 0 0 0 3px color-mix(in oklch, var(--sci-forest-800), white 70%);
+}
+
+/* Ensure button text stays readable (esp. dark mode) */
+a.btn-primary, .btn-primary { color: #fff !important; text-decoration: none; }
+a.btn-secondary { color: var(--sci-forest-800) !important; text-decoration: none; }
+
+/* Links (lake teal) — scoped to concept pages via this stylesheet */
+a { color: var(--sci-lake-600); text-underline-offset: 2px; }
+a:hover { color: var(--sci-lake-700); text-decoration: underline; }
+.dark a { color: var(--sci-lake-600); }
+.dark a:hover { color: var(--sci-lake-700); text-decoration: underline; }
+
+/* Dark-mode text contrast without editing every template */
+.dark h1, .dark .font-serif.text-stone-900,
+.dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--sci-ink) !important;
+}
+.dark p,
+.dark .text-stone-700, .dark .text-gray-700, .dark .text-stone-600, .dark .text-gray-600 {
+  color: oklch(0.82 0.014 260) !important; /* readable body text */
+}
+.dark .text-stone-500, .dark .text-gray-500 {
+  color: oklch(0.70 0.010 260) !important; /* softer secondary */
+}
+
+/* Borders on dark */
+.dark .border-stone-200, .dark .border-gray-200,
+.dark .border-stone-300, .dark .border-gray-300 {
+  border-color: var(--sci-border) !important;
+}
+
+/* Cards/surfaces that rely on "bg-white" look muddy in dark; nudge them */
+.dark .bg-white { background-color: var(--sci-surface) !important; }

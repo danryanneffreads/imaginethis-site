@@ -11,6 +11,10 @@ export interface Props {
   image?: string;
   status?: 'draft' | 'published' | 'unpublished';
   noindex?: boolean;
+
+  // New: allow concept layouts to hide the site header/footer
+  hideSiteHeader?: boolean;
+  hideSiteFooter?: boolean;
 }
 
 const {
@@ -18,7 +22,11 @@ const {
   description = 'Your website is part of your business operations. When it reflects how you actually serve people, everything gets easier.',
   image,
   status = 'published',
-  noindex = false
+  noindex = false,
+
+  // New props (default to showing both)
+  hideSiteHeader = false,
+  hideSiteFooter = false,
 } = Astro.props;
 
 const isUnpublished = status === 'unpublished';
@@ -93,13 +101,14 @@ const jsonLd = {
       Skip to content
     </a>
 
-    <Header />
+    {!hideSiteHeader && <Header />}
 
     <main id="main">
       <slot />
     </main>
 
-    <Footer />
-    <!-- Note: No theme toggle JS here. Header.astro owns toggling & persistence. -->
+    {!hideSiteFooter && <Footer />}
+
+    <!-- Note: No theme toggle JS here. Header.astro or concept headers own toggling & persistence. -->
   </body>
 </html>

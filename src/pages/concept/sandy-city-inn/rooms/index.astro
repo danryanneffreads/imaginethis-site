@@ -1,0 +1,56 @@
+---
+// src/pages/concept/sandy-city-inn/rooms/index.astro
+import SandyCityLayout from '@/layouts/SandyCityLayout.astro';
+import RoomCard from '@/components/sandy-city-inn/RoomCard.astro';
+import { rooms } from '@/data/rooms';
+---
+
+<SandyCityLayout
+  title="The Rooms"
+  description="Five guest rooms at Sandy City Inn, each named for a favorite song and shaped by the character of the house."
+>
+  <section class="py-20 md:py-28">
+    <div class="container-wide">
+      <div class="max-w-3xl mb-16">
+        <p class="text-eyebrow mb-3">Five rooms</p>
+        <h1
+          class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-stone-900 leading-[1.05] mb-6"
+        >
+          Rooms with character.
+        </h1>
+        <p class="text-lg md:text-xl text-stone-700 leading-relaxed">
+          Each guest room has its own feel. Some are bright and open, with
+          morning light and views of the garden. Others are quieter, with darker
+          wood, softer light, and a fireplace for colder nights.
+        </p>
+        <p class="text-lg md:text-xl text-stone-700 leading-relaxed mt-6">
+          The rooms are named for favorite songs, reflecting our appreciation
+          for music and the natural beauty of the Lake Michigan shoreline.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {rooms.map((room) => <RoomCard room={room} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guidance band -->
+  <section class="py-20 md:py-24 border-t sci-border sci-band">
+    <div class="container-wide max-w-2xl text-center">
+      <h2
+        class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 mb-4"
+      >
+        Not sure which room to choose?
+      </h2>
+      <p class="text-stone-700 leading-relaxed mb-8">
+        Write to us with your dates and the kind of stay you have in mind. We’ll
+        help you choose the room that fits best.
+      </p>
+      <a href="mailto:hello@sandycityinn.example" class="btn-primary">
+        Write to us
+      </a>
+    </div>
+  </section>
+</SandyCityLayout>
+```

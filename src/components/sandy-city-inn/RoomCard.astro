@@ -1,0 +1,67 @@
+---
+// src/components/sandy-city-inn/RoomCard.astro
+// A room preview card. Used on the rooms index and the home page.
+
+interface Room {
+  slug: string;
+  name: string;
+  artist: string;
+  oneLine: string;
+  blurb: string;
+  photoLabel: string;
+  category: string;
+  priceFrom: number;
+}
+
+interface Props {
+  room: Room;
+  variant?: 'default' | 'compact';
+}
+
+const { room, variant = 'default' } = Astro.props;
+const imageSrc = `/images/inn/${room.slug}.webp`;
+const imageAlt =
+  room.photoLabel || `${room.name} — guest room at Sandy City Inn`;
+---
+
+<a
+  href={`/concept/sandy-city-inn/rooms/${room.slug}/`}
+  class="group block bg-white rounded-lg overflow-hidden border border-stone-200 hover:border-stone-300 transition-all hover:shadow-lg hover:-translate-y-0.5"
+>
+  <div class="relative w-full overflow-hidden">
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class:list={[
+        'w-full object-cover',
+        variant === 'compact' ? 'h-40 md:h-48' : 'h-56 md:h-64 lg:h-72',
+      ]}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class:list={['p-6 md:p-7', variant === 'compact' && 'p-5']}>
+    <p class="text-eyebrow text-stone-500 mb-2">{room.category}</p>
+    <h3
+      class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 leading-tight group-hover:text-[var(--sci-forest-800)] transition-colors"
+    >
+      {room.name}
+    </h3>
+    <p class="text-sm text-stone-500 italic mt-1 mb-3">
+      after the song by {room.artist}
+    </p>
+    <p class="text-stone-700 leading-relaxed mb-4">
+      {room.blurb}
+    </p>
+    <div class="flex items-center justify-between mt-auto pt-2">
+      <span
+        class="text-sm font-medium text-[var(--sci-forest-800)] group-hover:underline"
+      >
+        Stay in this room →
+      </span>
+      <span class="text-sm text-stone-500">
+        from ${room.priceFrom}
+      </span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,173 @@
+---
+// src/pages/concept/sandy-city-inn/rooms/[slug].astro
+
+import SandyCityLayout from '@/layouts/SandyCityLayout.astro';
+import RoomCard from '@/components/sandy-city-inn/RoomCard.astro';
+import { rooms, type Room } from '@/data/rooms';
+
+export async function getStaticPaths() {
+  return rooms.map((room) => ({
+    params: { slug: room.slug },
+    props: { room },
+  }));
+}
+
+interface Props {
+  room: Room;
+}
+
+const { room } = Astro.props;
+const otherRooms = rooms.filter((r) => r.slug !== room.slug);
+
+const heroImage = `/images/inn/${room.slug}.webp`;
+const spreadOne = `/images/inn/${room.slug}-alt.webp`;
+const spreadTwo = `/images/inn/${room.slug}-detail.webp`;
+const heroAlt =
+  room.photoLabel || `${room.name} — guest room at Sandy City Inn`;
+---
+
+<SandyCityLayout title={room.name} description={room.blurb}>
+  <!-- Room hero -->
+  <section class="relative">
+    <img
+      src={heroImage}
+      alt={heroAlt}
+      class="w-full h-[42vh] md:h-[60vh] lg:h-[72vh] object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/40 via-black/10 to-transparent"
+    >
+      <div class="container-wide pb-12 md:pb-16 text-white">
+        <p class="text-eyebrow text-white/80 mb-3">{room.category}</p>
+        <h1
+          class="font-serif text-5xl md:text-7xl font-medium leading-[1.05] mb-3 max-w-4xl"
+        >
+          {room.name}
+        </h1>
+        <p class="text-lg md:text-xl italic text-white/90 mb-4">
+          after the song by {room.artist}
+        </p>
+        <p class="text-lg md:text-xl max-w-2xl text-white/95 leading-relaxed">
+          {room.oneLine}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <section class="py-20 md:py-28">
+    <div class="container-wide max-w-3xl">
+      <p class="text-eyebrow mb-4">The room</p>
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 leading-tight mb-10"
+      >
+        {room.oneLine}
+      </h2>
+      <div class="space-y-6 text-lg text-stone-700 leading-relaxed">
+        {room.description.map((para) => <p>{para}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo spread -->
+  <section class="py-12 md:py-16">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <img
+          src={spreadOne}
+          alt={`${room.name} — second view of the guest room`}
+          class="w-full h-56 md:h-64 lg:h-72 object-cover rounded-lg border sci-border"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src={spreadTwo}
+          alt={`${room.name} — detail view of the guest room`}
+          class="w-full h-56 md:h-64 lg:h-72 object-cover rounded-lg border sci-border"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights & rate -->
+  <section class="py-20 md:py-28 border-t sci-border">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-20">
+        <div>
+          <p class="text-eyebrow mb-4">Highlights</p>
+          <h2
+            class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 mb-8"
+          >
+            What this room offers.
+          </h2>
+          <ul
+            class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-stone-700"
+          >
+            {
+              room.highlights.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-[var(--sci-sunset-600)] mt-1.5 text-xs">
+                    ●
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="sci-surface rounded-lg p-7 md:p-8 border sci-border h-fit">
+          <p class="text-eyebrow mb-3">Rate</p>
+          <p class="text-sm text-stone-500">From</p>
+          <p class="font-serif text-3xl font-semibold text-stone-900">
+            ${room.priceFrom}
+            <span class="text-base font-normal text-stone-500">/ night</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 border-t sci-border sci-band">
+    <div class="container-wide max-w-2xl text-center">
+      <h2
+        class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 mb-4"
+      >
+        Stay in {room.name}.
+      </h2>
+      <p class="text-stone-700 leading-relaxed mb-8">
+        Write to us with the dates you have in mind and we’ll let you know
+        whether this room is available.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/concept/sandy-city-inn/visit/" class="btn-primary">
+          Plan your stay
+        </a>
+        <a href="mailto:hello@sandycityinn.example" class="btn-secondary">
+          Write to us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other rooms -->
+  <section class="py-20 md:py-28 border-t sci-border">
+    <div class="container-wide">
+      <p class="text-eyebrow mb-3">Other rooms</p>
+      <h2
+        class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 mb-10"
+      >
+        Explore the other guest rooms.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {otherRooms.map((r) => <RoomCard room={r} variant="compact" />)}
+      </div>
+    </div>
+  </section>
+</SandyCityLayout>
+```

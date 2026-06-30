@@ -1,0 +1,130 @@
+---
+// src/pages/concept/sandy-city-inn/our-town.astro
+import SandyCityLayout from '@/layouts/SandyCityLayout.astro';
+import TownSpot from '@/components/sandy-city-inn/TownSpot.astro';
+import { townPicks } from '@/data/town-picks';
+---
+
+<SandyCityLayout
+  title="Our Town"
+  description="Discover Sandy City, a walkable university town on the Lake Michigan shoreline with cafés, bookstores, beaches, and nearby dunes."
+>
+  <!-- Hero -->
+  <section class="py-20 md:py-28">
+    <div class="container-wide max-w-3xl">
+      <p class="text-eyebrow mb-4">Our town</p>
+
+      <h1
+        class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-stone-900 leading-[1.05] mb-8"
+      >
+        Sandy City, on the Lake Michigan shoreline.
+      </h1>
+
+      <p class="text-lg md:text-xl text-stone-700 leading-relaxed mb-6">
+        Sandy City is a university town where the shoreline, downtown, and
+        surrounding natural areas are all part of everyday life. It’s easy to
+        spend a morning outdoors, an afternoon exploring town, and an evening
+        back at the inn.
+      </p>
+
+      <p class="text-lg md:text-xl text-stone-700 leading-relaxed">
+        These are some of the places we recommend to guests visiting for the
+        first time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Town photo -->
+  <section class="pb-12 md:pb-16">
+    <div class="container-wide">
+      <img
+        src="/images/inn/sandy-city-inn-town-pier-sunset.webp"
+        alt="Sandy City — the pier at sunset, the bell tower above the trees"
+        class="w-full h-56 md:h-72 lg:h-96 object-cover rounded-lg border sci-border"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-20 md:py-28">
+    <div class="container-wide max-w-3xl">
+      <div class="space-y-6 text-lg text-stone-700 leading-relaxed">
+        <p>
+          One of the things we enjoy most about Sandy City is its balance. It
+          has the energy of a university town without feeling busy, and the
+          shoreline is never far away.
+        </p>
+
+        <p>
+          Downtown is easy to explore on foot, with locally owned cafés,
+          bookstores, restaurants, galleries, and neighborhood shops. Throughout
+          the year there are lectures, performances, markets, and community
+          events that bring people together.
+        </p>
+
+        <p>
+          Beyond downtown you'll find beaches, wooded trails, quiet overlooks,
+          and miles of Lake Michigan shoreline. A short drive north leads to the
+          dunes, one of our favorite places in every season.
+        </p>
+
+        <p>
+          Every guest comes for something different. Some spend the day hiking.
+          Others browse bookstores, enjoy long lunches, or simply walk to the
+          water with a cup of coffee. That's one of the things we appreciate
+          most about living here: there isn't just one way to enjoy the town.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Picks -->
+  <section class="py-20 md:py-28 border-t sci-border">
+    <div class="container-wide max-w-4xl">
+      <p class="text-eyebrow mb-3">Our recommendations</p>
+
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 leading-tight mb-12"
+      >
+        A few favorite places.
+      </h2>
+
+      <div>
+        {
+          townPicks.map((pick) => (
+            <TownSpot
+              number={pick.number}
+              title={pick.title}
+              category={pick.category}
+              body={pick.body}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="py-24 md:py-32 border-t sci-border sci-band">
+    <div class="container-wide max-w-2xl text-center">
+      <h2
+        class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 leading-tight mb-6"
+      >
+        There's always something worth exploring.
+      </h2>
+
+      <p class="text-stone-700 leading-relaxed mb-8">
+        Whether you're here for the lake, the university, the restaurants, or a
+        quiet weekend away, we're always happy to share a few suggestions to
+        help you make the most of your visit.
+      </p>
+
+      <a href="/concept/sandy-city-inn/visit/" class="btn-primary">
+        Plan your visit
+      </a>
+    </div>
+  </section>
+</SandyCityLayout>
+```

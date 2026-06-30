@@ -1,0 +1,185 @@
+---
+// src/pages/concept/sandy-city-inn/index.astro
+// Sandy City Inn — landing page.
+
+import SandyCityLayout from '@/layouts/SandyCityLayout.astro';
+import RoomCard from '@/components/sandy-city-inn/RoomCard.astro';
+import TownSpot from '@/components/sandy-city-inn/TownSpot.astro';
+import { rooms } from '@/data/rooms';
+import { townPicks } from '@/data/town-picks';
+
+const featuredRooms = rooms.slice(0, 3);
+const featuredPicks = townPicks.slice(0, 3);
+---
+
+<SandyCityLayout
+  title="Sandy City Inn"
+  description="A small inn on the shore of Lake Michigan, in the university town of Sandy City. Five guest rooms in a restored lakeside house, open year-round."
+>
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src="/images/inn/sandy-city-inn-exterior-dusk.webp"
+      alt="Sandy City Inn exterior at dusk with the lake beyond the cedars"
+      class="w-full h-[42vh] md:h-[60vh] lg:h-[72vh] object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/25 to-transparent"
+    >
+    </div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="container-wide pb-12 md:pb-20 text-white">
+        <p class="text-eyebrow text-white/90 mb-3">
+          Sandy City, Michigan · On the shore of Lake Michigan
+        </p>
+        <h1
+          class="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.02] mb-6 max-w-3xl"
+        >
+          A small inn<br />on the lake.
+        </h1>
+        <p
+          class="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed"
+        >
+          Five guest rooms in a restored lakeside house. Walk to downtown, spend
+          the afternoon by the water, and return to a quiet place at the end of
+          the day.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/concept/sandy-city-inn/rooms/" class="btn-primary">
+            See the rooms
+          </a>
+          <a href="/concept/sandy-city-inn/visit/" class="btn-secondary">
+            Plan your stay
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  <section class="py-24 md:py-32">
+    <div class="container-wide max-w-3xl">
+      <p class="text-eyebrow mb-4">Welcome</p>
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 leading-tight mb-8"
+      >
+        A place to settle in.
+      </h2>
+      <p class="text-lg text-stone-700 leading-relaxed mb-6">
+        Sandy City Inn occupies an older home near the lake in one of the city's
+        established neighborhoods. Original woodwork, wide porches, fireplaces,
+        and generous windows give the house its character, while each room
+        offers its own view of the property and the seasons outside.
+      </p>
+      <p class="text-lg text-stone-700 leading-relaxed">
+        We're Mary and Sam. We care for the inn, prepare breakfast each morning,
+        and enjoy helping guests discover both the town and the shoreline that
+        surround it. Whether you're here for a weekend away, a university visit,
+        or simply a few quieter days, we hope you'll feel at home.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rooms teaser -->
+  <section class="py-20 md:py-28 border-t sci-border">
+    <div class="container-wide">
+      <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+        <div>
+          <p class="text-eyebrow mb-3">Five rooms</p>
+          <h2
+            class="font-serif text-3xl md:text-4xl font-semibold text-stone-900"
+          >
+            Each with its own character.
+          </h2>
+        </div>
+        <a
+          href="/concept/sandy-city-inn/rooms/"
+          class="text-sm font-medium text-stone-800 hover:underline"
+        >
+          See all five rooms →
+        </a>
+      </div>
+
+      <div class="max-w-3xl mb-12">
+        <p class="text-lg text-stone-700 leading-relaxed">
+          Some rooms are bright and filled with morning light. Others are
+          wrapped in wood and warmed by a fireplace. Each is named for a
+          favorite song, reflecting our appreciation for music and the natural
+          beauty of the Lake Michigan shoreline.
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+      >
+        {featuredRooms.map((room) => <RoomCard room={room} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Town teaser -->
+  <section class="py-20 md:py-28 sci-band border-t sci-border">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20">
+        <div>
+          <p class="text-eyebrow mb-3">Sandy City</p>
+          <h2
+            class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 leading-tight mb-6"
+          >
+            A university town by the lake.
+          </h2>
+          <p class="text-stone-700 leading-relaxed mb-6">
+            Sandy City is easy to explore on foot. Downtown offers cafés,
+            bookstores, restaurants, galleries, and neighborhood shops, while
+            the shoreline, beaches, and nearby dunes are never far away. It's a
+            place where an afternoon outdoors and an evening in town fit
+            naturally into the same day.
+          </p>
+          <a href="/concept/sandy-city-inn/our-town/" class="btn-secondary">
+            Explore our town
+          </a>
+        </div>
+        <div>
+          {
+            featuredPicks.map((pick) => (
+              <TownSpot
+                number={pick.number}
+                title={pick.title}
+                category={pick.category}
+                body={pick.body}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 md:py-32 border-t sci-border">
+    <div class="container-wide max-w-2xl text-center">
+      <p class="text-eyebrow mb-4">Open year-round</p>
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 leading-tight mb-6"
+      >
+        We'd love to welcome you.
+      </h2>
+      <p class="text-lg text-stone-700 leading-relaxed mb-10">
+        Whether you're planning a quiet getaway, visiting the university, or
+        exploring the Lake Michigan shoreline, we'd be happy to help you find
+        the room that's right for your stay.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/concept/sandy-city-inn/visit/" class="btn-primary">
+          Plan your visit
+        </a>
+        <a href="mailto:hello@sandycityinn.example" class="btn-secondary">
+          Write to us
+        </a>
+      </div>
+    </div>
+  </section>
+</SandyCityLayout>
+```

@@ -1,0 +1,51 @@
+---
+// Uses site BaseLayout with the site header hidden on these pages.
+// Shows a non-sticky concept banner, then a sticky concept header with its own theme toggle.
+
+import BaseLayout from './Layout.astro';
+import Header from '@/components/sandy-city-inn/Header.astro';
+import Footer from '@/components/sandy-city-inn/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = 'Sandy City Inn. A small inn on the shore of Lake Michigan, in the college town of Sandy City. Five rooms, each named for a song. Open year-round.',
+  image,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={image}
+  noindex={true}
+  hideSiteHeader={true}
+>
+  <style is:global>
+    @import '../styles/sandy-city-inn.css';
+  </style>
+
+  <!-- Concept preview banner (scrolls away; not sticky) -->
+  <div
+    class="bg-indigo-50 text-indigo-900 dark:bg-indigo-950/30 dark:text-indigo-200 border-b border-indigo-200 dark:border-indigo-800"
+  >
+    <div class="max-w-6xl mx-auto px-4 py-2 text-sm text-center">
+      This is a concept preview by ImagineThis.Site — exploring what an inn’s
+      website can do.
+    </div>
+  </div>
+
+  <!-- Sticky concept header with breadcrumb + local nav + sun/moon toggle -->
+  <Header />
+
+  <!-- Page content -->
+  <slot />
+
+  <!-- Concept footer -->
+  <Footer />
+</BaseLayout>

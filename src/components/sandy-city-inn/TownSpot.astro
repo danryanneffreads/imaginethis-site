@@ -1,0 +1,33 @@
+---
+// src/components/sandy-city-inn/TownSpot.astro
+// A curated pick for "Our Town." Title + opinionated description.
+interface Props {
+  number: number | string;
+  title: string;
+  category: string;
+  body: string;
+}
+
+const { number, title, category, body } = Astro.props;
+---
+
+<article
+  class="grid grid-cols-[auto_1fr] gap-5 md:gap-7 py-7 border-b border-stone-200 last:border-b-0"
+>
+  <div
+    class="text-3xl md:text-4xl font-serif text-[var(--sci-sunset-600)] font-light leading-none pt-1"
+  >
+    {String(number).padStart(2, '0')}
+  </div>
+  <div>
+    <p class="text-eyebrow text-stone-500 mb-2">{category}</p>
+    <h3
+      class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 leading-tight mb-3"
+    >
+      {title}
+    </h3>
+    <p class="text-stone-700 leading-relaxed">
+      {body}
+    </p>
+  </div>
+</article>

@@ -1,0 +1,210 @@
+---
+// src/pages/concept/sandy-city-inn/visit.astro
+import SandyCityLayout from '@/layouts/SandyCityLayout.astro';
+import { rooms } from '@/data/rooms';
+
+const sortedByPrice = [...rooms].sort((a, b) => a.priceFrom - b.priceFrom);
+---
+
+<SandyCityLayout
+  title="Plan Your Visit"
+  description="Rates, hours, and visitor information for Sandy City Inn."
+>
+  <!-- Hero -->
+  <section class="py-20 md:py-28">
+    <div class="container-wide max-w-3xl">
+      <p class="text-eyebrow mb-4">Plan Your Visit</p>
+
+      <h1
+        class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-stone-900 dark:text-stone-100 leading-[1.05] mb-6"
+      >
+        We look forward to welcoming you.
+      </h1>
+
+      <p
+        class="text-lg md:text-xl text-stone-700 dark:text-stone-300 leading-relaxed"
+      >
+        Sandy City Inn has five guest rooms and is open throughout the year.
+        Whether you're visiting the university, exploring the shoreline, or
+        planning a quiet weekend away, we're happy to help you choose the room
+        that's right for your stay.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rates -->
+  <section class="py-16 md:py-20 border-t sci-border">
+    <div class="container-wide">
+      <div class="max-w-3xl">
+        <p class="text-eyebrow mb-4">Rates</p>
+
+        <h2
+          class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 dark:text-stone-100 leading-tight mb-8"
+        >
+          Rooms from $175 to $285 per night.
+        </h2>
+
+        <p class="text-stone-700 dark:text-stone-300 leading-relaxed mb-10">
+          Rates vary by room and season. Breakfast is included with every stay.
+          Weekend reservations generally require a two-night minimum, with
+          holiday weekends requiring three nights.
+        </p>
+
+        <div class="border sci-border rounded-lg overflow-hidden sci-card">
+          <table class="w-full text-left bg-transparent">
+            <thead class="sci-band text-stone-600 dark:text-stone-300 text-sm">
+              <tr>
+                <th class="px-5 py-3 font-medium">Room</th>
+                <th class="px-5 py-3 font-medium text-right">From</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {
+                sortedByPrice.map((room) => (
+                  <tr class="border-t sci-border">
+                    <td class="px-5 py-4">
+                      <a
+                        href={`/concept/sandy-city-inn/rooms/${room.slug}/`}
+                        class="font-serif text-lg text-stone-900 dark:text-stone-100 hover:text-[var(--sci-forest-800)]"
+                      >
+                        {room.name}
+                      </a>
+
+                      <p class="text-xs text-stone-500 dark:text-stone-400 italic">
+                        Named after {room.artist}
+                      </p>
+                    </td>
+
+                    <td class="px-5 py-4 text-right font-medium text-stone-900 dark:text-stone-100 whitespace-nowrap">
+                      ${room.priceFrom}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours -->
+  <section class="py-16 md:py-20 border-t sci-border sci-band">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
+        <div>
+          <p class="text-eyebrow mb-4">Hours</p>
+
+          <h2
+            class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 dark:text-stone-100 leading-tight mb-6"
+          >
+            Open year-round.
+          </h2>
+
+          <dl class="space-y-3 text-stone-700 dark:text-stone-300">
+            <div class="grid grid-cols-[10rem_1fr] gap-4">
+              <dt class="text-stone-500 dark:text-stone-400">Check-in</dt>
+              <dd>3:00 pm – 7:00 pm (later by arrangement)</dd>
+            </div>
+
+            <div class="grid grid-cols-[10rem_1fr] gap-4">
+              <dt class="text-stone-500 dark:text-stone-400">Check-out</dt>
+              <dd>11:00 am</dd>
+            </div>
+
+            <div class="grid grid-cols-[10rem_1fr] gap-4">
+              <dt class="text-stone-500 dark:text-stone-400">Breakfast</dt>
+              <dd>8:00 am – 10:00 am</dd>
+            </div>
+
+            <div class="grid grid-cols-[10rem_1fr] gap-4">
+              <dt class="text-stone-500 dark:text-stone-400">Office</dt>
+              <dd>9:00 am – 7:00 pm daily</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div>
+          <p class="text-eyebrow mb-4">Contact</p>
+
+          <h2
+            class="font-serif text-2xl md:text-3xl font-semibold text-stone-900 dark:text-stone-100 leading-tight mb-6"
+          >
+            We'd be happy to hear from you.
+          </h2>
+
+          <!-- keep existing contact info -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting here -->
+  <section class="py-16 md:py-20 border-t sci-border">
+    <div class="container-wide max-w-3xl">
+      <p class="text-eyebrow mb-4">Getting Here</p>
+
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 dark:text-stone-100 leading-tight mb-8"
+      >
+        Reaching Sandy City.
+      </h2>
+
+      <div
+        class="space-y-6 text-lg text-stone-700 dark:text-stone-300 leading-relaxed"
+      >
+        <p>
+          <strong class="text-stone-900 dark:text-stone-100">By car.</strong>
+          Most guests arrive by car. Sandy City is an easy drive from several Midwestern
+          cities, and the Lake Michigan shoreline makes the journey part of the experience.
+        </p>
+
+        <p>
+          <strong class="text-stone-900 dark:text-stone-100">By air.</strong>
+          The nearest regional airport is about an hour away. Rental cars are available,
+          making it easy to explore both Sandy City and the surrounding shoreline.
+        </p>
+
+        <p>
+          <strong class="text-stone-900 dark:text-stone-100">By train.</strong>
+          Passenger rail service is available in a nearby community, with the remainder
+          of the trip completed by car or rideshare.
+        </p>
+
+        <p>
+          <strong class="text-stone-900 dark:text-stone-100">Parking.</strong>
+          Complimentary parking is available for all guests.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <!-- Keep the FAQ structure, but simplify the answers. -->
+
+  <!-- CTA -->
+  <section class="py-24 md:py-32 border-t sci-border">
+    <div class="container-wide max-w-2xl text-center">
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-stone-900 dark:text-stone-100 leading-tight mb-6"
+      >
+        We'd love to welcome you.
+      </h2>
+
+      <p
+        class="text-lg text-stone-700 dark:text-stone-300 leading-relaxed mb-10"
+      >
+        If you're planning a visit, send us your preferred dates and we'll help
+        you find the room that's the best fit.
+      </p>
+
+      <a href="mailto:hello@sandycityinn.example" class="btn-primary">
+        Write to us
+      </a>
+    </div>
+  </section>
+</SandyCityLayout>
+```
+
